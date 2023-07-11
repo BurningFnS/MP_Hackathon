@@ -8,19 +8,35 @@ public class LevelGenerator : MonoBehaviour
     public GameObject Tile2;
     public GameObject StartTile;
 
+    public Vector3 length;
+    private MeshRenderer renderer;
+    public Vector3 nextTile;
+    public Vector3 differenceBetweenTile = new Vector3(0f,0f,0.434f);
+
     private void Start()
     {
+        //renderer = GetComponent<MeshRenderer>();
+        //length =  renderer.bounds.size;
+
+        GameObject StartPlane0 = Instantiate(StartTile, transform);
+        StartPlane0.transform.position = new Vector3(0, 0, -0.234f);
+        nextTile = StartPlane0.transform.position;
+
         GameObject StartPlane1 = Instantiate(StartTile, transform);
-        StartPlane1.transform.position = new Vector3(0, 0, 0.2f);
+        StartPlane1.transform.position = nextTile + differenceBetweenTile;
+        nextTile = StartPlane1.transform.position;
 
         GameObject StartPlane2 = Instantiate(Tile2, transform);
-        StartPlane2.transform.position = new Vector3(0, 0, 0.634f);
+        StartPlane2.transform.position = nextTile + differenceBetweenTile;
+        nextTile = StartPlane2.transform.position;
 
         GameObject StartPlane3 = Instantiate(Tile1, transform);
-        StartPlane3.transform.position = new Vector3(0, 0, 1.068f);
+        StartPlane3.transform.position = nextTile + differenceBetweenTile;
+        nextTile = StartPlane3.transform.position;
 
         GameObject StartPlane4 = Instantiate(Tile2, transform);
-        StartPlane4.transform.position = new Vector3(0, 0, 1.502f);
+        StartPlane4.transform.position = nextTile + differenceBetweenTile;
+        nextTile = StartPlane4.transform.position;
     }
 
     /*private void Update()
