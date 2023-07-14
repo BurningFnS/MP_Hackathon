@@ -43,7 +43,7 @@ public class TimeManager : MonoBehaviour
     {
         // Format the remaining time as minutes:seconds
         int minutes = Mathf.FloorToInt(timer / 60f);
-        int seconds = Mathf.FloorToInt(timer % 60f);
+        int seconds = Mathf.CeilToInt(timer % 60f);
 
         // Update the UI text with the formatted time
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
