@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float laneDistance = 2.5f; //Distance between two lanes 
 
     public float jumpForce;
-    public float Gravity = -20;
+    public float gravity = 20;
 
     public Animator anim;
 
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            direction.y += Gravity * Time.deltaTime;
+            direction.y -= gravity * Time.deltaTime;
         }
         //Gather the inputs on which lane we should be
 
