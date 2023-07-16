@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();          
+        controller = GetComponent<CharacterController>();   
+        
     }
 
     void Update()
@@ -31,16 +32,16 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isGameStarted", true);
         direction.z = forwardSpeed;
 
-        if (controller.isGrounded)
+
+        if (SwipeManager.swipeUp)
         {
-            if (SwipeManager.swipeUp)
-            {
-                Jump();
-            }
+            Jump();
+            anim.SetBool("Grounded", false);
         }
-        else
+        else if (controller.isGrounded == false)
         {
             direction.y -= gravity * Time.deltaTime;
+            anim.SetBool("Grounded", true);
         }
         //Gather the inputs on which lane we should be
 
@@ -60,7 +61,13 @@ public class PlayerController : MonoBehaviour
             {
                 desiredLane = 0;
             }
-        }  
+        }
+
+        if (SwipeManager.swipeDown)
+        {
+            Slide();
+            anim.SetTrigger("Slide");
+        }
     }
         
     private void FixedUpdate()
@@ -105,12 +112,18 @@ public class PlayerController : MonoBehaviour
     {
         direction.y = jumpForce;
     }
+    
+    private void Slide()
+    {
+        controller.height = 0.5f;
+    }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.transform.tag == "Obstacle")
         {
             Destroy(hit.gameObject);
+            anim.SetTrigger("GotHit");
         }
     }
 }
