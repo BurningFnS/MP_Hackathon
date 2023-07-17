@@ -115,7 +115,8 @@ public class PlayerController : MonoBehaviour
     
     private void Slide()
     {
-        controller.height = 0.5f;
+        controller.height = 0.7f;
+        controller.center.y = 0.4f;
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -123,7 +124,7 @@ public class PlayerController : MonoBehaviour
         if(hit.transform.tag == "Obstacle")
         {
             Destroy(hit.gameObject);
-            anim.SetTrigger("GotHit");
+            anim.SetTrigger("GetHit");
         }
     }
 }
