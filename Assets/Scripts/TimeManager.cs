@@ -19,6 +19,10 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerManager.isGameStarted)
+        {
+            return;
+        }
         if (!isGameOver) 
         {
             // Update the timer every frame

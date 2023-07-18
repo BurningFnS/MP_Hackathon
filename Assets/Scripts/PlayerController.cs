@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 direction;
     public float forwardSpeed;
+    private float timeSinceLastIncrease;
+    public float initialSpeed = 5f; // The initial speed of the player
+    public float maxSpeed = 10f;    // The maximum allowed speed for the player
+    public float speedIncrement = 1f; // The amount to increase speed per second
 
     private int desiredLane = 1; //0: Left Lane, 1: Middle Lane, 2: Right Lane
     public float laneDistance = 2.5f; //Distance between two lanes 
@@ -16,10 +20,12 @@ public class PlayerController : MonoBehaviour
 
     public Animator anim;
 
+
     void Start()
     {
-        controller = GetComponent<CharacterController>();   
-        
+        controller = GetComponent<CharacterController>();
+        forwardSpeed = initialSpeed;
+        timeSinceLastIncrease = 0f;
     }
 
     void Update()
@@ -29,11 +35,27 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        // Increment the time counter
+        timeSinceLastIncrease += Time.deltaTime;
+
+        // If enough time has passed, increase the player speed
+        if (timeSinceLastIncrease >= 1f)
+        {
+            forwardSpeed += speedIncrement;
+            Debug.Log(forwardSpeed);
+
+            // Cap the player speed at the maximum allowed speed
+            forwardSpeed = Mathf.Min(forwardSpeed, maxSpeed);
+
+            // Reset the time counter
+            timeSinceLastIncrease = 0f;
+        }
+
         anim.SetBool("isGameStarted", true);
         direction.z = forwardSpeed;
 
 
-        if (SwipeManager.swipeUp)
+        if (SwipeManager.swipeUp && controller.isGrounded)
         {
             Jump();
             anim.SetBool("Grounded", false);
@@ -58,15 +80,29 @@ public class PlayerController : MonoBehaviour
         {
             desiredLane--;
             if (desiredLane == -1)
+
             {
                 desiredLane = 0;
             }
         }
 
-        if (SwipeManager.swipeDown)
+        if (SwipeManager.swipeDown && controller.isGrounded)
         {
             Slide();
             anim.SetTrigger("Slide");
+        }
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Running"))
+        {
+            controller.height = 2.8f;
+            controller.center = new Vector3(controller.center.x, 1.7f, controller.center.z);
+        }
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
+        {
+            controller.height = 0.7f;
+            controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
+            anim.SetBool("Slide", false);
         }
 
     }
@@ -108,11 +144,7 @@ public class PlayerController : MonoBehaviour
             controller.Move(diff);
         }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Running"))
-        {
-            controller.height = 2.8f;
-            //controller.center = new Vector3(controller.center.x,1.7f, controller.center.z);
-        }
+
     }
 
     private void Jump()
