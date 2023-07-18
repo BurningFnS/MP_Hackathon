@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
             Slide();
             anim.SetTrigger("Slide");
         }
+
     }
         
     private void FixedUpdate()
@@ -106,6 +107,12 @@ public class PlayerController : MonoBehaviour
         {
             controller.Move(diff);
         }
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Running"))
+        {
+            controller.height = 2.8f;
+            //controller.center = new Vector3(controller.center.x,1.7f, controller.center.z);
+        }
     }
 
     private void Jump()
@@ -116,7 +123,7 @@ public class PlayerController : MonoBehaviour
     private void Slide()
     {
         controller.height = 0.7f;
-        controller.center.y = 0.4f;
+        controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
