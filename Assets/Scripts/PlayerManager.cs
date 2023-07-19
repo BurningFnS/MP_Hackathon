@@ -19,6 +19,11 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
+        if (numberOfCoins < 0)
+        {
+            numberOfCoins = 0;
+        }
+
         coinText.text = "Coins: " + numberOfCoins;
 
         if (SwipeManager.tap)
