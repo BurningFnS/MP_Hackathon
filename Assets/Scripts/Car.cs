@@ -15,7 +15,6 @@ public class Car : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PlayerManager.numberOfCoins += 1;
             Destroy(gameObject);
         }
     }
