@@ -8,14 +8,9 @@ public class Car : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
+        if (!PlayerManager.isGameStarted)
+            return;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
