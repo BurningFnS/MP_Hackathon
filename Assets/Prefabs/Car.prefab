@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1003623210563095745}
   - component: {fileID: 250543843770562651}
   - component: {fileID: 1576676001084729155}
+  - component: {fileID: 3349396240587386254}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,6 +67,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62977ab06d0361e448411f275fdf8bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3349396240587386254
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479146631053383291}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -0.045, y: 0.03326362, z: 0.11}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3157967768427457110
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,9 +205,10 @@ GameObject:
   - component: {fileID: 4956060932240098304}
   - component: {fileID: 8155882420764592441}
   - component: {fileID: 5054636164829660776}
+  - component: {fileID: 4532953609727039485}
   m_Layer: 0
   m_Name: MainBody
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,6 +278,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4532953609727039485
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5163987357787100429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.044999998, y: 0.037433047, z: 0.10764899}
+  m_Center: {x: 0, y: 0.011270106, z: 0.009874864}
 --- !u!1 &6119242427226562689
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,5 +589,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: -0.045, y: 0.03326362, z: 0.11}
+  m_Size: {x: 0.044, y: 0.03326362, z: 0.11}
   m_Center: {x: 0, y: 0, z: 0}
