@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed;
     private float timeSinceLastIncrease;
     public float initialSpeed = 5f; // The initial speed of the player
-    public float maxSpeed = 10f;    // The maximum allowed speed for the player
+    public float maxSpeed = 20f;    // The maximum allowed speed for the player
     public float speedIncrement = 1f; // The amount to increase speed per second
 
     private int desiredLane = 1; //0: Left Lane, 1: Middle Lane, 2: Right Lane
@@ -17,45 +17,60 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce;
     public float gravity = 20;
+    private bool hitObstacle = false;
+    private float timeDelay;
 
     public Animator anim;
-
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
+        timeDelay = 0f;
     }
 
     void Update()
     {
         if (!PlayerManager.isGameStarted)
-        {
             return;
-        }
 
         // Increment the time counter
-        timeSinceLastIncrease += Time.deltaTime;
-
-        // If enough time has passed, increase the player speed
-        if (timeSinceLastIncrease >= 1f)
+        if (hitObstacle == false)
         {
-            forwardSpeed += speedIncrement;
-            Debug.Log(forwardSpeed);
+            timeSinceLastIncrease += Time.deltaTime;
 
-            // Cap the player speed at the maximum allowed speed
-            forwardSpeed = Mathf.Min(forwardSpeed, maxSpeed);
+            // If enough time has passed, increase the player speed
+            if (timeSinceLastIncrease >= 1f)
+            {
+                forwardSpeed += speedIncrement;
 
-            // Reset the time counter
-            timeSinceLastIncrease = 0f;
+                // Cap the player speed at the maximum allowed speed
+                forwardSpeed = Mathf.Min(forwardSpeed, maxSpeed);
+
+                // Reset the time counter
+                timeSinceLastIncrease = 0f;
+            }
+        }
+
+        if (hitObstacle == true)
+        {
+            timeDelay += Time.deltaTime;
+
+            if (timeDelay >= 1.8f)
+            {
+                hitObstacle = false;
+
+                // Reset the time counter
+                timeDelay = 0f;
+            }
         }
 
         anim.SetBool("isGameStarted", true);
         direction.z = forwardSpeed;
 
 
-        if (SwipeManager.swipeUp && controller.isGrounded)
+        if (SwipeManager.swipeUp && controller.isGrounded && hitObstacle == false)
         {
             Jump();
             anim.SetBool("Grounded", false);
@@ -67,26 +82,28 @@ public class PlayerController : MonoBehaviour
         }
         //Gather the inputs on which lane we should be
 
-        if (SwipeManager.swipeRight)
+        if (SwipeManager.swipeRight && hitObstacle == false)
         {
+
             desiredLane++;
-            if(desiredLane == 3)
+            anim.SetTrigger("Right");
+            if (desiredLane == 3)
             {
                 desiredLane = 2;
             }
         }
 
-        if (SwipeManager.swipeLeft)
+        if (SwipeManager.swipeLeft && hitObstacle == false)
         {
             desiredLane--;
+            anim.SetTrigger("Left");
             if (desiredLane == -1)
-
             {
                 desiredLane = 0;
             }
         }
 
-        if (SwipeManager.swipeDown && controller.isGrounded)
+        if (SwipeManager.swipeDown && controller.isGrounded && hitObstacle == false)
         {
             Slide();
             anim.SetTrigger("Slide");
@@ -105,14 +122,16 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Slide", false);
         }
 
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Trip"))
+        {
+            anim.SetBool("GetHit", false);
+        }
     }
         
     private void FixedUpdate()
     {
         if (!PlayerManager.isGameStarted)
-        {
             return;
-        }
 
         controller.Move(direction * Time.fixedDeltaTime);
 
@@ -143,8 +162,6 @@ public class PlayerController : MonoBehaviour
         {
             controller.Move(diff);
         }
-
-
     }
 
     private void Jump()
@@ -164,6 +181,9 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(hit.gameObject);
             anim.SetTrigger("GetHit");
+            PlayerManager.numberOfCoins -= Random.Range(1, 3);
+            hitObstacle = true;
+            forwardSpeed = initialSpeed;
         }
     }
 }

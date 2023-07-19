@@ -17,11 +17,12 @@ public class TileManager : MonoBehaviour
         {
             if (i == 0)
             {
-                SpawnTile(0);
+                SpawnTile(0); //First tile has no obstacles
             }
             else
             {
-                SpawnTile(Random.Range(0, tilePrefabs.Length));
+                SpawnTile(Random.Range(0, tilePrefabs.Length)); //Subsequent tiles that spawn will be random
+
             }
         }
     }
