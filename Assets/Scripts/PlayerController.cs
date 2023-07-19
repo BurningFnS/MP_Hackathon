@@ -17,15 +17,17 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce;
     public float gravity = 20;
+    private bool hitObstacle = false;
+    private float timeDelay;
 
     public Animator anim;
-
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
+        timeDelay = 0f;
     }
 
     void Update()
@@ -34,19 +36,34 @@ public class PlayerController : MonoBehaviour
             return;
 
         // Increment the time counter
-        timeSinceLastIncrease += Time.deltaTime;
-
-        // If enough time has passed, increase the player speed
-        if (timeSinceLastIncrease >= 1f)
+        if(hitObstacle == false)
         {
-            forwardSpeed += speedIncrement;
+            timeSinceLastIncrease += Time.deltaTime;
 
-            // Cap the player speed at the maximum allowed speed
-            forwardSpeed = Mathf.Min(forwardSpeed, maxSpeed);
-            Debug.Log(forwardSpeed);
+            // If enough time has passed, increase the player speed
+            if (timeSinceLastIncrease >= 1f)
+            {
+                forwardSpeed += speedIncrement;
 
-            // Reset the time counter
-            timeSinceLastIncrease = 0f;
+                // Cap the player speed at the maximum allowed speed
+                forwardSpeed = Mathf.Min(forwardSpeed, maxSpeed);
+
+                // Reset the time counter
+                timeSinceLastIncrease = 0f;
+            }
+        }
+
+        if(hitObstacle == true)
+        {
+            timeDelay += Time.deltaTime;
+
+            if(timeDelay >= 1.8f)
+            {
+                hitObstacle = false;
+
+                // Reset the time counter
+                timeDelay = 0f;
+            }
         }
 
         anim.SetBool("isGameStarted", true);
@@ -67,7 +84,9 @@ public class PlayerController : MonoBehaviour
 
         if (SwipeManager.swipeRight)
         {
+
             desiredLane++;
+            anim.SetTrigger("Right");
             if(desiredLane == 3)
             {
                 desiredLane = 2;
@@ -77,8 +96,8 @@ public class PlayerController : MonoBehaviour
         if (SwipeManager.swipeLeft)
         {
             desiredLane--;
+            anim.SetTrigger("Left");
             if (desiredLane == -1)
-
             {
                 desiredLane = 0;
             }
@@ -102,7 +121,6 @@ public class PlayerController : MonoBehaviour
             controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
             anim.SetBool("Slide", false);
         }
-
     }
         
     private void FixedUpdate()
@@ -139,8 +157,6 @@ public class PlayerController : MonoBehaviour
         {
             controller.Move(diff);
         }
-
-
     }
 
     private void Jump()
@@ -159,7 +175,10 @@ public class PlayerController : MonoBehaviour
         if(hit.transform.tag == "Obstacle")
         {
             Destroy(hit.gameObject);
+            PlayerManager.numberOfCoins -= Random.Range(5, 10);
             anim.SetTrigger("GetHit");
+            hitObstacle = true;
+            forwardSpeed = initialSpeed;
         }
     }
 }
