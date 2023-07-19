@@ -31,9 +31,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (!PlayerManager.isGameStarted)
-        {
             return;
-        }
 
         // Increment the time counter
         timeSinceLastIncrease += Time.deltaTime;
@@ -42,10 +40,10 @@ public class PlayerController : MonoBehaviour
         if (timeSinceLastIncrease >= 1f)
         {
             forwardSpeed += speedIncrement;
-            Debug.Log(forwardSpeed);
 
             // Cap the player speed at the maximum allowed speed
             forwardSpeed = Mathf.Min(forwardSpeed, maxSpeed);
+            Debug.Log(forwardSpeed);
 
             // Reset the time counter
             timeSinceLastIncrease = 0f;
@@ -110,9 +108,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (!PlayerManager.isGameStarted)
-        {
             return;
-        }
 
         controller.Move(direction * Time.fixedDeltaTime);
 
