@@ -18,4 +18,20 @@ public class Magnet : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            StartCoroutine(ActivateCoin());
+            Destroy(transform.GetChild(0).gameObject);
+        }
+    }
+
+    IEnumerator ActivateCoin()
+    {
+        coinDetector.SetActive(true);
+        yield return new WaitForSeconds(10f);
+        coinDetector.SetActive(false);
+    }
 }
