@@ -24,7 +24,7 @@ public class PlayerManager : MonoBehaviour
             numberOfCoins = 0;
         }
 
-        coinText.text = "Coins: " + numberOfCoins;
+        coinText.text = "" + numberOfCoins;
 
         if (SwipeManager.tap)
         {

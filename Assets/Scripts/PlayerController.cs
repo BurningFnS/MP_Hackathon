@@ -21,9 +21,12 @@ public class PlayerController : MonoBehaviour
     private float timeDelay;
 
     public Animator anim;
+    public GameObject coinParticles;
+    private ParticleSystem coinBurst;
 
     void Start()
     {
+        coinBurst = coinParticles.GetComponent<ParticleSystem>();
         controller = GetComponent<CharacterController>();
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
@@ -117,8 +120,7 @@ public class PlayerController : MonoBehaviour
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
         {
-            controller.height = 0.7f;
-            controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
+            Slide();
             anim.SetBool("Slide", false);
         }
 
@@ -179,9 +181,16 @@ public class PlayerController : MonoBehaviour
     {
         if(hit.transform.tag == "Obstacle")
         {
-            Destroy(hit.gameObject);
-            anim.SetTrigger("GetHit");
-            PlayerManager.numberOfCoins -= Random.Range(1, 3);
+            Destroy(hit.gameObject); //Destroy the collided obstacle
+            ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
+            int randomNumber = Random.Range(1, 3);
+            bursts[0].count = randomNumber;
+            coinBurst.emission.SetBursts(bursts);
+            coinBurst.Play(); // Play coin burst particle
+
+            PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
+            anim.SetTrigger("GetHit"); //Play the Trip animation
+            
             hitObstacle = true;
             forwardSpeed = initialSpeed;
         }
