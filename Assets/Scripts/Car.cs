@@ -13,4 +13,12 @@ public class Car : MonoBehaviour
 
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
