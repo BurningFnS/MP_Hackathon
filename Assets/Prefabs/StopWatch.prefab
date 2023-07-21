@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8248529749005777987
+--- !u!1 &4191016742819668439
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8733459025343768313}
-  - component: {fileID: 5664579604967614812}
-  - component: {fileID: 7599919387106385302}
-  - component: {fileID: 9131544997403165167}
-  - component: {fileID: 9131544997403164944}
+  - component: {fileID: 3558594849530411885}
+  - component: {fileID: 490171887608165576}
+  - component: {fileID: 2389590567892058114}
+  - component: {fileID: 916802586246559682}
+  - component: {fileID: 1824225806883409431}
   m_Layer: 0
-  m_Name: Magnet
+  m_Name: StopWatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8733459025343768313
+--- !u!4 &3558594849530411885
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248529749005777987}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.6, z: 18.48}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_GameObject: {fileID: 4191016742819668439}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 3.5, y: 1, z: 14}
+  m_LocalScale: {x: 56, y: 25, z: 56}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5664579604967614812
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!33 &490171887608165576
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248529749005777987}
-  m_Mesh: {fileID: 4068373912626513877, guid: fcca5ddec85f1d748b898869a80be070, type: 3}
---- !u!23 &7599919387106385302
+  m_GameObject: {fileID: 4191016742819668439}
+  m_Mesh: {fileID: 2540817853737639666, guid: 74fd45dc74f894249b3685bd1c4f7611, type: 3}
+--- !u!23 &2389590567892058114
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248529749005777987}
+  m_GameObject: {fileID: 4191016742819668439}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6417c9ffbd80c9c4684d43b6bd7b73be, type: 2}
+  - {fileID: 2100000, guid: 261dc6663c8932b48826a253fb5abbab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,29 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9131544997403165167
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248529749005777987}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.034244265, y: 0.035631787, z: 0.010000001}
-  m_Center: {x: 0.006939162, y: 0.012815895, z: 0}
---- !u!114 &9131544997403164944
+--- !u!114 &916802586246559682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248529749005777987}
+  m_GameObject: {fileID: 4191016742819668439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c2a6a7dfbda924ba82ec5e9a46337b, type: 3}
+  m_Script: {fileID: 11500000, guid: 332ceb48ba5f2234b912fb2e47293c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetRadius: 10
+--- !u!65 &1824225806883409431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4191016742819668439}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000009, y: 0.011320361, z: 0.023217607}
+  m_Center: {x: 4.656615e-10, y: -0.0043398286, z: -0.0020982348}
