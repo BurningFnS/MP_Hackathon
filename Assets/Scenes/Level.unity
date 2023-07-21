@@ -6151,6 +6151,7 @@ MonoBehaviour:
   gravity: 20
   anim: {fileID: 1896889437}
   coinParticles: {fileID: 108146278}
+  magnetDuration: 10
 --- !u!136 &1749492193
 CapsuleCollider:
   m_ObjectHideFlags: 0
