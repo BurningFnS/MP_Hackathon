@@ -19,10 +19,14 @@ public class PlayerController : MonoBehaviour
     public float gravity = 20;
     private bool hitObstacle = false;
     private float timeDelay;
-
     public Animator anim;
     public GameObject coinParticles;
     private ParticleSystem coinBurst;
+
+    public float magnetDuration = 8f; // The duration of the magnet effect in seconds
+    private bool magnetEffectActive = false;
+    private float magnetRemainingTime = 0f;
+    private float magnetRadius;
 
     void Start()
     {
@@ -128,6 +132,36 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("GetHit", false);
         }
+
+        if (magnetEffectActive)
+        {
+            Debug.Log("Magnet Enabled");
+
+            // Update magnet remaining time and disable magnet effect if time is up
+            magnetRemainingTime -= Time.deltaTime;
+            if (magnetRemainingTime <= 0f)
+            {
+                Debug.Log("Magnet Disabled");
+                DisableMagnetEffect();
+            }
+
+            // Detect collectible items within the magnet radius and attract them towards the player
+            Collider[] collectibles = Physics.OverlapSphere(transform.position, magnetRadius, LayerMask.GetMask("Collectible"));
+
+            foreach (Collider collectible in collectibles)
+            {
+                Vector3 coinPosition = collectible.transform.position;
+                coinPosition.y = 1f; // Replace 'fixedYPosition' with the desired value
+                collectible.transform.position = coinPosition;
+
+                // Calculate the direction from the collectible to the player
+                Vector3 direction = (transform.position - collectible.transform.position).normalized;
+
+                // Move the collectible towards the player based on the distance and desired attraction speed
+                float attractionSpeed = 20f; // Adjust as needed
+                collectible.transform.position += direction * attractionSpeed * Time.deltaTime;
+            }
+        }
     }
         
     private void FixedUpdate()
@@ -176,6 +210,20 @@ public class PlayerController : MonoBehaviour
         controller.height = 0.7f;
         controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
     }
+
+    public void EnableMagnetEffect(float radius)
+    {
+        magnetEffectActive = true;
+        magnetRemainingTime = magnetDuration;
+        magnetRadius = radius;
+    }
+
+    private void DisableMagnetEffect()
+    {
+        magnetEffectActive = false;
+        // Perform any additional actions when the magnet effect ends, if needed.
+    }
+
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
