@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
     private float magnetRemainingTime = 0f;
     private float magnetRadius;
 
+    private bool shieldEffectActive = false;
+    private float shieldRemainingTime = 0f;
+    public GameObject shieldBarrier;
+
     void Start()
     {
         coinBurst = coinParticles.GetComponent<ParticleSystem>();
@@ -133,6 +137,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("GetHit", false);
         }
 
+
         if (magnetEffectActive)
         {
             Debug.Log("Magnet Enabled");
@@ -160,6 +165,17 @@ public class PlayerController : MonoBehaviour
                 // Move the collectible towards the player based on the distance and desired attraction speed
                 float attractionSpeed = 20f; // Adjust as needed
                 collectible.transform.position += direction * attractionSpeed * Time.deltaTime;
+            }
+        }
+
+        if (shieldEffectActive)
+        {
+            Debug.Log("Shield Enabled");
+            shieldRemainingTime -= Time.deltaTime;
+            if (shieldRemainingTime <= 0f)
+            {
+                Debug.Log("Shield Disabled");
+                DisableShieldEffect();
             }
         }
     }
@@ -224,6 +240,20 @@ public class PlayerController : MonoBehaviour
         // Perform any additional actions when the magnet effect ends, if needed.
     }
 
+    public void EnableShieldEffect(float duration)
+    {
+        shieldEffectActive = true;
+        shieldBarrier.SetActive(true);
+        shieldRemainingTime = duration;
+        // Activate the shield effect for the player, e.g., make the player invulnerable to obstacles
+    }
+
+    private void DisableShieldEffect()
+    {
+        shieldEffectActive = false;
+        shieldBarrier.SetActive(false);
+        // Deactivate the shield effect for the player, e.g., make the player vulnerable to obstacles again
+    }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -238,7 +268,7 @@ public class PlayerController : MonoBehaviour
 
             PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
             anim.SetTrigger("GetHit"); //Play the Trip animation
-            
+
             hitObstacle = true;
             forwardSpeed = initialSpeed;
         }

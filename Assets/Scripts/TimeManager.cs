@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
     public float totalTime = 60f; //Total time for the game in seconds
-    private float timer; //Remaining time 
+    public static float timer; //Remaining time 
     private bool isGameOver = false;
 
     public Text timerText;
