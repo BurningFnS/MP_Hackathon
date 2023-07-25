@@ -12,9 +12,15 @@ public class TimeManager : MonoBehaviour
     public Text timerText;
     public GameObject timeUpPanel;
 
+    public PlayerController playerController; // Reference to the player script
+    public Text shieldTimerText;
+    public Text magnetTimerText;
+
     void Start()
     {
         timer = totalTime; // Initialize the timer with the total time
+        shieldTimerText.enabled = false;
+        magnetTimerText.enabled = false;
     }
 
     void Update()
@@ -39,6 +45,33 @@ public class TimeManager : MonoBehaviour
 
             // Update the UI text to display the remaining time
             UpdateTimerUI();
+        }
+
+        if (playerController != null)
+        {
+            // Get and display the remaining time for the Shield power-up
+            float shieldRemainingTime = playerController.GetShieldRemainingTime();
+            float magnetRemainingTime = playerController.GetMagnetRemainingTime();
+
+            if (shieldRemainingTime > 0)
+            {
+                shieldTimerText.enabled = true;
+                shieldTimerText.text = "Shield: " + shieldRemainingTime.ToString("F1") + "s";
+            }
+            else
+            {
+                shieldTimerText.enabled = false;
+            }
+
+            if (magnetRemainingTime > 0)
+            {
+                magnetTimerText.enabled = true;
+                magnetTimerText.text = "Magnet: " + magnetRemainingTime.ToString("F1") + "s";
+            }
+            else
+            {
+                magnetTimerText.enabled = false;
+            }
         }
     }
 

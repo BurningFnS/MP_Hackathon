@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed;
     private float timeSinceLastIncrease;
     public float initialSpeed = 10f; // The initial speed of the player
-    public float maxSpeed = 30f;    // The maximum allowed speed for the player
-    public float speedIncrement = 2f; // The amount to increase speed per second
+    public float maxSpeed = 25f;    // The maximum allowed speed for the player
+    public float speedIncrement = 1f; // The amount to increase speed per second
 
     private int desiredLane = 1; //0: Left Lane, 1: Middle Lane, 2: Right Lane
     public float laneDistance = 2.5f; //Distance between two lanes 
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 direction = (transform.position - collectible.transform.position).normalized;
 
                 // Move the collectible towards the player based on the distance and desired attraction speed
-                float attractionSpeed = 50f; // Adjust as needed
+                float attractionSpeed = 40f; // Adjust as needed
                 collectible.transform.position += direction * attractionSpeed * Time.deltaTime;
             }
         }
@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-        
+
     private void FixedUpdate()
     {
         if (!PlayerManager.isGameStarted)
@@ -246,6 +246,11 @@ public class PlayerController : MonoBehaviour
         // Perform any additional actions when the magnet effect ends, if needed.
     }
 
+    public float GetMagnetRemainingTime()
+    {
+        return magnetRemainingTime;
+    }
+
     public void EnableShieldEffect(float duration)
     {
         shieldEffectActive = true;
@@ -259,6 +264,11 @@ public class PlayerController : MonoBehaviour
         shieldEffectActive = false;
         shieldBarrier.SetActive(false);
         // Deactivate the shield effect for the player, e.g., make the player vulnerable to obstacles again
+    }
+
+    public float GetShieldRemainingTime()
+    {
+        return shieldRemainingTime;
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
