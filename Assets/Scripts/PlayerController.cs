@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     private float timeDelay;
     public Animator anim;
     public GameObject coinParticles;
+    public GameObject explosionParticles;
     private ParticleSystem coinBurst;
+    private ParticleSystem explosionBurst;
 
     public float magnetDuration = 8f; // The duration of the magnet effect in seconds
     private bool magnetEffectActive = false;
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        explosionBurst = explosionParticles.GetComponent<ParticleSystem>();
         coinBurst = coinParticles.GetComponent<ParticleSystem>();
         controller = GetComponent<CharacterController>();
         forwardSpeed = initialSpeed;
@@ -259,6 +262,7 @@ public class PlayerController : MonoBehaviour
     {
         if(hit.transform.tag == "Obstacle")
         {
+            explosionBurst.Play(); 
             Destroy(hit.gameObject); //Destroy the collided obstacle
             ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
             int randomNumber = Random.Range(1, 3);
