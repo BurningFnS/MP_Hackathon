@@ -6,7 +6,7 @@ public class Clock : MonoBehaviour
 {
 
     public float bounceHeight = 1.0f;    // The maximum height the power-up will reach during each bounce
-    public float bounceSpeed = 1.0f;     // The speed at which the power-up will move up and down
+    public float bounceSpeed = 2.0f;     // The speed at which the power-up will move up and down
 
     private Vector3 startingPosition;    // Initial position of the power-up
     private float groundOffset = 0.5f;   // Offset to prevent the object from going below the ground
