@@ -8,9 +8,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
     public float forwardSpeed;
     private float timeSinceLastIncrease;
-    public float initialSpeed = 5f; // The initial speed of the player
-    public float maxSpeed = 20f;    // The maximum allowed speed for the player
-    public float speedIncrement = 1f; // The amount to increase speed per second
+    public float initialSpeed = 10f; // The initial speed of the player
+    public float maxSpeed = 30f;    // The maximum allowed speed for the player
+    public float speedIncrement = 2f; // The amount to increase speed per second
 
     private int desiredLane = 1; //0: Left Lane, 1: Middle Lane, 2: Right Lane
     public float laneDistance = 2.5f; //Distance between two lanes 
@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 direction = (transform.position - collectible.transform.position).normalized;
 
                 // Move the collectible towards the player based on the distance and desired attraction speed
-                float attractionSpeed = 20f; // Adjust as needed
+                float attractionSpeed = 50f; // Adjust as needed
                 collectible.transform.position += direction * attractionSpeed * Time.deltaTime;
             }
         }
@@ -262,7 +262,23 @@ public class PlayerController : MonoBehaviour
     {
         if(hit.transform.tag == "Obstacle")
         {
-            explosionBurst.Play(); 
+            Destroy(hit.gameObject); //Destroy the collided obstacle
+            ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
+            int randomNumber = Random.Range(1, 3);
+            bursts[0].count = randomNumber;
+            coinBurst.emission.SetBursts(bursts);
+            coinBurst.Play(); // Play coin burst particle
+
+            PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
+            anim.SetTrigger("GetHit"); //Play the Trip animation
+
+            hitObstacle = true;
+            forwardSpeed = initialSpeed;
+        }
+
+        if(hit.transform.tag == "Car")
+        {
+            explosionBurst.Play();
             Destroy(hit.gameObject); //Destroy the collided obstacle
             ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
             int randomNumber = Random.Range(1, 3);

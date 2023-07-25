@@ -6144,9 +6144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 5
-  initialSpeed: 5
-  maxSpeed: 10
-  speedIncrement: 1
+  initialSpeed: 10
+  maxSpeed: 30
+  speedIncrement: 2
   laneDistance: 3.6
   jumpForce: 9.253
   gravity: 20
@@ -6201,7 +6201,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 2
 --- !u!1 &1779096646
 GameObject:
@@ -7969,7 +7969,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8641311325664732075, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
 --- !u!1 &1351385593509184097 stripped
 GameObject:

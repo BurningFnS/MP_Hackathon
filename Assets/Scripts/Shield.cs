@@ -5,11 +5,28 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     public float shieldDuration = 10f; // The duration of the shield effect in seconds
+    public float bounceHeight = 1f;    // The maximum height the power-up will reach during each bounce
 
-    void Update()
+    private Vector3 startingPosition;    // Initial position of the power-up
+
+    private void Start()
     {
-        transform.Rotate(0, 50 * Time.deltaTime, 0);
+        startingPosition = transform.position;
     }
+
+    private void Update()
+    {
+        float verticalMovement = Mathf.PingPong(Time.time, bounceHeight);
+
+        // Calculate the target position for the power-up
+        Vector3 targetPosition = startingPosition + Vector3.up * verticalMovement;
+
+        // Update the position of the power-up
+        transform.position = targetPosition;
+        // Update the position of the power-up
+        transform.position = targetPosition;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

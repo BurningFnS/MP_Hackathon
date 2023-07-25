@@ -5,10 +5,25 @@ using UnityEngine;
 public class Magnet : MonoBehaviour
 {
     public float magnetRadius = 10f; // The radius within which collectible items are attracted
+    public float bounceHeight = 1f;    // The maximum height the power-up will reach during each bounce
+    private Vector3 startingPosition;    // Initial position of the power-up
 
-    void Update()
+    private void Start()
     {
-        transform.Rotate(0, 50 * Time.deltaTime, 0);
+        startingPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        float verticalMovement = Mathf.PingPong(Time.time, bounceHeight);
+
+        // Calculate the target position for the power-up
+        Vector3 targetPosition = startingPosition + Vector3.up * verticalMovement;
+
+        // Update the position of the power-up
+        transform.position = targetPosition;
+        // Update the position of the power-up
+        transform.position = targetPosition;
     }
 
     private void OnTriggerEnter(Collider other)
