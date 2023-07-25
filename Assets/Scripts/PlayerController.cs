@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public GameObject coinParticles;
     public GameObject explosionParticles;
+    public GameObject smokeParticles;
+    private ParticleSystem smokeBurst;
     private ParticleSystem coinBurst;
     private ParticleSystem explosionBurst;
 
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        smokeBurst = smokeParticles.GetComponent<ParticleSystem>();
         explosionBurst = explosionParticles.GetComponent<ParticleSystem>();
         coinBurst = coinParticles.GetComponent<ParticleSystem>();
         controller = GetComponent<CharacterController>();
@@ -262,6 +265,7 @@ public class PlayerController : MonoBehaviour
     {
         if(hit.transform.tag == "Obstacle")
         {
+            smokeBurst.Play();
             Destroy(hit.gameObject); //Destroy the collided obstacle
             ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
             int randomNumber = Random.Range(1, 3);
