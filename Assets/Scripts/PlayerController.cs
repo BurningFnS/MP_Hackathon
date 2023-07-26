@@ -167,7 +167,15 @@ public class PlayerController : MonoBehaviour
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Trip"))
         {
+            Debug.Log("trip");
             anim.SetBool("GetHit", false);
+        }
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+        {
+            Debug.Log("ROLLING ATM");
+            controller.height = 0.7f;
+            controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
         }
 
         if (magnetEffectActive)
@@ -257,8 +265,6 @@ public class PlayerController : MonoBehaviour
     {
         isRolling = true;
         anim.SetTrigger("Roll");
-        controller.height = 0.7f;
-        controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
     }
 
     public void EnableMagnetEffect(float radius)
