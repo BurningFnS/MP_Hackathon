@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
 
     private int desiredLane = 1; //0: Left Lane, 1: Middle Lane, 2: Right Lane
     public float laneDistance = 2.5f; //Distance between two lanes 
+    public bool isRolling = false;
 
     public float jumpForce;
     public float gravity = 20;
     private bool hitObstacle = false;
     private float timeDelay;
+    private float rollTime;
     public Animator anim;
     public GameObject coinParticles;
     public GameObject explosionParticles;
@@ -36,6 +38,10 @@ public class PlayerController : MonoBehaviour
     private float shieldRemainingTime = 0f;
     public GameObject shieldBarrier;
 
+    public bool isGrounded;
+    public LayerMask groundLayer;
+    public Transform groundCheck;
+
     void Start()
     {
         smokeBurst = smokeParticles.GetComponent<ParticleSystem>();
@@ -45,6 +51,7 @@ public class PlayerController : MonoBehaviour
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
         timeDelay = 0f;
+        rollTime = 1.167f;
     }
 
     void Update()
@@ -83,47 +90,73 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (isRolling == true)
+        {
+            rollTime -= Time.deltaTime;
+
+            if (rollTime <= 0)
+            {
+                isRolling = false;
+
+                // Reset the time counter
+                rollTime = 1.167f;
+            }
+        }
+
         anim.SetBool("isGameStarted", true);
         direction.z = forwardSpeed;
 
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.17f, groundLayer);
+        anim.SetBool("Grounded", isGrounded);
 
-        if (SwipeManager.swipeUp && controller.isGrounded && hitObstacle == false)
+        //if the player is on the ground and did not hit an obstacle
+        if (isGrounded && hitObstacle == false)
         {
-            Jump();
-            anim.SetBool("Grounded", false);
+            if (SwipeManager.swipeUp)
+            {
+                Jump();
+            }
+            if (SwipeManager.swipeDown && !isRolling)
+            {
+                Roll();
+            }
         }
-        else if (controller.isGrounded == false)
+        //if the player is not on the ground
+        else   
         {
+            //Apply gravity
             direction.y -= gravity * Time.deltaTime;
-            anim.SetBool("Grounded", true);
         }
+
         //Gather the inputs on which lane we should be
 
+        //Player can swipe right as long as they did not hit an obstacle and is not sliding
         if (SwipeManager.swipeRight && hitObstacle == false)
         {
-
             desiredLane++;
             anim.SetTrigger("Right");
+
             if (desiredLane == 3)
             {
                 desiredLane = 2;
             }
         }
 
+        //Player can swipe left as long as they did not hit an obstacle and is not sliding
         if (SwipeManager.swipeLeft && hitObstacle == false)
         {
             desiredLane--;
             anim.SetTrigger("Left");
+
             if (desiredLane == -1)
             {
                 desiredLane = 0;
             }
         }
 
-        if (SwipeManager.swipeDown && controller.isGrounded && hitObstacle == false)
+        if (SwipeManager.swipeDown && controller.isGrounded && hitObstacle == false && isRolling == false)
         {
-            Slide();
-            anim.SetTrigger("Slide");
+            Roll();
         }
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Running"))
@@ -132,17 +165,10 @@ public class PlayerController : MonoBehaviour
             controller.center = new Vector3(controller.center.x, 1.7f, controller.center.z);
         }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
-        {
-            Slide();
-            anim.SetBool("Slide", false);
-        }
-
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Trip"))
         {
             anim.SetBool("GetHit", false);
         }
-
 
         if (magnetEffectActive)
         {
@@ -227,8 +253,10 @@ public class PlayerController : MonoBehaviour
         direction.y = jumpForce;
     }
     
-    private void Slide()
+    private void Roll()
     {
+        isRolling = true;
+        anim.SetTrigger("Roll");
         controller.height = 0.7f;
         controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
     }

@@ -16,11 +16,15 @@ public class TimeManager : MonoBehaviour
     public Text shieldTimerText;
     public Text magnetTimerText;
 
+    public GameObject shieldPanel;
+    public GameObject magnetPanel;
+
     void Start()
     {
         timer = totalTime; // Initialize the timer with the total time
-        shieldTimerText.enabled = false;
-        magnetTimerText.enabled = false;
+        shieldPanel.SetActive(false);
+        magnetPanel.SetActive(false);
+
     }
 
     void Update()
@@ -55,22 +59,22 @@ public class TimeManager : MonoBehaviour
 
             if (shieldRemainingTime > 0)
             {
-                shieldTimerText.enabled = true;
-                shieldTimerText.text = "Shield: " + shieldRemainingTime.ToString("F1") + "s";
+                shieldPanel.SetActive(true);
+                shieldTimerText.text = shieldRemainingTime.ToString("F1") + "s";
             }
             else
             {
-                shieldTimerText.enabled = false;
+                shieldPanel.SetActive(false);
             }
 
             if (magnetRemainingTime > 0)
             {
-                magnetTimerText.enabled = true;
-                magnetTimerText.text = "Magnet: " + magnetRemainingTime.ToString("F1") + "s";
+                magnetPanel.SetActive(true);
+                magnetTimerText.text = magnetRemainingTime.ToString("F1") + "s";
             }
             else
             {
-                magnetTimerText.enabled = false;
+                magnetPanel.SetActive(false);
             }
         }
     }

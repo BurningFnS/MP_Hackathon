@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3655435784980067543}
   - component: {fileID: 3134104410475542285}
   - component: {fileID: 3345223568036949664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 520496496830011783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 6434889671581008125}
   - component: {fileID: 5860354163331480911}
   - component: {fileID: 2526357890942700644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
