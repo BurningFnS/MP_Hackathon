@@ -14,13 +14,11 @@ public class PlayerController : MonoBehaviour
 
     private int desiredLane = 1; //0: Left Lane, 1: Middle Lane, 2: Right Lane
     public float laneDistance = 2.5f; //Distance between two lanes 
-    public bool isRolling = false;
 
     public float jumpForce;
     public float gravity = 20;
     private bool hitObstacle = false;
-    private float timeDelay;
-    private float rollTime;
+
     public Animator anim;
     public GameObject coinParticles;
     public GameObject explosionParticles;
@@ -42,6 +40,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform groundCheck;
 
+    private bool isRolling = false;
+
     void Start()
     {
         smokeBurst = smokeParticles.GetComponent<ParticleSystem>();
@@ -50,8 +50,6 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
-        timeDelay = 0f;
-        rollTime = 1.167f;
     }
 
     void Update()
@@ -59,9 +57,10 @@ public class PlayerController : MonoBehaviour
         if (!PlayerManager.isGameStarted)
             return;
 
-        // Increment the time counter
+        //if the player did not hit an obstacle, we want to increase his speed
         if (hitObstacle == false)
         {
+            // Increment the time counter
             timeSinceLastIncrease += Time.deltaTime;
 
             // If enough time has passed, increase the player speed
@@ -77,87 +76,66 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (hitObstacle == true)
-        {
-            timeDelay += Time.deltaTime;
-
-            if (timeDelay >= 1.8f)
-            {
-                hitObstacle = false;
-
-                // Reset the time counter
-                timeDelay = 0f;
-            }
-        }
-
-        if (isRolling == true)
-        {
-            rollTime -= Time.deltaTime;
-
-            if (rollTime <= 0)
-            {
-                isRolling = false;
-
-                // Reset the time counter
-                rollTime = 1.167f;
-            }
-        }
-
         anim.SetBool("isGameStarted", true);
         direction.z = forwardSpeed;
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.17f, groundLayer);
         anim.SetBool("Grounded", isGrounded);
 
-        //if the player is on the ground and did not hit an obstacle
-        if (isGrounded && hitObstacle == false)
+        if(hitObstacle == false)
         {
-            if (SwipeManager.swipeUp)
+            //if the player is on the ground and did not hit an obstacle
+            if (isGrounded)
             {
-                Jump();
+                if (SwipeManager.swipeUp)
+                {
+                    Jump();
+                }
+                if (SwipeManager.swipeDown && !isRolling)
+                {
+                    Roll();
+                }
             }
-            if (SwipeManager.swipeDown && !isRolling)
+            //if the player is not on the ground
+            else
+            {
+                //Apply gravity
+                direction.y -= gravity * Time.deltaTime;
+            }
+
+            //Gather the inputs on which lane we should be
+
+            //Player can swipe right as long as they did not hit an obstacle and is not sliding
+            if (SwipeManager.swipeRight)
+            {
+                desiredLane++;
+                anim.SetTrigger("Right");
+
+                if (desiredLane == 3)
+                {
+                    desiredLane = 2;
+                }
+            }
+
+            //Player can swipe left as long as they did not hit an obstacle and is not sliding
+            if (SwipeManager.swipeLeft)
+            {
+                desiredLane--;
+                anim.SetTrigger("Left");
+
+                if (desiredLane == -1)
+                {
+                    desiredLane = 0;
+                }
+            }
+
+            if (SwipeManager.swipeDown && controller.isGrounded)
             {
                 Roll();
             }
         }
-        //if the player is not on the ground
-        else   
-        {
-            //Apply gravity
-            direction.y -= gravity * Time.deltaTime;
-        }
 
-        //Gather the inputs on which lane we should be
-
-        //Player can swipe right as long as they did not hit an obstacle and is not sliding
-        if (SwipeManager.swipeRight && hitObstacle == false)
-        {
-            desiredLane++;
-            anim.SetTrigger("Right");
-
-            if (desiredLane == 3)
-            {
-                desiredLane = 2;
-            }
-        }
-
-        //Player can swipe left as long as they did not hit an obstacle and is not sliding
-        if (SwipeManager.swipeLeft && hitObstacle == false)
-        {
-            desiredLane--;
-            anim.SetTrigger("Left");
-
-            if (desiredLane == -1)
-            {
-                desiredLane = 0;
-            }
-        }
-
-        if (SwipeManager.swipeDown && controller.isGrounded && hitObstacle == false && isRolling == false)
-        {
-            Roll();
-        }
+        //Animation check code
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Running"))
         {
@@ -167,16 +145,24 @@ public class PlayerController : MonoBehaviour
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Trip"))
         {
-            Debug.Log("trip");
             anim.SetBool("GetHit", false);
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            {
+                hitObstacle = false;
+            }
         }
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
         {
-            Debug.Log("ROLLING ATM");
             controller.height = 0.7f;
             controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            {
+                isRolling = false;
+            }
         }
+
+        //Magnet and Shield Code
 
         if (magnetEffectActive)
         {
@@ -265,6 +251,8 @@ public class PlayerController : MonoBehaviour
     {
         isRolling = true;
         anim.SetTrigger("Roll");
+        controller.height = 0.7f;
+        controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
     }
 
     public void EnableMagnetEffect(float radius)
@@ -311,35 +299,30 @@ public class PlayerController : MonoBehaviour
         {
             smokeBurst.Play();
             Destroy(hit.gameObject); //Destroy the collided obstacle
-            ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
-            int randomNumber = Random.Range(1, 3);
-            bursts[0].count = randomNumber;
-            coinBurst.emission.SetBursts(bursts);
-            coinBurst.Play(); // Play coin burst particle
-
-            PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
-            anim.SetTrigger("GetHit"); //Play the Trip animation
-
-            hitObstacle = true;
-            forwardSpeed = initialSpeed;
+            CoinExplosion();
         }
 
-        if(hit.transform.tag == "Car")
+        if (hit.transform.tag == "Car")
         {
             explosionBurst.Play();
             Destroy(hit.gameObject); //Destroy the collided obstacle
-            ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
-            int randomNumber = Random.Range(1, 3);
-            bursts[0].count = randomNumber;
-            coinBurst.emission.SetBursts(bursts);
-            coinBurst.Play(); // Play coin burst particle
-
-            PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
-            anim.SetTrigger("GetHit"); //Play the Trip animation
-
-            hitObstacle = true;
-            forwardSpeed = initialSpeed;
+            CoinExplosion();
         }
+    }
+
+    private void CoinExplosion()
+    {
+        ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
+        int randomNumber = Random.Range(1, 3);
+        bursts[0].count = randomNumber;
+        coinBurst.emission.SetBursts(bursts);
+        coinBurst.Play(); // Play coin burst particle
+
+        PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
+        anim.SetTrigger("GetHit"); //Play the Trip animation
+
+        hitObstacle = true;
+        forwardSpeed = initialSpeed;
     }
 }
  
