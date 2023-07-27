@@ -6697,7 +6697,6 @@ MonoBehaviour:
   maxSpeed: 25
   speedIncrement: 1
   laneDistance: 3.6
-  isRolling: 0
   jumpForce: 9.253
   gravity: 20
   anim: {fileID: 1896889437}
@@ -6724,7 +6723,7 @@ CapsuleCollider:
   m_Radius: 0.55
   m_Height: 2.8
   m_Direction: 1
-  m_Center: {x: 0, y: 1.7, z: 0}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!143 &1749492194
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7107,6 +7106,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8496879035693090889, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
@@ -8348,6 +8351,10 @@ PrefabInstance:
     - target: {fileID: 5586887060247184359, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.24392146
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
       propertyPath: m_Controller

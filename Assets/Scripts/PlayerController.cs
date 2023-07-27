@@ -82,25 +82,31 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.17f, groundLayer);
         anim.SetBool("Grounded", isGrounded);
 
-        if(hitObstacle == false)
+        //if the player is on the ground and did not hit an obstacle
+        if (isGrounded && hitObstacle == false)
         {
-            //if the player is on the ground and did not hit an obstacle
-            if (isGrounded)
+            if (SwipeManager.swipeUp)
             {
-                if (SwipeManager.swipeUp)
-                {
-                    Jump();
-                }
-                if (SwipeManager.swipeDown && !isRolling)
-                {
-                    Roll();
-                }
-            }
-            //if the player is not on the ground
-            else
+                Jump();
+            }       
+        }
+
+        if (!isGrounded && isRolling == true)
+        {
+            direction.y -= gravity * Time.deltaTime * 10;
+        }
+        //if the player is not on the ground
+        else 
+        {
+            //Apply gravity
+            direction.y -= gravity * Time.deltaTime;
+        }
+
+        if (hitObstacle == false)
+        {
+            if (SwipeManager.swipeDown && isRolling == false)
             {
-                //Apply gravity
-                direction.y -= gravity * Time.deltaTime;
+                Roll();
             }
 
             //Gather the inputs on which lane we should be
@@ -129,7 +135,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (SwipeManager.swipeDown && controller.isGrounded)
+            if (SwipeManager.swipeDown && isGrounded)
             {
                 Roll();
             }
@@ -141,6 +147,7 @@ public class PlayerController : MonoBehaviour
         {
             controller.height = 2.8f;
             controller.center = new Vector3(controller.center.x, 1.7f, controller.center.z);
+            isRolling = false;
         }
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Trip"))
@@ -152,10 +159,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling"))
         {
             controller.height = 0.7f;
             controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
+
             if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             {
                 isRolling = false;
@@ -244,6 +252,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        isRolling = false;
         direction.y = jumpForce;
     }
     
