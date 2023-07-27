@@ -304,18 +304,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.transform.tag == "Obstacle")
+        if (!shieldEffectActive)
         {
-            smokeBurst.Play();
-            Destroy(hit.gameObject); //Destroy the collided obstacle
-            CoinExplosion();
-        }
+            if (hit.transform.tag == "Obstacle")
+            {
+                smokeBurst.Play();
+                Destroy(hit.gameObject); //Destroy the collided obstacle
+                CoinExplosion();
+            }
 
-        if (hit.transform.tag == "Car")
-        {
-            explosionBurst.Play();
-            Destroy(hit.gameObject); //Destroy the collided obstacle
-            CoinExplosion();
+            if (hit.transform.tag == "Car")
+            {
+                explosionBurst.Play();
+                Destroy(hit.gameObject); //Destroy the collided obstacle
+                CoinExplosion();
+            }
         }
     }
 
