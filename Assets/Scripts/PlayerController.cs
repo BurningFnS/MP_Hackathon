@@ -161,6 +161,8 @@ public class PlayerController : MonoBehaviour
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling"))
         {
+            anim.SetBool("Roll", false);
+
             controller.height = 0.7f;
             controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
 
