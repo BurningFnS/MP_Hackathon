@@ -38,7 +38,7 @@ public class TimeManager : MonoBehaviour
             return;
 
 
-        coinText.text = "Collected: " + PlayerManager.numberOfCoins;
+        coinText.text = "Collected: " + PlayerManager.numberOfCoins;    
 
 
         if (!isGameOver) 
