@@ -57,6 +57,9 @@ public class PlayerController : MonoBehaviour
         if (!PlayerManager.isGameStarted)
             return;
 
+        if (TimeManager.isPaused)
+            return;
+
         //if the player did not hit an obstacle, we want to increase his speed
         if (hitObstacle == false)
         {

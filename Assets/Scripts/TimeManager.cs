@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -15,22 +16,30 @@ public class TimeManager : MonoBehaviour
     public PlayerController playerController; // Reference to the player script
     public Text shieldTimerText;
     public Text magnetTimerText;
+    public GameObject pausedScreen;
+    public static bool isPaused;
 
     public GameObject shieldPanel;
     public GameObject magnetPanel;
+
+    public Text coinText;
 
     void Start()
     {
         timer = totalTime; // Initialize the timer with the total time
         shieldPanel.SetActive(false);
         magnetPanel.SetActive(false);
-
+        pausedScreen.SetActive(false);
     }
 
     void Update()
     {
         if (!PlayerManager.isGameStarted)
             return;
+
+
+        coinText.text = "Collected: " + PlayerManager.numberOfCoins;
+
 
         if (!isGameOver) 
         {
@@ -77,6 +86,8 @@ public class TimeManager : MonoBehaviour
                 magnetPanel.SetActive(false);
             }
         }
+
+
     }
 
     private void UpdateTimerUI()
@@ -89,9 +100,28 @@ public class TimeManager : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         Time.timeScale = 0;
         timeUpPanel.SetActive(true);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f; // Pause the game
+        pausedScreen.SetActive(true);
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f; // Resume the game
+        pausedScreen.SetActive(false);
+        isPaused = false;
+    }
+
+    public void Proceed()
+    {
+        SceneManager.LoadScene("Simulator");
     }
 }
