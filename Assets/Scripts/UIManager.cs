@@ -8,8 +8,9 @@ public class UIManager : MonoBehaviour
     public GameObject ClickToVisitCanvas;
     public GameObject ClickedOnCanvas;
     public GameObject AfterVisitCanvas;
+    public GameObject TownCanvas; 
     public GameObject AlertPanel;
-    public GameObject Background;
+    public GameObject Map;
     public GameObject Property;
     public GameObject Bank;
     public GameObject Investment;
@@ -42,11 +43,15 @@ public class UIManager : MonoBehaviour
     public GameObject GymInvestmentPanel;
     public GameObject BankOfRashidPanel;
     public GameObject JunnieBankPanel;
-    public GameObject NationalFooBankPanel;
+    public GameObject LegalFooBankPanel;
     public GameObject BankOfRashidDepositPanel;
     public GameObject JunnieBankDepositPanel;
-    public GameObject NationalFooBankDepositPanel;
+    public GameObject LegalFooBankDepositPanel;
     public GameObject InformationPanel;
+    public GameObject InformationPanelTwo;
+    public GameObject BankButton;
+    public GameObject[] panelsToCheck;
+    public GameObject[] buttonsToDisable;
     public GameObject[] InsurancePanels;
     public GameObject[] PropertyPanels;
     public GameObject[] BankPanels;
@@ -54,13 +59,39 @@ public class UIManager : MonoBehaviour
     public GameObject[] InvestmentPanels;
     public GameObject[] DepositPanels; 
     private int clickCount = 0;
-
+    public void CheckPanelActivityAndDisableButtons()
+    {
+        for (int i = 0; i < panelsToCheck.Length; i++)
+        {
+            GameObject panel = panelsToCheck[i];
+            // Check if the panel is active
+            if (panel.activeSelf)
+            {
+                // Disable buttons
+                for (int j = 0; j < buttonsToDisable.Length; j++)
+                {
+                    buttonsToDisable[j].SetActive(false);
+                }
+                break;
+            }
+            else
+            {
+                // Enable buttons for inactive panels
+                for (int j = 0; j < buttonsToDisable.Length; j++)
+                {
+                    buttonsToDisable[j].SetActive(true);
+                }
+            }
+        }
+        Debug.Log("INISFN");
+    }
     public void CloseAlertBox()
     {
         if (AlertPanel != null)
         {
             AlertPanel.SetActive(false);
-            Background.SetActive(false);
+            Map.SetActive(false);
+            TownCanvas.SetActive(false);
         }
     }
     public void ReturnBack() //Just for the Return Arrows, where if the respective panels pop up and u press the return arrow, the respective panel will close. 
@@ -70,98 +101,122 @@ public class UIManager : MonoBehaviour
             if (PropertyClickedPanel != null)
             {
                 PropertyClickedPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (BankClickedPanel != null)
             {
                 BankClickedPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (InsuranceClickedPanel != null)
             {
                 InsuranceClickedPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (InvestmentClickedPanel != null)
             {
                 InvestmentClickedPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (JobClickedPanel != null)
             {
                 JobClickedPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (NoInsurancePanel != null)
             {
                 NoInsurancePanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (LifeInsurancePanel != null)
             {
                 LifeInsurancePanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (HealthInsurancePanel != null)
             {
                 HealthInsurancePanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (CriticalIllnessInsurancePanel != null)
             {
                 CriticalIllnessInsurancePanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (BankOfRashidPanel != null)
             {
                 BankOfRashidPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (JunnieBankPanel != null)
             {
                 JunnieBankPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
-            if (NationalFooBankPanel != null)
+            if (LegalFooBankPanel != null)
             {
-                NationalFooBankPanel.SetActive(false);
+                LegalFooBankPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (LandedPanel != null)
             {
                 LandedPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (ApartmentPanel != null)
             {
                 ApartmentPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (CondominiumPanel != null)
             {
                 CondominiumPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (GameInvestmentPanel != null)
             {
                 GameInvestmentPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (BusinessInvestmentPanel != null)
             {
                 BusinessInvestmentPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (GymInvestmentPanel != null)
             {
                 GymInvestmentPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (PlumberPanel != null)
             {
                 PlumberPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (ZooKeeperPanel != null)
             {
                 ZooKeeperPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (PhotographerPanel != null)
             {
                 PhotographerPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if(BankOfRashidDepositPanel != null)
             {
                 BankOfRashidDepositPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if(JunnieBankDepositPanel != null)
             {
                 JunnieBankDepositPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
-            if(NationalFooBankDepositPanel != null)
+            if(LegalFooBankDepositPanel != null)
             {
-                NationalFooBankDepositPanel.SetActive(false);
+                LegalFooBankDepositPanel.SetActive(false);
+                TownCanvas.SetActive(true);
             }
             if (OptionsPanel != null)
             {
@@ -174,6 +229,7 @@ public class UIManager : MonoBehaviour
     {
         if (BankOfRashidPanel != null)
         {
+            TownCanvas.SetActive(false);
             BankOfRashidPanel.SetActive(false);
             BankOfRashidDepositPanel.SetActive(true);
         }
@@ -182,52 +238,60 @@ public class UIManager : MonoBehaviour
     {
         if (JunnieBankPanel != null)
         {
+            TownCanvas.SetActive(false);
             JunnieBankPanel.SetActive(false);
             JunnieBankDepositPanel.SetActive(true);
         }
     }
-    public void ConfirmNationalFooBankButton()
+    public void ConfirmLegalFooBankButton()
     {
-        if (NationalFooBankPanel != null)
+        if (LegalFooBankPanel != null)
         {
-            NationalFooBankPanel.SetActive(false);
-            NationalFooBankDepositPanel.SetActive(true);
+            TownCanvas.SetActive(false);
+            LegalFooBankPanel.SetActive(false);
+            LegalFooBankDepositPanel.SetActive(true);
         }
     }
     public void OkayButton()
     {
-        if (InformationPanel != null && clickCount ==0 )
+        if (InformationPanel != null && clickCount == 0 )
         {
+            TownCanvas.SetActive(false);
             InformationPanel.SetActive(false);
             BankOfRashidPanel.SetActive(true);
         }
         if (InformationPanel != null && clickCount == 1)
         {
+            TownCanvas.SetActive(false);
             InformationPanel.SetActive(false);
             JunnieBankPanel.SetActive(true);           
         }
         if (InformationPanel != null && clickCount == 2 )
         {
+            TownCanvas.SetActive(false);
             InformationPanel.SetActive(false);
-            NationalFooBankPanel.SetActive(true);
+            LegalFooBankPanel.SetActive(true);
         }
     }
     public void DepositOkayButton()
     {
-        if (InformationPanel != null && clickCount == 0)
+        if (InformationPanelTwo != null && clickCount == 0 && GameObject.FindGameObjectWithTag("Okay"))
         {
-            InformationPanel.SetActive(false);
+            TownCanvas.SetActive(false);
+            InformationPanelTwo.SetActive(false);
             BankOfRashidDepositPanel.SetActive(true);
         }
-        if (InformationPanel != null && clickCount == 1)
+        if (InformationPanelTwo != null && clickCount == 1 && GameObject.FindGameObjectWithTag("Okay"))
         {
-            InformationPanel.SetActive(false);
+            TownCanvas.SetActive(false);
+            InformationPanelTwo.SetActive(false);
             JunnieBankDepositPanel.SetActive(true);
         }
-        if (InformationPanel != null && clickCount == 2)
+        if (InformationPanelTwo != null && clickCount == 2 && GameObject.FindGameObjectWithTag("Okay"))
         {
-            InformationPanel.SetActive(false);
-            NationalFooBankDepositPanel.SetActive(true);
+            TownCanvas.SetActive(false);
+            InformationPanelTwo.SetActive(false);
+            LegalFooBankDepositPanel.SetActive(true);
         }
     }
     public void BankOpenVisitButton()//For the ClickToVisitCanvas Bank panel to appear :} 
@@ -239,6 +303,7 @@ public class UIManager : MonoBehaviour
             InvestmentPanel.SetActive(false);
             InsurancePanel.SetActive(false);
             JobPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
     }
     public void InvestmentOpenVisitButton()//For the ClickToVisitCanvas Investment panel to appear :D
@@ -250,6 +315,7 @@ public class UIManager : MonoBehaviour
             InsurancePanel.SetActive(false);
             PropertyPanel.SetActive(false);
             JobPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
     }
     public void PropertyOpenVisitButton()//For the ClickToVisitCanvas Property panel to appear :} 
@@ -261,6 +327,7 @@ public class UIManager : MonoBehaviour
             BankPanel.SetActive(false);
             InvestmentPanel.SetActive(false);
             JobPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
     }
     public void InsuranceOpenVisitButton()//For the ClickToVisitCanvas Insurance panel to appear :} 
@@ -272,6 +339,7 @@ public class UIManager : MonoBehaviour
             InvestmentPanel.SetActive(false);
             PropertyPanel.SetActive(false);
             JobPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
     }
     public void JobOpenVisitButton()//For the ClickToVisitCanvas Job panel to appear :} 
@@ -283,6 +351,7 @@ public class UIManager : MonoBehaviour
             BankPanel.SetActive(false);
             InvestmentPanel.SetActive(false);
             PropertyPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
     }
     public void InformationButton()
@@ -293,8 +362,21 @@ public class UIManager : MonoBehaviour
         BankOfRashidPanel.SetActive(false);
         JunnieBankPanel.SetActive(false);
         JunnieBankDepositPanel.SetActive(false);
-        NationalFooBankDepositPanel.SetActive(false);
-        NationalFooBankPanel.SetActive(false);
+        LegalFooBankDepositPanel.SetActive(false);
+        LegalFooBankPanel.SetActive(false);
+        TownCanvas.SetActive(false);
+    }
+    public void InformationButton2()
+    {
+        InformationPanelTwo.SetActive(true);
+        OptionsButton.SetActive(false);
+        BankOfRashidDepositPanel.SetActive(false);
+        BankOfRashidPanel.SetActive(false);
+        JunnieBankPanel.SetActive(false);
+        JunnieBankDepositPanel.SetActive(false);
+        LegalFooBankDepositPanel.SetActive(false);
+        LegalFooBankPanel.SetActive(false);
+        TownCanvas.SetActive(false);
     }
     public void InsuranceOnLeftArrowButtonClick()
     {
@@ -466,94 +548,110 @@ public class UIManager : MonoBehaviour
     {   
         OptionsButton.SetActive(false);
         InsuranceClickedPanel.SetActive(false);
-        LifeInsurancePanel.SetActive(true);        
+        LifeInsurancePanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void HealthInsuranceButton()
     {
         OptionsButton.SetActive(false);
         InsuranceClickedPanel.SetActive(false);
         HealthInsurancePanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void CriticalIllnessInsuranceButton()
     {
         OptionsButton.SetActive(false);
         InsuranceClickedPanel.SetActive(false);
         CriticalIllnessInsurancePanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void BankOfRashidButton()
     {
         OptionsButton.SetActive(false);
         BankClickedPanel.SetActive(false);
+        BankButton.SetActive(false);    
         BankOfRashidPanel.SetActive(true);
-        
+        TownCanvas.SetActive(false);
+
     }
     public void JunnieBankButton()
     {
         OptionsButton.SetActive(false);
         BankClickedPanel.SetActive(false);
         JunnieBankPanel.SetActive(true);
-        
+        TownCanvas.SetActive(false);
+
     }
     public void NationalFooBankButton()
     {
         OptionsButton.SetActive(false);
         BankClickedPanel.SetActive(false);
-        NationalFooBankPanel.SetActive(true);
-       
+        LegalFooBankPanel.SetActive(true);
+        TownCanvas.SetActive(false);
+
     }
     public void ApartmentButton()
     {
         OptionsButton.SetActive(false);
         PropertyClickedPanel.SetActive(false);
         ApartmentPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void LandedButton()
     {
         OptionsButton.SetActive(false);
         PropertyClickedPanel.SetActive(false);
         LandedPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void CondominiumButton()
     {
         OptionsButton.SetActive(false);
         PropertyClickedPanel.SetActive(false);
         CondominiumPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void GameInvestmentButton()
     {
         OptionsButton.SetActive(false);
         InvestmentClickedPanel.SetActive(false);
         GameInvestmentPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void BusinessInvestmentButton()
     {
         OptionsButton.SetActive(false);
         InvestmentClickedPanel.SetActive(false);
         BusinessInvestmentPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void GymInvestmentButton()
     {
         OptionsButton.SetActive(false);
         InvestmentClickedPanel.SetActive(false);
         GymInvestmentPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void PlumberButton()
     {
         OptionsButton.SetActive(false);
         JobClickedPanel.SetActive(false);
         PlumberPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void ZooKeeperButton()
     {
         OptionsButton.SetActive(false);
         JobClickedPanel.SetActive(false);
         ZooKeeperPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void PhotographerButton()
     {
         OptionsButton.SetActive(false);
         JobClickedPanel.SetActive(false);
         PhotographerPanel.SetActive(true);
+        TownCanvas.SetActive(false);
     }
     public void ProceedOn()
     {
@@ -569,28 +667,34 @@ public class UIManager : MonoBehaviour
     {
         OptionsPanel.SetActive(true);
         OptionsButton.SetActive(false);
+        TownCanvas.SetActive(false);
     }
     public void CloseCanvas()
     {
         if(InsurancePanel != null)
         {
-            InsurancePanel.SetActive(false);    
+            InsurancePanel.SetActive(false);
+            TownCanvas.SetActive(true);
         }
         if (BankPanel != null)
         {
-            BankPanel.SetActive(false);           
+            BankPanel.SetActive(false);
+            TownCanvas.SetActive(true);
         }
         if (InvestmentPanel != null)
         {
-            InvestmentPanel.SetActive(false);          
+            InvestmentPanel.SetActive(false);
+            TownCanvas.SetActive(true);
         }
          if(PropertyPanel != null)
         {
-            PropertyPanel.SetActive(false);       
+            PropertyPanel.SetActive(false);
+            TownCanvas.SetActive(true);
         }
          if(JobPanel != null)
         {
             JobPanel.SetActive(false);
+            TownCanvas.SetActive(true);
         }
     }
     public void OpenClickedCanvas()
@@ -607,6 +711,7 @@ public class UIManager : MonoBehaviour
             BankClickedPanel.SetActive(false);
             JobPanel.SetActive(false);
             JobClickedPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
         if (GameObject.FindGameObjectWithTag("InsuranceVisit"))
         {
@@ -620,6 +725,7 @@ public class UIManager : MonoBehaviour
             PropertyPanel.SetActive(false);
             JobPanel.SetActive(false);
             JobClickedPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
         if (GameObject.FindGameObjectWithTag("BankVisit"))
         {
@@ -633,6 +739,7 @@ public class UIManager : MonoBehaviour
             PropertyPanel.SetActive (false);
             JobPanel.SetActive(false);
             JobClickedPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
         if (GameObject.FindGameObjectWithTag("InvestmentVisit"))
         {
@@ -646,6 +753,7 @@ public class UIManager : MonoBehaviour
             PropertyPanel.SetActive(false);
             JobPanel.SetActive(false);
             JobClickedPanel.SetActive(false);
+            TownCanvas.SetActive(false);
         }
         if(GameObject.FindGameObjectWithTag("JobVisit"))
         {
@@ -659,6 +767,7 @@ public class UIManager : MonoBehaviour
             BankClickedPanel.SetActive(false);
             JobPanel.SetActive(false);
             JobClickedPanel.SetActive(true);
+            TownCanvas.SetActive(false);
         }
     }
 }

@@ -7,6 +7,19 @@ TagManager:
   - Obstacle
   - Barrier
   - Car
+  - ReturnBack
+  - JobVisit
+  - InsuranceOpenVisit
+  - BankVisit
+  - JobOpenVisit
+  - InsuranceVisit
+  - BankOpenVisit
+  - PropertyVisit
+  - InvestmentOpenVisit
+  - InvestmentVisit
+  - PropertyOpenVisit
+  - Proceed
+  - Okay
   layers:
   - Default
   - TransparentFX
