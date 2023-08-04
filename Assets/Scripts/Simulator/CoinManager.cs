@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class CoinManager : MonoBehaviour
 {
-    private int totalCoins = 0;
+    private int coinsCollected = 0;
+    private int totalCoins;
     public Text coinText;
 
     private void Start()
     {
         // Retrieve the number of collected coins from PlayerPrefs
-        totalCoins = PlayerPrefs.GetInt("CollectedCoins", 0);
+        coinsCollected = PlayerPrefs.GetInt("CollectedCoins", 0);
+
+        totalCoins += coinsCollected;
 
         // Optionally, you can update the player's coins display or any other relevant UI elements
         UpdateCoinDisplay();
