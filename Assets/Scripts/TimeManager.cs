@@ -124,7 +124,6 @@ public class TimeManager : MonoBehaviour
     {
         SceneManager.LoadScene("Simulator");
 
-        // Store the number of collected coins in PlayerPrefs
         PlayerPrefs.SetInt("CollectedCoins", PlayerManager.numberOfCoins);
     }
 }
