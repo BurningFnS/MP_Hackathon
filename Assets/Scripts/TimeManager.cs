@@ -123,5 +123,7 @@ public class TimeManager : MonoBehaviour
     public void Proceed()
     {
         SceneManager.LoadScene("Simulator");
+
+        PlayerPrefs.SetInt("CollectedCoins", PlayerManager.numberOfCoins);
     }
 }
