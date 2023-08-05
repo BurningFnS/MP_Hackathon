@@ -25,12 +25,18 @@ public class PlayerController : MonoBehaviour
 
     public float magnetDuration = 8f; // The duration of the magnet effect in seconds
     private bool magnetEffectActive = false;
-    private float magnetRemainingTime = 0f;
+    public float magnetRemainingTime = 0f;
     private float magnetRadius;
 
     private bool shieldEffectActive = false;
-    private float shieldRemainingTime = 0f;
+    public float shieldRemainingTime = 0f;
     public GameObject shieldBarrier;
+
+    public AudioClip backgroundMusic;/////////
+    public AudioClip soundEffect;
+
+    private AudioSource backgroundMusicAudioSource;
+    private AudioSource soundEffectAudioSource;
 
     void Start()
     {
@@ -39,6 +45,17 @@ public class PlayerController : MonoBehaviour
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
         timeDelay = 0f;
+
+        backgroundMusicAudioSource = GetComponents<AudioSource>()[0]; ///////
+        soundEffectAudioSource = GetComponents<AudioSource>()[1];
+
+        // Set the background music
+        backgroundMusicAudioSource.clip = backgroundMusic;
+        backgroundMusicAudioSource.loop = true;
+        //backgroundMusicAudioSource.pitch = 1.7f;
+        //soundEffectAudioSource.pitch = 1f;
+        backgroundMusicAudioSource.Play();
+
     }
 
     void Update()
@@ -66,6 +83,9 @@ public class PlayerController : MonoBehaviour
 
         if (hitObstacle == true)
         {
+            soundEffectAudioSource.pitch = 0.5f; ////////
+            soundEffectAudioSource.PlayOneShot(soundEffect);
+
             timeDelay += Time.deltaTime;
 
             if (timeDelay >= 1.8f)

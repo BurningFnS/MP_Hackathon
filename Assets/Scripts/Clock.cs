@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-<<<<<<< HEAD
-    void Update()
-    {
-        transform.Rotate(0, 0 , 50 * Time.deltaTime);
-=======
+    //void Update()
+    //{
+    //    transform.Rotate(0, 0, 50 * Time.deltaTime);
+    //}
+
     public float bounceHeight = 0.5f;    // The maximum height the power-up will reach during each bounce
 
     private Vector3 startingPosition;    // Initial position of the power-up
+
 
     private void Start()
     {
@@ -27,7 +28,6 @@ public class Clock : MonoBehaviour
 
         // Update the position of the power-up
         transform.position = targetPosition;
->>>>>>> HJ-Autistic
     }
 
     private void OnTriggerEnter(Collider other)
