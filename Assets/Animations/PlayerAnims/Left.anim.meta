@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animations/PlayerAnims/Left.anim.meta
 guid: 2da1831cc76097240bc0ca009a44656b
+=======
+guid: 08e3fce0f00056c448692e2ec3d8c442
+>>>>>>> HJ-Autistic:Assets/Materials/InsuranceMat.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

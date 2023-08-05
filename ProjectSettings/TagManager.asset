@@ -6,6 +6,23 @@ TagManager:
   tags:
   - Obstacle
   - Barrier
+<<<<<<< HEAD
+=======
+  - Car
+  - ReturnBack
+  - JobVisit
+  - InsuranceOpenVisit
+  - BankVisit
+  - JobOpenVisit
+  - InsuranceVisit
+  - BankOpenVisit
+  - PropertyVisit
+  - InvestmentOpenVisit
+  - InvestmentVisit
+  - PropertyOpenVisit
+  - Proceed
+  - Okay
+>>>>>>> HJ-Autistic
   layers:
   - Default
   - TransparentFX
