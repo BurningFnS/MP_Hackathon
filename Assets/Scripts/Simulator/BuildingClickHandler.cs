@@ -19,15 +19,48 @@ public class BuildingClickHandler : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("HELLO");
         // Check if the clicked building has an associated UI panel
         int buildingIndex = GetBuildingIndex();
-        Debug.Log(buildingIndex);
 
         if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
         {
             // Activate the appropriate UI panel
             buildingUIPanels[buildingIndex].SetActive(true);
+            if (buildingIndex == 0)
+            {
+                buildingUIPanels[1].SetActive(false);
+                buildingUIPanels[2].SetActive(false);
+                buildingUIPanels[3].SetActive(false);
+                buildingUIPanels[4].SetActive(false);
+            }
+            else if(buildingIndex == 1)
+            {
+                buildingUIPanels[0].SetActive(false);
+                buildingUIPanels[2].SetActive(false);
+                buildingUIPanels[3].SetActive(false);
+                buildingUIPanels[4].SetActive(false);
+            }
+            else if(buildingIndex == 2)
+            {
+                buildingUIPanels[0].SetActive(false);
+                buildingUIPanels[1].SetActive(false);
+                buildingUIPanels[3].SetActive(false);
+                buildingUIPanels[4].SetActive(false);
+            }
+            else if (buildingIndex == 3)
+            {
+                buildingUIPanels[0].SetActive(false);
+                buildingUIPanels[1].SetActive(false);
+                buildingUIPanels[2].SetActive(false);
+                buildingUIPanels[4].SetActive(false);
+            }
+            else if (buildingIndex == 4)
+            {
+                buildingUIPanels[0].SetActive(false);
+                buildingUIPanels[1].SetActive(false);
+                buildingUIPanels[2].SetActive(false);
+                buildingUIPanels[3].SetActive(false);
+            }
         }
     }
 
@@ -48,5 +81,30 @@ public class BuildingClickHandler : MonoBehaviour
             return 4;
 
         return -1;
+    }
+
+    public void CloseInvestment()
+    {
+        buildingUIPanels[0].SetActive(false);
+    }
+
+    public void CloseBank()
+    {
+        buildingUIPanels[1].SetActive(false);
+    }
+
+    public void CloseJob()
+    {
+        buildingUIPanels[2].SetActive(false);
+    }
+
+    public void CloseInsurance()
+    {
+        buildingUIPanels[3].SetActive(false);
+    }
+
+    public void CloseProperty()
+    {
+        buildingUIPanels[4].SetActive(false);
     }
 }

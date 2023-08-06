@@ -20,6 +20,11 @@ TagManager:
   - PropertyOpenVisit
   - Proceed
   - Okay
+  - InvestmentClose
+  - BankClose
+  - JobClose
+  - InsuranceClose
+  - PropertyClose
   layers:
   - Default
   - TransparentFX
