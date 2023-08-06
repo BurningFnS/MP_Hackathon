@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class BuildingClickHandler : MonoBehaviour
 {
     public GameObject[] buildingUIPanels;
+    public PlayerMovement playerMovement;
+    public int buildingIndex;
 
     void Start()
     {
@@ -20,46 +22,18 @@ public class BuildingClickHandler : MonoBehaviour
     void OnMouseDown()
     {
         // Check if the clicked building has an associated UI panel
-        int buildingIndex = GetBuildingIndex();
+        buildingIndex = GetBuildingIndex();
 
         if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
         {
             // Activate the appropriate UI panel
             buildingUIPanels[buildingIndex].SetActive(true);
-            if (buildingIndex == 0)
+            for (int i = 0; i < buildingUIPanels.Length; i++)
             {
-                buildingUIPanels[1].SetActive(false);
-                buildingUIPanels[2].SetActive(false);
-                buildingUIPanels[3].SetActive(false);
-                buildingUIPanels[4].SetActive(false);
-            }
-            else if(buildingIndex == 1)
-            {
-                buildingUIPanels[0].SetActive(false);
-                buildingUIPanels[2].SetActive(false);
-                buildingUIPanels[3].SetActive(false);
-                buildingUIPanels[4].SetActive(false);
-            }
-            else if(buildingIndex == 2)
-            {
-                buildingUIPanels[0].SetActive(false);
-                buildingUIPanels[1].SetActive(false);
-                buildingUIPanels[3].SetActive(false);
-                buildingUIPanels[4].SetActive(false);
-            }
-            else if (buildingIndex == 3)
-            {
-                buildingUIPanels[0].SetActive(false);
-                buildingUIPanels[1].SetActive(false);
-                buildingUIPanels[2].SetActive(false);
-                buildingUIPanels[4].SetActive(false);
-            }
-            else if (buildingIndex == 4)
-            {
-                buildingUIPanels[0].SetActive(false);
-                buildingUIPanels[1].SetActive(false);
-                buildingUIPanels[2].SetActive(false);
-                buildingUIPanels[3].SetActive(false);
+                if (i != buildingIndex)
+                {
+                    buildingUIPanels[i].SetActive(false);
+                }
             }
         }
     }
@@ -83,28 +57,16 @@ public class BuildingClickHandler : MonoBehaviour
         return -1;
     }
 
-    public void CloseInvestment()
+    public void Close()
     {
-        buildingUIPanels[0].SetActive(false);
+        foreach (GameObject panel in buildingUIPanels)
+        {
+            panel.SetActive(false);
+        }
     }
 
-    public void CloseBank()
+    public void Visit()
     {
-        buildingUIPanels[1].SetActive(false);
-    }
-
-    public void CloseJob()
-    {
-        buildingUIPanels[2].SetActive(false);
-    }
-
-    public void CloseInsurance()
-    {
-        buildingUIPanels[3].SetActive(false);
-    }
-
-    public void CloseProperty()
-    {
-        buildingUIPanels[4].SetActive(false);
+        playerMovement.MoveToWaypoint(buildingIndex);
     }
 }
