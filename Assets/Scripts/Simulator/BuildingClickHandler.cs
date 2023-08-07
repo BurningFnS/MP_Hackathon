@@ -8,7 +8,9 @@ public class BuildingClickHandler : MonoBehaviour
 {
     public GameObject[] buildingUIPanels;
     public PlayerMovement playerMovement;
-    public int buildingIndex;
+    public Transform[] buildingTransforms;
+
+    private int buildingIndex;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class BuildingClickHandler : MonoBehaviour
     {
         // Check if the clicked building has an associated UI panel
         buildingIndex = GetBuildingIndex();
+        Debug.Log(buildingIndex);
 
         if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
         {
@@ -67,6 +70,6 @@ public class BuildingClickHandler : MonoBehaviour
 
     public void Visit()
     {
-        playerMovement.MoveToWaypoint(buildingIndex);
+       
     }
 }
