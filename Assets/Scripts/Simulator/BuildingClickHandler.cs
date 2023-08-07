@@ -11,6 +11,11 @@ public class BuildingClickHandler : MonoBehaviour
     public Transform[] buildingTransforms;
 
     private int buildingIndex;
+    [HideInInspector]
+    public int selectedBuilding;
+    private Vector3 targetPosition;
+
+    public PlayerMovement playermovement;
 
     void Start()
     {
@@ -25,12 +30,14 @@ public class BuildingClickHandler : MonoBehaviour
     {
         // Check if the clicked building has an associated UI panel
         buildingIndex = GetBuildingIndex();
-        Debug.Log(buildingIndex);
+        Debug.Log("Building index is :" + buildingIndex);
 
         if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
         {
             // Activate the appropriate UI panel
             buildingUIPanels[buildingIndex].SetActive(true);
+            selectedBuilding = buildingIndex;
+            Debug.Log(selectedBuilding);
             for (int i = 0; i < buildingUIPanels.Length; i++)
             {
                 if (i != buildingIndex)
@@ -60,6 +67,11 @@ public class BuildingClickHandler : MonoBehaviour
         return -1;
     }
 
+    Vector3 GetBuildingPosition(int buildingIndex)
+    {
+        return buildingTransforms[buildingIndex].transform.position;
+    }
+
     public void Close()
     {
         foreach (GameObject panel in buildingUIPanels)
@@ -70,6 +82,10 @@ public class BuildingClickHandler : MonoBehaviour
 
     public void Visit()
     {
-       
+        targetPosition = GetBuildingPosition(GetBuildingIndex());
+        Debug.Log("In visit function: " + selectedBuilding);
+        playermovement.MoveToPosition(targetPosition);
+        Debug.Log(targetPosition);
+
     }
 }
