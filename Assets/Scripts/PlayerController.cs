@@ -42,6 +42,13 @@ public class PlayerController : MonoBehaviour
 
     private bool isRolling = false;
 
+    //public AudioClip backgroundMusic;
+    //public AudioClip soundEffect;
+
+    //private AudioSource backgroundMusicAudioSource;
+    //private AudioSource soundEffectAudioSource;
+
+
     void Start()
     {
         smokeBurst = smokeParticles.GetComponent<ParticleSystem>();
@@ -50,6 +57,16 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
+
+        //backgroundMusicAudioSource = gameObject.AddComponent<AudioSource>();
+        //soundEffectAudioSource = gameObject.AddComponent<AudioSource>();
+
+        // Set the background music audio source
+        //backgroundMusicAudioSource.clip = backgroundMusic;
+        //backgroundMusicAudioSource.volume = 0.2f;
+        //backgroundMusicAudioSource.loop = true;
+        //backgroundMusicAudioSource.pitch = 1.7f; // Set the pitch to 1.7
+        //backgroundMusicAudioSource.Play();
     }
 
     void Update()
@@ -311,8 +328,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!shieldEffectActive)
         {
+            
+
             if (hit.transform.tag == "Obstacle")
             {
+                //soundEffectAudioSource.pitch = 1.0f; // Set the pitch to 1.0 (normal pitch)
+                //soundEffectAudioSource.PlayOneShot(soundEffect);
+
                 smokeBurst.Play();
                 Destroy(hit.gameObject); //Destroy the collided obstacle
                 CoinExplosion();
@@ -320,6 +342,8 @@ public class PlayerController : MonoBehaviour
 
             if (hit.transform.tag == "Car")
             {
+                //soundEffectAudioSource.PlayOneShot(soundEffect);
+
                 explosionBurst.Play();
                 Destroy(hit.gameObject); //Destroy the collided obstacle
                 CoinExplosion();
