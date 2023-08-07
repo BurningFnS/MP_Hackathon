@@ -3,7 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Barrier
+  - Car
+  - ReturnBack
+  - JobVisit
+  - InsuranceOpenVisit
+  - BankVisit
+  - JobOpenVisit
+  - InsuranceVisit
+  - BankOpenVisit
+  - PropertyVisit
+  - InvestmentOpenVisit
+  - InvestmentVisit
+  - PropertyOpenVisit
+  - Proceed
+  - Okay
+  - InvestmentClose
+  - BankClose
+  - JobClose
+  - InsuranceClose
+  - PropertyClose
   layers:
   - Default
   - TransparentFX
@@ -11,9 +32,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Obstacle
+  - Collectible
+  - Ground
   - 
   - 
   - 

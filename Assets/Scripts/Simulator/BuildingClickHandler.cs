@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class BuildingClickHandler : MonoBehaviour
 {
     public GameObject[] buildingUIPanels;
+    public PlayerMovement playerMovement;
+    public int buildingIndex;
 
     void Start()
     {
@@ -19,15 +21,20 @@ public class BuildingClickHandler : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("HELLO");
         // Check if the clicked building has an associated UI panel
-        int buildingIndex = GetBuildingIndex();
-        Debug.Log(buildingIndex);
+        buildingIndex = GetBuildingIndex();
 
         if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
         {
             // Activate the appropriate UI panel
             buildingUIPanels[buildingIndex].SetActive(true);
+            for (int i = 0; i < buildingUIPanels.Length; i++)
+            {
+                if (i != buildingIndex)
+                {
+                    buildingUIPanels[i].SetActive(false);
+                }
+            }
         }
     }
 
@@ -48,5 +55,18 @@ public class BuildingClickHandler : MonoBehaviour
             return 4;
 
         return -1;
+    }
+
+    public void Close()
+    {
+        foreach (GameObject panel in buildingUIPanels)
+        {
+            panel.SetActive(false);
+        }
+    }
+
+    public void Visit()
+    {
+        playerMovement.MoveToWaypoint(buildingIndex);
     }
 }
