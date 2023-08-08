@@ -25,6 +25,7 @@ TagManager:
   - JobClose
   - InsuranceClose
   - PropertyClose
+  - isPanel
   layers:
   - Default
   - TransparentFX
