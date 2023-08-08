@@ -4063,6 +4063,7 @@ GameObject:
   - component: {fileID: 117889456}
   m_Layer: 5
   m_Name: PhotographerPanel
+  m_TagString: Untagged
   m_TagString: isPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4543,6 +4544,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
       propertyPath: m_RootOrder
+      value: 5
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
