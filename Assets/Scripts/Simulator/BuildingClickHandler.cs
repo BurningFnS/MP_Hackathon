@@ -24,15 +24,18 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
         // Check if the clicked building has an associated UI panel
         int buildingIndex = GetBuildingIndex();
 
-        if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            // Activate the appropriate UI panel
-            buildingUIPanels[buildingIndex].SetActive(true);
-            for (int i = 0; i < buildingUIPanels.Length; i++)
+            if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
             {
-                if (i != buildingIndex)
+                // Activate the appropriate UI panel
+                buildingUIPanels[buildingIndex].SetActive(true);
+                for (int i = 0; i < buildingUIPanels.Length; i++)
                 {
-                    buildingUIPanels[i].SetActive(false);
+                    if (i != buildingIndex)
+                    {
+                        buildingUIPanels[i].SetActive(false);
+                    }
                 }
             }
         }
