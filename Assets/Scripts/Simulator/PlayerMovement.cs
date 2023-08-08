@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     private Animator animator;
     private NavMeshAgent agent;
+    private bool isMoving;
+    private int receivedValue;
+    public GameObject[] visitUIPanel;
 
     private void Start()
     {
@@ -14,26 +17,37 @@ public class PlayerMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    public void MoveToPosition(Vector3 targetPosition)
+    public void MoveToDestination(Vector3 targetPosition)
     {
-        if (agent != null)
-        {
-            animator.SetBool("isRunning", true);
-            agent.SetDestination(targetPosition);
-        }
+        isMoving = true;
+        agent.SetDestination(targetPosition);
     }
 
-    private void Update()
+    public void Update()
     {
-        // Check if the player has reached the target within the stopping distance
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        //Check if player has reached its destination
+        if (agent.hasPath && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            // If remaining distance is within stopping distance, transition to idle
+            animator.SetBool("isRunning", false);
+            agent.ResetPath();
+            isMoving = false;
+            visitUIPanel[receivedValue].SetActive(true);
+        }
+        if (!agent.hasPath && !isMoving)
         {
             animator.SetBool("isRunning", false);
-
-            // Perform actions when the player reaches the target
-            Debug.Log("Player has reached the target!");
+        }
+        if (isMoving)
+        {
+            // Otherwise, transition to run animation
+            animator.SetBool("isRunning", true);
         }
     }
-}
 
+    public void ReceiveButtonValue(int value)
+    {
+        receivedValue = value;
+    }
+}
 

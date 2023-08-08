@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-
-public class BuildingClickHandler : MonoBehaviour
+public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
 {
     public GameObject[] buildingUIPanels;
     public PlayerMovement playerMovement;
     public Transform[] buildingTransforms;
-
-    private int buildingIndex;
 
     void Start()
     {
@@ -24,8 +22,7 @@ public class BuildingClickHandler : MonoBehaviour
     void OnMouseDown()
     {
         // Check if the clicked building has an associated UI panel
-        buildingIndex = GetBuildingIndex();
-        Debug.Log(buildingIndex);
+        int buildingIndex = GetBuildingIndex();
 
         if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
         {
@@ -59,6 +56,24 @@ public class BuildingClickHandler : MonoBehaviour
 
         return -1;
     }
+    int GetVisitButtonIndex()
+    {
+        // Implement your own logic to determine which building is clicked.
+        // You can use raycasting, tags, or other methods to identify the clicked building.
+        // For simplicity, we'll just return a unique index for each building in this example.
+        if (gameObject.name == "InvestmentVisitButton")
+            return 0;
+        else if (gameObject.name == "BankVisitButton")
+            return 1;
+        else if (gameObject.name == "JobVisitButton")
+            return 2;
+        else if (gameObject.name == "InsuranceVisitButton")
+            return 3;
+        else if (gameObject.name == "PropertyVisitButton")
+            return 4;
+
+        return -1;
+    }
 
     public void Close()
     {
@@ -68,8 +83,15 @@ public class BuildingClickHandler : MonoBehaviour
         }
     }
 
-    public void Visit()
+    public void OnPointerClick(PointerEventData eventData)
     {
-       
+        int visitButtonIndex = GetVisitButtonIndex();
+        playerMovement.ReceiveButtonValue(visitButtonIndex);
+
+        if (visitButtonIndex >= 0 && visitButtonIndex < buildingTransforms.Length)
+        {
+            buildingUIPanels[visitButtonIndex].SetActive(false);
+            playerMovement.MoveToDestination(buildingTransforms[visitButtonIndex].position);
+        }
     }
 }
