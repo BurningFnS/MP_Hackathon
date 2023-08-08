@@ -4064,7 +4064,6 @@ GameObject:
   m_Layer: 5
   m_Name: PhotographerPanel
   m_TagString: Untagged
-  m_TagString: isPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4545,7 +4544,6 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
       propertyPath: m_RootOrder
       value: 5
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e478c7fdb9750a14e94ef63c45aeee04, type: 3}
       propertyPath: m_LocalScale.x
@@ -4689,284 +4687,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136941133}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
---- !u!1 &138536636
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 138536637}
-  - component: {fileID: 138536640}
-  - component: {fileID: 138536639}
-  - component: {fileID: 138536638}
-  m_Layer: 5
-  m_Name: PropertyBorderClose
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &138536637
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138536636}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0035244}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 892137905}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -194, y: 231}
-  m_SizeDelta: {x: 40, y: 40}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &138536638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138536636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 138536639}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 141500712}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CloseCanvas
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &138536639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138536636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a188a361aacf8a94b825991769e3d5ca, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &138536640
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138536636}
-  m_CullTransparentMesh: 1
---- !u!1 &141500711
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 141500713}
-  - component: {fileID: 141500712}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &141500712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141500711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ClickToVisitCanvas: {fileID: 358294723}
-  ClickedOnCanvas: {fileID: 1774272772}
-  AfterVisitCanvas: {fileID: 252745329}
-  TownCanvas: {fileID: 487099554}
-  AlertPanel: {fileID: 0}
-  Map: {fileID: 0}
-  Property: {fileID: 0}
-  Bank: {fileID: 0}
-  Investment: {fileID: 0}
-  Insurance: {fileID: 919132148594203913}
-  Job: {fileID: 919132148835294438}
-  PropertyClickedPanel: {fileID: 1315983217}
-  BankClickedPanel: {fileID: 924506843}
-  InvestmentClickedPanel: {fileID: 1737767796}
-  InsuranceClickedPanel: {fileID: 428331196}
-  JobClickedPanel: {fileID: 219980059}
-  InvestmentPanel: {fileID: 717235369}
-  InsurancePanel: {fileID: 727524731}
-  PropertyPanel: {fileID: 892137904}
-  BankPanel: {fileID: 1672989250}
-  JobPanel: {fileID: 1255993640}
-  NoInsurancePanel: {fileID: 740149411}
-  LifeInsurancePanel: {fileID: 970655465}
-  HealthInsurancePanel: {fileID: 465267230}
-  CriticalIllnessInsurancePanel: {fileID: 1207806385}
-  OptionsPanel: {fileID: 1878531648}
-  OptionsButton: {fileID: 375789363}
-  ApartmentPanel: {fileID: 1967092999}
-  LandedPanel: {fileID: 643930378}
-  CondominiumPanel: {fileID: 1815026030}
-  PlumberPanel: {fileID: 765123146}
-  ZooKeeperPanel: {fileID: 1344050882}
-  PhotographerPanel: {fileID: 117889454}
-  GameInvestmentPanel: {fileID: 508608169}
-  BusinessInvestmentPanel: {fileID: 599699561}
-  GymInvestmentPanel: {fileID: 753397164}
-  BankOfRashidPanel: {fileID: 677177682}
-  JunnieBankPanel: {fileID: 1131141100}
-  LegalFooBankPanel: {fileID: 747177730}
-  BankOfRashidDepositPanel: {fileID: 297754051}
-  JunnieBankDepositPanel: {fileID: 1364918729}
-  LegalFooBankDepositPanel: {fileID: 724092054}
-  InformationPanel: {fileID: 1116129846}
-  InformationPanelTwo: {fileID: 1473799412}
-  BankButton: {fileID: 1046554994}
-  panelsToCheck:
-  - {fileID: 924506843}
-  - {fileID: 428331196}
-  - {fileID: 1315983217}
-  - {fileID: 1737767796}
-  - {fileID: 219980059}
-  - {fileID: 1878531648}
-  - {fileID: 740149411}
-  - {fileID: 970655465}
-  - {fileID: 465267230}
-  - {fileID: 1207806385}
-  - {fileID: 1967092999}
-  - {fileID: 643930378}
-  - {fileID: 1815026030}
-  - {fileID: 765123146}
-  - {fileID: 1344050882}
-  - {fileID: 117889454}
-  - {fileID: 508608169}
-  - {fileID: 599699561}
-  - {fileID: 753397164}
-  - {fileID: 677177682}
-  - {fileID: 1131141100}
-  - {fileID: 747177730}
-  - {fileID: 297754051}
-  - {fileID: 1364918729}
-  - {fileID: 724092054}
-  - {fileID: 1116129846}
-  buttonsToDisable: []
-  InsurancePanels:
-  - {fileID: 740149411}
-  - {fileID: 970655465}
-  - {fileID: 465267230}
-  - {fileID: 1207806385}
-  PropertyPanels:
-  - {fileID: 1967092999}
-  - {fileID: 643930378}
-  - {fileID: 1815026030}
-  BankPanels:
-  - {fileID: 677177682}
-  - {fileID: 1131141100}
-  - {fileID: 747177730}
-  JobPanels:
-  - {fileID: 765123146}
-  - {fileID: 1344050882}
-  - {fileID: 117889454}
-  InvestmentPanels:
-  - {fileID: 508608169}
-  - {fileID: 599699561}
-  - {fileID: 753397164}
-  DepositPanels:
-  - {fileID: 297754051}
-  - {fileID: 1364918729}
-  - {fileID: 724092054}
---- !u!4 &141500713
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141500711}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.431898, y: -8.434861, z: 1.1466591}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2055011726}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &146435013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7111,7 +6831,7 @@ GameObject:
   - component: {fileID: 219980061}
   m_Layer: 5
   m_Name: 'JobClickedPanel '
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8197,11 +7917,7 @@ RectTransform:
   - {fileID: 1116129847}
   - {fileID: 1473799413}
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 9
-=======
-  m_RootOrder: 10
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8932,7 +8648,7 @@ GameObject:
   - component: {fileID: 297754053}
   m_Layer: 5
   m_Name: 'BankOfRashidDepositPanel '
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10099,119 +9815,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357962523}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
---- !u!1 &358294723
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 358294727}
-  - component: {fileID: 358294726}
-  - component: {fileID: 358294725}
-  - component: {fileID: 358294724}
-  m_Layer: 5
-  m_Name: ClickToVisitCanvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &358294724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358294723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &358294725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358294723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &358294726
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358294723}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &358294727
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358294723}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1255993641}
-  - {fileID: 653705499}
-  - {fileID: 717235370}
-  - {fileID: 1695234458}
-  - {fileID: 892137905}
-  - {fileID: 1863905777}
-  - {fileID: 727524732}
-  - {fileID: 503667560}
-  - {fileID: 1672989251}
-  - {fileID: 1046554995}
-  m_Father: {fileID: 2055011726}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
->>>>>>> Stashed changes
 --- !u!1 &363418962
 GameObject:
   m_ObjectHideFlags: 0
@@ -10654,11 +10257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376823035}
   m_CullTransparentMesh: 1
---- !u!1 &379488944 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 155255147592964572, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-  m_PrefabInstance: {fileID: 7489619687464554132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &389660502
 GameObject:
   m_ObjectHideFlags: 0
@@ -11404,7 +11002,7 @@ GameObject:
   - component: {fileID: 428331198}
   m_Layer: 5
   m_Name: InsuranceClickedPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12338,7 +11936,7 @@ GameObject:
   - component: {fileID: 465267232}
   m_Layer: 5
   m_Name: HealthInsurancePanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13335,7 +12933,7 @@ RectTransform:
   - {fileID: 930384486}
   - {fileID: 707559417}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13925,7 +13523,7 @@ GameObject:
   - component: {fileID: 508608171}
   m_Layer: 5
   m_Name: GameInvestmentPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15583,7 +15181,7 @@ GameObject:
   - component: {fileID: 599699563}
   m_Layer: 5
   m_Name: BusinessInvestmentPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17057,7 +16655,7 @@ GameObject:
   - component: {fileID: 643930380}
   m_Layer: 5
   m_Name: 'LandedPanel '
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18194,7 +17792,7 @@ GameObject:
   - component: {fileID: 677177684}
   m_Layer: 5
   m_Name: BankOfRashidPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19747,7 +19345,7 @@ GameObject:
   - component: {fileID: 724092056}
   m_Layer: 5
   m_Name: 'LegalFooBankDepositPanel  '
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19957,45 +19555,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727595002}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
---- !u!1 &728064535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 728064536}
-  m_Layer: 0
-  m_Name: Waypoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &728064536
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728064535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 499195543}
-  - {fileID: 1615753084}
-  - {fileID: 1217761031}
-  - {fileID: 2025333624}
-  - {fileID: 1445640486}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &730305989
 GameObject:
   m_ObjectHideFlags: 0
@@ -20372,7 +19931,7 @@ GameObject:
   - component: {fileID: 740149413}
   m_Layer: 5
   m_Name: NoInsurancePanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20588,7 +20147,7 @@ GameObject:
   - component: {fileID: 747177732}
   m_Layer: 5
   m_Name: LegalFooBankPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20829,7 +20388,7 @@ GameObject:
   - component: {fileID: 753397166}
   m_Layer: 5
   m_Name: 'GymInvestmentPanel '
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20992,7 +20551,7 @@ GameObject:
   - component: {fileID: 765123148}
   m_Layer: 5
   m_Name: 'PlumberPanel '
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24614,7 +24173,7 @@ GameObject:
   - component: {fileID: 924506845}
   m_Layer: 5
   m_Name: BankClickedPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26117,7 +25676,7 @@ GameObject:
   - component: {fileID: 970655467}
   m_Layer: 5
   m_Name: 'LifeInsurancePanel '
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28839,7 +28398,7 @@ GameObject:
   - component: {fileID: 1116129848}
   m_Layer: 5
   m_Name: InformationPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29365,7 +28924,7 @@ GameObject:
   - component: {fileID: 1131141102}
   m_Layer: 5
   m_Name: 'JunnnieBankPanel '
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30678,7 +30237,7 @@ GameObject:
   - component: {fileID: 1207806387}
   m_Layer: 5
   m_Name: CriticalillnessInsurancePanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32252,7 +31811,7 @@ GameObject:
   - component: {fileID: 1315983219}
   m_Layer: 5
   m_Name: PropertyClickedPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32724,7 +32283,7 @@ GameObject:
   - component: {fileID: 1344050884}
   m_Layer: 5
   m_Name: ZooKeeperPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33559,7 +33118,7 @@ GameObject:
   - component: {fileID: 1364918731}
   m_Layer: 5
   m_Name: JunnieBankDepositPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34766,7 +34325,7 @@ RectTransform:
   - {fileID: 357962524}
   - {fileID: 1188150442}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -35321,7 +34880,7 @@ GameObject:
   - component: {fileID: 1473799414}
   m_Layer: 5
   m_Name: InformationPanelTwo
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37382,11 +36941,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 10
-=======
-  m_RootOrder: 4
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1552456190
 MonoBehaviour:
@@ -37408,19 +36963,11 @@ MonoBehaviour:
   - {fileID: 1188150441}
   playerMovement: {fileID: 1013728734}
   buildingTransforms:
-<<<<<<< Updated upstream
   - {fileID: 811640022}
   - {fileID: 99173878}
   - {fileID: 1566543469}
   - {fileID: 1933373541}
   - {fileID: 123096401}
-=======
-  - {fileID: 499195543}
-  - {fileID: 1615753084}
-  - {fileID: 1217761031}
-  - {fileID: 2025333624}
-  - {fileID: 1445640486}
->>>>>>> Stashed changes
 --- !u!114 &1552456191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37436,40 +36983,24 @@ MonoBehaviour:
   ClickToVisitCanvas: {fileID: 1447754439}
   ClickedOnCanvas: {fileID: 1774272772}
   AfterVisitCanvas: {fileID: 252745329}
-<<<<<<< Updated upstream
   TownCanvas: {fileID: 0}
   AlertPanel: {fileID: 0}
   Map: {fileID: 1050599651}
-=======
-  TownCanvas: {fileID: 487099554}
-  AlertPanel: {fileID: 0}
-  Map: {fileID: 379488944}
->>>>>>> Stashed changes
   Property: {fileID: 0}
   Bank: {fileID: 0}
   Investment: {fileID: 0}
   Insurance: {fileID: 0}
   Job: {fileID: 0}
-<<<<<<< Updated upstream
   PropertyClickedPanel: {fileID: 0}
   BankClickedPanel: {fileID: 0}
   InvestmentClickedPanel: {fileID: 0}
   InsuranceClickedPanel: {fileID: 0}
   JobClickedPanel: {fileID: 0}
   InvestmentPanel: {fileID: 2075598765}
-=======
-  PropertyClickedPanel: {fileID: 1315983217}
-  BankClickedPanel: {fileID: 924506843}
-  InvestmentClickedPanel: {fileID: 1737767796}
-  InsuranceClickedPanel: {fileID: 428331196}
-  JobClickedPanel: {fileID: 219980059}
-  InvestmentPanel: {fileID: 0}
->>>>>>> Stashed changes
   InsurancePanel: {fileID: 0}
   PropertyPanel: {fileID: 0}
   BankPanel: {fileID: 0}
   JobPanel: {fileID: 0}
-<<<<<<< Updated upstream
   NoInsurancePanel: {fileID: 0}
   LifeInsurancePanel: {fileID: 0}
   HealthInsurancePanel: {fileID: 0}
@@ -37599,86 +37130,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566543468}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-=======
-  NoInsurancePanel: {fileID: 740149411}
-  LifeInsurancePanel: {fileID: 970655465}
-  HealthInsurancePanel: {fileID: 465267230}
-  CriticalIllnessInsurancePanel: {fileID: 1207806385}
-  OptionsPanel: {fileID: 1878531648}
-  OptionsButton: {fileID: 375789363}
-  ApartmentPanel: {fileID: 1967092999}
-  LandedPanel: {fileID: 643930378}
-  CondominiumPanel: {fileID: 1815026030}
-  PlumberPanel: {fileID: 765123146}
-  ZooKeeperPanel: {fileID: 1344050882}
-  PhotographerPanel: {fileID: 117889454}
-  GameInvestmentPanel: {fileID: 508608169}
-  BusinessInvestmentPanel: {fileID: 599699561}
-  GymInvestmentPanel: {fileID: 753397164}
-  BankOfRashidPanel: {fileID: 677177682}
-  JunnieBankPanel: {fileID: 1131141100}
-  LegalFooBankPanel: {fileID: 747177730}
-  BankOfRashidDepositPanel: {fileID: 297754051}
-  JunnieBankDepositPanel: {fileID: 1364918729}
-  LegalFooBankDepositPanel: {fileID: 724092054}
-  InformationPanel: {fileID: 1116129846}
-  InformationPanelTwo: {fileID: 1473799412}
-  BankButton: {fileID: 0}
-  panelsToCheck:
-  - {fileID: 1737767796}
-  - {fileID: 924506843}
-  - {fileID: 219980059}
-  - {fileID: 428331196}
-  - {fileID: 1315983217}
-  - {fileID: 1878531648}
-  - {fileID: 740149411}
-  - {fileID: 970655465}
-  - {fileID: 465267230}
-  - {fileID: 1207806385}
-  - {fileID: 1967092999}
-  - {fileID: 643930378}
-  - {fileID: 1815026030}
-  - {fileID: 765123146}
-  - {fileID: 1344050882}
-  - {fileID: 117889454}
-  - {fileID: 508608169}
-  - {fileID: 599699561}
-  - {fileID: 753397164}
-  - {fileID: 677177682}
-  - {fileID: 1131141100}
-  - {fileID: 747177730}
-  - {fileID: 297754051}
-  - {fileID: 1364918729}
-  - {fileID: 724092054}
-  - {fileID: 1116129846}
-  - {fileID: 1473799412}
-  buttonsToDisable: []
-  InsurancePanels:
-  - {fileID: 740149411}
-  - {fileID: 970655465}
-  - {fileID: 465267230}
-  - {fileID: 1207806385}
-  PropertyPanels:
-  - {fileID: 1967092999}
-  - {fileID: 643930378}
-  - {fileID: 1815026030}
-  BankPanels:
-  - {fileID: 677177682}
-  - {fileID: 1131141100}
-  - {fileID: 747177730}
-  JobPanels:
-  - {fileID: 765123146}
-  - {fileID: 1344050882}
-  - {fileID: 117889454}
-  InvestmentPanels:
-  - {fileID: 508608169}
-  - {fileID: 599699561}
-  - {fileID: 753397164}
-  DepositPanels:
-  - {fileID: 297754051}
-  - {fileID: 1364918729}
-  - {fileID: 724092054}
->>>>>>> Stashed changes
 --- !u!1 &1566667678
 GameObject:
   m_ObjectHideFlags: 0
@@ -41429,7 +40880,7 @@ GameObject:
   - component: {fileID: 1737767798}
   m_Layer: 5
   m_Name: InvestmentClickedPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42780,7 +42231,7 @@ RectTransform:
   - {fileID: 1315983218}
   - {fileID: 1878531649}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -43727,7 +43178,7 @@ GameObject:
   - component: {fileID: 1815026032}
   m_Layer: 5
   m_Name: CondominiumPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45992,7 +45443,7 @@ GameObject:
   - component: {fileID: 1878531650}
   m_Layer: 5
   m_Name: OptionsPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48528,7 +47979,7 @@ GameObject:
   - component: {fileID: 1967093001}
   m_Layer: 5
   m_Name: ApartmentPanel
-  m_TagString: isPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49988,42 +49439,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051063390}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
---- !u!1 &2055011725
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2055011726}
-  m_Layer: 0
-  m_Name: HongJunStuff
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2055011726
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055011725}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 358294727}
-  - {fileID: 141500713}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &2055448852
 GameObject:
   m_ObjectHideFlags: 0
@@ -51935,143 +51350,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 358f9165381978c48b48dbd1d96eb375, type: 3}
-<<<<<<< Updated upstream
-=======
---- !u!1001 &7489619687464554132
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 155255147592964572, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_Name
-      value: Board
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
---- !u!1001 &7627632017257598502
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1633438246}
-    m_Modifications:
-    - target: {fileID: 7285596291486257856, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_Name
-      value: Job
-      objectReference: {fileID: 0}
-    - target: {fileID: 7285596291486257856, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7285596291486257856, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 60.00002
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 60.00002
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 6.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.33406606
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.9425497
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 140.968
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948980427845355642, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9086961443581899541, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 789e3dd22439a0541b0b4832bc3ae3de, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
->>>>>>> Stashed changes
 --- !u!64 &8382651623227993739
 MeshCollider:
   m_ObjectHideFlags: 0
