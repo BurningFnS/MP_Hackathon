@@ -86,6 +86,8 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         int visitButtonIndex = GetVisitButtonIndex();
+
+
         playerMovement.ReceiveButtonValue(visitButtonIndex);
 
         if (visitButtonIndex >= 0 && visitButtonIndex < buildingTransforms.Length)
@@ -94,4 +96,6 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
             playerMovement.MoveToDestination(buildingTransforms[visitButtonIndex].position);
         }
     }
+
+
 }
