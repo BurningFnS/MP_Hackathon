@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
             agent.ResetPath();
             isMoving = false;
             visitUIPanel[receivedValue].SetActive(true);
+            BuildingClickHandler.canClickOnBuildings = false;
         }
         if (!agent.hasPath && !isMoving)
         {

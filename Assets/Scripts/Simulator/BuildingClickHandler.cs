@@ -9,6 +9,7 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
     public GameObject[] buildingUIPanels;
     public PlayerMovement playerMovement;
     public Transform[] buildingTransforms;
+    public static bool canClickOnBuildings = true;
 
     void Start()
     {
@@ -21,10 +22,10 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
 
     void OnMouseDown()
     {
-        // Check if the clicked building has an associated UI panel
-        int buildingIndex = GetBuildingIndex();
-        if (!EventSystem.current.IsPointerOverGameObject())
+        if (canClickOnBuildings)
         {
+            // Check if the clicked building has an associated UI panel
+            int buildingIndex = GetBuildingIndex();
             if (buildingIndex >= 0 && buildingIndex < buildingUIPanels.Length)
             {
                 // Activate the appropriate UI panel
@@ -88,8 +89,6 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         int visitButtonIndex = GetVisitButtonIndex();
-
-
         playerMovement.ReceiveButtonValue(visitButtonIndex);
 
         if (visitButtonIndex >= 0 && visitButtonIndex < buildingTransforms.Length)
