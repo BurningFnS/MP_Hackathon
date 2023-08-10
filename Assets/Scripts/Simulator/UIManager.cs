@@ -225,6 +225,10 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    public void TownCanvasOff()
+    {
+        TownCanvas.SetActive(false);
+    }
     public void ConfirmBankOfRashidButton()
     {
         if (BankOfRashidPanel != null)
