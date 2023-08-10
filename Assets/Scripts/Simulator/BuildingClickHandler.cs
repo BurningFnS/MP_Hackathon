@@ -9,7 +9,10 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
     public GameObject[] buildingUIPanels;
     public PlayerMovement playerMovement;
     public Transform[] buildingTransforms;
-
+    public GameObject TownCanvas;
+    public GameObject ClickedOnCanvas;
+    public GameObject AfterVisitCanvas;
+    public GameObject ClickToVisitCanvas;
     void Start()
     {
         // Disable all UI panels at the start
@@ -89,7 +92,9 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
     {
         int visitButtonIndex = GetVisitButtonIndex();
 
-
+        ClickedOnCanvas.SetActive(true);
+        TownCanvas.SetActive(false);
+        ClickToVisitCanvas.SetActive(false);
         playerMovement.ReceiveButtonValue(visitButtonIndex);
 
         if (visitButtonIndex >= 0 && visitButtonIndex < buildingTransforms.Length)

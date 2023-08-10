@@ -94,6 +94,36 @@ public class UIManager : MonoBehaviour
             TownCanvas.SetActive(false);
         }
     }
+    //public void CanvasCheck()
+    //{
+    //    if (TownCanvas != null)
+    //    {
+    //        ClickedOnCanvas.SetActive(false);
+    //        ClickToVisitCanvas.SetActive(true);
+    //        AfterVisitCanvas.SetActive(false);
+    //    }
+    //    else if (ClickToVisitCanvas != null)
+    //    {
+    //        ClickedOnCanvas.SetActive(true);
+    //        AfterVisitCanvas.SetActive(false);
+    //        TownCanvas.SetActive(false);
+
+    //    }
+    //    else if (ClickedOnCanvas != null)
+    //    {
+    //        TownCanvas.SetActive(false);
+    //        ClickToVisitCanvas.SetActive(false);
+    //        AfterVisitCanvas.SetActive(true);
+    //    }
+    //    else if (AfterVisitCanvas != null)
+    //    {
+    //        ClickToVisitCanvas.SetActive(false);
+    //        ClickedOnCanvas.SetActive(false);
+    //        TownCanvas.SetActive(false);
+    //    }
+
+    //}
+
     public void ReturnBack() //Just for the Return Arrows, where if the respective panels pop up and u press the return arrow, the respective panel will close. 
     {
         if (GameObject.FindGameObjectWithTag("ReturnBack"))
@@ -102,126 +132,176 @@ public class UIManager : MonoBehaviour
             {
                 PropertyClickedPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                ClickToVisitCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
             }
             if (BankClickedPanel != null)
             {
                 BankClickedPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                ClickToVisitCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
             }
             if (InsuranceClickedPanel != null)
             {
                 InsuranceClickedPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                ClickToVisitCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
             }
             if (InvestmentClickedPanel != null)
             {
                 InvestmentClickedPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                ClickToVisitCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
             }
             if (JobClickedPanel != null)
             {
                 JobClickedPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                ClickToVisitCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
             }
             if (NoInsurancePanel != null)
             {
                 NoInsurancePanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (LifeInsurancePanel != null)
             {
                 LifeInsurancePanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (HealthInsurancePanel != null)
             {
                 HealthInsurancePanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (CriticalIllnessInsurancePanel != null)
             {
                 CriticalIllnessInsurancePanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (BankOfRashidPanel != null)
             {
                 BankOfRashidPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (JunnieBankPanel != null)
             {
                 JunnieBankPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (LegalFooBankPanel != null)
             {
                 LegalFooBankPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (LandedPanel != null)
             {
                 LandedPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (ApartmentPanel != null)
             {
                 ApartmentPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (CondominiumPanel != null)
             {
                 CondominiumPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (GameInvestmentPanel != null)
             {
                 GameInvestmentPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (BusinessInvestmentPanel != null)
             {
                 BusinessInvestmentPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (GymInvestmentPanel != null)
             {
                 GymInvestmentPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (PlumberPanel != null)
             {
                 PlumberPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (ZooKeeperPanel != null)
             {
                 ZooKeeperPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (PhotographerPanel != null)
             {
                 PhotographerPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if(BankOfRashidDepositPanel != null)
             {
                 BankOfRashidDepositPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if(JunnieBankDepositPanel != null)
             {
                 JunnieBankDepositPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if(LegalFooBankDepositPanel != null)
             {
                 LegalFooBankDepositPanel.SetActive(false);
                 TownCanvas.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickToVisitCanvas.SetActive(true);
             }
             if (OptionsPanel != null)
             {
                 OptionsPanel.SetActive(false);
                 OptionsButton.SetActive(true);
+                AfterVisitCanvas.SetActive(false);
+                ClickedOnCanvas.SetActive(false);
             }
         }
     }
@@ -234,6 +314,8 @@ public class UIManager : MonoBehaviour
         if (BankOfRashidPanel != null)
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             BankOfRashidPanel.SetActive(false);
             BankOfRashidDepositPanel.SetActive(true);
         }
@@ -243,6 +325,8 @@ public class UIManager : MonoBehaviour
         if (JunnieBankPanel != null)
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             JunnieBankPanel.SetActive(false);
             JunnieBankDepositPanel.SetActive(true);
         }
@@ -252,6 +336,8 @@ public class UIManager : MonoBehaviour
         if (LegalFooBankPanel != null)
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             LegalFooBankPanel.SetActive(false);
             LegalFooBankDepositPanel.SetActive(true);
         }
@@ -261,18 +347,24 @@ public class UIManager : MonoBehaviour
         if (InformationPanel != null && clickCount == 0 )
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             InformationPanel.SetActive(false);
             BankOfRashidPanel.SetActive(true);
         }
         if (InformationPanel != null && clickCount == 1)
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             InformationPanel.SetActive(false);
             JunnieBankPanel.SetActive(true);           
         }
         if (InformationPanel != null && clickCount == 2 )
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             InformationPanel.SetActive(false);
             LegalFooBankPanel.SetActive(true);
         }
@@ -282,82 +374,88 @@ public class UIManager : MonoBehaviour
         if (InformationPanelTwo != null && clickCount == 0 && GameObject.FindGameObjectWithTag("Okay"))
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             InformationPanelTwo.SetActive(false);
             BankOfRashidDepositPanel.SetActive(true);
         }
         if (InformationPanelTwo != null && clickCount == 1 && GameObject.FindGameObjectWithTag("Okay"))
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             InformationPanelTwo.SetActive(false);
             JunnieBankDepositPanel.SetActive(true);
         }
         if (InformationPanelTwo != null && clickCount == 2 && GameObject.FindGameObjectWithTag("Okay"))
         {
             TownCanvas.SetActive(false);
+            ClickedOnCanvas.SetActive(false);
+            ClickToVisitCanvas.SetActive(false);
             InformationPanelTwo.SetActive(false);
             LegalFooBankDepositPanel.SetActive(true);
         }
     }
-    public void BankOpenVisitButton()//For the ClickToVisitCanvas Bank panel to appear :} 
-    {
-        if (GameObject.FindGameObjectWithTag("BankOpenVisit"))
-        {
-            BankPanel.SetActive(true);
-            PropertyPanel.SetActive(false);
-            InvestmentPanel.SetActive(false);
-            InsurancePanel.SetActive(false);
-            JobPanel.SetActive(false);
-            TownCanvas.SetActive(false);
-        }
-    }
-    public void InvestmentOpenVisitButton()//For the ClickToVisitCanvas Investment panel to appear :D
-    {
-        if (GameObject.FindGameObjectWithTag("InvestmentOpenVisit"))
-        {
-            InvestmentPanel.SetActive(true);
-            BankPanel.SetActive(false);
-            InsurancePanel.SetActive(false);
-            PropertyPanel.SetActive(false);
-            JobPanel.SetActive(false);
-            TownCanvas.SetActive(false);
-        }
-    }
-    public void PropertyOpenVisitButton()//For the ClickToVisitCanvas Property panel to appear :} 
-    {
-        if (GameObject.FindGameObjectWithTag("PropertyOpenVisit"))
-        {
-            PropertyPanel.SetActive(true);
-            InsurancePanel.SetActive(false);
-            BankPanel.SetActive(false);
-            InvestmentPanel.SetActive(false);
-            JobPanel.SetActive(false);
-            TownCanvas.SetActive(false);
-        }
-    }
-    public void InsuranceOpenVisitButton()//For the ClickToVisitCanvas Insurance panel to appear :} 
-    {
-        if (GameObject.FindGameObjectWithTag("InsuranceOpenVisit"))
-        {
-            InsurancePanel.SetActive(true);
-            BankPanel.SetActive(false);
-            InvestmentPanel.SetActive(false);
-            PropertyPanel.SetActive(false);
-            JobPanel.SetActive(false);
-            TownCanvas.SetActive(false);
-        }
-    }
-    public void JobOpenVisitButton()//For the ClickToVisitCanvas Job panel to appear :} 
-    {
-        if (GameObject.FindGameObjectWithTag("JobOpenVisit"))
-        {
-            JobPanel.SetActive(true);
-            InsurancePanel.SetActive(false);
-            BankPanel.SetActive(false);
-            InvestmentPanel.SetActive(false);
-            PropertyPanel.SetActive(false);
-            TownCanvas.SetActive(false);
-        }
-    }
+    //public void BankOpenVisitButton()//For the ClickToVisitCanvas Bank panel to appear :} 
+    //{
+    //    if (GameObject.FindGameObjectWithTag("BankOpenVisit"))
+    //    {
+    //        BankPanel.SetActive(true);
+    //        PropertyPanel.SetActive(false);
+    //        InvestmentPanel.SetActive(false);
+    //        InsurancePanel.SetActive(false);
+    //        JobPanel.SetActive(false);
+    //        TownCanvas.SetActive(false);
+    //    }
+    //}
+    //public void InvestmentOpenVisitButton()//For the ClickToVisitCanvas Investment panel to appear :D
+    //{
+    //    if (GameObject.FindGameObjectWithTag("InvestmentOpenVisit"))
+    //    {
+    //        InvestmentPanel.SetActive(true);
+    //        BankPanel.SetActive(false);
+    //        InsurancePanel.SetActive(false);
+    //        PropertyPanel.SetActive(false);
+    //        JobPanel.SetActive(false);
+    //        TownCanvas.SetActive(false);
+    //    }
+    //}
+    //public void PropertyOpenVisitButton()//For the ClickToVisitCanvas Property panel to appear :} 
+    //{
+    //    if (GameObject.FindGameObjectWithTag("PropertyOpenVisit"))
+    //    {
+    //        PropertyPanel.SetActive(true);
+    //        InsurancePanel.SetActive(false);
+    //        BankPanel.SetActive(false);
+    //        InvestmentPanel.SetActive(false);
+    //        JobPanel.SetActive(false);
+    //        TownCanvas.SetActive(false);
+    //    }
+    //}
+    //public void InsuranceOpenVisitButton()//For the ClickToVisitCanvas Insurance panel to appear :} 
+    //{
+    //    if (GameObject.FindGameObjectWithTag("InsuranceOpenVisit"))
+    //    {
+    //        InsurancePanel.SetActive(true);
+    //        BankPanel.SetActive(false);
+    //        InvestmentPanel.SetActive(false);
+    //        PropertyPanel.SetActive(false);
+    //        JobPanel.SetActive(false);
+    //        TownCanvas.SetActive(false);
+    //    }
+    //}
+    //public void JobOpenVisitButton()//For the ClickToVisitCanvas Job panel to appear :} 
+    //{
+    //    if (GameObject.FindGameObjectWithTag("JobOpenVisit"))
+    //    {
+    //        JobPanel.SetActive(true);
+    //        InsurancePanel.SetActive(false);
+    //        BankPanel.SetActive(false);
+    //        InvestmentPanel.SetActive(false);
+    //        PropertyPanel.SetActive(false);
+    //        TownCanvas.SetActive(false);
+    //    }
+    //}
     public void InformationButton()
     {
         InformationPanel.SetActive(true);
@@ -369,6 +467,8 @@ public class UIManager : MonoBehaviour
         LegalFooBankDepositPanel.SetActive(false);
         LegalFooBankPanel.SetActive(false);
         TownCanvas.SetActive(false);
+        ClickToVisitCanvas.SetActive(false);
+        ClickedOnCanvas.SetActive(false);
     }
     public void InformationButton2()
     {
@@ -381,6 +481,8 @@ public class UIManager : MonoBehaviour
         LegalFooBankDepositPanel.SetActive(false);
         LegalFooBankPanel.SetActive(false);
         TownCanvas.SetActive(false);
+        ClickToVisitCanvas.SetActive(false);
+        ClickedOnCanvas.SetActive(false);
     }
     public void InsuranceOnLeftArrowButtonClick()
     {
@@ -549,113 +651,168 @@ public class UIManager : MonoBehaviour
         NoInsurancePanel.SetActive(true);
     }
     public void LifeInsuranceButton()
-    {   
+    {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         InsuranceClickedPanel.SetActive(false);
         LifeInsurancePanel.SetActive(true);
         TownCanvas.SetActive(false);
+        
+        ClickToVisitCanvas.SetActive(false);    
     }
     public void HealthInsuranceButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         InsuranceClickedPanel.SetActive(false);
         HealthInsurancePanel.SetActive(true);
         TownCanvas.SetActive(false);
+      
+        ClickToVisitCanvas.SetActive(false);
     }
     public void CriticalIllnessInsuranceButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         InsuranceClickedPanel.SetActive(false);
         CriticalIllnessInsurancePanel.SetActive(true);
         TownCanvas.SetActive(false);
+       
+        ClickToVisitCanvas.SetActive(false);
     }
     public void BankOfRashidButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         BankClickedPanel.SetActive(false);
         BankButton.SetActive(false);    
         BankOfRashidPanel.SetActive(true);
         TownCanvas.SetActive(false);
-
+        ClickToVisitCanvas.SetActive(false);
     }
     public void JunnieBankButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         BankClickedPanel.SetActive(false);
         JunnieBankPanel.SetActive(true);
         TownCanvas.SetActive(false);
-
+       
+        ClickToVisitCanvas.SetActive(false);
     }
     public void NationalFooBankButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         BankClickedPanel.SetActive(false);
         LegalFooBankPanel.SetActive(true);
         TownCanvas.SetActive(false);
-
+       
+        ClickToVisitCanvas.SetActive(false);
     }
     public void ApartmentButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         PropertyClickedPanel.SetActive(false);
         ApartmentPanel.SetActive(true);
         TownCanvas.SetActive(false);
+       
+        ClickToVisitCanvas.SetActive(false);
     }
     public void LandedButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         PropertyClickedPanel.SetActive(false);
         LandedPanel.SetActive(true);
         TownCanvas.SetActive(false);
+       
+        ClickToVisitCanvas.SetActive(false);
     }
     public void CondominiumButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         PropertyClickedPanel.SetActive(false);
         CondominiumPanel.SetActive(true);
         TownCanvas.SetActive(false);
+       
+        ClickToVisitCanvas.SetActive(false);
     }
     public void GameInvestmentButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         InvestmentClickedPanel.SetActive(false);
         GameInvestmentPanel.SetActive(true);
         TownCanvas.SetActive(false);
+        
+        ClickToVisitCanvas.SetActive(false);
     }
     public void BusinessInvestmentButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         InvestmentClickedPanel.SetActive(false);
         BusinessInvestmentPanel.SetActive(true);
         TownCanvas.SetActive(false);
+        ClickToVisitCanvas.SetActive(false);
     }
     public void GymInvestmentButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         InvestmentClickedPanel.SetActive(false);
         GymInvestmentPanel.SetActive(true);
         TownCanvas.SetActive(false);
+       
+        ClickToVisitCanvas.SetActive(false);
     }
     public void PlumberButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         JobClickedPanel.SetActive(false);
         PlumberPanel.SetActive(true);
         TownCanvas.SetActive(false);
+        
+        ClickToVisitCanvas.SetActive(false);
     }
     public void ZooKeeperButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         JobClickedPanel.SetActive(false);
         ZooKeeperPanel.SetActive(true);
         TownCanvas.SetActive(false);
+        
+        ClickToVisitCanvas.SetActive(false);
     }
     public void PhotographerButton()
     {
+        AfterVisitCanvas.SetActive(true);
+        ClickedOnCanvas.SetActive(false);
         OptionsButton.SetActive(false);
         JobClickedPanel.SetActive(false);
         PhotographerPanel.SetActive(true);
         TownCanvas.SetActive(false);
+        
+        ClickToVisitCanvas.SetActive(false);
     }
     public void ProceedOn()
     {
