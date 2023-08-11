@@ -97,6 +97,4 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
             playerMovement.MoveToDestination(buildingTransforms[visitButtonIndex].position);
         }
     }
-
-
 }
