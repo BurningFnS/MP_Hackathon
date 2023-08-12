@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     public GameObject[] insuranceUIPanels;
     public GameObject[] propertyUIPanels;
 
+    public GameObject[] bankConfirmUIPanels;
+
     public void ReturnBack()
     {
         for (int i = 0; i < clickedPanel.Length; i++)
@@ -176,6 +178,12 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         { 
             clickedPanel[4].SetActive(true);
             propertyUIPanels[2].SetActive(false);
+        }
+
+        //Bank Confirmation Button
+        if (gameObject.name == "ConfirmButtonRashid")
+        {
+           
         }
     }
 }
