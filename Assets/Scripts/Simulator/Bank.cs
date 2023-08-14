@@ -99,9 +99,8 @@ public class Bank : MonoBehaviour
         // For example, you could set the text of a UI Text component to show the totalCoins value.
      
         coinText.text = "" + totalCoins;
-        
     }
-
+    
     private void UpdateBankBalanceText()
     {
         moneyInBankText.text = "Money in bank: $" + bankBalance.ToString("");

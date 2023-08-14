@@ -6930,6 +6930,7 @@ GameObject:
   - component: {fileID: 247781413}
   - component: {fileID: 247781412}
   - component: {fileID: 247781411}
+  - component: {fileID: 247781414}
   m_Layer: 5
   m_Name: SideArrowLeft
   m_TagString: Untagged
@@ -7000,19 +7001,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247781412}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: BankOnLeftArrowButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &247781412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7051,6 +7040,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247781409}
   m_CullTransparentMesh: 1
+--- !u!114 &247781414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247781409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  investmentUIPanels: []
+  bankUIPanels:
+  - {fileID: 677177682}
+  - {fileID: 1131141100}
+  - {fileID: 747177730}
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
 --- !u!1 &248246274
 GameObject:
   m_ObjectHideFlags: 0
@@ -11805,7 +11816,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485471650
 MonoBehaviour:
@@ -17330,19 +17341,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 700563025}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: BankOnLeftArrowButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &700563025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21620,8 +21619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -41.5}
-  m_SizeDelta: {x: 0, y: 83}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &914278166
 MonoBehaviour:
@@ -28299,7 +28298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -55, y: -130}
+  m_AnchoredPosition: {x: -55, y: -140}
   m_SizeDelta: {x: 55, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306949543
@@ -32170,7 +32169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.5, y: 46}
+  m_AnchoredPosition: {x: -0.5, y: 57}
   m_SizeDelta: {x: 195.4822, y: 77.8251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1509395388
@@ -37161,7 +37160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -130}
+  m_AnchoredPosition: {x: 0, y: -140}
   m_SizeDelta: {x: 480, y: 63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768337795
@@ -38474,6 +38473,7 @@ GameObject:
   - component: {fileID: 1825542005}
   - component: {fileID: 1825542004}
   - component: {fileID: 1825542003}
+  - component: {fileID: 1825542006}
   m_Layer: 5
   m_Name: SideArrowRight
   m_TagString: Untagged
@@ -38544,19 +38544,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1825542004}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: BankOnRightArrowButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1825542004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38595,6 +38583,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825542001}
   m_CullTransparentMesh: 1
+--- !u!114 &1825542006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825542001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  investmentUIPanels: []
+  bankUIPanels:
+  - {fileID: 677177682}
+  - {fileID: 1131141100}
+  - {fileID: 747177730}
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
 --- !u!1 &1827386303
 GameObject:
   m_ObjectHideFlags: 0
@@ -40933,19 +40943,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1901329622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: InsuranceOnLeftArrowButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1901329622
 MonoBehaviour:
   m_ObjectHideFlags: 0
