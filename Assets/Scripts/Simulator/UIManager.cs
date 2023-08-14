@@ -57,8 +57,6 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             investmentUIPanels[2].SetActive(false);
         }
 
-
-
         //Bank Panels
         if (gameObject.name == "BankOfRashidButton")
         {
