@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     public GameObject[] insuranceUIPanels;
     public GameObject[] propertyUIPanels;
 
-    public GameObject[] bankConfirmUIPanels;
+    public GameObject[] bankDepositUIPanels;
 
     public void ReturnBack()
     {
@@ -183,7 +183,31 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         //Bank Confirmation Button
         if (gameObject.name == "ConfirmButtonRashid")
         {
-           
+            bankDepositUIPanels[0].SetActive(true);
+        }
+        if(gameObject.name == "ConfirmButtonJunnie")
+        {
+            bankDepositUIPanels[1].SetActive(true);
+        }
+        if (gameObject.name == "ConfirmButtonFoo")
+        {
+            bankDepositUIPanels[3].SetActive(true);
+        }
+
+        if (gameObject.name == "ReturnBackButtonRashid1")
+        {
+            bankUIPanels[0].SetActive(true);
+            bankDepositUIPanels[0].SetActive(false);
+        }
+        if (gameObject.name == "ReturnBackButtonJunnie1")
+        {
+            bankUIPanels[1].SetActive(true);
+            bankDepositUIPanels[1].SetActive(false);
+        }
+        if (gameObject.name == "ReturnBackButtonFoo1")
+        {
+            bankUIPanels[1].SetActive(true);
+            bankDepositUIPanels[2].SetActive(false);
         }
     }
 }
