@@ -28984,6 +28984,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120704773}
   m_CullTransparentMesh: 1
+--- !u!1 &1122658502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122658504}
+  - component: {fileID: 1122658503}
+  m_Layer: 0
+  m_Name: CoinManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1122658503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122658502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7255dc49293694dbe7b3ae1a285955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalCoins: 0
+  currentCoins: 0
+  cashAtHand: 0
+  coinText: {fileID: 1483962595}
+  ageText: {fileID: 783532774}
+  currentAge: 0
+  defaultAge: 25
+--- !u!4 &1122658504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122658502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1122862107
 GameObject:
   m_ObjectHideFlags: 0
@@ -34907,7 +34958,7 @@ MonoBehaviour:
   moneyInBankText: {fileID: 2072703369}
   error: {fileID: 493903170}
   errorText: {fileID: 1766421135}
-  coinText: {fileID: 1483962595}
+  coinManager: {fileID: 1122658503}
 --- !u!1 &1447612452
 GameObject:
   m_ObjectHideFlags: 0
