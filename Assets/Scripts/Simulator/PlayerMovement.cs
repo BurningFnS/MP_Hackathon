@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
