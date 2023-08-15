@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour, IPointerClickHandler
 {
@@ -207,5 +208,10 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             bankUIPanels[1].SetActive(true);
             bankDepositUIPanels[2].SetActive(false);
         }
+    }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
