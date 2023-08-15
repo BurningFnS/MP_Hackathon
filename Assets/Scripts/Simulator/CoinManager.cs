@@ -7,7 +7,7 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     public int totalCoins;
-    private int currentCoins;
+    public int currentCoins;
     public int cashAtHand;
     public Text coinText;
     public Text ageText;

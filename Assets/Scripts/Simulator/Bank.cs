@@ -24,13 +24,13 @@ public class Bank : MonoBehaviour
         if (int.TryParse(amountInputField.text, out int InputAmount))
         {
             //Deposit amount is less than or equal to total coins, so player can deposit
-            if(InputAmount <= coinManager.totalCoins)
+            if(InputAmount <= coinManager.currentCoins)
             {
                 // Update the bank balance
                 bankBalance += InputAmount;
 
                 //Update the coin balance
-                coinManager.totalCoins -= InputAmount;
+                coinManager.currentCoins -= InputAmount;
 
                 // Update the balance text
                 UpdateBankBalanceText();
@@ -61,7 +61,7 @@ public class Bank : MonoBehaviour
         {
             if (InputAmount <= bankBalance)
             {
-                coinManager.totalCoins += InputAmount;
+                coinManager.currentCoins += InputAmount;
 
                 bankBalance -= InputAmount;
 
