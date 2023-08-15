@@ -405,6 +405,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &10678790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,6 +2627,7 @@ MonoBehaviour:
   - {fileID: 1207806385}
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &78419305
 GameObject:
   m_ObjectHideFlags: 0
@@ -6922,6 +6924,7 @@ MonoBehaviour:
   - {fileID: 643930378}
   - {fileID: 1815026030}
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &213137434
 GameObject:
   m_ObjectHideFlags: 0
@@ -7722,7 +7725,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247781412}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoPrevious
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &247781412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7783,6 +7798,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &248246274
 GameObject:
   m_ObjectHideFlags: 0
@@ -9548,6 +9564,7 @@ MonoBehaviour:
   - {fileID: 643930378}
   - {fileID: 1815026030}
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &326275656
 GameObject:
   m_ObjectHideFlags: 0
@@ -10357,6 +10374,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &357663058
 GameObject:
   m_ObjectHideFlags: 0
@@ -10879,6 +10897,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &376823035
 GameObject:
   m_ObjectHideFlags: 0
@@ -12580,6 +12599,7 @@ MonoBehaviour:
   - {fileID: 1207806385}
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &448868947
 GameObject:
   m_ObjectHideFlags: 0
@@ -13053,6 +13073,7 @@ MonoBehaviour:
   - {fileID: 1207806385}
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &467152347
 GameObject:
   m_ObjectHideFlags: 0
@@ -13520,6 +13541,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &487099554
 GameObject:
   m_ObjectHideFlags: 0
@@ -14797,6 +14819,7 @@ MonoBehaviour:
   - {fileID: 643930378}
   - {fileID: 1815026030}
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &522250860
 GameObject:
   m_ObjectHideFlags: 0
@@ -15954,6 +15977,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &556618342
 GameObject:
   m_ObjectHideFlags: 0
@@ -17054,6 +17078,7 @@ MonoBehaviour:
   - {fileID: 297754051}
   - {fileID: 1364918729}
   - {fileID: 724092054}
+  currentPanelIndex: 0
 --- !u!1 &621544942
 GameObject:
   m_ObjectHideFlags: 0
@@ -18618,6 +18643,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &670184903
 GameObject:
   m_ObjectHideFlags: 0
@@ -19527,6 +19553,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &700563022
 GameObject:
   m_ObjectHideFlags: 0
@@ -19609,7 +19636,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 700563025}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoPrevious
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &700563025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19797,6 +19836,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &706776400
 GameObject:
   m_ObjectHideFlags: 0
@@ -19947,6 +19987,7 @@ MonoBehaviour:
   - {fileID: 1207806385}
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &707559416
 GameObject:
   m_ObjectHideFlags: 0
@@ -20030,7 +20071,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 707559419}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1122658503}
+        m_TargetAssemblyTypeName: CoinManager, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &707559419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20219,6 +20272,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &720290421
 GameObject:
   m_ObjectHideFlags: 0
@@ -20369,6 +20423,7 @@ MonoBehaviour:
   - {fileID: 1207806385}
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &724092054
 GameObject:
   m_ObjectHideFlags: 0
@@ -20540,6 +20595,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoPrevious
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: BankOnLeftArrowButtonClick
@@ -23261,6 +23328,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &828562720
 GameObject:
   m_ObjectHideFlags: 0
@@ -23982,6 +24050,7 @@ MonoBehaviour:
   - {fileID: 643930378}
   - {fileID: 1815026030}
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &890948093
 GameObject:
   m_ObjectHideFlags: 0
@@ -28546,6 +28615,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1112626694
 GameObject:
   m_ObjectHideFlags: 0
@@ -31578,6 +31648,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: BankOnRightArrowButtonClick
@@ -33070,6 +33152,7 @@ MonoBehaviour:
   - {fileID: 1207806385}
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1351222333
 GameObject:
   m_ObjectHideFlags: 0
@@ -33293,6 +33376,7 @@ MonoBehaviour:
   - {fileID: 297754051}
   - {fileID: 1364918729}
   - {fileID: 724092054}
+  currentPanelIndex: 0
 --- !u!1 &1355524977
 GameObject:
   m_ObjectHideFlags: 0
@@ -35982,6 +36066,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1486859586
 GameObject:
   m_ObjectHideFlags: 0
@@ -36622,6 +36707,7 @@ MonoBehaviour:
   - {fileID: 297754051}
   - {fileID: 1364918729}
   - {fileID: 724092054}
+  currentPanelIndex: 0
 --- !u!1 &1517519240
 GameObject:
   m_ObjectHideFlags: 0
@@ -37616,6 +37702,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1566543468
 GameObject:
   m_ObjectHideFlags: 0
@@ -38314,6 +38401,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1590238678
 GameObject:
   m_ObjectHideFlags: 0
@@ -39803,6 +39891,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1675960081
 GameObject:
   m_ObjectHideFlags: 0
@@ -40914,6 +41003,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1718858611
 GameObject:
   m_ObjectHideFlags: 0
@@ -41764,6 +41854,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1762285539
 GameObject:
   m_ObjectHideFlags: 0
@@ -43335,6 +43426,7 @@ MonoBehaviour:
   - {fileID: 643930378}
   - {fileID: 1815026030}
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1815026030
 GameObject:
   m_ObjectHideFlags: 0
@@ -43717,7 +43809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1825542004}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1825542004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43778,6 +43882,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1827386303
 GameObject:
   m_ObjectHideFlags: 0
@@ -43927,6 +44032,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1827903542
 GameObject:
   m_ObjectHideFlags: 0
@@ -44460,6 +44566,7 @@ MonoBehaviour:
   insuranceUIPanels: []
   propertyUIPanels: []
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1836975388
 GameObject:
   m_ObjectHideFlags: 0
@@ -45714,6 +45821,7 @@ MonoBehaviour:
   - {fileID: 297754051}
   - {fileID: 1364918729}
   - {fileID: 724092054}
+  currentPanelIndex: 0
 --- !u!1 &1886253052
 GameObject:
   m_ObjectHideFlags: 0
@@ -46603,6 +46711,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: BankOnRightArrowButtonClick
@@ -48103,6 +48223,7 @@ MonoBehaviour:
   - {fileID: 297754051}
   - {fileID: 1364918729}
   - {fileID: 724092054}
+  currentPanelIndex: 0
 --- !u!1 &1966402280
 GameObject:
   m_ObjectHideFlags: 0
@@ -51088,6 +51209,7 @@ MonoBehaviour:
   - {fileID: 643930378}
   - {fileID: 1815026030}
   bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &2093000963
 GameObject:
   m_ObjectHideFlags: 0
@@ -51448,6 +51570,7 @@ MonoBehaviour:
   - {fileID: 297754051}
   - {fileID: 1364918729}
   - {fileID: 724092054}
+  currentPanelIndex: 0
 --- !u!1 &2117874312
 GameObject:
   m_ObjectHideFlags: 0
