@@ -5476,7 +5476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabs:
-  - {fileID: 680329544}
+  - {fileID: 1876527733591322818, guid: 9b0fb861e871a2e459fd91eafdad9270, type: 3}
   - {fileID: 3020304205523313158, guid: 4380837c844ac3342b9ab4772385cc4f, type: 3}
   - {fileID: 2810899153893480827, guid: 6eeacf471ca939f4696f0754f077d279, type: 3}
   - {fileID: 8919390859186386481, guid: 719398c584a4af741b4f998b4337dfa6, type: 3}
@@ -5486,11 +5486,6 @@ MonoBehaviour:
   tileLength: 45
   numberOfTiles: 5
   playerTransform: {fileID: 1749492190}
---- !u!1 &680329544 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1876527733591322818, guid: 9b0fb861e871a2e459fd91eafdad9270, type: 3}
-  m_PrefabInstance: {fileID: 2063897141}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &695006895
 GameObject:
   m_ObjectHideFlags: 0
@@ -6482,7 +6477,7 @@ RectTransform:
   m_Children:
   - {fileID: 430822442}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9997,7 +9992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1876527733591322819, guid: 9b0fb861e871a2e459fd91eafdad9270, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1876527733591322819, guid: 9b0fb861e871a2e459fd91eafdad9270, type: 3}
       propertyPath: m_LocalPosition.x
