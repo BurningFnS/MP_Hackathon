@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        Time.timeScale = 1;
     }
 
     public void MoveToDestination(Vector3 targetPosition)

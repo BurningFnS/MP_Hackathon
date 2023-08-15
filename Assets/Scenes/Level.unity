@@ -5985,7 +5985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052c13f8a4177d445935f852c613a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 60
+  totalTime: 5
   timerText: {fileID: 1791390365}
   timeUpPanel: {fileID: 926932345}
   playerController: {fileID: 1749492192}

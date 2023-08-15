@@ -86,8 +86,6 @@ public class TimeManager : MonoBehaviour
                 magnetPanel.SetActive(false);
             }
         }
-
-
     }
 
     private void UpdateTimerUI()
@@ -124,6 +122,6 @@ public class TimeManager : MonoBehaviour
     {
         SceneManager.LoadScene("Simulator");
 
-        PlayerPrefs.SetInt("CollectedCoins", PlayerManager.numberOfCoins);
+        PlayerPrefs.SetInt("CollectedCoins", PlayerManager.numberOfCoins); 
     }
 }
