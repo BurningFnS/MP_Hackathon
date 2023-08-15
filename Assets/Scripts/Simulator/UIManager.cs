@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+//using System.Diagnostics;
 
 public class UIManager : MonoBehaviour, IPointerClickHandler
 {
@@ -16,6 +17,12 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
 
     public GameObject[] bankDepositUIPanels;
 
+    public int currentPanelIndex;
+
+    private void Start()
+    {
+        currentPanelIndex = 0;  // Set an initial value for currentPanelIndex
+    }
     public void ReturnBack()
     {
         for (int i = 0; i < clickedPanel.Length; i++)
@@ -23,6 +30,62 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             clickedPanel[i].SetActive(false);
         }
         BuildingClickHandler.canClickOnBuildings = true;
+    }
+
+    private void SetCurrentPanelIndex(int newIndex)
+    {
+        currentPanelIndex = newIndex;
+        if (currentPanelIndex >= bankUIPanels.Length)
+        {
+            currentPanelIndex = 0;
+        }
+    }
+
+
+    public void GoNext()
+    {
+        for (var i = 0;i < bankUIPanels.Length;i++)
+        {
+            if (bankUIPanels[i].activeSelf == true)
+            {
+                currentPanelIndex = i;
+                //Debug.Log(currentPanelIndex);
+                break;
+            }
+        }
+        //Debug.Log("before: " + currentPanelIndex);
+        bankUIPanels[currentPanelIndex].SetActive(false);
+        currentPanelIndex++;
+        if (currentPanelIndex >= bankUIPanels.Length)
+        {
+            //Debug.Log("back to 0");
+            currentPanelIndex = 0;
+        }
+        //Debug.Log("After: " + currentPanelIndex);
+        bankUIPanels[currentPanelIndex].SetActive(true);
+    }
+
+    public void GoPrevious()
+    {
+        for (var i = 0; i < bankUIPanels.Length; i++)
+        {
+            if (bankUIPanels[i].activeSelf == true)
+            {
+                currentPanelIndex = i;
+                //Debug.Log(currentPanelIndex);
+                break;
+            }
+        }
+        //Debug.Log("before: " + currentPanelIndex);
+        bankUIPanels[currentPanelIndex].SetActive(false);
+        currentPanelIndex--;
+        if (currentPanelIndex < 0)
+        {
+            Debug.Log("back to 2");
+            currentPanelIndex = 2;
+        }
+        //Debug.Log("After: " + currentPanelIndex);
+        bankUIPanels[currentPanelIndex].SetActive(true);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -60,17 +123,22 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         //Bank Panels
         if (gameObject.name == "BankOfRashidButton")
         {
-            bankUIPanels[0].SetActive(true);
+            SetCurrentPanelIndex(0);
+            Debug.Log("Current panel Index: " + currentPanelIndex);
+            bankUIPanels[currentPanelIndex].SetActive(true);
         }
         else if (gameObject.name == "JunnieBankButton")
         {
-            bankUIPanels[1].SetActive(true);
+            SetCurrentPanelIndex(1);
+            Debug.Log("Current panel Index: " + currentPanelIndex);
+            bankUIPanels[currentPanelIndex].SetActive(true);
         }
         else if (gameObject.name == "NationalFooBankButton")
         {
-            bankUIPanels[2].SetActive(true);
+            SetCurrentPanelIndex(2);
+            Debug.Log("Current panel Index: " + currentPanelIndex);
+            bankUIPanels[currentPanelIndex].SetActive(true);
         }
-
 
         if (gameObject.name == "ReturnBackButtonRashid")
         {
