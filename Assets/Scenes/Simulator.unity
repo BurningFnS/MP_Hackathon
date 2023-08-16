@@ -19566,6 +19566,7 @@ GameObject:
   - component: {fileID: 700563026}
   - component: {fileID: 700563025}
   - component: {fileID: 700563024}
+  - component: {fileID: 700563027}
   m_Layer: 5
   m_Name: SideArrowLeft
   m_TagString: Untagged
@@ -19687,6 +19688,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700563022}
   m_CullTransparentMesh: 1
+--- !u!114 &700563027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700563022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  investmentUIPanels: []
+  bankUIPanels:
+  - {fileID: 677177682}
+  - {fileID: 1131141100}
+  - {fileID: 747177730}
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &705050245
 GameObject:
   m_ObjectHideFlags: 0
@@ -20524,6 +20548,7 @@ GameObject:
   - component: {fileID: 727595006}
   - component: {fileID: 727595005}
   - component: {fileID: 727595004}
+  - component: {fileID: 727595007}
   m_Layer: 5
   m_Name: SideArrowLeft
   m_TagString: Untagged
@@ -20607,18 +20632,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: BankOnLeftArrowButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &727595005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20657,6 +20670,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727595002}
   m_CullTransparentMesh: 1
+--- !u!114 &727595007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727595002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  investmentUIPanels: []
+  bankUIPanels:
+  - {fileID: 677177682}
+  - {fileID: 1131141100}
+  - {fileID: 747177730}
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &730305989
 GameObject:
   m_ObjectHideFlags: 0
@@ -31577,6 +31613,7 @@ GameObject:
   - component: {fileID: 1275737865}
   - component: {fileID: 1275737864}
   - component: {fileID: 1275737863}
+  - component: {fileID: 1275737866}
   m_Layer: 5
   m_Name: SideArrowRight
   m_TagString: Untagged
@@ -31660,18 +31697,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: BankOnRightArrowButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1275737864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31710,6 +31735,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275737861}
   m_CullTransparentMesh: 1
+--- !u!114 &1275737866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275737861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  investmentUIPanels: []
+  bankUIPanels:
+  - {fileID: 677177682}
+  - {fileID: 1131141100}
+  - {fileID: 747177730}
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1280059512
 GameObject:
   m_ObjectHideFlags: 0
@@ -37697,7 +37745,10 @@ MonoBehaviour:
   - {fileID: 508608169}
   - {fileID: 599699561}
   - {fileID: 753397164}
-  bankUIPanels: []
+  bankUIPanels:
+  - {fileID: 677177682}
+  - {fileID: 1131141100}
+  - {fileID: 747177730}
   jobUIPanels: []
   insuranceUIPanels: []
   propertyUIPanels: []
@@ -46640,6 +46691,7 @@ GameObject:
   - component: {fileID: 1917711798}
   - component: {fileID: 1917711797}
   - component: {fileID: 1917711796}
+  - component: {fileID: 1917711799}
   m_Layer: 5
   m_Name: SideArrowRight
   m_TagString: Untagged
@@ -46723,18 +46775,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: BankOnRightArrowButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1917711797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46773,6 +46813,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917711794}
   m_CullTransparentMesh: 1
+--- !u!114 &1917711799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917711794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  investmentUIPanels: []
+  bankUIPanels:
+  - {fileID: 677177682}
+  - {fileID: 1131141100}
+  - {fileID: 747177730}
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
 --- !u!1 &1918109854
 GameObject:
   m_ObjectHideFlags: 0
