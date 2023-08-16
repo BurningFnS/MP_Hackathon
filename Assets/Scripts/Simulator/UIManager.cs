@@ -19,6 +19,10 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
 
     public int currentPanelIndex;
 
+    public static bool atBankOfRashid;
+    public static bool atBankOfJunnie;
+    public static bool atBankOfFoo;
+
     private void Start()
     {
         currentPanelIndex = 0;  // Set an initial value for currentPanelIndex
@@ -250,30 +254,36 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         if (gameObject.name == "ConfirmButtonRashid")
         {
             bankDepositUIPanels[0].SetActive(true);
+            atBankOfRashid = true;
         }
         if (gameObject.name == "ConfirmButtonJunnie")
         {
             bankDepositUIPanels[1].SetActive(true);
+            atBankOfJunnie = true;
         }
         if (gameObject.name == "ConfirmButtonFoo")
         {
-            bankDepositUIPanels[3].SetActive(true);
+            bankDepositUIPanels[2].SetActive(true);
+            atBankOfFoo = true;
         }
 
         if (gameObject.name == "ReturnBackButtonRashid1")
         {
             bankUIPanels[0].SetActive(true);
             bankDepositUIPanels[0].SetActive(false);
+            atBankOfRashid = false;
         }
         if (gameObject.name == "ReturnBackButtonJunnie1")
         {
             bankUIPanels[1].SetActive(true);
             bankDepositUIPanels[1].SetActive(false);
+            atBankOfJunnie = false;
         }
         if (gameObject.name == "ReturnBackButtonFoo1")
         {
             bankUIPanels[1].SetActive(true);
             bankDepositUIPanels[2].SetActive(false);
+            atBankOfFoo = false;
         }
     }
 }

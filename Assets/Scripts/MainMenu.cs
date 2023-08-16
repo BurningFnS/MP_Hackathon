@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("CurrentCoins", 0);
         PlayerPrefs.SetInt("CurrentAge", 25);
 
+        PlayerPrefs.SetInt("BankOfRashidBalance", 0);
+        PlayerPrefs.SetInt("BankOfJunnieBalance", 0);
+        PlayerPrefs.SetInt("BankOfFooBalance", 0);
+
     }
     public void StartGame()
     {

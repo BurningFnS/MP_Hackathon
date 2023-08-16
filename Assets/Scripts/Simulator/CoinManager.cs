@@ -15,6 +15,8 @@ public class CoinManager : MonoBehaviour
     public int currentAge;
     public int defaultAge = 25;
 
+    public Bank bank;
+
     void Start()
     {
         totalCoins = PlayerPrefs.GetInt("CollectedCoins");
@@ -41,8 +43,11 @@ public class CoinManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentCoins", currentCoins);
         currentAge = currentAge + 5;
         PlayerPrefs.SetInt("CurrentAge", currentAge);
-        SceneManager.LoadScene("Level");
 
+        PlayerPrefs.SetInt("BankOfRashidBalance", bank.bankBalance[0]);
+        PlayerPrefs.SetInt("BankOfJunnieBalance", bank.bankBalance[1]);
+        PlayerPrefs.SetInt("BankOfFooBalance", bank.bankBalance[2]);
+
+        SceneManager.LoadScene("Level");
     }
 }
-
