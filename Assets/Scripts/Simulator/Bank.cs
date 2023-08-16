@@ -5,39 +5,47 @@ using UnityEngine.UI;
 
 public class Bank : MonoBehaviour
 {
-    public InputField amountInputField;
-    public Text moneyInBankText;
+    public InputField[] amountInputField;
+    public Text[] moneyInBankText;
     public GameObject error;
     public Text errorText;
 
-    private float bankBalance = 0;
+    public int[] bankBalance;
     public CoinManager coinManager;
 
     private void Start()
     {
-        UpdateBankBalanceText();
-        // Retrieve the number of collected coins from PlayerPrefs
+        bankBalance[0] = PlayerPrefs.GetInt("BankOfRashidBalance");
+        bankBalance[1] = PlayerPrefs.GetInt("BankOfJunnieBalance");
+        bankBalance[2] = PlayerPrefs.GetInt("BankOfFooBalance");
+
+        for (int i = 0; i < moneyInBankText.Length; i++)
+        {
+            moneyInBankText[i].text = "Money in bank: $" + bankBalance[i].ToString("");
+        }
     }
     public void DepositAmount()
     {
+        int bankIndex = GetBankIndex();
+
         // Check if the input is a valid number
-        if (int.TryParse(amountInputField.text, out int InputAmount))
+        if (int.TryParse(amountInputField[bankIndex].text, out int InputAmount))
         {
             //Deposit amount is less than or equal to total coins, so player can deposit
             if(InputAmount <= coinManager.currentCoins)
             {
                 // Update the bank balance
-                bankBalance += InputAmount;
+                bankBalance[bankIndex] += InputAmount;
 
                 //Update the coin balance
                 coinManager.currentCoins -= InputAmount;
 
                 // Update the balance text
-                UpdateBankBalanceText();
+                moneyInBankText[bankIndex].text = "Money in bank: $" + bankBalance[bankIndex].ToString("");
                 coinManager.UpdateCoinDisplay();
 
                 // Clear the input field and feedback text
-                amountInputField.text = "";
+                amountInputField[bankIndex].text = "";
             }
             else
             {
@@ -56,21 +64,23 @@ public class Bank : MonoBehaviour
 
     public void WithdrawAmount()
     {
+        int bankIndex = GetBankIndex();
+
         // Check if the input is a valid number
-        if (int.TryParse(amountInputField.text, out int InputAmount))
+        if (int.TryParse(amountInputField[bankIndex].text, out int InputAmount))
         {
-            if (InputAmount <= bankBalance)
+            if (InputAmount <= bankBalance[bankIndex])
             {
                 coinManager.currentCoins += InputAmount;
 
-                bankBalance -= InputAmount;
+                bankBalance[bankIndex] -= InputAmount;
 
                 // Update the balance text
-                UpdateBankBalanceText();
+                moneyInBankText[bankIndex].text = "Money in bank: $" + bankBalance[bankIndex].ToString("");
                 coinManager.UpdateCoinDisplay();
 
                 // Clear the input field and feedback text
-                amountInputField.text = "";
+                amountInputField[bankIndex].text = "";
             }
             else
             {
@@ -87,14 +97,20 @@ public class Bank : MonoBehaviour
         }
     }
 
-    private void UpdateBankBalanceText()
-    {
-        moneyInBankText.text = "Money in bank: $" + bankBalance.ToString("");
-    }
-
     public void Close()
     {
         error.SetActive(false);
         errorText.text = "";
+    }
+
+    int GetBankIndex()
+    {
+        if (UIManager.atBankOfRashid)
+            return 0;
+        else if (UIManager.atBankOfJunnie)
+            return 1;
+        else if (UIManager.atBankOfFoo)
+            return 2;
+        return -1;
     }
 }
