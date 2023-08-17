@@ -44,9 +44,9 @@ public class CoinManager : MonoBehaviour
         currentAge = currentAge + 5;
         PlayerPrefs.SetInt("CurrentAge", currentAge);
 
-        PlayerPrefs.SetInt("BankOfRashidBalance", bank.bankBalance[0]);
-        PlayerPrefs.SetInt("BankOfJunnieBalance", bank.bankBalance[1]);
-        PlayerPrefs.SetInt("BankOfFooBalance", bank.bankBalance[2]);
+        PlayerPrefs.SetFloat("BankOfRashidBalance", bank.bankBalance[0]);
+        PlayerPrefs.SetFloat("BankOfJunnieBalance", bank.bankBalance[1]);
+        PlayerPrefs.SetFloat("BankOfFooBalance", bank.bankBalance[2]);
 
         SceneManager.LoadScene("Level");
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34570014, g: 0.6317408, b: 0.8684247, a: 1}
+  m_IndirectSpecularColor: {r: 0.34592992, g: 0.6318323, b: 0.8684931, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -34987,8 +34987,13 @@ MonoBehaviour:
   - {fileID: 950103296}
   error: {fileID: 493903170}
   errorText: {fileID: 1766421135}
-  bankBalance: 000000000000000000000000
+  bankBalance:
+  - 0
+  - 0
+  - 0
   coinManager: {fileID: 1122658503}
+  interestAmount: 0
+  bankBalanceWithInterest: 0
 --- !u!1 &1447612452
 GameObject:
   m_ObjectHideFlags: 0
