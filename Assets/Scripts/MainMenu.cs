@@ -16,6 +16,9 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("BankOfJunnieBalance", 0);
         PlayerPrefs.SetInt("BankOfFooBalance", 0);
 
+        PlayerPrefs.SetInt("JobIndex", 0);
+        PlayerPrefs.SetInt("Salary", 0);
+
     }
     public void StartGame()
     {

@@ -721,6 +721,9 @@ MonoBehaviour:
   - {fileID: 1598912694}
   - {fileID: 2140479336}
   - {fileID: 2104858943}
+  isPhotographer: 0
+  isPlumber: 0
+  isZookeeper: 0
 --- !u!4 &397532177
 Transform:
   m_ObjectHideFlags: 0
@@ -1577,7 +1580,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: 'Income: 45600/year
+  m_Text: 'Income: 400/year
 
     Perks: difficult to promote but large pay raise
 
@@ -2792,7 +2795,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Income: 48000/year\r\nPerks: Faster promotion \r\nStability of job: Stable"
+  m_Text: "Income: 480/year\r\nPerks: Faster promotion \r\nStability of job: Stable"
 --- !u!222 &1242765918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4041,6 +4044,9 @@ MonoBehaviour:
   - {fileID: 1598912694}
   - {fileID: 2140479336}
   - {fileID: 2104858943}
+  isPhotographer: 0
+  isPlumber: 0
+  isZookeeper: 0
 --- !u!1 &1840897481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4830,7 +4836,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Income: 36000/year\r\nPerks: Large pay raise only\r\nafter working long
+  m_Text: "Income: 360/year\r\nPerks: Large pay raise only\r\nafter working long
     term \r\nStability of job: Stable"
 --- !u!222 &2085798051
 CanvasRenderer:
