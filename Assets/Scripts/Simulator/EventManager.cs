@@ -8,6 +8,7 @@ public class EventManager : MonoBehaviour
     public Text[] livingExpensesText;
     public int[] livingExpenses;
     public GameObject yourExpenses;
+    public CoinManager coinManager;
 
     void Start()
     {
@@ -35,7 +36,9 @@ public class EventManager : MonoBehaviour
 
     public void Pay()
     {
-
+        coinManager.currentCoins -= livingExpenses[2];
+        coinManager.UpdateCoinDisplay();
+        yourExpenses.SetActive(false);
     }
- 
+
 }
