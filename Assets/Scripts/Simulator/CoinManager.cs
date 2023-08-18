@@ -17,6 +17,7 @@ public class CoinManager : MonoBehaviour
 
     public Bank bank;
     public GameObject negativeBalancePanel;
+    public GameObject losePanel;
     public Text alertText;
 
     void Start()
@@ -57,14 +58,16 @@ public class CoinManager : MonoBehaviour
             PlayerPrefs.SetFloat("BankOfJunnieBalance", bank.bankBalance[1]);
             PlayerPrefs.SetFloat("BankOfFooBalance", bank.bankBalance[2]);
 
-            PlayerPrefs.SetInt("minExpenses", PlayerPrefs.GetInt("minExpenses") + 200);
-            PlayerPrefs.SetInt("maxExpenses", PlayerPrefs.GetInt("maxExpenses") + 300);
-           
             SceneManager.LoadScene("Level");
         }
     }
 
     public void Proceed()
+    {
+        losePanel.SetActive(true);
+    }
+
+    public void Return()
     {
         negativeBalancePanel.SetActive(false);
     }

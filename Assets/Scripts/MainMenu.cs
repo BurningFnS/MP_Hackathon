@@ -12,8 +12,8 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("CurrentCoins", 0);
         PlayerPrefs.SetInt("CurrentAge", 25);
 
-        PlayerPrefs.SetInt("minExpenses", 100);
-        PlayerPrefs.SetInt("maxExpenses", 200);
+        PlayerPrefs.SetInt("WaterBill", 200);
+        PlayerPrefs.SetInt("ElectricalBill", 200);
 
         PlayerPrefs.SetInt("BankOfRashidBalance", 0);
         PlayerPrefs.SetInt("BankOfJunnieBalance", 0);

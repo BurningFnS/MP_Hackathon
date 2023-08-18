@@ -10,26 +10,29 @@ public class EventManager : MonoBehaviour
     public int[] livingExpenses;
     public GameObject yourExpenses;
     public CoinManager coinManager;
-    public GameObject LoseScreen;
-    public Text loseText;
 
+    public GameObject[] randomEventPanel;
 
     void Start()
     {
-        int minNum = PlayerPrefs.GetInt("minExpenses");
-        int maxNum = PlayerPrefs.GetInt("maxExpenses");
+        int waterBill = PlayerPrefs.GetInt("WaterBill");
+        int elecBill = PlayerPrefs.GetInt("ElectricalBill");
+
 
         for (int i = 0; i < livingExpenses.Length; i++)
         {
+            int changeInCostOfLiving = Random.Range(-50, 100);
             if (i == 0)
             {
-                livingExpenses[i] = Random.Range(minNum, maxNum);
+                livingExpenses[i] = waterBill + changeInCostOfLiving;
                 livingExpensesText[i].text = "Water Bill: " + livingExpenses[0];
+                PlayerPrefs.SetInt("WaterBill", livingExpenses[i]);
             }
             if (i == 1)
             {
-                livingExpenses[i] = Random.Range(minNum, maxNum);
+                livingExpenses[i] = elecBill + changeInCostOfLiving;
                 livingExpensesText[i].text = "Electrical Bill: " + livingExpenses[1];
+                PlayerPrefs.SetInt("ElectricalBill", livingExpenses[i]);
             }
             if (i == 2)
             {
@@ -40,6 +43,7 @@ public class EventManager : MonoBehaviour
 
         //Show expenses panel
         yourExpenses.SetActive(true);
+        BuildingClickHandler.canClickOnBuildings = false;
     }
 
     public void Pay()
@@ -47,6 +51,9 @@ public class EventManager : MonoBehaviour
         coinManager.currentCoins -= livingExpenses[2];
         coinManager.UpdateCoinDisplay();
         yourExpenses.SetActive(false);
+        BuildingClickHandler.canClickOnBuildings = true;
+
+        //randomEventPanel[Random.Range(0, randomEventPanel.Length)].SetActive(true);
     }
 
     public void Restart()
