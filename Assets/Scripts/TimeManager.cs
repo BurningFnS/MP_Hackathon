@@ -23,6 +23,9 @@ public class TimeManager : MonoBehaviour
     public GameObject magnetPanel;
 
     public Text coinText;
+    public Text salaryText;
+    public int salary;
+    public int totalCoins;
 
     void Start()
     {
@@ -30,6 +33,7 @@ public class TimeManager : MonoBehaviour
         shieldPanel.SetActive(false);
         magnetPanel.SetActive(false);
         pausedScreen.SetActive(false);
+        salary = PlayerPrefs.GetInt("Salary");
     }
 
     void Update()
@@ -38,7 +42,9 @@ public class TimeManager : MonoBehaviour
             return;
 
 
-        coinText.text = "Collected: " + PlayerManager.numberOfCoins;    
+        coinText.text = "Collected: " + PlayerManager.numberOfCoins;
+        salaryText.text = "Salary: " + salary;
+        
 
 
         if (!isGameOver) 
@@ -123,7 +129,7 @@ public class TimeManager : MonoBehaviour
     public void Proceed()
     {
         SceneManager.LoadScene("Simulator");
-
-        PlayerPrefs.SetInt("CollectedCoins", PlayerManager.numberOfCoins);
+        totalCoins = PlayerManager.numberOfCoins + (salary * 5);
+        PlayerPrefs.SetInt("CollectedCoins", totalCoins);
     }
 }

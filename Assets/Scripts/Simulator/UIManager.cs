@@ -281,7 +281,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         }
         if (gameObject.name == "ReturnBackButtonFoo1")
         {
-            bankUIPanels[1].SetActive(true);
+            bankUIPanels[2].SetActive(true);
             bankDepositUIPanels[2].SetActive(false);
             atBankOfFoo = false;
         }
