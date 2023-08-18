@@ -16,6 +16,8 @@ public class CoinManager : MonoBehaviour
     public int defaultAge = 25;
 
     public Bank bank;
+    public GameObject negativeBalancePanel;
+    public Text alertText;
 
     void Start()
     {
@@ -40,14 +42,30 @@ public class CoinManager : MonoBehaviour
 
     public void Continue()
     {
-        PlayerPrefs.SetInt("CurrentCoins", currentCoins);
-        currentAge = currentAge + 5;
-        PlayerPrefs.SetInt("CurrentAge", currentAge);
+        if(currentCoins < 0)
+        {
+            alertText.text = "You have negative balance of " + currentCoins;
+            negativeBalancePanel.SetActive(true);
+        }
+        else if(currentCoins >= 0)
+        {
+            PlayerPrefs.SetInt("CurrentCoins", currentCoins);
+            currentAge = currentAge + 5;
+            PlayerPrefs.SetInt("CurrentAge", currentAge);
 
-        PlayerPrefs.SetFloat("BankOfRashidBalance", bank.bankBalance[0]);
-        PlayerPrefs.SetFloat("BankOfJunnieBalance", bank.bankBalance[1]);
-        PlayerPrefs.SetFloat("BankOfFooBalance", bank.bankBalance[2]);
+            PlayerPrefs.SetFloat("BankOfRashidBalance", bank.bankBalance[0]);
+            PlayerPrefs.SetFloat("BankOfJunnieBalance", bank.bankBalance[1]);
+            PlayerPrefs.SetFloat("BankOfFooBalance", bank.bankBalance[2]);
 
-        SceneManager.LoadScene("Level");
+            PlayerPrefs.SetInt("minExpenses", PlayerPrefs.GetInt("minExpenses") + 200);
+            PlayerPrefs.SetInt("maxExpenses", PlayerPrefs.GetInt("maxExpenses") + 300);
+           
+            SceneManager.LoadScene("Level");
+        }
+    }
+
+    public void Proceed()
+    {
+        negativeBalancePanel.SetActive(false);
     }
 }
