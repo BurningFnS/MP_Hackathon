@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8f0c77e02d7c043468eee4ec02dc1124
+guid: 59fd6ced1bff8bb4b90bdef1d5a2f00e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -112,17 +112,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eventIcon_1
+      name: FireNCarAccident_0
       rect:
         serializedVersion: 2
-        x: 260
-        y: 186
-        width: 128
-        height: 147
+        x: 194
+        y: 5
+        width: 212
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08552e53c25df1148a4bad9d967fc765
-      internalID: 151279725
+      spriteID: cbc02e72a0442c54dacce215d5f85932
+      internalID: -2126644006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eventIcon_4
+      name: FireNCarAccident_1
       rect:
         serializedVersion: 2
-        x: 402
-        y: 176
-        width: 205
-        height: 147
+        x: 3
+        y: 10
+        width: 180
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faf9ae710a1c9264db115c4c3e1e446d
-      internalID: -1912190991
+      spriteID: becb2236f715df54ba418f042b4983b3
+      internalID: -1103972595
       vertices: []
       indices: 
       edges: []
@@ -160,7 +172,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f0e2ad4a76d7db94ebd6db7e0c52fd22
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -168,16 +180,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      eventIcon_4: -1912190991
-      eventIcon_3: -466839456
-      eventIcon_8: 251554767
-      eventIcon_7: -1666660585
-      eventIcon_9: -743725855
-      eventIcon_0: -912020108
-      eventIcon_5: -1400801515
-      eventIcon_1: 151279725
-      eventIcon_6: -1388276144
-      eventIcon_2: -1223851912
+      FireNCarAccident_1: 1729304655
+      FireNCarAccident_0: 1148261975
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
