@@ -42,6 +42,16 @@ public class PlayerController : MonoBehaviour
 
     private bool isRolling = false;
 
+    public AudioSource collisionSource;
+    public AudioClip collisionImpactSFX;
+
+    public AudioSource powerUpSource;
+    public AudioClip powerUpSFX;
+
+    public AudioSource coinSource;
+    public AudioClip coinImpactSFX;
+
+
     void Start()
     {
         smokeBurst = smokeParticles.GetComponent<ParticleSystem>();
@@ -179,6 +189,7 @@ public class PlayerController : MonoBehaviour
 
         if (magnetEffectActive)
         {
+            PowerUpSFX();
             Debug.Log("Magnet Enabled");
 
             // Update magnet remaining time and disable magnet effect if time is up
@@ -209,6 +220,7 @@ public class PlayerController : MonoBehaviour
 
         if (shieldEffectActive)
         {
+            PowerUpSFX();
             Debug.Log("Shield Enabled");
             shieldRemainingTime -= Time.deltaTime;
             if (shieldRemainingTime <= 0f)
@@ -289,6 +301,7 @@ public class PlayerController : MonoBehaviour
 
     public void EnableShieldEffect(float duration)
     {
+        
         shieldEffectActive = true;
         shieldBarrier.SetActive(true);
         shieldRemainingTime = duration;
@@ -313,6 +326,7 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.transform.tag == "Obstacle")
             {
+                PlayCollisionSFX();
                 smokeBurst.Play();
                 Destroy(hit.gameObject); //Destroy the collided obstacle
                 CoinExplosion();
@@ -320,11 +334,27 @@ public class PlayerController : MonoBehaviour
 
             if (hit.transform.tag == "Car")
             {
+                PlayCollisionSFX();
                 explosionBurst.Play();
                 Destroy(hit.gameObject); //Destroy the collided obstacle
                 CoinExplosion();
             }
         }
+    }
+
+    private void PlayCollisionSFX()
+    {
+        collisionSource.PlayOneShot(collisionImpactSFX);
+    }
+
+    private void PlayCoinSFX()
+    {
+        coinSource.PlayOneShot(coinImpactSFX);
+    }
+
+    private void PowerUpSFX()
+    {
+        powerUpSource.PlayOneShot(powerUpSFX);
     }
 
     private void CoinExplosion()
@@ -333,6 +363,8 @@ public class PlayerController : MonoBehaviour
         int randomNumber = Random.Range(1, 3);
         bursts[0].count = randomNumber;
         coinBurst.emission.SetBursts(bursts);
+
+        PlayCoinSFX();
         coinBurst.Play(); // Play coin burst particle
 
         PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
