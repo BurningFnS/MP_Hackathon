@@ -13,41 +13,33 @@ public class EventManager : MonoBehaviour
     public GameObject LoseScreen;
     public Text loseText;
 
+
     void Start()
     {
+        int minNum = PlayerPrefs.GetInt("minExpenses");
+        int maxNum = PlayerPrefs.GetInt("maxExpenses");
+
         for (int i = 0; i < livingExpenses.Length; i++)
         {
-            if(i == 0)
+            if (i == 0)
             {
-                livingExpenses[i] = 100;
+                livingExpenses[i] = Random.Range(minNum, maxNum);
                 livingExpensesText[i].text = "Water Bill: " + livingExpenses[0];
             }
-            if(i == 1)
+            if (i == 1)
             {
-                livingExpenses[i] = 100;
+                livingExpenses[i] = Random.Range(minNum, maxNum);
                 livingExpensesText[i].text = "Electrical Bill: " + livingExpenses[1];
             }
-            if(i == 2)
+            if (i == 2)
             {
                 livingExpenses[i] = livingExpenses[0] + livingExpenses[1];
                 livingExpensesText[i].text = "Total Bill: " + livingExpenses[i];
             }
         }
 
-        if (coinManager.currentCoins >= livingExpenses[2])
-        {
-            yourExpenses.SetActive(true);
-        }
-        else if (coinManager.currentCoins < livingExpenses[2])
-        {
-            LoseScreen.SetActive(true);
-            loseText.text = "You do not have enough to pay you your expenses";
-        }
-        else
-        {
-            LoseScreen.SetActive(true);
-            loseText.text = "You have $0 in your\n savings, you do not have enough to live";
-        }
+        //Show expenses panel
+        yourExpenses.SetActive(true);
     }
 
     public void Pay()
