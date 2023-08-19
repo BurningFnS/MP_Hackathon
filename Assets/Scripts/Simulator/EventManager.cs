@@ -25,19 +25,19 @@ public class EventManager : MonoBehaviour
             if (i == 0)
             {
                 livingExpenses[i] = waterBill + changeInCostOfLiving;
-                livingExpensesText[i].text = "Water Bill: " + livingExpenses[0];
+                livingExpensesText[i].text = "Water Bill: $" + livingExpenses[0];
                 PlayerPrefs.SetInt("WaterBill", livingExpenses[i]);
             }
             if (i == 1)
             {
                 livingExpenses[i] = elecBill + changeInCostOfLiving;
-                livingExpensesText[i].text = "Electrical Bill: " + livingExpenses[1];
+                livingExpensesText[i].text = "Electrical Bill: $" + livingExpenses[1];
                 PlayerPrefs.SetInt("ElectricalBill", livingExpenses[i]);
             }
             if (i == 2)
             {
                 livingExpenses[i] = livingExpenses[0] + livingExpenses[1];
-                livingExpensesText[i].text = "Total Bill: " + livingExpenses[i];
+                livingExpensesText[i].text = "Total: $" + livingExpenses[i];
             }
         }
 

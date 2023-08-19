@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InsuranceManager : MonoBehaviour
 {
+
     void Start()
     {
         
