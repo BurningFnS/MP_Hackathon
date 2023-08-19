@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
 {
     public GameObject[] clickedPanel;
 
+    public GameObject[] currentUIpanels;
+
     public GameObject[] investmentUIPanels;
     public GameObject[] bankUIPanels;
     public GameObject[] jobUIPanels;
@@ -46,50 +48,90 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     }
 
 
-    public void GoNext()
+    public void GoNext(string listPanel)
     {
-        for (var i = 0; i < bankUIPanels.Length; i++)
+        if (listPanel == "Bank")
         {
-            if (bankUIPanels[i].activeSelf == true)
+            currentUIpanels = bankUIPanels;
+        }
+        if (listPanel == "Job")
+        {
+            currentUIpanels = jobUIPanels;
+        }
+        if (listPanel == "Investment")
+        {
+            currentUIpanels = investmentUIPanels;
+        }
+        if (listPanel == "Insurance")
+        {
+            currentUIpanels = insuranceUIPanels;
+        }
+        if (listPanel == "Property")
+        {
+            currentUIpanels = propertyUIPanels;
+        }
+        for (var i = 0; i < currentUIpanels.Length; i++)
+        {
+            if (currentUIpanels[i].activeSelf == true)
             {
                 currentPanelIndex = i;
-                Debug.Log(currentPanelIndex);
+                //Debug.Log(currentPanelIndex);
                 break;
             }
         }
-        Debug.Log("before: " + currentPanelIndex);
-        bankUIPanels[currentPanelIndex].SetActive(false);
+        //Debug.Log("before: " + currentPanelIndex);
+        currentUIpanels[currentPanelIndex].SetActive(false);
         currentPanelIndex++;
-        if (currentPanelIndex >= bankUIPanels.Length)
+        if (currentPanelIndex >= currentUIpanels.Length)
         {
-            Debug.Log("back to 0");
+            //Debug.Log("back to 0");
             currentPanelIndex = 0;
         }
-        Debug.Log("After: " + currentPanelIndex);
-        bankUIPanels[currentPanelIndex].SetActive(true);
+        //Debug.Log("After: " + currentPanelIndex);
+        currentUIpanels[currentPanelIndex].SetActive(true);
     }
 
-    public void GoPrevious()
+    public void GoPrevious(string listPanel)
     {
-        for (var i = 0; i < bankUIPanels.Length; i++)
+        if (listPanel == "Bank")
         {
-            if (bankUIPanels[i].activeSelf == true)
+            currentUIpanels = bankUIPanels;
+        }
+        if (listPanel == "Job")
+        {
+            currentUIpanels = jobUIPanels;
+        }
+        if (listPanel == "Investment")
+        {
+            currentUIpanels = investmentUIPanels;
+        }
+        if (listPanel == "Insurance")
+        {
+            currentUIpanels = insuranceUIPanels;
+        }
+        if (listPanel == "Property")
+        {
+            currentUIpanels = propertyUIPanels;
+        }
+        for (var i = 0; i < currentUIpanels.Length; i++)
+        {
+            if (currentUIpanels[i].activeSelf == true)
             {
                 currentPanelIndex = i;
-                Debug.Log(currentPanelIndex);
+                //Debug.Log(currentPanelIndex);
                 break;
             }
         }
-        Debug.Log("before: " + currentPanelIndex);
-        bankUIPanels[currentPanelIndex].SetActive(false);
+        //Debug.Log("before: " + currentPanelIndex);
+        currentUIpanels[currentPanelIndex].SetActive(false);
         currentPanelIndex--;
         if (currentPanelIndex < 0)
         {
-            Debug.Log("back to 2");
+            //Debug.Log("back to 2");
             currentPanelIndex = 2;
         }
-        Debug.Log("After: " + currentPanelIndex);
-        bankUIPanels[currentPanelIndex].SetActive(true);
+        //Debug.Log("After: " + currentPanelIndex);
+        currentUIpanels[currentPanelIndex].SetActive(true);
     }
 
     public void OnPointerClick(PointerEventData eventData)

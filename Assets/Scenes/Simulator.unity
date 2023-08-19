@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34578177, g: 0.6317545, b: 0.86845326, a: 1}
+  m_IndirectSpecularColor: {r: 0.34603092, g: 0.631915, b: 0.86851895, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8123,7 +8123,7 @@ MonoBehaviour:
 
     Bank Security: Average
 
-    
+
 
     Compound
     interest of 10% per annum'
@@ -40863,6 +40863,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566667678}
   m_CullTransparentMesh: 1
+--- !u!1 &1569758521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569758522}
+  m_Layer: 0
+  m_Name: InvestmentManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1569758522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569758521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1577560171
 GameObject:
   m_ObjectHideFlags: 0
@@ -46053,10 +46084,10 @@ MonoBehaviour:
 
     Bank Security: Good
 
-    
 
-    Compound
-    interest of 12% per annum'
+
+    Compound interest
+    of 12% per annum'
 --- !u!222 &1791079792
 CanvasRenderer:
   m_ObjectHideFlags: 0
