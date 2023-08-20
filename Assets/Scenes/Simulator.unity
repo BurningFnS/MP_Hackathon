@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34570768, g: 0.63170034, b: 0.8684292, a: 1}
+  m_IndirectSpecularColor: {r: 0.3457115, g: 0.6318271, b: 0.86851346, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33059,6 +33059,7 @@ MonoBehaviour:
   negativeBalancePanel: {fileID: 921383028}
   losePanel: {fileID: 479171632}
   alertText: {fileID: 552494222}
+  investment: {fileID: 1569758523}
 --- !u!4 &1122658504
 Transform:
   m_ObjectHideFlags: 0
