@@ -15,12 +15,16 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("WaterBill", 200);
         PlayerPrefs.SetInt("ElectricalBill", 200);
 
-        PlayerPrefs.SetInt("BankOfRashidBalance", 0);
-        PlayerPrefs.SetInt("BankOfJunnieBalance", 0);
-        PlayerPrefs.SetInt("BankOfFooBalance", 0);
+        PlayerPrefs.SetFloat("BankOfRashidBalance", 0f);
+        PlayerPrefs.SetFloat("BankOfJunnieBalance", 0f);
+        PlayerPrefs.SetFloat("BankOfFooBalance", 0f);
 
         PlayerPrefs.SetInt("JobIndex", 0);
         PlayerPrefs.SetInt("Salary", 0);
+
+        PlayerPrefs.SetFloat("GameInvestmentBalance", 0f);
+        PlayerPrefs.SetFloat("BusinessInvestmentBalance", 0f);
+        PlayerPrefs.SetFloat("GymInvestmentBalance", 0f);
 
     }
     public void StartGame()

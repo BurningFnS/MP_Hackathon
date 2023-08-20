@@ -20,6 +20,8 @@ public class CoinManager : MonoBehaviour
     public GameObject losePanel;
     public Text alertText;
 
+    public InvestmentManager investment;
+
     void Start()
     {
         totalCoins = PlayerPrefs.GetInt("CollectedCoins");
@@ -57,6 +59,10 @@ public class CoinManager : MonoBehaviour
             PlayerPrefs.SetFloat("BankOfRashidBalance", bank.bankBalance[0]);
             PlayerPrefs.SetFloat("BankOfJunnieBalance", bank.bankBalance[1]);
             PlayerPrefs.SetFloat("BankOfFooBalance", bank.bankBalance[2]);
+
+            PlayerPrefs.SetFloat("GameInvestmentBalance", investment.investmentBalance[0]);
+            PlayerPrefs.SetFloat("BusinessInvestmentBalance", investment.investmentBalance[1]);
+            PlayerPrefs.SetFloat("GymInvestmentBalance", investment.investmentBalance[2]);
 
             SceneManager.LoadScene("Level");
         }

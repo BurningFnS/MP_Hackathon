@@ -4673,12 +4673,12 @@ RectTransform:
   m_Children:
   - {fileID: 408067748}
   - {fileID: 194354343}
-  m_Father: {fileID: 1200579060}
+  m_Father: {fileID: 1624810761}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218.26569, y: 1.3378296}
+  m_AnchoredPosition: {x: 120.86568, y: -55.66218}
   m_SizeDelta: {x: 203.6419, y: 40.9098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124667762
@@ -6811,8 +6811,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445708475}
-        m_TargetAssemblyTypeName: Bank, Assembly-CSharp
+      - m_Target: {fileID: 1569758523}
+        m_TargetAssemblyTypeName: InvestmentManager, Assembly-CSharp
         m_MethodName: DepositAmount
         m_Mode: 1
         m_Arguments:
@@ -8348,8 +8348,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445708475}
-        m_TargetAssemblyTypeName: Bank, Assembly-CSharp
+      - m_Target: {fileID: 1569758523}
+        m_TargetAssemblyTypeName: InvestmentManager, Assembly-CSharp
         m_MethodName: DepositAmount
         m_Mode: 1
         m_Arguments:
@@ -22877,8 +22877,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445708475}
-        m_TargetAssemblyTypeName: Bank, Assembly-CSharp
+      - m_Target: {fileID: 1569758523}
+        m_TargetAssemblyTypeName: InvestmentManager, Assembly-CSharp
         m_MethodName: WithdrawAmount
         m_Mode: 1
         m_Arguments:
@@ -28355,8 +28355,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445708475}
-        m_TargetAssemblyTypeName: Bank, Assembly-CSharp
+      - m_Target: {fileID: 1569758523}
+        m_TargetAssemblyTypeName: InvestmentManager, Assembly-CSharp
         m_MethodName: DepositAmount
         m_Mode: 1
         m_Arguments:
@@ -31603,8 +31603,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445708475}
-        m_TargetAssemblyTypeName: Bank, Assembly-CSharp
+      - m_Target: {fileID: 1569758523}
+        m_TargetAssemblyTypeName: InvestmentManager, Assembly-CSharp
         m_MethodName: WithdrawAmount
         m_Mode: 1
         m_Arguments:
@@ -34415,10 +34415,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 124667761}
+  m_Children: []
   m_Father: {fileID: 1624810761}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -42728,6 +42727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1569758522}
+  - component: {fileID: 1569758523}
   m_Layer: 0
   m_Name: InvestmentManager
   m_TagString: Untagged
@@ -42750,6 +42750,36 @@ Transform:
   m_Father: {fileID: 1701902652}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1569758523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569758521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c06ea6a016bd90439f786db5cc5b14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountInputField:
+  - {fileID: 1034387747}
+  - {fileID: 1730504082}
+  - {fileID: 124667762}
+  moneyInvestedText:
+  - {fileID: 575454386}
+  - {fileID: 780686029}
+  - {fileID: 1624810762}
+  error: {fileID: 493903170}
+  errorText: {fileID: 1766421135}
+  investmentBalance:
+  - 0
+  - 0
+  - 0
+  coinManager: {fileID: 1122658503}
+  gameInvestmentRate: 0
+  businessInvestmentRate: 0
+  gymInterestRate: 0
 --- !u!1 &1577560171
 GameObject:
   m_ObjectHideFlags: 0
@@ -43478,6 +43508,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 124667761}
   - {fileID: 1200579060}
   m_Father: {fileID: 753397165}
   m_RootOrder: 7
@@ -43520,7 +43551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money To Invest:  $0'
+  m_Text: 'Money Invested:  $0'
 --- !u!222 &1624810763
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54897,8 +54928,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445708475}
-        m_TargetAssemblyTypeName: Bank, Assembly-CSharp
+      - m_Target: {fileID: 1569758523}
+        m_TargetAssemblyTypeName: InvestmentManager, Assembly-CSharp
         m_MethodName: WithdrawAmount
         m_Mode: 1
         m_Arguments:
