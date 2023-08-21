@@ -1349,8 +1349,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1766064508}
         m_TargetAssemblyTypeName: JobManager, Assembly-CSharp
-        m_MethodName: CheckJobButton
-        m_Mode: 1
+        m_MethodName: AcquireJob
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6910,7 +6910,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184214667}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dcf416cd0412784daeeeb020c6032ef, type: 3}
   m_Name: 
@@ -6969,7 +6969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 184214671}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1766064508}
+        m_TargetAssemblyTypeName: JobManager, Assembly-CSharp
+        m_MethodName: ProceedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &184214671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27413,7 +27425,7 @@ GameObject:
   - component: {fileID: 883344672}
   - component: {fileID: 883344671}
   m_Layer: 5
-  m_Name: RetirementMoneyText
+  m_Name: HaveJobText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30587,7 +30599,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019412171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dcf416cd0412784daeeeb020c6032ef, type: 3}
   m_Name: 
@@ -30646,7 +30658,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1019412175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1766064508}
+        m_TargetAssemblyTypeName: JobManager, Assembly-CSharp
+        m_MethodName: ProceedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1019412175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31155,12 +31179,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1766064508}
         m_TargetAssemblyTypeName: JobManager, Assembly-CSharp
-        m_MethodName: CheckJobButton
-        m_Mode: 1
+        m_MethodName: AcquireJob
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -48448,11 +48472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b20e19a583c4324288bfec769a26380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HaveJobAlreadyPanel: {fileID: 0}
-  CongratulationsOnJobPanel: {fileID: 0}
-  CongratsJobText: {fileID: 0}
-  HaveJobText: {fileID: 0}
-  PhotographerSummaryText: {fileID: 0}
+  HaveJobAlreadyPanel: {fileID: 1808318258}
+  CongratulationsOnJobPanel: {fileID: 791493136}
+  LivingExpensesPanel: {fileID: 508644629}
+  CongratsJobText: {fileID: 1348327952}
+  HaveJobText: {fileID: 883344671}
 --- !u!4 &1766064509
 Transform:
   m_ObjectHideFlags: 0
@@ -59508,12 +59532,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1766064508}
         m_TargetAssemblyTypeName: JobManager, Assembly-CSharp
-        m_MethodName: CheckJobButton
-        m_Mode: 1
+        m_MethodName: AcquireJob
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

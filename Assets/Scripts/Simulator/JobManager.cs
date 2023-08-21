@@ -10,41 +10,76 @@ public class JobManager : MonoBehaviour
     //public Text coinText;
     public GameObject HaveJobAlreadyPanel;
     public GameObject CongratulationsOnJobPanel;
+    public GameObject LivingExpensesPanel; 
     public Text CongratsJobText;
     public Text HaveJobText;
-    public Text PhotographerSummaryText;
+    private bool isPhotographer;
+    private bool isZooKeeper;
+    private bool isPlumber;
 
     // Start is called before the first frame update
     void Start()
     {
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    public void CheckJobButton()
-    {
+        LivingExpensesPanel.SetActive(false);
         if (PlayerPrefs.GetInt("JobIndex") == 0)
         {
-            
-            //PhotographerSummaryText.text = "Photographer Closed";
-            Debug.Log("WAAAAAAAAAAAAA");
-
+            isPhotographer = true;
+            Debug.Log("ISPT");
         }
         if (PlayerPrefs.GetInt("JobIndex") == 1)
         {
-            //ZooKeeperSummaryText.text = "ZooKeeper Closed";
-            Debug.Log("BBBBBBBBBBBBB");
+            isZooKeeper = true;
+            Debug.Log("IZKT");
         }
         if (PlayerPrefs.GetInt("JobIndex") == 2)
         {
-            //PlumberSummaryText.text = "PlumberClosed";
-            Debug.Log("WAHAHAHAH");
+            isPlumber = true;
+            Debug.Log("IPT");
         }
     }
-
+    public void AcquireJob(int jobIndex)
+    {
+        if (jobIndex == 0 && !isPhotographer)
+        {
+            CongratulationsOnJobPanel.SetActive(true);
+            isPhotographer = true;
+            isPlumber = false;
+            isZooKeeper = false;
+            PlayerPrefs.SetInt("JobIndex", 0);
+            CongratsJobText.text = "You are now a Photographer!";
+            // Display UI messages for Photographer job
+        }
+        else if (jobIndex == 1 && !isZooKeeper)
+        {
+            CongratulationsOnJobPanel.SetActive(true);
+            isZooKeeper = true;
+            isPlumber = false;
+            isPhotographer = false;
+            PlayerPrefs.SetInt("JobIndex", 1);
+            CongratsJobText.text = "You are now a ZooKeeper!";
+            // Display UI messages for ZooKeeper job
+        }
+        else if (jobIndex == 2 && !isPlumber)
+        {
+            CongratulationsOnJobPanel.SetActive(true);
+            isPlumber = true;
+            isPhotographer = false;
+            isZooKeeper = false;
+            PlayerPrefs.SetInt("JobIndex", 2);
+            CongratsJobText.text = "You are now a Plumber!";
+            // Display UI messages for Plumber job
+        }
+        else
+        {
+            HaveJobAlreadyPanel.SetActive(true);
+            HaveJobText.text = "You already have this job!";
+        }
+        PlayerPrefs.Save(); // Save changes to PlayerPrefs
+    }
+  
+    public void ProceedButton()
+    {
+        CongratulationsOnJobPanel.SetActive(false);
+        HaveJobAlreadyPanel.SetActive(false);
+    }
 }
