@@ -43,6 +43,7 @@ public class EventManager : MonoBehaviour
 
         //Show expenses panel
         yourExpenses.SetActive(true);
+      
         BuildingClickHandler.canClickOnBuildings = false;
     }
 
