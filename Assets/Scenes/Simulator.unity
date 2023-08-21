@@ -2605,7 +2605,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Life Insurance
+  m_Text: Fire Insurance
 --- !u!222 &67798444
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21597,7 +21597,7 @@ GameObject:
   - component: {fileID: 706776402}
   - component: {fileID: 706776405}
   m_Layer: 5
-  m_Name: CriticalillnessInsuranceButton
+  m_Name: CarInsuranceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22169,7 +22169,7 @@ GameObject:
   - component: {fileID: 720290423}
   - component: {fileID: 720290426}
   m_Layer: 5
-  m_Name: LifeInsuranceButton
+  m_Name: FireInsuranceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30832,9 +30832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Critical Illness
-
-    Insurance'
+  m_Text: Car Insurance
 --- !u!222 &1056787157
 CanvasRenderer:
   m_ObjectHideFlags: 0
