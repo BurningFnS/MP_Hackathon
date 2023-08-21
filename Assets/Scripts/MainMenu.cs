@@ -26,6 +26,9 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("BusinessInvestmentBalance", 0f);
         PlayerPrefs.SetFloat("GymInvestmentBalance", 0f);
 
+        PlayerPrefs.SetInt("FireInsurance", 0);
+        PlayerPrefs.SetInt("HealthInsurance", 0);
+        PlayerPrefs.SetInt("CarInsurance", 0);
     }
     public void StartGame()
     {

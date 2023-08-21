@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 491537e914a878748aa54b95c175d79e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MPLogos1 1_4
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 466
+        width: 131
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf56b8cee9f9c44b91370712a5350fc
+      internalID: -244303834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MPLogos1 1_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 496
+        width: 164
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561e27bd2d07d8142b2bf812bbe7a7c0
+      internalID: -1380484454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MPLogos1 1_32
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 267
+        width: 97
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3311796797e66847a568b27bcc56968
+      internalID: -1410953066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MPLogos1 1_75
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 17
+        width: 158
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f3be6e3e7c0074bade324e498b7892
+      internalID: -1456645418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MPLogos1 1_77
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 45
+        width: 124
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b756f4691cc124abf1af104b8cc4f9
+      internalID: -1558872910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MPLogos1 1_79
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 14
+        width: 156
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66086bd182af4c449b5ea1aaa6285a3d
+      internalID: 1719276897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 351ebaba4a84e074c8beb1a9ea777f81
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MPLogos1 1_76: 657268204
+      MPLogos1 1_60: 1204887041
+      MPLogos1 1_49: -1323447152
+      MPLogos1 1_77: -1558872910
+      MPLogos1 1_62: 1339842396
+      MPLogos1 1_16: -2136280105
+      MPLogos1 1_73: 401921189
+      MPLogos1 1_23: 1702735830
+      MPLogos1 1_83: -1188292067
+      MPLogos1 1_26: 2043568819
+      MPLogos1 1_66: -1058114772
+      MPLogos1 1_3: -538157898
+      MPLogos1 1_57: 2094903844
+      MPLogos1 1_85: 338713168
+      MPLogos1 1_90: 293782246
+      MPLogos1 1_86: -264758945
+      MPLogos1 1_9: -1993112818
+      MPLogos1 1_40: 532459573
+      MPLogos1 1_30: 806775451
+      MPLogos1 1_65: 1620735123
+      MPLogos1 1_44: -479958331
+      MPLogos1 1_42: 1351110406
+      MPLogos1 1_31: -1795266810
+      MPLogos1 1_48: -939745306
+      MPLogos1 1_19: -636755507
+      MPLogos1 1_67: 859292717
+      MPLogos1 1_53: -154858849
+      MPLogos1 1_1: -2006366174
+      MPLogos1 1_78: 257967460
+      MPLogos1 1_39: 1418179084
+      MPLogos1 1_11: -1928460479
+      MPLogos1 1_38: -227356193
+      MPLogos1 1_71: 1268789456
+      MPLogos1 1_15: -1739785285
+      MPLogos1 1_45: -91646696
+      MPLogos1 1_58: -555041138
+      MPLogos1 1_18: 1991148356
+      MPLogos1 1_50: 1327027465
+      MPLogos1 1_55: 474940688
+      MPLogos1 1_84: 433390594
+      MPLogos1 1_41: 1196237077
+      MPLogos1 1_70: 307021765
+      MPLogos1 1_64: -538720409
+      MPLogos1 1_17: -923782582
+      MPLogos1 1_46: 1242682792
+      MPLogos1 1_43: -1863954909
+      MPLogos1 1_61: 1911868188
+      MPLogos1 1_75: -1456645418
+      MPLogos1 1_52: 66678011
+      MPLogos1 1_47: 1522508997
+      MPLogos1 1_89: 521968864
+      MPLogos1 1_6: -1380484454
+      MPLogos1 1_82: -1378507
+      MPLogos1 1_51: -1772763862
+      MPLogos1 1_36: -2059855824
+      MPLogos1 1_72: -2069917347
+      MPLogos1 1_74: -1042275363
+      MPLogos1 1_14: -274416582
+      MPLogos1 1_81: 462133788
+      MPLogos1 1_34: 1709890086
+      MPLogos1 1_20: -1960418663
+      MPLogos1 1_29: 95297485
+      MPLogos1 1_12: 873417902
+      MPLogos1 1_24: 520177307
+      MPLogos1 1_0: 1003325671
+      MPLogos1 1_79: 1719276897
+      MPLogos1 1_56: -537499236
+      MPLogos1 1_63: 1131876978
+      MPLogos1 1_4: -244303834
+      MPLogos1 1_8: -739207267
+      MPLogos1 1_35: -485492661
+      MPLogos1 1_88: -1196313241
+      MPLogos1 1_59: 1337069503
+      MPLogos1 1_32: -1410953066
+      MPLogos1 1_21: -1616359665
+      MPLogos1 1_33: -447452751
+      MPLogos1 1_27: -1509378394
+      MPLogos1 1_10: -2062791095
+      MPLogos1 1_54: 741637743
+      MPLogos1 1_13: -1470593773
+      MPLogos1 1_87: 1089904914
+      MPLogos1 1_5: -1231778775
+      MPLogos1 1_7: -113835784
+      MPLogos1 1_69: 1460714076
+      MPLogos1 1_28: 575343477
+      MPLogos1 1_68: -1934802297
+      MPLogos1 1_25: 1040018645
+      MPLogos1 1_37: 1376514558
+      MPLogos1 1_2: -1073143205
+      MPLogos1 1_80: 1095195866
+      MPLogos1 1_22: -1352017054
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
