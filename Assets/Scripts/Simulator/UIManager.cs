@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     public static bool atBankOfJunnie;
     public static bool atBankOfFoo;
 
+    public static bool atInvest;
     public static bool atGameInvest;
     public static bool atBusinessInvest;
     public static bool atGymInvest;
@@ -33,6 +34,36 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         currentPanelIndex = 0;  // Set an initial value for currentPanelIndex
+    }
+    private void Update()
+    {
+        if (atInvest)
+        {
+            if (investmentUIPanels[0].activeSelf)
+            {
+                atGameInvest = true;
+            }
+            else
+            {
+                atGameInvest = false;
+            }
+            if (investmentUIPanels[1].activeSelf)
+            {
+                atBusinessInvest = true;
+            }
+            else
+            {
+                atBusinessInvest = false;
+            }
+            if (investmentUIPanels[2].activeSelf)
+            {
+                atGymInvest = true;
+            }
+            else
+            { 
+                atGymInvest = false;
+            }
+        }
     }
     public void ReturnBack()
     {
@@ -144,38 +175,44 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         //Investment Panels
         if (gameObject.name == "GameCompanyButton")
         {
+            atInvest = true;
             investmentUIPanels[0].SetActive(true);
-            atGameInvest = true;
+            
             
         }
         else if (gameObject.name == "BusinessButton")
         {
+            atInvest = true;
             investmentUIPanels[1].SetActive(true);
-            atBusinessInvest = true;
+            
         }
         else if (gameObject.name == "GymCompanyButton")
         {
+            atInvest = true;
             investmentUIPanels[2].SetActive(true);
-            atGymInvest = true;
+            
         }
 
         if (gameObject.name == "ReturnBackButtonGame")
         {
+            atInvest = false;
             clickedPanel[0].SetActive(true);
             investmentUIPanels[0].SetActive(false);
-            atGameInvest = false;
+            
         }
         if (gameObject.name == "ReturnBackButtonBusiness")
         {
+            atInvest = false;
             clickedPanel[0].SetActive(true);
             investmentUIPanels[1].SetActive(false);
-            atBusinessInvest = false;
+            
         }
         if (gameObject.name == "ReturnBackButtonGym")
         {
+            atInvest = false;
             clickedPanel[0].SetActive(true);
             investmentUIPanels[2].SetActive(false);
-            atGymInvest = false;
+            
         }
 
         //Bank Panels
