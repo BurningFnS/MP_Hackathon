@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3458287, g: 0.6318179, b: 0.86846924, a: 1}
+  m_IndirectSpecularColor: {r: 0.34567535, g: 0.6317699, b: 0.86848885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1349,8 +1349,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1766064508}
         m_TargetAssemblyTypeName: JobManager, Assembly-CSharp
-        m_MethodName: MixedFunctions
-        m_Mode: 1
+        m_MethodName: AcquireJob
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -30448,12 +30448,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1766064508}
         m_TargetAssemblyTypeName: JobManager, Assembly-CSharp
-        m_MethodName: MixedFunctions
-        m_Mode: 1
+        m_MethodName: AcquireJob
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -57996,12 +57996,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1766064508}
         m_TargetAssemblyTypeName: JobManager, Assembly-CSharp
-        m_MethodName: MixedFunctions
-        m_Mode: 1
+        m_MethodName: AcquireJob
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
