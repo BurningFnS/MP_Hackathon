@@ -15,7 +15,7 @@ public class InvestmentManager : MonoBehaviour
 
     [HideInInspector] public float gameInvestmentRate;
     [HideInInspector] public float businessInvestmentRate;
-    [HideInInspector] public float gymInterestRate;
+    [HideInInspector] public float gymInvestmentRate;
 
 
     private void Start()
@@ -24,21 +24,26 @@ public class InvestmentManager : MonoBehaviour
         investmentBalance[1] = PlayerPrefs.GetFloat("BusinessInvestmentBalance");
         investmentBalance[2] = PlayerPrefs.GetFloat("GymInvestmentBalance");
 
-        //gameInvestmentRate = Random.RandomRange
-        
+        gameInvestmentRate = Random.Range(0.4f, 1.7f);
+        Debug.Log("game investment rate: " + gameInvestmentRate);
+        businessInvestmentRate = Random.Range(0.95f, 1.25f);
+        Debug.Log("business investment rate: " + businessInvestmentRate);
+        gymInvestmentRate = Random.Range(0.7f, 1.5f);
+        Debug.Log("game investment rate: " + gymInvestmentRate);
+
         for (int i = 0; i < moneyInvestedText.Length; i++)
         {
             if (i == 0)
             {
-                investmentBalance[i] = RoundBalance(CalculateNewInvestmentPrice(investmentBalance[i], 0.03f));
+                investmentBalance[i] = RoundBalance(CalculateNewInvestmentPrice(investmentBalance[i], gameInvestmentRate));
             }
             if (i == 1)
             {
-                investmentBalance[i] = RoundBalance(CalculateNewInvestmentPrice(investmentBalance[i], 0.12f));
+                investmentBalance[i] = RoundBalance(CalculateNewInvestmentPrice(investmentBalance[i], businessInvestmentRate));
             }
             if (i == 2)
             {
-                investmentBalance[i] = RoundBalance(CalculateNewInvestmentPrice(investmentBalance[i], 0.10f));
+                investmentBalance[i] = RoundBalance(CalculateNewInvestmentPrice(investmentBalance[i], gymInvestmentRate));
             }
             moneyInvestedText[i].text = "Money invested:  $" + investmentBalance[i].ToString("");
         }
@@ -97,7 +102,7 @@ public class InvestmentManager : MonoBehaviour
                 investmentBalance[investmentIndex] -= InputAmount;
 
                 // Update the balance text
-                moneyInvestedText[investmentIndex].text = "Money invested: $" + investmentBalance[investmentIndex].ToString("");
+                moneyInvestedText[investmentIndex].text = "Money invested:  $" + investmentBalance[investmentIndex].ToString("");
                 coinManager.UpdateCoinDisplay();
 
                 // Clear the input field and feedback text
