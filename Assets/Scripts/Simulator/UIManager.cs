@@ -245,7 +245,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         }
 
         //Insurance Panels
-        if (gameObject.name == "LifeInsuranceButton")
+        if (gameObject.name == "FireInsuranceButton")
         {
             insuranceUIPanels[0].SetActive(true);
         }
@@ -253,12 +253,12 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         {
             insuranceUIPanels[1].SetActive(true);
         }
-        else if (gameObject.name == "CriticalillnessInsuranceButton")
+        else if (gameObject.name == "CarInsuranceButton")
         {
             insuranceUIPanels[2].SetActive(true);
         }
 
-        if (gameObject.name == "ReturnBackButtonLife")
+        if (gameObject.name == "ReturnBackButtonFire")
         {
             clickedPanel[3].SetActive(true);
             insuranceUIPanels[0].SetActive(false);
@@ -268,7 +268,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             clickedPanel[3].SetActive(true);
             insuranceUIPanels[1].SetActive(false);
         }
-        if (gameObject.name == "ReturnBackButtonCritical")
+        if (gameObject.name == "ReturnBackButtonCar")
         {
             clickedPanel[3].SetActive(true);
             insuranceUIPanels[2].SetActive(false);
