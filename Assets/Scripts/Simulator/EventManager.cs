@@ -12,6 +12,7 @@ public class EventManager : MonoBehaviour
     public CoinManager coinManager;
 
     public GameObject[] randomEventPanel;
+    public InsuranceManager insuranceManager;
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class EventManager : MonoBehaviour
             }
             if (i == 2)
             {
-                livingExpenses[i] = livingExpenses[0] + livingExpenses[1];
+                livingExpenses[i] = livingExpenses[0] + livingExpenses[1] + insuranceManager.totalInsuranceExpenses;
                 livingExpensesText[i].text = "Total: $" + livingExpenses[i];
             }
         }
