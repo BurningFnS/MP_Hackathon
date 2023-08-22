@@ -29,7 +29,7 @@ public class InvestmentManager : MonoBehaviour
         businessInvestmentRate = Random.Range(0.95f, 1.25f);
         Debug.Log("business investment rate: " + businessInvestmentRate);
         gymInvestmentRate = Random.Range(0.7f, 1.5f);
-        Debug.Log("game investment rate: " + gymInvestmentRate);
+        Debug.Log("gym investment rate: " + gymInvestmentRate);
 
         for (int i = 0; i < moneyInvestedText.Length; i++)
         {
