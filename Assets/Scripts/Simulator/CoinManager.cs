@@ -53,8 +53,7 @@ public class CoinManager : MonoBehaviour
         else if(currentCoins >= 0)
         {
             PlayerPrefs.SetInt("CurrentCoins", currentCoins);
-            currentAge = currentAge + 5;
-            PlayerPrefs.SetInt("CurrentAge", currentAge);
+            PlayerPrefs.SetInt("CurrentAge", currentAge + 5);
 
             PlayerPrefs.SetFloat("BankOfRashidBalance", bank.bankBalance[0]);
             PlayerPrefs.SetFloat("BankOfJunnieBalance", bank.bankBalance[1]);
