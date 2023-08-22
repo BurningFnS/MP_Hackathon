@@ -19,7 +19,7 @@ public class EventManager : MonoBehaviour
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
 
-
+        Debug.Log("this shld only play once");
         for (int i = 0; i < livingExpenses.Length; i++)
         {
             int changeInCostOfLiving = Random.Range(-50, 100);
@@ -44,6 +44,7 @@ public class EventManager : MonoBehaviour
 
         //Show expenses panel
         yourExpenses.SetActive(true);
+        Debug.Log("reopen expenses");
       
         BuildingClickHandler.canClickOnBuildings = false;
     }
@@ -53,9 +54,17 @@ public class EventManager : MonoBehaviour
         coinManager.currentCoins -= livingExpenses[2];
         coinManager.UpdateCoinDisplay();
         yourExpenses.SetActive(false);
-        BuildingClickHandler.canClickOnBuildings = true;
+        Debug.Log("Closing yourExpenses panel");
+        //BuildingClickHandler.canClickOnBuildings = true;
 
-        //randomEventPanel[Random.Range(0, randomEventPanel.Length)].SetActive(true);
+        OpenRandomEvent();
+    }
+
+    public void OpenRandomEvent()
+    {
+        int randomizedIndex = Random.Range(0, randomEventPanel.Length);
+        Debug.Log($"Opening random event panel at index {randomizedIndex}");
+        randomEventPanel[randomizedIndex].SetActive(true);
     }
 
     public void Restart()
