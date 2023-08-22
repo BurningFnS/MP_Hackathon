@@ -18,6 +18,7 @@ public class CoinManager : MonoBehaviour
     public Bank bank;
     public GameObject negativeBalancePanel;
     public GameObject losePanel;
+    public GameObject retireButton;
     public Text alertText;
 
     public InvestmentManager investment;
@@ -33,6 +34,10 @@ public class CoinManager : MonoBehaviour
         // Optionally, you can update the player's coins display or any other relevant UI elements
         UpdateCoinDisplay();
         ageText.text = "" + currentAge;
+        if (currentAge >= 65)
+        {
+            retireButton.SetActive(true);
+        }
     }
 
     public void UpdateCoinDisplay()
@@ -66,7 +71,13 @@ public class CoinManager : MonoBehaviour
             SceneManager.LoadScene("Level");
         }
     }
-
+    public void Retire()
+    {
+        if(currentAge >= 65 )
+        {
+            PlayerPrefs.SetInt("Salary", 0);
+        }
+    }
     public void Proceed()
     {
         losePanel.SetActive(true);
