@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: e3d54139f09d12548a3fd8824074ad2b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LogoINSURANCE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 694
+        width: 186
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9cff24a432a9314eb26a03beadcaa08
+      internalID: 687744687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_1
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 695
+        width: 182
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efdbb01a1b99d134ab066d93c013ce81
+      internalID: 860565393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 705
+        width: 306
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e42c98bc6bbfb64599acec8a18bbe1d
+      internalID: -1184139025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_6
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 714
+        width: 342
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f73f16df9d80540862f7609d722a6b
+      internalID: -185063528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_22
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 674
+        width: 17
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a996155f99bea354f9c8e9995848adc9
+      internalID: -1672350187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 438
+        width: 224
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d45b0f8e94ea114cb8ba232359f255a
+      internalID: 1721302996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 438
+        width: 224
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2574c2cb6759c454881b253abb51531e
+      internalID: 703922799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_26
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 438
+        width: 224
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc9816f93fcd774084e079f9c306dcf
+      internalID: -1745291318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_39
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 242
+        width: 224
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1b228ba51a5b74580c9d2d1bb1009e
+      internalID: 206790152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_40
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 462
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a279cba0be43a9544a5c3ab94b67550e
+      internalID: -1312355607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_41
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 204
+        width: 224
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4c84fa7b2804041a0e54a914aad7fa
+      internalID: -1937672393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_48
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 420
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99364bc7f0f16c4db183f4cd90065bb
+      internalID: 1894424221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_66
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 7
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b8c9b88fa94cb4ba8f1aef922bb89a
+      internalID: 1023157761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_68
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 8
+        width: 224
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c67e858a3770cb47a60e17e96fcff31
+      internalID: 1104765952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_70
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 5
+        width: 226
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb850dd2a8231d43ab90766f5e26e54
+      internalID: 9015974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoINSURANCE_74
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 192
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f713a70bedeaae4e8a9a2b5bd97bed2
+      internalID: -1773697215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c3ae2cec48cd9474c856f7690089184c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      LogoINSURANCE_60: -1378234655
+      LogoINSURANCE_17: 32922035
+      LogoINSURANCE_5: 661827872
+      LogoINSURANCE_9: -1321711332
+      LogoINSURANCE_8: -418749670
+      LogoINSURANCE_23: 1395837254
+      LogoINSURANCE_36: -54524199
+      LogoINSURANCE_47: -1638256903
+      LogoINSURANCE_74: -1773697215
+      LogoINSURANCE_12: 1281767858
+      LogoINSURANCE_51: -1735975645
+      LogoINSURANCE_46: -405187637
+      LogoINSURANCE_75: 427333995
+      LogoINSURANCE_18: 1210694271
+      LogoINSURANCE_26: -1745291318
+      LogoINSURANCE_30: 1017580204
+      LogoINSURANCE_15: 985036233
+      LogoINSURANCE_56: 2085964105
+      LogoINSURANCE_45: 1945301288
+      LogoINSURANCE_33: -1097564564
+      LogoINSURANCE_57: -1378012419
+      LogoINSURANCE_43: -796789492
+      LogoINSURANCE_6: -185063528
+      LogoINSURANCE_28: -740544359
+      LogoINSURANCE_3: -1184139025
+      LogoINSURANCE_37: -725600570
+      LogoINSURANCE_73: -1396454511
+      LogoINSURANCE_52: 994056248
+      LogoINSURANCE_25: 703922799
+      LogoINSURANCE_13: 150937975
+      LogoINSURANCE_34: 423899456
+      LogoINSURANCE_1: 860565393
+      LogoINSURANCE_67: 1263075653
+      LogoINSURANCE_32: -812175401
+      LogoINSURANCE_72: -1736628558
+      LogoINSURANCE_50: -1992224184
+      LogoINSURANCE_41: -1937672393
+      LogoINSURANCE_35: -1669735975
+      LogoINSURANCE_78: -351888993
+      LogoINSURANCE_53: 301261047
+      LogoINSURANCE_19: -784064770
+      LogoINSURANCE_69: 1136231373
+      LogoINSURANCE_0: 687744687
+      LogoINSURANCE_7: -679703613
+      LogoINSURANCE_79: -679097222
+      LogoINSURANCE_22: -1672350187
+      LogoINSURANCE_38: -877775606
+      LogoINSURANCE_76: 1819729947
+      LogoINSURANCE_40: -1312355607
+      LogoINSURANCE_24: 1721302996
+      LogoINSURANCE_4: -1088397562
+      LogoINSURANCE_58: 668050317
+      LogoINSURANCE_27: 333104728
+      LogoINSURANCE_63: -1020786694
+      LogoINSURANCE_20: -1533404090
+      LogoINSURANCE_44: 547920199
+      LogoINSURANCE_77: 1580942536
+      LogoINSURANCE_68: 1104765952
+      LogoINSURANCE_55: 292964677
+      LogoINSURANCE_14: 1277438343
+      LogoINSURANCE_31: -1520237800
+      LogoINSURANCE_10: 997618117
+      LogoINSURANCE_66: 1023157761
+      LogoINSURANCE_65: -365548626
+      LogoINSURANCE_54: 75620293
+      LogoINSURANCE_11: -946070348
+      LogoINSURANCE_42: -499726223
+      LogoINSURANCE_16: -291253437
+      LogoINSURANCE_21: 1895643291
+      LogoINSURANCE_2: 753121697
+      LogoINSURANCE_71: -2113716823
+      LogoINSURANCE_59: -918706030
+      LogoINSURANCE_81: 1200338238
+      LogoINSURANCE_80: 457106659
+      LogoINSURANCE_49: -1147986239
+      LogoINSURANCE_64: -1449508782
+      LogoINSURANCE_62: -522087441
+      LogoINSURANCE_39: 206790152
+      LogoINSURANCE_70: 9015974
+      LogoINSURANCE_29: 1234349451
+      LogoINSURANCE_48: 1894424221
+      LogoINSURANCE_61: -997148002
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
