@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PropertyManager : MonoBehaviour
 {
     public GameObject purchasedPropertyBG;
+    public GameObject failedPurchaseBG;
     public Text purchasedPropertyText;
     public CoinManager coinManager;
     // Start is called before the first frame update
@@ -14,24 +15,56 @@ public class PropertyManager : MonoBehaviour
         coinManager.totalCoins = PlayerPrefs.GetInt("CollectedCoins");
         coinManager.currentCoins = coinManager.totalCoins + coinManager.cashAtHand;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
+        coinManager.UpdateCoinDisplay();
     }
     public void ApartmentButton()
     {
-        purchasedPropertyBG.SetActive(true);
+        StartCoroutine(SuccessfullyPurchasedProperty());
         purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Apartment Property!";
-
     }
     public void CondominiumButton()
     {
-
+        if(coinManager.currentCoins >= 4000)
+        {
+            StartCoroutine(SuccessfullyPurchasedProperty());
+            purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Condominium Property!";
+            coinManager.currentCoins -= 4000;
+        }
+        else
+        {
+            StartCoroutine(FailedPurchaseProperty());
+        }
     }
     public void LandedButton()
     {
+        if (coinManager.currentCoins >= 5500)
+        {
+            StartCoroutine(SuccessfullyPurchasedProperty());
+            purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Landed Property!";
+            coinManager.currentCoins -= 5500;
+        }
+        else
+        {
+            StartCoroutine(FailedPurchaseProperty());
+        }
+    }
+    IEnumerator SuccessfullyPurchasedProperty()
+    {
+        purchasedPropertyBG.SetActive(true);
 
+        yield return new WaitForSeconds(1.5f);
+
+        purchasedPropertyBG.SetActive(false);
+    }
+    IEnumerator FailedPurchaseProperty()
+    {
+        failedPurchaseBG.SetActive(true);
+
+        yield return new WaitForSeconds(1.5f);
+
+        failedPurchaseBG.SetActive(false);
+       
     }
 }
