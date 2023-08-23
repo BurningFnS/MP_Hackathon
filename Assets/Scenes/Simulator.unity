@@ -8867,6 +8867,7 @@ MonoBehaviour:
     m_LineSpacing: 0.8
   m_Text: 'Cost: $4000
 
+
     Perks: Lesser crimes will occur
 
     The safest choice!'
@@ -9774,7 +9775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.0079, y: -31}
+  m_AnchoredPosition: {x: 2.0079, y: -80}
   m_SizeDelta: {x: 570.51, y: 128.3586}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283566934
@@ -9810,7 +9811,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You used $2000\r on \nhospital bills!"
+  m_Text: Your hospital bills are $2000
 --- !u!222 &283566935
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36091,7 +36092,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Income: 48000/year\r\nPerks: Faster promotion \r\nStability of job: Stable"
+  m_Text: "Income: 480/year\r\nPerks: Faster promotion \r\nStability of job: Stable"
 --- !u!222 &1220662165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36135,8 +36136,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.0059, y: 141.17}
-  m_SizeDelta: {x: 570.51, y: 183.98}
+  m_AnchoredPosition: {x: -0.0000009536743, y: 38}
+  m_SizeDelta: {x: 553.6714, y: 183.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1220932165
 MonoBehaviour:
@@ -36171,7 +36172,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You slipped and fell on \na \rwet floor in a grocery store"
+  m_Text: You slipped on a wet floor in a grocery store
 --- !u!222 &1220932166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36696,13 +36697,14 @@ RectTransform:
   - {fileID: 283566933}
   - {fileID: 348184563}
   - {fileID: 1525193124}
+  - {fileID: 1869289918}
   m_Father: {fileID: 750997697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00001335144, y: 0.000015258789}
-  m_SizeDelta: {x: 613.7487, y: 820}
+  m_AnchoredPosition: {x: 0.00001335144, y: -0.0000047683716}
+  m_SizeDelta: {x: 613.7487, y: 864.6221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265890313
 MonoBehaviour:
@@ -40757,7 +40759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -33, y: -99.26437}
+  m_AnchoredPosition: {x: -33, y: -84}
   m_SizeDelta: {x: 201.7223, y: 89.8564}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1439193758
@@ -43734,7 +43736,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Income: 36000/year\r\nPerks: Large pay raise only\r\nafter working long
+  m_Text: "Income: 360/year\r\nPerks: Large pay raise only\r\nafter working long
     term \r\nStability of job: Stable"
 --- !u!222 &1542796703
 CanvasRenderer:
@@ -46483,7 +46485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: 'Income: 45600/year
+  m_Text: 'Income: 400/year
 
     Perks: difficult to promote but large pay raise
 
@@ -52682,6 +52684,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865569770}
   m_CullTransparentMesh: 1
+--- !u!1 &1869289917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869289918}
+  - component: {fileID: 1869289920}
+  - component: {fileID: 1869289919}
+  m_Layer: 5
+  m_Name: SlippedImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1869289918
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869289917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1265890312}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -6, y: 205}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1869289919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869289917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1840628731, guid: 8814e8472966f6c4daf9a4b469f35dd4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1869289920
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869289917}
+  m_CullTransparentMesh: 1
 --- !u!1 &1877505244
 GameObject:
   m_ObjectHideFlags: 0
@@ -55893,7 +55971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1967093000
 RectTransform:
   m_ObjectHideFlags: 0
