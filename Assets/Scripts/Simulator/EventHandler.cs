@@ -17,11 +17,13 @@ public class EventHandler : MonoBehaviour
 
     public bool randomEventCanHappen;
     public bool gettingRobbed;
+    public bool slipAndFall;
 
     void Start()
     {
         randomEventCanHappen = false;
         gettingRobbed = false;
+        slipAndFall = true;
         //randomEventManager.SetActive(false);
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
@@ -70,10 +72,14 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         int randomizedIndexPanel = Random.Range(0, randomEventPanel.Length);
-        randomEventPanel[randomizedIndexPanel].SetActive(true);
+        randomEventPanel[1].SetActive(true);
         if(randomizedIndexPanel == 0)
         {
             gettingRobbed = true;
+        }
+        if(randomizedIndexPanel == 1)
+        {
+            slipAndFall = true;
         }
     }
 
