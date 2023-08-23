@@ -15,11 +15,13 @@ public class EventHandler : MonoBehaviour
     public InsuranceManager insuranceManager;
     //public GameObject randomEventManager;
 
-    public bool randomeEventCanHappen;
+    public bool randomEventCanHappen;
+    public bool gettingRobbed;
 
     void Start()
     {
-        randomeEventCanHappen = false;
+        randomEventCanHappen = false;
+        gettingRobbed = false;
         //randomEventManager.SetActive(false);
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
@@ -60,7 +62,7 @@ public class EventHandler : MonoBehaviour
         yourExpenses.SetActive(false);
         BuildingClickHandler.canClickOnBuildings = true;
 
-        randomeEventCanHappen = true;
+        randomEventCanHappen = true;
         //randomEventManager.SetActive(true);
         PlayRandomEvent();
     }
@@ -68,7 +70,11 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         int randomizedIndexPanel = Random.Range(0, randomEventPanel.Length);
-        randomEventPanel[0].SetActive(true);
+        randomEventPanel[randomizedIndexPanel].SetActive(true);
+        if(randomizedIndexPanel == 0)
+        {
+            gettingRobbed = true;
+        }
     }
 
     public void Restart()

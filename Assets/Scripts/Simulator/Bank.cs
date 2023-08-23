@@ -48,6 +48,15 @@ public class Bank : MonoBehaviour
         // Check if the input is a valid number
         if (int.TryParse(amountInputField[bankIndex].text, out int InputAmount))
         {
+            if (InputAmount < 0)
+            {
+                // Display a warning message for negative input
+                error.SetActive(true);
+                errorText.text = "Please enter a positive number.";
+
+                // Exit the method to prevent further execution
+                return;
+            }
             //Deposit amount is less than or equal to total coins, so player can deposit
             if (InputAmount <= coinManager.currentCoins)
             {
@@ -86,6 +95,15 @@ public class Bank : MonoBehaviour
         // Check if the input is a valid number
         if (int.TryParse(amountInputField[bankIndex].text, out int InputAmount))
         {
+            if (InputAmount < 0)
+            {
+                // Display a warning message for negative input
+                error.SetActive(true);
+                errorText.text = "Please enter a positive number.";
+
+                // Exit the method to prevent further execution
+                return;
+            }
             if (InputAmount <= bankBalance[bankIndex])
             {
                 coinManager.currentCoins += InputAmount;

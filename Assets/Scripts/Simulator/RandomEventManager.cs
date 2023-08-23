@@ -26,12 +26,11 @@ public class RandomEventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(eventHandler.randomeEventCanHappen == true && randomEventHasHappened == false)
+        if (eventHandler.gettingRobbed)
         {
-            amountRobbed = Random.Range(1, coinManager.currentCoins);
-            robbedText.text = "Amount Lost: " + amountRobbed;
-            randomEventHasHappened = true;
+            GettingRobbedEvent();
         }
+
     }
 
     public void ProceedRobbed()
@@ -40,5 +39,24 @@ public class RandomEventManager : MonoBehaviour
         robbedPanel.SetActive(false);
         coinManager.currentCoins = coinManager.currentCoins - amountRobbed;
         coinManager.UpdateCoinDisplay();
+    }
+
+    public void GettingRobbedEvent()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            if (coinManager.currentCoins > 0)
+            {
+                amountRobbed = Random.Range(0, coinManager.currentCoins);
+                robbedText.text = "Amount Lost: " + amountRobbed;
+                randomEventHasHappened = true;
+            }
+            else
+            {
+                robbedText.text = "Amount Lost: 0";
+                randomEventHasHappened = true;
+            }
+
+        }
     }
 }
