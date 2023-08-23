@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34594312, g: 0.6318734, b: 0.8685151, a: 1}
+  m_IndirectSpecularColor: {r: 0.345899, g: 0.631855, b: 0.86850977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37724,6 +37724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
+--- !u!4 &1298477845 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 678991411691127654, guid: 77341e152aa9e5c4eb57b78e42ff025c, type: 3}
+  m_PrefabInstance: {fileID: 1298477844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306949541
 GameObject:
   m_ObjectHideFlags: 0
@@ -47185,6 +47190,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688826623}
   m_CullTransparentMesh: 1
+--- !u!1001 &1688826735
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1298477845}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3544831
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7090436
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.036
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0776
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9976812
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.068060726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -7.805
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c01f1c8f420804459110b43a372b27b, type: 2}
+    - target: {fileID: 919132149155446097, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
+      propertyPath: m_Name
+      value: Bridge
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62659a2f0041f6240879bf10dc8871b3, type: 3}
 --- !u!1 &1698010246
 GameObject:
   m_ObjectHideFlags: 0
