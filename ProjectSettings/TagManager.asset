@@ -8,6 +8,18 @@ TagManager:
   - Barrier
   - Car
   - ReturnBack
+  - BankClose
+  - InsuranceVisit
+  - InvestmentClose
+  - JobVisit
+  - Okay
+  - JobClose
+  - InsuranceClose
+  - BankVisit
+  - PropertyVisit
+  - InvestmentVisit
+  - PropertyClose
+  - toClock
   layers:
   - Default
   - TransparentFX

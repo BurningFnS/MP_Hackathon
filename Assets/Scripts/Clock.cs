@@ -8,6 +8,8 @@ public class Clock : MonoBehaviour
 
     private Vector3 startingPosition;    // Initial position of the power-up
 
+    public GameObject textEffectPrefab; // Reference to the text effect prefab
+
     private void Start()
     {
         startingPosition = transform.position;
@@ -28,6 +30,9 @@ public class Clock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameObject canvas = GameObject.Find("Canvas"); // Make sure your Canvas object is named "Canvas"
+            GameObject textEffect = Instantiate(textEffectPrefab, canvas.transform);
+            textEffect.GetComponent<TextEffect>().SetText("+" + 10 + "s");
             Destroy(gameObject);
             TimeManager.timer += 10;
         }

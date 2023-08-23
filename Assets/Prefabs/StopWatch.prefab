@@ -111,3 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceHeight: 0.5
+  textEffectPrefab: {fileID: 6007102908374340214, guid: 208e2197c47bf64449eb7cac7edeae06, type: 3}

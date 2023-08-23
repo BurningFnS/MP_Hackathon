@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem coinBurst;
     private ParticleSystem explosionBurst;
 
+    public GameObject magneticEffect;
+
     public float magnetDuration = 8f; // The duration of the magnet effect in seconds
     private bool magnetEffectActive = false;
     private float magnetRemainingTime = 0f;
@@ -189,7 +191,6 @@ public class PlayerController : MonoBehaviour
 
         if (magnetEffectActive)
         {
-            PowerUpSFX();
             Debug.Log("Magnet Enabled");
 
             // Update magnet remaining time and disable magnet effect if time is up
@@ -220,7 +221,6 @@ public class PlayerController : MonoBehaviour
 
         if (shieldEffectActive)
         {
-            PowerUpSFX();
             Debug.Log("Shield Enabled");
             shieldRemainingTime -= Time.deltaTime;
             if (shieldRemainingTime <= 0f)
@@ -284,6 +284,7 @@ public class PlayerController : MonoBehaviour
     public void EnableMagnetEffect(float radius)
     {
         magnetEffectActive = true;
+        magneticEffect.SetActive(true);
         magnetRemainingTime = magnetDuration;
         magnetRadius = radius;
     }
@@ -291,6 +292,7 @@ public class PlayerController : MonoBehaviour
     private void DisableMagnetEffect()
     {
         magnetEffectActive = false;
+        magneticEffect.SetActive(false);
         // Perform any additional actions when the magnet effect ends, if needed.
     }
 
@@ -326,7 +328,6 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.transform.tag == "Obstacle")
             {
-                PlayCollisionSFX();
                 smokeBurst.Play();
                 Destroy(hit.gameObject); //Destroy the collided obstacle
                 CoinExplosion();
@@ -334,7 +335,6 @@ public class PlayerController : MonoBehaviour
 
             if (hit.transform.tag == "Car")
             {
-                PlayCollisionSFX();
                 explosionBurst.Play();
                 Destroy(hit.gameObject); //Destroy the collided obstacle
                 CoinExplosion();
@@ -342,7 +342,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayCollisionSFX()
+/*    private void PlayCollisionSFX()
     {
         collisionSource.PlayOneShot(collisionImpactSFX);
     }
@@ -355,7 +355,7 @@ public class PlayerController : MonoBehaviour
     private void PowerUpSFX()
     {
         powerUpSource.PlayOneShot(powerUpSFX);
-    }
+    }*/
 
     private void CoinExplosion()
     {
@@ -364,7 +364,6 @@ public class PlayerController : MonoBehaviour
         bursts[0].count = randomNumber;
         coinBurst.emission.SetBursts(bursts);
 
-        PlayCoinSFX();
         coinBurst.Play(); // Play coin burst particle
 
         PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
