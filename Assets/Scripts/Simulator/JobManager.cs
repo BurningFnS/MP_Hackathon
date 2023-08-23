@@ -10,7 +10,7 @@ public class JobManager : MonoBehaviour
     //public Text coinText;
     public GameObject HaveJobAlreadyPanel;
     public GameObject CongratulationsOnJobPanel;
-    public GameObject LivingExpensesPanel; 
+    //public GameObject LivingExpensesPanel; 
     public Text CongratsJobText;
     public Text HaveJobText;
     private bool isPhotographer;
@@ -20,7 +20,7 @@ public class JobManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LivingExpensesPanel.SetActive(false);
+        //LivingExpensesPanel.SetActive(false);
         if (PlayerPrefs.GetInt("JobIndex") == 0)
         {
             isPhotographer = true;

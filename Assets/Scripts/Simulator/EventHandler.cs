@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class EventManager : MonoBehaviour
+public class EventHandler : MonoBehaviour
 {
     public Text[] livingExpensesText;
     public int[] livingExpenses;
@@ -18,7 +18,7 @@ public class EventManager : MonoBehaviour
     {
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
-
+        Debug.Log("script functions");
 
         for (int i = 0; i < livingExpenses.Length; i++)
         {
@@ -44,7 +44,7 @@ public class EventManager : MonoBehaviour
 
         //Show expenses panel
         yourExpenses.SetActive(true);
-      
+
         BuildingClickHandler.canClickOnBuildings = false;
     }
 
@@ -55,7 +55,12 @@ public class EventManager : MonoBehaviour
         yourExpenses.SetActive(false);
         BuildingClickHandler.canClickOnBuildings = true;
 
-        //randomEventPanel[Random.Range(0, randomEventPanel.Length)].SetActive(true);
+        PlayRandomEvent();
+    }
+
+    public void PlayRandomEvent()
+    {
+        randomEventPanel[Random.Range(0, randomEventPanel.Length)].SetActive(true);
     }
 
     public void Restart()
@@ -63,3 +68,4 @@ public class EventManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 }
+
