@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.345899, g: 0.631855, b: 0.86850977, a: 1}
+  m_IndirectSpecularColor: {r: 0.3459696, g: 0.6319204, b: 0.86853015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5559,7 +5559,6 @@ MonoBehaviour:
   - {fileID: 8919390859186386481, guid: 719398c584a4af741b4f998b4337dfa6, type: 3}
   - {fileID: 832914781367012115, guid: b8bdc9a446c8d044e90d8452a7c69dc4, type: 3}
   - {fileID: 1846252225569747496, guid: 065afc5790906b64582acfc7626ccb9d, type: 3}
-  - {fileID: 1846252225569747496, guid: ea61c1a5d2aa3ab4898dd12bb727dcf9, type: 3}
   zSpawn: 0
   tileLength: 45
   numberOfTiles: 5
@@ -5671,6 +5670,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1e25138406f6ca14680ff66add992053, type: 2}
   - {fileID: 2100000, guid: 4696e7596c4bc3a4696101ecb56f3ade, type: 2}
   - {fileID: 2100000, guid: 1c1c8b716921fb64e93eab9f9b7ce393, type: 2}
+  - {fileID: 2100000, guid: b1f1126e9a51e134c896a231d1424cb5, type: 2}
 --- !u!95 &609895886 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 52af3f5abdde5d24398c7b3738a75150, type: 3}
@@ -7714,7 +7714,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1314245857
 AudioSource:
@@ -9373,7 +9373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1876527733591322819, guid: 9b0fb861e871a2e459fd91eafdad9270, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1876527733591322819, guid: 9b0fb861e871a2e459fd91eafdad9270, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9565,6 +9565,10 @@ PrefabInstance:
     - target: {fileID: 4116976619712009880, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793870287065579388, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8894611293491738048, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_IsTrigger
