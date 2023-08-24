@@ -13,12 +13,15 @@ public class RandomEventManager : MonoBehaviour
     public Text insuranceCoverageText;
     public Text finalBillText;
     public Text fireText;
+    public Text carAcciText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
     public float medicalInsurancePercentage;
     public int moneyLostInFire;
     public float fireInsurancePercentage;
+    public int carAccidentBill;
+    public float carInsurancePercentage;
 
     public bool randomEventHasHappened;
 
@@ -34,6 +37,7 @@ public class RandomEventManager : MonoBehaviour
     public GameObject carAcciInsurance;
     public GameObject carAcciGreyInsurance;
 
+
     public GameObject noInsurancePanel;
     public GameObject insuranceBillPanel;
     // Start is called before the first frame update
@@ -46,6 +50,9 @@ public class RandomEventManager : MonoBehaviour
         moneyLostInFire = Random.Range(150, 750);
         fireInsurancePercentage = 0.25f;
         fireText.text = "Amount Lost: " + moneyLostInFire;
+        carAccidentBill = Random.Range(750, 1250);
+        carInsurancePercentage = 0.2f;
+        carAcciText.text = "Amount Lost: " + carAccidentBill;
 
     }
 
@@ -64,7 +71,10 @@ public class RandomEventManager : MonoBehaviour
         {
             CheckForFireInsurance();
         }
-
+        if (eventHandler.carAccident)
+        {
+            CheckForCarInsurance();
+        }
     }
 
     public void ProceedRobbed()
@@ -89,7 +99,9 @@ public class RandomEventManager : MonoBehaviour
     }
     public void ProceedAccident()
     {
-
+        carAccidentPanel.SetActive(false);
+        coinManager.currentCoins = coinManager.currentCoins - carAccidentBill;
+        coinManager.UpdateCoinDisplay();
     }
 
     public void GettingRobbedEvent()
@@ -125,6 +137,12 @@ public class RandomEventManager : MonoBehaviour
         firePanel.SetActive(false);
         StartCoroutine(InsuranceBill(moneyLostInFire, fireInsurancePercentage));
     }
+
+    public void InsuranceCar()
+    {
+        carAccidentPanel.SetActive(false); 
+        StartCoroutine(InsuranceBill(carAccidentBill, carInsurancePercentage));
+    }
     public void CheckForMedicalInsurance()
     {
         if (PlayerPrefs.GetInt("HealthInsurance") == 1)
@@ -151,6 +169,20 @@ public class RandomEventManager : MonoBehaviour
         {
             fireGreyInsurance.SetActive(true);
             fireInsurance.SetActive(false);
+        }
+    }
+
+    public void CheckForCarInsurance()
+    {
+        if (PlayerPrefs.GetInt("CarInsurance") == 1)
+        {
+            carAcciGreyInsurance.SetActive(false);
+            carAcciInsurance.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("CarInsurance") == 0)
+        {
+            carAcciGreyInsurance.SetActive(true);
+            carAcciInsurance.SetActive(false);
         }
     }
 
