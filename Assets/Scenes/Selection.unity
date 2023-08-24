@@ -1427,7 +1427,7 @@ MonoBehaviour:
     m_LineSpacing: 0.8
   m_Text: 'Income: 400/year
 
-    Perks: difficult to promote but large pay raise
+    Perks: Has Pension after retirement
 
     Stability
     of job: Unstable'
@@ -2275,7 +2275,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Income: 480/year\r\nPerks: Faster promotion \r\nStability of job: Stable"
+  m_Text: 'Income: 480/year
+
+    Perks: None
+
+    Stability of job: Stable'
 --- !u!222 &1242765918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2510,7 +2514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1598912695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3972,8 +3976,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Income: 360/year\r\nPerks: Large pay raise only\r\nafter working long
-    term \r\nStability of job: Stable"
+  m_Text: 'Income: 360/year
+
+    Perks: Has Health Insurance Immediately
+
+    Stability
+    of job: Stable'
 --- !u!222 &2085798051
 CanvasRenderer:
   m_ObjectHideFlags: 0
