@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34607258, g: 0.6319652, b: 0.86854565, a: 1}
+  m_IndirectSpecularColor: {r: 0.34599325, g: 0.6318843, b: 0.8685065, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -56112,6 +56112,7 @@ MonoBehaviour:
   beforeInsuranceText: {fileID: 862036478}
   insuranceCoverageText: {fileID: 1614389018}
   finalBillText: {fileID: 1864699367}
+  fireText: {fileID: 437719415}
   amountRobbed: 0
   medicalSlippedBill: 0
   medicalInsurancePercentage: 0

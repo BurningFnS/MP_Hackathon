@@ -12,6 +12,7 @@ public class RandomEventManager : MonoBehaviour
     public Text beforeInsuranceText;
     public Text insuranceCoverageText;
     public Text finalBillText;
+    public Text fireText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -41,7 +42,7 @@ public class RandomEventManager : MonoBehaviour
         medicalInsurancePercentage = 0.2f;
         moneyLostInFire = Random.Range(150, 750);
         fireInsurancePercentage = 0.25f;
-
+        fireText.text = "Amount Lost: " + moneyLostInFire;
 
     }
 
@@ -133,7 +134,7 @@ public class RandomEventManager : MonoBehaviour
 
     public void CheckForFireInsurance()
     {
-        Debug.Log("FireInsurance: " + PlayerPrefs.GetInt("FireInsurance"));
+        //Debug.Log("FireInsurance: " + PlayerPrefs.GetInt("FireInsurance"));
         if (PlayerPrefs.GetInt("FireInsurance") == 1)
         {
             fireGreyInsurance.SetActive(false);
