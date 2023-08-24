@@ -107,18 +107,21 @@ public class PropertyManager : MonoBehaviour
     {
         if(hasApartment)
         {
+            hasApartment = false;
             hasProperty = false;
             coinManager.currentCoins += 0;
             apartmentSellButton.SetActive(false);
         }
         if(hasCondominium)
         {
+            hasCondominium = false;
             hasProperty = false;
             coinManager.currentCoins += 3500;
             condominiumSellButton.SetActive(false);
         }
         if(hasLanded)
         {
+            hasLanded=false;
             hasProperty = false;
             coinManager.currentCoins += 5000;
             landedSellButton.SetActive(false);
