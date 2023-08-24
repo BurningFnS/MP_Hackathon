@@ -8502,7 +8502,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: 'Legal Foo Bank has been around for 1 year
+  m_Text: 'Legal Foo Bank has been around for a year
 
     Bank Security: Average
 
@@ -9179,8 +9179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000019073486, y: -14}
-  m_SizeDelta: {x: 343.95, y: 203.7417}
+  m_AnchoredPosition: {x: 3.1522, y: -23.780888}
+  m_SizeDelta: {x: 337.6456, y: 184.1799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &257995305
 MonoBehaviour:
@@ -9215,8 +9215,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'A newly developed Indie Company, offering a 0-20% chance of significant
-    returns.
+  m_Text: 'A newly developed Indie Company that was struggling during the pandemic
+    with their new game dropping soon.
 
 '
 --- !u!222 &257995306
@@ -13571,7 +13571,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Max deposit amount: $12000'
+  m_Text: 'Max amount: $12000'
 --- !u!222 &432669297
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25840,8 +25840,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038146973, y: -17}
-  m_SizeDelta: {x: 287.8783, y: 203.7417}
+  m_AnchoredPosition: {x: 1.1, y: -24.297}
+  m_SizeDelta: {x: 331.2437, y: 167.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784621564
 MonoBehaviour:
@@ -25876,10 +25876,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Philosophical Ltd. is a operating for 145 years, offering 0-30% chance
-    of significant returns.
+  m_Text: 'Philosophical Ltd. is a finanically stable company operating for 70 years
+    even surviving through the pandemic.
 
-    $5 / Share'
+'
 --- !u!222 &784621565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29365,9 +29365,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "10% interest per year,\n\r$12 monthly maintenance fee\r unless you \nhave
-    $2000 in bank"
+    m_LineSpacing: 1.32
+  m_Text: '10% interest per year, Compounded yearly.
+
+    Security: Low '
 --- !u!222 &944980753
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49538,8 +49539,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000064373016, y: 0.00000166893}
-  m_SizeDelta: {x: 312.4862, y: 182.1678}
+  m_AnchoredPosition: {x: 2.5718, y: 0.00000166893}
+  m_SizeDelta: {x: 350.7804, y: 182.1678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778232367
 MonoBehaviour:
@@ -49573,9 +49574,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "3% interest per year,\r $20 monthly maintenance fee\r unless you have
-    \n$9000 in bank"
+    m_LineSpacing: 1.32
+  m_Text: "3% interest per year,\r Compounded yearly. \nSecurity : Extremely High"
 --- !u!222 &1778232368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49699,8 +49699,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000064373016, y: 0.00000166893}
-  m_SizeDelta: {x: 312.4862, y: 182.1678}
+  m_AnchoredPosition: {x: 2.1196, y: 0.00000166893}
+  m_SizeDelta: {x: 349.8763, y: 182.1678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781021541
 MonoBehaviour:
@@ -49734,9 +49734,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "12% interest per year,\r $18 monthly maintenance\nfee\r unless you have
-    $6000 in bank"
+    m_LineSpacing: 1.32
+  m_Text: "12% interest per year,\r Compunded yearly\nSecurity: Moderately High"
 --- !u!222 &1781021542
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49815,7 +49814,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.8
+    m_LineSpacing: 0.7
   m_Text: 'Junnie Bank has great rates
 
     Bank Security: Good
@@ -51363,8 +51362,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038146973, y: -17}
-  m_SizeDelta: {x: 287.8783, y: 203.7417}
+  m_AnchoredPosition: {x: 0.00000667572, y: -29.3}
+  m_SizeDelta: {x: 340.6064, y: 160.1219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827903544
 MonoBehaviour:
@@ -51399,10 +51398,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fang Jun Pte Ltd., a thriving gym company, offering 0-40% share in significant
-    returns.
+  m_Text: 'Fang Jun Pte Ltd., a striving gym company that is trying to pick up the
+    pace after the pandemic
 
-    $3 / Share'
+'
 --- !u!222 &1827903545
 CanvasRenderer:
   m_ObjectHideFlags: 0
