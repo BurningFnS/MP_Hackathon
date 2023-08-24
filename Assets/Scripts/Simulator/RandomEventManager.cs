@@ -9,6 +9,9 @@ public class RandomEventManager : MonoBehaviour
     public EventHandler eventHandler;
 
     public Text robbedText;
+    public Text beforeInsuranceText;
+    public Text insuranceCoverageText;
+    public Text finalBillText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -20,12 +23,14 @@ public class RandomEventManager : MonoBehaviour
 
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
+    public GameObject noInsurancePanel;
+    public GameObject insuranceBillPanel;
     // Start is called before the first frame update
     void Start()
     {
         randomEventHasHappened = false;
         //if (gameObject.name == "")
-        medicalSlippedBill = 200;
+        medicalSlippedBill = 2000;
         medicalInsurancePercentage = 0.2f;
 
     }
@@ -78,13 +83,11 @@ public class RandomEventManager : MonoBehaviour
         coinManager.UpdateCoinDisplay();
     }
 
+
     public void InsuranceSlipped()
     {
         slippedPanel.SetActive(false);
-        int insuredBill = Mathf.CeilToInt(medicalSlippedBill * medicalInsurancePercentage);
-        coinManager.currentCoins = coinManager.currentCoins - insuredBill;
-        Debug.Log("Insured bill is : " +  insuredBill);
-        coinManager.UpdateCoinDisplay();
+        StartCoroutine(InsuranceBill(medicalSlippedBill, medicalInsurancePercentage));
     }
 
     public void CheckForMedicalInsurance()
@@ -99,5 +102,35 @@ public class RandomEventManager : MonoBehaviour
             slippedGreyInsurance.SetActive(true);
             slippedInsurance.SetActive(false);
         }
+    }
+
+    public void NoInsuranceWarning()
+    {
+        StartCoroutine(NoInsurance());
+    }
+
+    IEnumerator NoInsurance()
+    {
+        noInsurancePanel.SetActive(true);
+
+        yield return new WaitForSeconds(1.5f);
+
+        noInsurancePanel.SetActive(false);
+    }
+
+    IEnumerator InsuranceBill(int billBeforeInsurance, float insurancePercentage)
+    {
+        insuranceBillPanel.SetActive(true);
+        int insuredBill = Mathf.CeilToInt(billBeforeInsurance * insurancePercentage);
+
+        Debug.Log("Insured bill is : " + insuredBill);
+        beforeInsuranceText.text = "Bill: $" + billBeforeInsurance;
+        insuranceCoverageText.text = "Insurance covers:\r\n" + "$" + billBeforeInsurance + " x " + (100 - (insurancePercentage * 100)) + "% = $" + (billBeforeInsurance - insuredBill);
+        finalBillText.text = "Final Bill: $" + insuredBill;
+
+        yield return new WaitForSeconds(3f);
+        coinManager.currentCoins = coinManager.currentCoins - insuredBill;
+        coinManager.UpdateCoinDisplay();
+        insuranceBillPanel.SetActive(false);
     }
 }
