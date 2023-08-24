@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
+    public PlayerController playerController;
+
     void Update()
     {
         transform.Rotate(Vector3.up * 80 * Time.deltaTime);
@@ -11,14 +13,10 @@ public class Barrier : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag("Obstacle") || other.CompareTag("Car") || other.CompareTag("Truck"))
         {
             Destroy(other.gameObject);
-        }
-
-        if (other.CompareTag("Car"))
-        {
-            Destroy(other.gameObject);
+            playerController.DisableShieldEffect();
         }
     }
 }

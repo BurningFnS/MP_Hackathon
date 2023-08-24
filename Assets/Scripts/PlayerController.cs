@@ -310,9 +310,10 @@ public class PlayerController : MonoBehaviour
         // Activate the shield effect for the player, e.g., make the player invulnerable to obstacles
     }
 
-    private void DisableShieldEffect()
+    public void DisableShieldEffect()
     {
         shieldEffectActive = false;
+        shieldRemainingTime = 0f;
         shieldBarrier.SetActive(false);
         // Deactivate the shield effect for the player, e.g., make the player vulnerable to obstacles again
     }
@@ -333,7 +334,7 @@ public class PlayerController : MonoBehaviour
                 CoinExplosion();
             }
 
-            if (hit.transform.tag == "Car")
+            if (hit.transform.tag == "Car" || hit.transform.tag == "Truck")
             {
                 explosionBurst.Play();
                 Destroy(hit.gameObject); //Destroy the collided obstacle
