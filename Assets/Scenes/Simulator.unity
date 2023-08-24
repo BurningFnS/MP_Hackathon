@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34631392, g: 0.63202417, b: 0.8685427, a: 1}
+  m_IndirectSpecularColor: {r: 0.34576076, g: 0.63172567, b: 0.8684182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -40749,6 +40749,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394132079}
   m_CullTransparentMesh: 1
+--- !u!1 &1394845641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1394845642}
+  - component: {fileID: 1394845643}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1394845642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394845641}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 191.40742, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1701902652}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1394845643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394845641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728102b498b7d1c4081876981c7dfdec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: ignore
+    clip: {fileID: 0}
+    volume: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: StartSong
+    clip: {fileID: 8300000, guid: 1f673c174ad10a24c85903b8776a5c02, type: 3}
+    volume: 0.5
+    loop: 1
+    source: {fileID: 0}
+  - name: RunnerSong
+    clip: {fileID: 8300000, guid: 33ca7b03b5730804a8973e04383754a7, type: 3}
+    volume: 0.5
+    loop: 1
+    source: {fileID: 0}
+  - name: SimSong
+    clip: {fileID: 8300000, guid: 50cdb9ea7fa644649abf9af9d3dccedb, type: 3}
+    volume: 0.5
+    loop: 1
+    source: {fileID: 0}
+  - name: Coin
+    clip: {fileID: 8300000, guid: 835c7932c2e9f414190f151845b30122, type: 3}
+    volume: 0.6
+    loop: 0
+    source: {fileID: 0}
+  - name: Bang
+    clip: {fileID: 8300000, guid: 2b4aa8f4fc63ca4459b3c1299fa5134d, type: 3}
+    volume: 0.6
+    loop: 0
+    source: {fileID: 0}
+  - name: Yay
+    clip: {fileID: 8300000, guid: 4639f0a6071ca68458041df55a0f857d, type: 3}
+    volume: 0.6
+    loop: 0
+    source: {fileID: 0}
+  isStartScene: 0
+  isRunnerScene: 0
+  isSimScene: 1
 --- !u!1 &1395102290
 GameObject:
   m_ObjectHideFlags: 0
@@ -48906,6 +48989,7 @@ Transform:
   - {fileID: 2123037364}
   - {fileID: 1834669574}
   - {fileID: 1357331840}
+  - {fileID: 1394845642}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
