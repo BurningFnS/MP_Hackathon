@@ -71,13 +71,7 @@ public class CoinManager : MonoBehaviour
             SceneManager.LoadScene("Level");
         }
     }
-    public void Retire()
-    {
-        if(currentAge >= 65 )
-        {
-            PlayerPrefs.SetInt("Salary", 0);
-        }
-    }
+ 
     public void Proceed()
     {
         losePanel.SetActive(true);
