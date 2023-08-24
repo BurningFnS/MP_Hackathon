@@ -39,6 +39,7 @@ public class PropertyManager : MonoBehaviour
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You already own \n a property!";
         }
+
         else
         {
             apartmentSellButton.SetActive(true);
@@ -47,11 +48,13 @@ public class PropertyManager : MonoBehaviour
             StartCoroutine(SuccessfullyPurchasedProperty());
             purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Apartment Property!";
         }
+        Debug.Log("hasApartment: " + hasApartment);
         Debug.Log(hasProperty);
     }
     public void CondominiumButton()
     {
-        if (!hasCondominium && coinManager.currentCoins >= 4000)
+        Debug.Log(hasApartment +" Have apartment");
+        if (!hasCondominium && coinManager.currentCoins >= 4000 && !hasApartment && !hasLanded)
         {
             condominiumSellButton.SetActive(true);
             hasCondominium = true;
@@ -60,7 +63,7 @@ public class PropertyManager : MonoBehaviour
             purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Condominium Property!";
             coinManager.currentCoins -= 4000;
         }
-        else if (hasProperty)
+        else if (hasProperty )
         {
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You already own \n a property!";
@@ -75,10 +78,12 @@ public class PropertyManager : MonoBehaviour
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You do not have enough \n money to purchase this property!";
         }
+        Debug.Log("hasCondominium: " + hasCondominium);
+        Debug.Log(hasProperty);
     }
     public void LandedButton()
     {
-        if (!hasLanded && coinManager.currentCoins >= 5500)
+        if (!hasLanded && coinManager.currentCoins >= 5500 && !hasApartment && !hasCondominium)
         {
             landedSellButton.SetActive(true);
             hasLanded = true;
@@ -102,6 +107,8 @@ public class PropertyManager : MonoBehaviour
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You do not have enough \n money to purchase \n this property!";
         }
+        Debug.Log("hasLanded: " + hasLanded);
+        Debug.Log(hasProperty);
     }
     public void SellPropertyButton()
     {
