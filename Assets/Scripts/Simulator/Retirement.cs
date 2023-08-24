@@ -25,6 +25,7 @@ public class Retirement : MonoBehaviour
             //Show you have Retired Panel (FORCE PLAYER TO RETIRE)
             forcedRetiredPanel.SetActive(true);
             BuildingClickHandler.canClickOnBuildings = false;
+            PlayerPrefs.SetInt("JobIndex", 3);
             PlayerPrefs.SetInt("Salary", 0);
             PlayerPrefs.SetInt("Retirement", 1);
         }
@@ -67,6 +68,7 @@ public class Retirement : MonoBehaviour
         //Set the player's salary to $0
         PlayerPrefs.SetInt("Salary", 0);
         PlayerPrefs.SetInt("Retirement", 1);
+        PlayerPrefs.SetInt("JobIndex", 3);
 
         RetireConfirmationPanel.SetActive(false);
         BuildingClickHandler.canClickOnBuildings = true;
