@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34629518, g: 0.6320171, b: 0.8685379, a: 1}
+  m_IndirectSpecularColor: {r: 0.34631392, g: 0.63202417, b: 0.8685427, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37049,7 +37049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Income: 480/year\r\nPerks: Faster promotion \r\nStability of job: Stable"
+  m_Text: "Income: 480/year\r\nPerks: None \r\nStability of job: Stable"
 --- !u!222 &1220662165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45162,8 +45162,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "Income: 360/year\r\nPerks: Large pay raise only\r\nafter working long
-    term \r\nStability of job: Stable"
+  m_Text: 'Income: 360/year
+
+    Perks: Has Health Insurance Immediately
+
+    Stability
+    of job: Stable'
 --- !u!222 &1542796703
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47832,7 +47836,7 @@ MonoBehaviour:
     m_LineSpacing: 0.8
   m_Text: 'Income: 400/year
 
-    Perks: difficult to promote but large pay raise
+    Perks: Has Pension after retirement
 
     Stability
     of job: Unstable'
