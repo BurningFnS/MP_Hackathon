@@ -19,6 +19,7 @@ public class EventHandler : MonoBehaviour
     public bool gettingRobbed;
     public bool slipAndFall;
     public bool fireAccident;
+    public bool carAccident;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class EventHandler : MonoBehaviour
         gettingRobbed = false;
         slipAndFall = false;
         fireAccident = false;
+        carAccident = false;
         //randomEventManager.SetActive(false);
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
@@ -74,7 +76,7 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         int randomizedIndexPanel = Random.Range(0, randomEventPanel.Length);
-        randomizedIndexPanel = 2;
+        randomizedIndexPanel = 3;
         randomEventPanel[randomizedIndexPanel].SetActive(true);
         if(randomizedIndexPanel == 0)
         {
@@ -87,6 +89,10 @@ public class EventHandler : MonoBehaviour
         if(randomizedIndexPanel == 2)
         {
             fireAccident = true;
+        }
+        if(randomizedIndexPanel == 3)
+        {
+            carAccident = true;
         }
     }
 

@@ -25,11 +25,14 @@ public class RandomEventManager : MonoBehaviour
     public GameObject robbedPanel;
     public GameObject slippedPanel;
     public GameObject firePanel;
+    public GameObject carAccidentPanel;
 
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
     public GameObject fireInsurance;
     public GameObject fireGreyInsurance;
+    public GameObject carAcciInsurance;
+    public GameObject carAcciGreyInsurance;
 
     public GameObject noInsurancePanel;
     public GameObject insuranceBillPanel;
@@ -83,6 +86,10 @@ public class RandomEventManager : MonoBehaviour
         firePanel.SetActive(false);
         coinManager.currentCoins = coinManager.currentCoins - moneyLostInFire;
         coinManager.UpdateCoinDisplay();
+    }
+    public void ProceedAccident()
+    {
+
     }
 
     public void GettingRobbedEvent()
