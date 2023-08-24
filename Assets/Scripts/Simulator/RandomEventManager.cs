@@ -16,13 +16,20 @@ public class RandomEventManager : MonoBehaviour
     public int amountRobbed;
     public int medicalSlippedBill;
     public float medicalInsurancePercentage;
+    public int moneyLostInFire;
+    public float fireInsurancePercentage;
+
     public bool randomEventHasHappened;
 
     public GameObject robbedPanel;
     public GameObject slippedPanel;
+    public GameObject firePanel;
 
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
+    public GameObject fireInsurance;
+    public GameObject fireGreyInsurance;
+
     public GameObject noInsurancePanel;
     public GameObject insuranceBillPanel;
     // Start is called before the first frame update
@@ -32,6 +39,9 @@ public class RandomEventManager : MonoBehaviour
         //if (gameObject.name == "")
         medicalSlippedBill = 2000;
         medicalInsurancePercentage = 0.2f;
+        moneyLostInFire = Random.Range(150, 750);
+        fireInsurancePercentage = 0.25f;
+
 
     }
 
@@ -46,6 +56,10 @@ public class RandomEventManager : MonoBehaviour
         {
             CheckForMedicalInsurance();
         }
+        if (eventHandler.fireAccident)
+        {
+            CheckForFireInsurance();
+        }
 
     }
 
@@ -54,6 +68,19 @@ public class RandomEventManager : MonoBehaviour
         
         robbedPanel.SetActive(false);
         coinManager.currentCoins = coinManager.currentCoins - amountRobbed;
+        coinManager.UpdateCoinDisplay();
+    }
+
+    public void ProceedSlipped()
+    {
+        slippedPanel.SetActive(false);
+        coinManager.currentCoins = coinManager.currentCoins - medicalSlippedBill;
+        coinManager.UpdateCoinDisplay();
+    }
+    public void ProceedFire()
+    {
+        firePanel.SetActive(false);
+        coinManager.currentCoins = coinManager.currentCoins - moneyLostInFire;
         coinManager.UpdateCoinDisplay();
     }
 
@@ -76,12 +103,7 @@ public class RandomEventManager : MonoBehaviour
         }
     }
 
-    public void ProceedSlipped()
-    {
-        slippedPanel.SetActive(false);
-        coinManager.currentCoins = coinManager.currentCoins - medicalSlippedBill;
-        coinManager.UpdateCoinDisplay();
-    }
+
 
 
     public void InsuranceSlipped()
@@ -90,6 +112,11 @@ public class RandomEventManager : MonoBehaviour
         StartCoroutine(InsuranceBill(medicalSlippedBill, medicalInsurancePercentage));
     }
 
+    public void InsuranceFire()
+    {
+        firePanel.SetActive(false);
+        StartCoroutine(InsuranceBill(moneyLostInFire, fireInsurancePercentage));
+    }
     public void CheckForMedicalInsurance()
     {
         if (PlayerPrefs.GetInt("HealthInsurance") == 1)
@@ -101,6 +128,21 @@ public class RandomEventManager : MonoBehaviour
         {
             slippedGreyInsurance.SetActive(true);
             slippedInsurance.SetActive(false);
+        }
+    }
+
+    public void CheckForFireInsurance()
+    {
+        Debug.Log("FireInsurance: " + PlayerPrefs.GetInt("FireInsurance"));
+        if (PlayerPrefs.GetInt("FireInsurance") == 1)
+        {
+            fireGreyInsurance.SetActive(false);
+            fireInsurance.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("FireInsurance") == 0)
+        {
+            fireGreyInsurance.SetActive(true);
+            fireInsurance.SetActive(false);
         }
     }
 
