@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving;
     private int receivedValue;
     public GameObject[] visitUIPanel;
+    public Retirement retirement;
 
     private void Start()
     {
@@ -33,9 +34,20 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isRunning", false);
             agent.ResetPath();
             isMoving = false;
-            visitUIPanel[receivedValue].SetActive(true);
-            BuildingClickHandler.canClickOnBuildings = false;
+
+            //Make sure the player cannot get a job after they retire
+            if(PlayerPrefs.GetInt("Retirement") == 1 && receivedValue == 2)
+            {
+                retirement.forcedRetiredPanel.SetActive(true);
+                BuildingClickHandler.canClickOnBuildings = false;
+            }
+            else
+            {
+                visitUIPanel[receivedValue].SetActive(true);
+                BuildingClickHandler.canClickOnBuildings = false;
+            }
         }
+
         if (!agent.hasPath && !isMoving)
         {
             animator.SetBool("isRunning", false);

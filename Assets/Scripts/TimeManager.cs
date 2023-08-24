@@ -33,7 +33,7 @@ public class TimeManager : MonoBehaviour
         shieldPanel.SetActive(false);
         magnetPanel.SetActive(false);
         pausedScreen.SetActive(false);
-        salary = PlayerPrefs.GetInt("Salary");
+        salary = PlayerPrefs.GetInt("Salary") * 5;
     }
 
     void Update()
@@ -129,7 +129,7 @@ public class TimeManager : MonoBehaviour
     public void Proceed()
     {
         SceneManager.LoadScene("Simulator");
-        totalCoins = PlayerManager.numberOfCoins + (salary * 5);
+        totalCoins = PlayerManager.numberOfCoins + salary;
         PlayerPrefs.SetInt("CollectedCoins", totalCoins);
     }
 }
