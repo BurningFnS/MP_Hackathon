@@ -17,16 +17,15 @@ public class Retirement : MonoBehaviour
     public Sprite RetiredButton; // Already Retired Button
     public Image button; // Reference to the Image component of the button
 
-    private bool retired;
 
     private void Update()
     {
-        if (coinManager.currentAge >= 65 && !retired)
+        if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("Retirement") == 0)
         {
             //Show you have Retired Panel (FORCE PLAYER TO RETIRE)
             forcedRetiredPanel.SetActive(true);
             PlayerPrefs.SetInt("Salary", 0);
-            retired = true;
+            PlayerPrefs.SetInt("Retirement", 1);
         }
 
         if (coinManager.currentAge >= 90)
@@ -36,7 +35,7 @@ public class Retirement : MonoBehaviour
         }
 
         //if the player has already retired
-        if (retired)
+        if (PlayerPrefs.GetInt("Retirement") == 1)
         {
             //change the retire button image to the locked one
             button.sprite = RetiredButton;
@@ -49,7 +48,7 @@ public class Retirement : MonoBehaviour
     //Retire button
     public void Retire()
     {
-        if (retired)
+        if (PlayerPrefs.GetInt("Retirement") == 1)
         {
             forcedRetiredPanel.SetActive(true);
         }
@@ -63,7 +62,7 @@ public class Retirement : MonoBehaviour
     {
         //Set the player's salary to $0
         PlayerPrefs.SetInt("Salary", 0);
-        retired = true;
+        PlayerPrefs.SetInt("Retirement", 1);
 
         RetireConfirmationPanel.SetActive(false);
     }
