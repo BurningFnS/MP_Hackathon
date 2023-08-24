@@ -76,7 +76,7 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         int randomizedIndexPanel = Random.Range(0, randomEventPanel.Length);
-        randomizedIndexPanel = 3; //For Debugging purpose
+        randomizedIndexPanel = 4; //For Debugging purpose
         randomEventPanel[randomizedIndexPanel].SetActive(true);
         if(randomizedIndexPanel == 0)
         {
@@ -86,11 +86,11 @@ public class EventHandler : MonoBehaviour
         {
             slipAndFall = true;
         }
-        if(randomizedIndexPanel == 2)
+        if(randomizedIndexPanel == 2 || randomizedIndexPanel == 4)
         {
             fireAccident = true;
         }
-        if(randomizedIndexPanel == 3)
+        if(randomizedIndexPanel == 3 )
         {
             carAccident = true;
         }
