@@ -25,6 +25,10 @@ public class CoinManager : MonoBehaviour
     public Sprite positiveCoinSprite;
     public InvestmentManager investment;
 
+
+    public Color redColor;
+    public Color blueColor;
+
     void Start()
     {
 
@@ -50,10 +54,12 @@ public class CoinManager : MonoBehaviour
         if(currentCoins < 0)
         {
             coinImageComponent.sprite = negativeCoinSprite;
+            coinText.color = redColor;
         }
         else
         {
             coinImageComponent.sprite = positiveCoinSprite;
+            coinText.color = blueColor;
         }
         coinText.text = "" + currentCoins;
     }

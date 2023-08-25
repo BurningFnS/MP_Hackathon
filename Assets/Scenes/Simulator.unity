@@ -37224,6 +37224,8 @@ MonoBehaviour:
   negativeCoinSprite: {fileID: 21300000, guid: 931e7c076351a2b4b9337866c14d8e24, type: 3}
   positiveCoinSprite: {fileID: 21300000, guid: 70b204d3509031247944fa683a45b067, type: 3}
   investment: {fileID: 1569758523}
+  redColor: {r: 0.94509804, g: 0.25490198, b: 0.24705882, a: 1}
+  blueColor: {r: 0.2784314, g: 0.5058824, b: 0.90588236, a: 1}
 --- !u!4 &1122658504
 Transform:
   m_ObjectHideFlags: 0
