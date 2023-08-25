@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3460188, g: 0.63187516, b: 0.8684989, a: 1}
+  m_IndirectSpecularColor: {r: 0.34595993, g: 0.6318681, b: 0.8685098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6104,7 +6104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052c13f8a4177d445935f852c613a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 100000
+  totalTime: 60
   timerText: {fileID: 1791390365}
   timeUpPanel: {fileID: 926932345}
   playerController: {fileID: 1749492192}
@@ -9348,7 +9348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632611324639677474, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4116976619712009880, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_RootOrder
@@ -9396,7 +9396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4597625037036234937, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5793870287065579388, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_IsActive
@@ -9404,7 +9404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8894611293491738048, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8894611293491738048, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_IsTrigger
@@ -9441,6 +9441,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4116976619712009880, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
   m_PrefabInstance: {fileID: 1351385593509184096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3162483950697829628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353331781107158594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab3d17859cc67544a45b283e7cf2e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1749492192}
 --- !u!1001 &3500024821803258032
 PrefabInstance:
   m_ObjectHideFlags: 0

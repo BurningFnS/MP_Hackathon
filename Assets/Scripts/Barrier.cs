@@ -9,9 +9,13 @@ public class Barrier : MonoBehaviour
     void Update()
     {
         transform.Rotate(Vector3.up * 80 * Time.deltaTime);
-        if (playerController.hitObstacle)
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle") || other.CompareTag("Car") || other.CompareTag("Truck"))
         {
-            playerController.DisableShieldEffect();
+            Destroy(other.gameObject);
         }
     }
 }

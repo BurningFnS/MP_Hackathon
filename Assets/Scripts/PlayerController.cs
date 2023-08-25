@@ -311,7 +311,6 @@ public class PlayerController : MonoBehaviour
     public void DisableShieldEffect()
     {
         shieldEffectActive = false;
-        shieldRemainingTime = 0f;
         shieldBarrier.SetActive(false);
         // Deactivate the shield effect for the player, e.g., make the player vulnerable to obstacles again
     }
