@@ -119,13 +119,13 @@ TextureImporter:
       name: Icons_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 789
-        width: 418
-        height: 171
+        x: 22
+        y: 803
+        width: 410
+        height: 141
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 2, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

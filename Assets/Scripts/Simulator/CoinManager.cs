@@ -20,11 +20,14 @@ public class CoinManager : MonoBehaviour
     public GameObject losePanel;
     public GameObject retireButton;
     public Text alertText;
-
+    public Image coinImageComponent;
+    public Sprite negativeCoinSprite;
+    public Sprite positiveCoinSprite;
     public InvestmentManager investment;
 
     void Start()
     {
+
         totalCoins = PlayerPrefs.GetInt("CollectedCoins");
         cashAtHand = PlayerPrefs.GetInt("CurrentCoins");
         currentAge = PlayerPrefs.GetInt("CurrentAge");
@@ -44,7 +47,14 @@ public class CoinManager : MonoBehaviour
     {
         // Code to update the UI display of the collected coins
         // For example, you could set the text of a UI Text component to show the totalCoins value.
-
+        if(currentCoins < 0)
+        {
+            coinImageComponent.sprite = negativeCoinSprite;
+        }
+        else
+        {
+            coinImageComponent.sprite = positiveCoinSprite;
+        }
         coinText.text = "" + currentCoins;
     }
 
