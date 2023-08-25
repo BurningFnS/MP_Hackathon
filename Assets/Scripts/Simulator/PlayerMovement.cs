@@ -38,6 +38,12 @@ public class PlayerMovement : MonoBehaviour
             //Make sure the player cannot get a job after they retire
             if(PlayerPrefs.GetInt("Retirement") == 1 && receivedValue == 2)
             {
+                if(PlayerPrefs.GetInt("JobIndex")==0) //to actually set the salary for the pension 
+                {
+                    PlayerPrefs.SetInt("Salary", 200);
+                }
+                Debug.Log(PlayerPrefs.GetInt("JobIndex"));
+                Debug.Log(PlayerPrefs.GetInt("Salary"));
                 retirement.forcedRetiredPanel.SetActive(true);
                 BuildingClickHandler.canClickOnBuildings = false;
             }

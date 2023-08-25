@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3457537, g: 0.63179946, b: 0.8684673, a: 1}
+  m_IndirectSpecularColor: {r: 0.34603584, g: 0.6318786, b: 0.86850536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -43135,6 +43135,10 @@ MonoBehaviour:
   purchasedPropertyText: {fileID: 653180082}
   failedPurchaseText: {fileID: 593349523}
   coinManager: {fileID: 1122658503}
+  hasProperty: 0
+  hasApartment: 0
+  hasLanded: 0
+  hasCondominium: 0
 --- !u!1 &1355524977
 GameObject:
   m_ObjectHideFlags: 0
@@ -67016,6 +67020,7 @@ MonoBehaviour:
   - {fileID: 628138177}
   - {fileID: 2089129163}
   insuranceManager: {fileID: 429489366}
+  propertyManager: {fileID: 1353680983}
   randomEventCanHappen: 0
   gettingRobbed: 0
   slipAndFall: 0

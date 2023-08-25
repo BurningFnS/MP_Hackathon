@@ -33,6 +33,10 @@ public class TextureChange : MonoBehaviour
         {
             shirtRenderer.sharedMaterial = material[3];
         }
+        if(PlayerPrefs.GetInt("JobIndex")== 0 && PlayerPrefs.GetInt("Retirement") ==1 )
+        {
+            shirtRenderer.sharedMaterial = material[3];
+        }
     }
     
 }

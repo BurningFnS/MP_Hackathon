@@ -12,15 +12,30 @@ public class PropertyManager : MonoBehaviour
     public Text purchasedPropertyText;
     public Text failedPurchaseText;
     public CoinManager coinManager;
-    private bool hasProperty = false;
-    private bool hasApartment = false;
-    private bool hasLanded = false;
-    private bool hasCondominium = false;
+    public bool hasProperty = false;
+    public bool hasApartment = false;
+    public bool hasLanded = false;
+    public bool hasCondominium = false;
     // Start is called before the first frame update
     void Start()
     {
         coinManager.cashAtHand = PlayerPrefs.GetInt("CurrentCoins");
         coinManager.totalCoins = PlayerPrefs.GetInt("CollectedCoins");
+        if(PlayerPrefs.GetInt("Apartment") == 1)
+        {
+            ApartmentButton();
+            hasApartment = true;
+        }
+        if (PlayerPrefs.GetInt("Condo") == 1)
+        {
+            CondominiumButton();
+            hasCondominium = true;
+        }
+        if(PlayerPrefs.GetInt("Landed") == 1)
+        {
+            LandedButton();
+            hasLanded = true;
+        };
         coinManager.currentCoins = coinManager.totalCoins + coinManager.cashAtHand;
     }
     private void Update()
@@ -44,6 +59,7 @@ public class PropertyManager : MonoBehaviour
         {
             apartmentSellButton.SetActive(true);
             hasProperty = true;
+            PlayerPrefs.SetInt("Apartment", 1);
             hasApartment = true;
             StartCoroutine(SuccessfullyPurchasedProperty());
             purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Apartment Property!";
@@ -58,6 +74,7 @@ public class PropertyManager : MonoBehaviour
         {
             condominiumSellButton.SetActive(true);
             hasCondominium = true;
+            PlayerPrefs.SetInt("Condo", 1);
             hasProperty = true;
             StartCoroutine(SuccessfullyPurchasedProperty());
             purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Condominium Property!";
@@ -87,6 +104,7 @@ public class PropertyManager : MonoBehaviour
         {
             landedSellButton.SetActive(true);
             hasLanded = true;
+            PlayerPrefs.SetInt("Landed", 1);
             hasProperty = true;
             StartCoroutine(SuccessfullyPurchasedProperty());
             purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Landed Property!";
