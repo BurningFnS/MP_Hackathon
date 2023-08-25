@@ -12,7 +12,7 @@ public class CoinManager : MonoBehaviour
     public Text coinText;
     public Text ageText;
 
-    public static int currentAge;
+    public int currentAge;
     public int defaultAge = 25;
 
     public Bank bank;
