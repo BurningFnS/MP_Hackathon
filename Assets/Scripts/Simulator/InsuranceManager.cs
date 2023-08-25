@@ -21,7 +21,7 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
     public Text cancelText;
 
     public int[] insuranceExpenses;
-    public int totalInsuranceExpenses;
+    public static int totalInsuranceExpenses;
 
     public GameObject[] cancelButton;
     public GameObject[] confirmButton;
@@ -30,13 +30,29 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
     {
         PlayerPrefs.GetInt("HealthInsurance");
         PlayerPrefs.GetInt("CarInsurance");
+        InsuranceUpdate();
 
+        if (totalInsuranceExpenses != 0)
+        {
+            insuranceBill.SetActive(true);
+            insuranceExpensesText.text = "Insurance Bill: $" + totalInsuranceExpenses;
+        }
+    }
+
+
+    public void InsuranceUpdate()
+    {
         if (PlayerPrefs.GetInt("FireInsurance") == 1)
         {
             cancelButton[0].SetActive(true);
             noInsurance[0].SetActive(false);
             insurance[0].SetActive(true);
             insuranceExpenses[0] = 2000;
+        }
+        else
+        {
+            insuranceExpenses[0] = 0;
+
         }
 
         if (PlayerPrefs.GetInt("HealthInsurance") == 1)
@@ -46,6 +62,11 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             insurance[1].SetActive(true);
             insuranceExpenses[1] = 3000;
         }
+        else
+        {
+            insuranceExpenses[1] = 0;
+
+        }
 
         if (PlayerPrefs.GetInt("CarInsurance") == 1)
         {
@@ -54,15 +75,13 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             insurance[2].SetActive(true);
             insuranceExpenses[2] = 1000;
         }
+        else
+        {
+            insuranceExpenses[2] = 0;
+        }
 
         totalInsuranceExpenses = insuranceExpenses[0] + insuranceExpenses[1] + insuranceExpenses[2];
-        Debug.Log(totalInsuranceExpenses);
-
-        if (totalInsuranceExpenses != 0)
-        {
-            insuranceBill.SetActive(true);
-            insuranceExpensesText.text = "Insurance Bill: $" + totalInsuranceExpenses;
-        }
+        //Debug.Log(totalInsuranceExpenses);
     }
 
     public void OnPointerClick(PointerEventData eventData)

@@ -48,7 +48,8 @@ public class EventHandler : MonoBehaviour
             }
             if (i == 2)
             {
-                livingExpenses[i] = livingExpenses[0] + livingExpenses[1] + insuranceManager.totalInsuranceExpenses;
+                //Debug.Log(insuranceManager.totalInsuranceExpenses);
+                livingExpenses[i] = livingExpenses[0] + livingExpenses[1] + InsuranceManager.totalInsuranceExpenses;
                 livingExpensesText[i].text = "Total: $" + livingExpenses[i];
             }
         }
