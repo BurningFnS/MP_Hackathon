@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce;
     public float gravity = 20;
-    private bool hitObstacle = false;
+    public bool hitObstacle = false;
 
     public Animator anim;
     public GameObject coinParticles;
@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource coinSource;
     public AudioClip coinImpactSFX;
-
 
     void Start()
     {
@@ -303,14 +302,13 @@ public class PlayerController : MonoBehaviour
 
     public void EnableShieldEffect(float duration)
     {
-        
         shieldEffectActive = true;
         shieldBarrier.SetActive(true);
         shieldRemainingTime = duration;
         // Activate the shield effect for the player, e.g., make the player invulnerable to obstacles
     }
 
-    private void DisableShieldEffect()
+    public void DisableShieldEffect()
     {
         shieldEffectActive = false;
         shieldBarrier.SetActive(false);
@@ -324,21 +322,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (!shieldEffectActive)
+        if (hit.transform.tag == "Obstacle")
         {
-            if (hit.transform.tag == "Obstacle")
-            {
-                smokeBurst.Play();
-                Destroy(hit.gameObject); //Destroy the collided obstacle
-                CoinExplosion();
-            }
+            smokeBurst.Play();
+            Destroy(hit.gameObject); //Destroy the collided obstacle
+            CoinExplosion();
+        }
 
-            if (hit.transform.tag == "Car")
-            {
-                explosionBurst.Play();
-                Destroy(hit.gameObject); //Destroy the collided obstacle
-                CoinExplosion();
-            }
+        if (hit.transform.tag == "Car" || hit.transform.tag == "Truck")
+        {
+            explosionBurst.Play();
+            Destroy(hit.gameObject); //Destroy the collided obstacle
+            CoinExplosion();
         }
     }
 

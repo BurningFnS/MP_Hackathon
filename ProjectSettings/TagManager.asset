@@ -20,6 +20,7 @@ TagManager:
   - InvestmentVisit
   - PropertyClose
   - toClock
+  - Truck
   layers:
   - Default
   - TransparentFX
