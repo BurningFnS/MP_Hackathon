@@ -80,11 +80,12 @@ public class EventHandler : MonoBehaviour
 
     public void Pay()
     {
-        coinManager.currentCoins -= livingExpenses[2];
-        coinManager.UpdateCoinDisplay();
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins -= livingExpenses[2]);
+
+        //coinManager.UpdateCoinDisplay();
+
         yourExpenses.SetActive(false);
         BuildingClickHandler.canClickOnBuildings = true;
-
         randomEventCanHappen = true;
         //randomEventManager.SetActive(true);
         PlayRandomEvent();

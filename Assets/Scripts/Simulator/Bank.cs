@@ -64,11 +64,11 @@ public class Bank : MonoBehaviour
                 bankBalance[bankIndex] += InputAmount;
 
                 //Update the coin balance
-                coinManager.currentCoins -= InputAmount;
+                coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins -= InputAmount);
 
                 // Update the balance text
                 moneyInBankText[bankIndex].text = "Money in bank: $" + bankBalance[bankIndex].ToString("");
-                coinManager.UpdateCoinDisplay();
+                //coinManager.UpdateCoinDisplay();
 
                 // Clear the input field and feedback text
                 amountInputField[bankIndex].text = "";
@@ -106,13 +106,13 @@ public class Bank : MonoBehaviour
             }
             if (InputAmount <= bankBalance[bankIndex])
             {
-                coinManager.currentCoins += InputAmount;
+                coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins += InputAmount);
 
                 bankBalance[bankIndex] -= InputAmount;
 
                 // Update the balance text
                 moneyInBankText[bankIndex].text = "Money in bank: $" + bankBalance[bankIndex].ToString("");
-                coinManager.UpdateCoinDisplay();
+                //coinManager.UpdateCoinDisplay();
 
                 // Clear the input field and feedback text
                 amountInputField[bankIndex].text = "";

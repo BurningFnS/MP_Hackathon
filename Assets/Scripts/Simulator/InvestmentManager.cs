@@ -72,11 +72,10 @@ public class InvestmentManager : MonoBehaviour
                 investmentBalance[investmentIndex] += InputAmount;
 
                 //Update the coin balance
-                coinManager.currentCoins -= InputAmount;
+                coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins -= InputAmount);
 
                 // Update the balance text
                 moneyInvestedText[investmentIndex].text = "Money invested:  $" + investmentBalance[investmentIndex].ToString("");
-                coinManager.UpdateCoinDisplay();
 
                 // Clear the input field and feedback text
                 amountInputField[investmentIndex].text = "";
@@ -115,7 +114,7 @@ public class InvestmentManager : MonoBehaviour
             }
             if (InputAmount <= investmentBalance[investmentIndex])
             {
-                coinManager.currentCoins += InputAmount;
+                coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins += InputAmount);
 
                 investmentBalance[investmentIndex] -= InputAmount;
 

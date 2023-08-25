@@ -19,8 +19,6 @@ public class PropertyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coinManager.cashAtHand = PlayerPrefs.GetInt("CurrentCoins");
-        coinManager.totalCoins = PlayerPrefs.GetInt("CollectedCoins");
         if(PlayerPrefs.GetInt("Apartment") == 1)
         {
             ApartmentButton();
@@ -35,13 +33,9 @@ public class PropertyManager : MonoBehaviour
         {
             LandedButton();
             hasLanded = true;
-        };
-        coinManager.currentCoins = coinManager.totalCoins + coinManager.cashAtHand;
+        }
     }
-    private void Update()
-    {
-        coinManager.UpdateCoinDisplay();
-    }
+
     public void ApartmentButton()
     {
         if (hasApartment)

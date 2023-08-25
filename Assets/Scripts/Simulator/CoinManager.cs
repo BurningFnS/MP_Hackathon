@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CoinManager : MonoBehaviour
 {
-    public int totalCoins;
+    public int endlessRunnerCoins;
     public int currentCoins;
     public int cashAtHand;
     public Text coinText;
@@ -25,21 +25,27 @@ public class CoinManager : MonoBehaviour
     public Sprite positiveCoinSprite;
     public InvestmentManager investment;
 
-
     public Color redColor;
     public Color blueColor;
 
+    public float animationDuration = 2.0f; // Duration of the animation in seconds
+
+    private int targetAmount; // The target money amount after animation
+    private int initialAmount; // The initial money amount at the start of animation
+    private float animationStartTime; // The time when the animation started
+
+    private int currentAmount; // The current displayed money amount
+
     void Start()
     {
-
-        totalCoins = PlayerPrefs.GetInt("CollectedCoins");
+        endlessRunnerCoins = PlayerPrefs.GetInt("CollectedCoins");
         cashAtHand = PlayerPrefs.GetInt("CurrentCoins");
         currentAge = PlayerPrefs.GetInt("CurrentAge");
 
-        currentCoins = totalCoins + cashAtHand;
+        currentCoins = endlessRunnerCoins + cashAtHand;
 
         // Optionally, you can update the player's coins display or any other relevant UI elements
-        UpdateCoinDisplay();
+        AnimateToAmount(cashAtHand, currentCoins);
         ageText.text = "" + currentAge;
         if (currentAge >= 65)
         {
@@ -47,11 +53,47 @@ public class CoinManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        UpdateCoinDisplay();
+    }
+
+    public void AnimateToAmount(int currentCoins, int newAmount)
+    {
+        targetAmount = newAmount;
+        initialAmount = currentCoins;
+        animationStartTime = Time.time;
+
+        // Start the animation coroutine
+        StartCoroutine(AnimateMoney());
+    }
+
+    private IEnumerator AnimateMoney()
+    {
+        while (Time.time - animationStartTime < animationDuration)
+        {
+            float progress = (Time.time - animationStartTime) / animationDuration;
+            int animatedAmount = Mathf.RoundToInt(Mathf.Lerp(initialAmount, targetAmount, progress));
+            UpdateMoneyText(animatedAmount);
+            yield return null;
+        }
+
+        // Ensure the final amount is correct
+        UpdateMoneyText(targetAmount);
+    }
+
+    private void UpdateMoneyText(int amount)
+    {
+        currentCoins = amount;
+        coinText.text = "" + amount.ToString();
+    }
+
+
     public void UpdateCoinDisplay()
     {
         // Code to update the UI display of the collected coins
         // For example, you could set the text of a UI Text component to show the totalCoins value.
-        if(currentCoins < 0)
+        if (currentCoins < 0)
         {
             coinImageComponent.sprite = negativeCoinSprite;
             coinText.color = redColor;
@@ -61,7 +103,7 @@ public class CoinManager : MonoBehaviour
             coinImageComponent.sprite = positiveCoinSprite;
             coinText.color = blueColor;
         }
-        coinText.text = "" + currentCoins;
+        //coinText.text = "" + currentCoins;
     }
 
     public void Continue()

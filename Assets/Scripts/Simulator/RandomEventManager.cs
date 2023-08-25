@@ -48,7 +48,6 @@ public class RandomEventManager : MonoBehaviour
     void Start()
     {
         randomEventHasHappened = false;
-        //if (gameObject.name == "")
         medicalSlippedBill = 2000;
         medicalInsurancePercentage = 0.2f;
         moneyLostInFire = Random.Range(150, 750);
@@ -83,35 +82,29 @@ public class RandomEventManager : MonoBehaviour
 
     public void ProceedRobbed()
     {
-        
         robbedPanel.SetActive(false);
-        coinManager.currentCoins = coinManager.currentCoins - amountRobbed;
-        coinManager.UpdateCoinDisplay();
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - amountRobbed);
     }
 
     public void ProceedSlipped()
     {
         slippedPanel.SetActive(false);
-        coinManager.currentCoins = coinManager.currentCoins - medicalSlippedBill;
-        coinManager.UpdateCoinDisplay();
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - medicalSlippedBill);
     }
     public void ProceedFire()
     {
         firePanel.SetActive(false);
-        coinManager.currentCoins = coinManager.currentCoins - moneyLostInFire;
-        coinManager.UpdateCoinDisplay();
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - moneyLostInFire);
     }
     public void ProceedAccident()
     {
         carAccidentPanel.SetActive(false);
-        coinManager.currentCoins = coinManager.currentCoins - carAccidentBill;
-        coinManager.UpdateCoinDisplay();
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - carAccidentBill);
     }
     public void ProceedElecFire()
     {
         electricalFirePanel.SetActive(false);
-        coinManager.currentCoins = coinManager.currentCoins - moneyLostInFire;
-        coinManager.UpdateCoinDisplay();
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - moneyLostInFire);
     }
 
     public void GettingRobbedEvent()
@@ -231,8 +224,7 @@ public class RandomEventManager : MonoBehaviour
         finalBillText.text = "Final Bill: $" + insuredBill;
 
         yield return new WaitForSeconds(3f);
-        coinManager.currentCoins = coinManager.currentCoins - insuredBill;
-        coinManager.UpdateCoinDisplay();
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - insuredBill);
         insuranceBillPanel.SetActive(false);
     }
 }
