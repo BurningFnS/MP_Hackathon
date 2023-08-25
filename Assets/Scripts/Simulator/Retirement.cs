@@ -19,15 +19,21 @@ public class Retirement : MonoBehaviour
 
     private void Update()
     {
-        
+   
         if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("Retirement") == 0)
         {
+            if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("JobIndex") == 0) //for the perks for pension 
+            {
+                PlayerPrefs.SetInt("JobIndex", 0);
+                PlayerPrefs.SetInt("Retirement", 1);
+            }
             //Show you have Retired Panel (FORCE PLAYER TO RETIRE)
             forcedRetiredPanel.SetActive(true);
             BuildingClickHandler.canClickOnBuildings = false;
             PlayerPrefs.SetInt("JobIndex", 3);
             PlayerPrefs.SetInt("Salary", 0);
             PlayerPrefs.SetInt("Retirement", 1);
+            Debug.Log(PlayerPrefs.GetInt("JobIndex"));
         }
 
         if (coinManager.currentAge >= 90)

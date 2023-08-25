@@ -13,6 +13,7 @@ public class EventHandler : MonoBehaviour
 
     public GameObject[] randomEventPanel;
     public InsuranceManager insuranceManager;
+    public PropertyManager propertyManager;
     //public GameObject randomEventManager;
 
     public bool randomEventCanHappen;
@@ -41,12 +42,28 @@ public class EventHandler : MonoBehaviour
                 livingExpenses[i] = waterBill + changeInCostOfLiving;
                 livingExpensesText[i].text = "Water Bill: $" + livingExpenses[0];
                 PlayerPrefs.SetInt("WaterBill", livingExpenses[i]);
+                Debug.Log("Water Bill  not discount = " + livingExpenses[i]);
+            }
+            if(i == 0 && PlayerPrefs.GetInt("Landed") == 1)
+            {
+                livingExpenses[i] = (int)((waterBill + changeInCostOfLiving) * 0.75f);
+                livingExpensesText[i].text = "Water Bill: $" + livingExpenses[0];
+                PlayerPrefs.SetInt("WaterBill", livingExpenses[i]);
+                Debug.Log("Water Bill = " + livingExpenses[i]);
             }
             if (i == 1)
             {
-                livingExpenses[i] = elecBill + changeInCostOfLiving;
+                livingExpenses[i] = (elecBill + changeInCostOfLiving);
                 livingExpensesText[i].text = "Electrical Bill: $" + livingExpenses[1];
                 PlayerPrefs.SetInt("ElectricalBill", livingExpenses[i]);
+                Debug.Log("Elec Bill not discount = " + livingExpenses[i]);
+            }
+            if (i == 1 && PlayerPrefs.GetInt("Landed") == 1)
+            {
+                livingExpenses[i] = (int)((elecBill + changeInCostOfLiving) * 0.75f);
+                livingExpensesText[i].text = "Electrical Bill: $" + livingExpenses[1];
+                PlayerPrefs.SetInt("ElectricalBill", livingExpenses[i]);
+                Debug.Log("Elec Bill = " + livingExpenses[i]);
             }
             if (i == 2)
             {

@@ -38,7 +38,13 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             insurance[0].SetActive(true);
             insuranceExpenses[0] = 2000;
         }
-
+        if(PlayerPrefs.GetInt("JobIndex")== 1)
+        {
+            cancelButton[1].SetActive(true);
+            noInsurance[1].SetActive(false);
+            insurance[1].SetActive(true);
+            insuranceExpenses[1] = 3000;
+        }
         if (PlayerPrefs.GetInt("HealthInsurance") == 1)
         {
             cancelButton[1].SetActive(true);
