@@ -44,14 +44,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isRolling = false;
 
-    public AudioSource collisionSource;
-    public AudioClip collisionImpactSFX;
-
-    public AudioSource powerUpSource;
-    public AudioClip powerUpSFX;
-
-    public AudioSource coinSource;
-    public AudioClip coinImpactSFX;
 
 
     void Start()
@@ -283,6 +275,7 @@ public class PlayerController : MonoBehaviour
 
     public void EnableMagnetEffect(float radius)
     {
+        FindObjectOfType<Audio>().PlaysSound("Yay");
         magnetEffectActive = true;
         magneticEffect.SetActive(true);
         magnetRemainingTime = magnetDuration;
@@ -303,7 +296,7 @@ public class PlayerController : MonoBehaviour
 
     public void EnableShieldEffect(float duration)
     {
-        
+        FindObjectOfType<Audio>().PlaysSound("Yay");
         shieldEffectActive = true;
         shieldBarrier.SetActive(true);
         shieldRemainingTime = duration;
@@ -339,23 +332,21 @@ public class PlayerController : MonoBehaviour
                 Destroy(hit.gameObject); //Destroy the collided obstacle
                 CoinExplosion();
             }
+            FindObjectOfType<Audio>().PlaysSound("Bang");
+            smokeBurst.Play();
+            Destroy(hit.gameObject); //Destroy the collided obstacle
+            CoinExplosion();
+        }
+
+        if (hit.transform.tag == "Car" || hit.transform.tag == "Truck")
+        {
+            FindObjectOfType<Audio>().PlaysSound("Bang");
+            explosionBurst.Play();
+            Destroy(hit.gameObject); //Destroy the collided obstacle
+            CoinExplosion();
         }
     }
 
-/*    private void PlayCollisionSFX()
-    {
-        collisionSource.PlayOneShot(collisionImpactSFX);
-    }
-
-    private void PlayCoinSFX()
-    {
-        coinSource.PlayOneShot(coinImpactSFX);
-    }
-
-    private void PowerUpSFX()
-    {
-        powerUpSource.PlayOneShot(powerUpSFX);
-    }*/
 
     private void CoinExplosion()
     {
