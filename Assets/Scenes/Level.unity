@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.34588814, g: 0.6318907, b: 0.8685126, a: 1}
+  m_IndirectSpecularColor: {r: 0.3460188, g: 0.63187516, b: 0.8684989, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8460,6 +8460,7 @@ MonoBehaviour:
   laneDistance: 3.6
   jumpForce: 9.253
   gravity: 20
+  hitObstacle: 0
   anim: {fileID: 609895886}
   coinParticles: {fileID: 108146278}
   explosionParticles: {fileID: 767866101540771977}
@@ -9347,7 +9348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632611324639677474, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4116976619712009880, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_RootOrder
@@ -9395,7 +9396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4597625037036234937, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5793870287065579388, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_IsActive
@@ -9403,7 +9404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8894611293491738048, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8894611293491738048, guid: 1f03e8388920dc645b712900c4e0d26a, type: 3}
       propertyPath: m_IsTrigger

@@ -32,7 +32,7 @@ public class TileManager : MonoBehaviour
 
     void Update()
     {
-        if(playerTransform.position.z - 30 > zSpawn - (numberOfTiles * tileLength))
+        if(playerTransform.position.z - 25 > zSpawn - (numberOfTiles * tileLength))
         {
    /*         if(Random.Range(0, 11) >= 8)
             {
