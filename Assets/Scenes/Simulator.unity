@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34603584, g: 0.6318786, b: 0.86850536, a: 1}
+  m_IndirectSpecularColor: {r: 0.34595338, g: 0.63192207, b: 0.86857677, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37220,6 +37220,9 @@ MonoBehaviour:
   losePanel: {fileID: 479171632}
   retireButton: {fileID: 1717696506}
   alertText: {fileID: 552494222}
+  coinImageComponent: {fileID: 1096943720}
+  negativeCoinSprite: {fileID: 21300000, guid: 931e7c076351a2b4b9337866c14d8e24, type: 3}
+  positiveCoinSprite: {fileID: 21300000, guid: 70b204d3509031247944fa683a45b067, type: 3}
   investment: {fileID: 1569758523}
 --- !u!4 &1122658504
 Transform:
