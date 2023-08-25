@@ -132,6 +132,7 @@ public class PropertyManager : MonoBehaviour
     {
         if(hasApartment)
         {
+            PlayerPrefs.SetInt("Apartment", 0);
             hasApartment = false;
             hasProperty = false;
             coinManager.currentCoins += 0;
@@ -139,6 +140,7 @@ public class PropertyManager : MonoBehaviour
         }
         if(hasCondominium)
         {
+            PlayerPrefs.SetInt("Condo", 0);
             hasCondominium = false;
             hasProperty = false;
             coinManager.currentCoins += 3500;
@@ -146,7 +148,8 @@ public class PropertyManager : MonoBehaviour
         }
         if(hasLanded)
         {
-            hasLanded=false;
+            PlayerPrefs.SetInt("Landed", 0);
+            hasLanded =false;
             hasProperty = false;
             coinManager.currentCoins += 5000;
             landedSellButton.SetActive(false);
