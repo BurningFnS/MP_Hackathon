@@ -20,7 +20,7 @@ public class Retirement : MonoBehaviour
     private void Update()
     {
         
-        if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("Retirement") == 0)
+        if (CoinManager.currentAge >= 65 && PlayerPrefs.GetInt("Retirement") == 0)
         {
             //Show you have Retired Panel (FORCE PLAYER TO RETIRE)
             forcedRetiredPanel.SetActive(true);
@@ -30,7 +30,7 @@ public class Retirement : MonoBehaviour
             PlayerPrefs.SetInt("Retirement", 1);
         }
 
-        if (coinManager.currentAge >= 90)
+        if (CoinManager.currentAge >= 90)
         {
             totalSavings.text = "You have retired with\n$" + coinManager.currentCoins + " in your savings";
             winPanel.SetActive(true);

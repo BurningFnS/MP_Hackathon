@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
     public AudioSource coinSource;
     public AudioClip coinImpactSFX;
 
-
     void Start()
     {
         smokeBurst = smokeParticles.GetComponent<ParticleSystem>();
