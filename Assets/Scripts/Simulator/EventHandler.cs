@@ -11,6 +11,7 @@ public class EventHandler : MonoBehaviour
     public GameObject yourExpenses;
     public CoinManager coinManager;
 
+    public int randomizedIndexPanel;
     public GameObject[] randomEventPanel;
     public InsuranceManager insuranceManager;
     public PropertyManager propertyManager;
@@ -93,8 +94,15 @@ public class EventHandler : MonoBehaviour
 
     public void PlayRandomEvent()
     {
-        int randomizedIndexPanel = Random.Range(0, randomEventPanel.Length);
-        randomizedIndexPanel = 1; //For Debugging purpose
+        RandomizeIndex(randomizedIndexPanel);
+        //randomizedIndexPanel = 0; //For Debugging purpose
+        if(PlayerPrefs.GetInt("Condo") == 1)
+        {
+            while(randomizedIndexPanel == 0)
+            {
+                RandomizeIndex(randomizedIndexPanel);
+            }
+        }
         randomEventPanel[randomizedIndexPanel].SetActive(true);
         if(randomizedIndexPanel == 0)
         {
@@ -117,6 +125,11 @@ public class EventHandler : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void RandomizeIndex(int randomizedEventIndexPanel)
+    {
+        randomizedIndexPanel = Random.Range(0, randomEventPanel.Length);
     }
 }
 
