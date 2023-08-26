@@ -94,7 +94,7 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         int randomizedIndexPanel = Random.Range(0, randomEventPanel.Length);
-        randomizedIndexPanel = 4; //For Debugging purpose
+        randomizedIndexPanel = 1; //For Debugging purpose
         randomEventPanel[randomizedIndexPanel].SetActive(true);
         if(randomizedIndexPanel == 0)
         {

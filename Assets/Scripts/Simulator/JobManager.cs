@@ -24,17 +24,17 @@ public class JobManager : MonoBehaviour
         if (PlayerPrefs.GetInt("JobIndex") == 0)
         {
             isPhotographer = true;
-            Debug.Log("ISPT");
+            //Debug.Log("ISPT");
         }
         if (PlayerPrefs.GetInt("JobIndex") == 1)
         {
             isZooKeeper = true;
-            Debug.Log("IZKT");
+            //Debug.Log("IZKT");
         }
         if (PlayerPrefs.GetInt("JobIndex") == 2)
         {
             isPlumber = true;
-            Debug.Log("IPT");
+            //Debug.Log("IPT");
         }
     }
     public void AcquireJob(int jobIndex)
