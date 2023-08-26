@@ -282,6 +282,7 @@ public class PlayerController : MonoBehaviour
 
     public void EnableMagnetEffect(float radius)
     {
+        FindObjectOfType<Audio>().PlaysSound("Yay");
         magnetEffectActive = true;
         magneticEffect.SetActive(true);
         magnetRemainingTime = magnetDuration;
@@ -302,6 +303,7 @@ public class PlayerController : MonoBehaviour
 
     public void EnableShieldEffect(float duration)
     {
+        FindObjectOfType<Audio>().PlaysSound("Yay");
         shieldEffectActive = true;
         shieldBarrier.SetActive(true);
         shieldRemainingTime = duration;
@@ -324,6 +326,7 @@ public class PlayerController : MonoBehaviour
     {
         if (hit.transform.tag == "Obstacle")
         {
+            FindObjectOfType<Audio>().PlaysSound("Bang");
             smokeBurst.Play();
             Destroy(hit.gameObject); //Destroy the collided obstacle
             CoinExplosion();
@@ -331,6 +334,7 @@ public class PlayerController : MonoBehaviour
 
         if (hit.transform.tag == "Car" || hit.transform.tag == "Truck")
         {
+            FindObjectOfType<Audio>().PlaysSound("Bang");
             explosionBurst.Play();
             Destroy(hit.gameObject); //Destroy the collided obstacle
             CoinExplosion();
