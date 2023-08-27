@@ -36,6 +36,12 @@ public class CoinManager : MonoBehaviour
 
     private int currentAmount; // The current displayed money amount
 
+
+    // Variables for confirmation.
+    public GameObject confirmationPanel;
+    public Text _MoneyEarned, _Expenditures, _Tips;
+    public InsuranceManager insuranceManager;
+
     void Start()
     {
         endlessRunnerCoins = PlayerPrefs.GetInt("CollectedCoins");
@@ -105,16 +111,46 @@ public class CoinManager : MonoBehaviour
         }
         //coinText.text = "" + currentCoins;
     }
-
-    public void Continue()
+    public void Confirmation()
     {
-        if(currentCoins < 0)
+        // This function is to open the Continue panel under "ClickedOnCanvas".
+        // It contains a portion of the code from the Continue function
+        // as it is dumb for users to be allowed to confirm if they can not proceed.
+        if (currentCoins < 0)
         {
             alertText.text = "You have negative balance of " + currentCoins;
             negativeBalancePanel.SetActive(true);
         }
-        else if(currentCoins >= 0)
+        else if (currentCoins >= 0)
         {
+            confirmationPanel.SetActive(true);
+
+            insuranceManager.InsuranceUpdate();
+
+            _MoneyEarned.text = "$" + PlayerPrefs.GetInt("Salary");
+            Debug.Log("total insurance expenses: " + InsuranceManager.totalInsuranceExpenses);
+            _Expenditures.text = "$" + (PlayerPrefs.GetInt("WaterBill") + PlayerPrefs.GetInt("ElectricalBill") + InsuranceManager.totalInsuranceExpenses);
+            _Tips.text = "Tips: " + Tips.TipArray[Random.Range(0, Tips.TipArray.Length)];
+
+        }
+    }
+
+    public void CloseConfirmation()
+    {
+        confirmationPanel.SetActive(false);
+    }
+
+    public void Continue()
+    {
+        if (currentCoins < 0)
+        {
+            alertText.text = "You have negative balance of " + currentCoins;
+            negativeBalancePanel.SetActive(true);
+        }
+        else if (currentCoins >= 0)
+        {
+            confirmationPanel.SetActive(false);
+
             PlayerPrefs.SetInt("CurrentCoins", currentCoins);
             PlayerPrefs.SetInt("CurrentAge", currentAge + 5);
 
@@ -129,6 +165,7 @@ public class CoinManager : MonoBehaviour
             SceneManager.LoadScene("Level");
         }
     }
+
  
     public void Proceed()
     {
