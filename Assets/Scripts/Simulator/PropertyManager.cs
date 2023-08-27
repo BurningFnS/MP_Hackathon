@@ -24,24 +24,23 @@ public class PropertyManager : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("Apartment", 1);
-        hasProperty = true;
-        hasApartment = true;
+        
         if (PlayerPrefs.GetInt("Apartment") == 1)
         {
             apartmentSellButton.SetActive(true);
-
+            hasProperty = true;
             hasApartment = true;
         }
         if (PlayerPrefs.GetInt("Condo") == 1)
         {
             condominiumSellButton.SetActive(true);
-
+            hasProperty = true;
             hasCondominium = true;
         }
         if (PlayerPrefs.GetInt("Landed") == 1)
         {
             landedSellButton.SetActive(true);
-
+            hasProperty = true;
             hasLanded = true;
         }
     }
@@ -53,7 +52,7 @@ public class PropertyManager : MonoBehaviour
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You have already purchased \n this property!";
         }
-        else if (hasProperty || !hasCondominium || !hasLanded)
+        else if (hasCondominium || hasLanded)
         {
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You already own \n a property!";
@@ -73,16 +72,10 @@ public class PropertyManager : MonoBehaviour
     public void CondominiumButton()
     {
         Debug.Log(hasApartment + " Have apartment");
-        if (!hasCondominium && coinManager.currentCoins >= condominiumPrice && !hasApartment && !hasLanded)
+        if (hasCondominium)
         {
-            condominiumSellButton.SetActive(true);
-            PlayerPrefs.SetInt("Condo", 1);
-            hasProperty = true;
-            hasCondominium = true;
-            StartCoroutine(SuccessfullyPurchasedProperty());
-            purchasedPropertyText.text = "You Have \n Purchased The \n Condominium Property!";
-            //coinManager.currentCoins -= 4000;
-            coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - condominiumPrice);
+            StartCoroutine(FailedPurchaseProperty());
+            failedPurchaseText.text = "You have already purchased \n this property!";
         }
         else if (hasProperty)
         {
@@ -92,24 +85,27 @@ public class PropertyManager : MonoBehaviour
         else if (coinManager.currentCoins < condominiumPrice)
         {
             StartCoroutine(FailedPurchaseProperty());
-            failedPurchaseText.text = "You do not have enough \n money to purchase this property!";
+            failedPurchaseText.text = "You do not have \n enough  money to purchase \n this property!";
+        }
+        else
+        {
+            condominiumSellButton.SetActive(true);
+            PlayerPrefs.SetInt("Condo", 1);
+            hasProperty = true;
+            hasCondominium = true;
+            StartCoroutine(SuccessfullyPurchasedProperty());
+            purchasedPropertyText.text = "You Have \n Purchased The \n Condominium Property!";
+            coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - condominiumPrice);
         }
         Debug.Log("hasCondominium: " + hasCondominium);
         Debug.Log(hasProperty);
     }
     public void LandedButton()
     {
-        if (!hasLanded && coinManager.currentCoins >= landedPrice && !hasApartment && !hasCondominium)
+        if (hasLanded)
         {
-            landedSellButton.SetActive(true);
-            hasLanded = true;
-            PlayerPrefs.SetInt("Landed", 1);
-            hasProperty = true;
-            StartCoroutine(SuccessfullyPurchasedProperty());
-            purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Landed Property!";
-            //coinManager.currentCoins -= 5500;
-            coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - landedPrice);
-
+            StartCoroutine(FailedPurchaseProperty());
+            failedPurchaseText.text = "You have already purchased \n this property!";
         }
         else if (hasProperty)
         {
@@ -119,7 +115,17 @@ public class PropertyManager : MonoBehaviour
         else if (coinManager.currentCoins < landedPrice)
         {
             StartCoroutine(FailedPurchaseProperty());
-            failedPurchaseText.text = "You do not have enough \n money to purchase \n this property!";
+            failedPurchaseText.text = "You do not have enough \n money to purchase this property!";
+        }
+        else
+        {
+            landedSellButton.SetActive(true);
+            hasLanded = true;
+            PlayerPrefs.SetInt("Landed", 1);
+            hasProperty = true;
+            StartCoroutine(SuccessfullyPurchasedProperty());
+            purchasedPropertyText.text = "You Have Purchased " + "\n" + "The Landed Property!";          
+            coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - landedPrice);
         }
         Debug.Log("hasLanded: " + hasLanded);
         Debug.Log(hasProperty);
@@ -127,7 +133,7 @@ public class PropertyManager : MonoBehaviour
     public void SellPropertyButton()
     {
         sellPercentage = 0.9f;
-        hasProperty = false;
+       
         if (hasApartment)
         {
             apartmentSellButton.SetActive(false);
@@ -153,6 +159,7 @@ public class PropertyManager : MonoBehaviour
             coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + Mathf.RoundToInt(sellAmt));
 
         }
+        hasProperty = hasApartment || hasCondominium || hasLanded;
         Debug.Log(hasProperty);
     }
     IEnumerator SuccessfullyPurchasedProperty()
