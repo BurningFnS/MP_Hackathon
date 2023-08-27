@@ -22,6 +22,7 @@ public class EventHandler : MonoBehaviour
     public bool slipAndFall;
     public bool fireAccident;
     public bool carAccident;
+    public bool triathlonWon;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class EventHandler : MonoBehaviour
         slipAndFall = false;
         fireAccident = false;
         carAccident = false;
+        triathlonWon = false;
         //randomEventManager.SetActive(false);
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
@@ -119,6 +121,10 @@ public class EventHandler : MonoBehaviour
         if(randomizedIndexPanel == 3 )
         {
             carAccident = true;
+        }
+        if(randomizedIndexPanel == 5)
+        {
+            triathlonWon = true;
         }
     }
 

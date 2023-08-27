@@ -15,6 +15,7 @@ public class RandomEventManager : MonoBehaviour
     public Text fireText;
     public Text carAcciText;
     public Text electricalFireText;
+    public Text grandPrizeText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -23,6 +24,7 @@ public class RandomEventManager : MonoBehaviour
     public float fireInsurancePercentage;
     public int carAccidentBill;
     public float carInsurancePercentage;
+    public int grandPrize;
 
     public bool randomEventHasHappened;
 
@@ -31,6 +33,7 @@ public class RandomEventManager : MonoBehaviour
     public GameObject firePanel;
     public GameObject carAccidentPanel;
     public GameObject electricalFirePanel;
+    public GameObject triathlonWinPanel;
 
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
@@ -57,6 +60,7 @@ public class RandomEventManager : MonoBehaviour
         carInsurancePercentage = 0.2f;
         carAcciText.text = "Amount Lost: " + carAccidentBill;
         electricalFireText.text = "Amount Lost: " + moneyLostInFire;
+        grandPrize = 1500;
     }
 
     // Update is called once per frame
@@ -77,6 +81,10 @@ public class RandomEventManager : MonoBehaviour
         if (eventHandler.carAccident)
         {
             CheckForCarInsurance();
+        }
+        if (eventHandler.triathlonWon)
+        {
+            WonTriathlon();
         }
     }
 
@@ -106,6 +114,11 @@ public class RandomEventManager : MonoBehaviour
         electricalFirePanel.SetActive(false);
         coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - moneyLostInFire);
     }
+    public void ProceedTriathlon()
+    {
+        triathlonWinPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + grandPrize);
+    }
 
     public void GettingRobbedEvent()
     {
@@ -122,6 +135,16 @@ public class RandomEventManager : MonoBehaviour
                 robbedText.text = "Amount Lost: 0";
                 randomEventHasHappened = true;
             }
+
+        }
+    }
+
+    public void WonTriathlon()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            grandPrizeText.text = "Grand Prize: " + grandPrize;
+            randomEventHasHappened = true;
 
         }
     }
