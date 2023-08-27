@@ -17,28 +17,31 @@ public class PropertyManager : MonoBehaviour
     public bool hasLanded = false;
     public bool hasCondominium = false;
     public int condominiumPrice = 4000;
-    public int landedPrice= 5500;
+    public int landedPrice = 5500;
     public float sellAmt;
     public float sellPercentage;
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("Apartment", 1);
+        hasProperty = true;
+        hasApartment = true;
         if (PlayerPrefs.GetInt("Apartment") == 1)
         {
             apartmentSellButton.SetActive(true);
-            
+
             hasApartment = true;
         }
         if (PlayerPrefs.GetInt("Condo") == 1)
         {
             condominiumSellButton.SetActive(true);
-            
+
             hasCondominium = true;
         }
         if (PlayerPrefs.GetInt("Landed") == 1)
         {
             landedSellButton.SetActive(true);
-           
+
             hasLanded = true;
         }
     }
@@ -81,12 +84,12 @@ public class PropertyManager : MonoBehaviour
             //coinManager.currentCoins -= 4000;
             coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - condominiumPrice);
         }
-        if (hasProperty)
+        else if (hasProperty)
         {
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You already own \n a property!";
         }
-        else
+        else if (coinManager.currentCoins < condominiumPrice)
         {
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You do not have enough \n money to purchase this property!";
@@ -108,12 +111,12 @@ public class PropertyManager : MonoBehaviour
             coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - landedPrice);
 
         }
-        if (hasProperty)
+        else if (hasProperty)
         {
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You already own \n a property!";
         }
-        else
+        else if (coinManager.currentCoins < landedPrice)
         {
             StartCoroutine(FailedPurchaseProperty());
             failedPurchaseText.text = "You do not have enough \n money to purchase \n this property!";
@@ -130,7 +133,7 @@ public class PropertyManager : MonoBehaviour
             apartmentSellButton.SetActive(false);
             PlayerPrefs.SetInt("Apartment", 0);
             hasApartment = false;
-            coinManager.currentCoins += 0;  
+            coinManager.currentCoins += 0;
         }
         if (hasCondominium)
         {
@@ -148,7 +151,7 @@ public class PropertyManager : MonoBehaviour
             PlayerPrefs.SetInt("Landed", 0);
             hasLanded = false;
             coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + Mathf.RoundToInt(sellAmt));
-            
+
         }
         Debug.Log(hasProperty);
     }
