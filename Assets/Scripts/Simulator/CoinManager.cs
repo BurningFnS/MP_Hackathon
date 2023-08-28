@@ -127,7 +127,7 @@ public class CoinManager : MonoBehaviour
 
             insuranceManager.InsuranceUpdate();
 
-            _MoneyEarned.text = "$" + PlayerPrefs.GetInt("Salary");
+            _MoneyEarned.text = "$" + (PlayerPrefs.GetInt("Salary") * 5);
             Debug.Log("total insurance expenses: " + InsuranceManager.totalInsuranceExpenses);
             _Expenditures.text = "$" + (PlayerPrefs.GetInt("WaterBill") + PlayerPrefs.GetInt("ElectricalBill") + InsuranceManager.totalInsuranceExpenses);
             _Tips.text = "Tips: " + Tips.TipArray[Random.Range(0, Tips.TipArray.Length)];
