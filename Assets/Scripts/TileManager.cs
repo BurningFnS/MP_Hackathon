@@ -8,6 +8,7 @@ public class TileManager : MonoBehaviour
     public GameObject[] intermediateTilePrefabs;
     public GameObject[] hardTilePrefabs;
     private GameObject[] ChosenTile;
+    public PlayerController playerController;
 
     public float zSpawn = 0;
     public float tileLength = 45f;
@@ -50,17 +51,20 @@ public class TileManager : MonoBehaviour
         {
             Debug.Log("Easy");
             ChosenTile = easyTilePrefabs;
+            playerController.maxSpeed = 25;
         }
         // 45 to 65 intermediate mode
         else if (PlayerPrefs.GetInt("CurrentAge") >= 45 && PlayerPrefs.GetInt("CurrentAge") <= 65)
         {
             Debug.Log("Intermediate");
             ChosenTile = intermediateTilePrefabs;
+            playerController.maxSpeed = 35;
         }
         else  //70 to 90 hard mode
         {
             Debug.Log("Hard");
             ChosenTile = hardTilePrefabs;
+            playerController.maxSpeed = 45;
         }
         GameObject go = Instantiate(ChosenTile[tileIndex], transform.forward * zSpawn, transform.rotation);
         activeTiles.Add(go);

@@ -105,6 +105,7 @@ public class PlayerController : MonoBehaviour
             }       
         }
 
+        //if the player is not grounded and is rolling
         if (!isGrounded && isRolling == true)
         {
             direction.y -= gravity * Time.deltaTime * 10;
@@ -149,11 +150,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (SwipeManager.swipeDown && isGrounded)
+            if (SwipeManager.swipeDown)
             {
                 Roll();
             }
         }
+
 
         //Animation check code
 
@@ -185,6 +187,7 @@ public class PlayerController : MonoBehaviour
                 isRolling = false;
             }
         }
+
 
         //Magnet and Shield Code
 
@@ -275,7 +278,7 @@ public class PlayerController : MonoBehaviour
     private void Roll()
     {
         isRolling = true;
-        anim.SetTrigger("Roll");
+        anim.SetBool("Roll", true);
         controller.height = 0.7f;
         controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
     }
@@ -340,21 +343,6 @@ public class PlayerController : MonoBehaviour
             CoinExplosion();
         }
     }
-
-/*    private void PlayCollisionSFX()
-    {
-        collisionSource.PlayOneShot(collisionImpactSFX);
-    }
-
-    private void PlayCoinSFX()
-    {
-        coinSource.PlayOneShot(coinImpactSFX);
-    }
-
-    private void PowerUpSFX()
-    {
-        powerUpSource.PlayOneShot(powerUpSFX);
-    }*/
 
     private void CoinExplosion()
     {
