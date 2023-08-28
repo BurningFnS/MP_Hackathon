@@ -17,9 +17,11 @@ public class Retirement : MonoBehaviour
     public Sprite RetiredButton; // Already Retired Button
     public Image button; // Reference to the Image component of the button
 
+    public Bank bank;
+    public float bankTotal;
     private void Update()
     {
-   
+        bankTotal= bank.bankBalance[0] + bank.bankBalance[1] + bank.bankBalance[2];
         if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("Retirement") == 0)
         {
             if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("JobIndex") == 0) //for the perks for pension 
@@ -38,9 +40,10 @@ public class Retirement : MonoBehaviour
 
         if (coinManager.currentAge >= 90)
         {
-            totalSavings.text = "You have retired with\n$" + coinManager.currentCoins + " in your savings";
+            totalSavings.text = "You have retired with\n$" + (coinManager.currentCoins + bankTotal) + " in your savings";
             winPanel.SetActive(true);
             BuildingClickHandler.canClickOnBuildings = false;
+            Debug.Log(totalSavings.text);
         }
 
         //if the player has already retired

@@ -98,6 +98,12 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             insurance[1].SetActive(true);
             noInsurance[1].SetActive(false);
         }
+        else if(PlayerPrefs.GetInt("JobIndex") != 1)
+        {
+            cancelButton[1].SetActive(false);
+            noInsurance[1].SetActive(true);
+            insurance[1].SetActive(false);
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
