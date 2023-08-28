@@ -357,7 +357,7 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("GetHit"); //Play the Trip animation
 
         hitObstacle = true;
-        forwardSpeed = initialSpeed;
+        forwardSpeed = 5f;
     }
 }
  
