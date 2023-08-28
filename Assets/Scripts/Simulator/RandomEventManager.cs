@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class RandomEventManager : MonoBehaviour
 {
@@ -25,6 +27,9 @@ public class RandomEventManager : MonoBehaviour
     public int carAccidentBill;
     public float carInsurancePercentage;
     public int grandPrize;
+    public int moneyBeforeBankrupt;
+    public float percentageLostInBankrupt;
+    public int moneyAfterBankrupt;
 
     public bool randomEventHasHappened;
 
@@ -34,6 +39,8 @@ public class RandomEventManager : MonoBehaviour
     public GameObject carAccidentPanel;
     public GameObject electricalFirePanel;
     public GameObject triathlonWinPanel;
+    public GameObject bankruptBankPanel;
+    public GameObject chainedBankruptLock;
 
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
@@ -43,6 +50,7 @@ public class RandomEventManager : MonoBehaviour
     public GameObject carAcciGreyInsurance;
     public GameObject electricalFireInsurance;
     public GameObject electricalFireGreyInsurance;
+    public GameObject claimBankruptMoneyBtn;
 
 
     public GameObject noInsurancePanel;
@@ -61,6 +69,12 @@ public class RandomEventManager : MonoBehaviour
         carAcciText.text = "Amount Lost: " + carAccidentBill;
         electricalFireText.text = "Amount Lost: " + moneyLostInFire;
         grandPrize = 1500;
+
+        if (PlayerPrefs.GetInt("FooBankBankrupt") == 1)
+        {
+            bankruptBankPanel.SetActive(false);
+            chainedBankruptLock.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -85,6 +99,10 @@ public class RandomEventManager : MonoBehaviour
         if (eventHandler.triathlonWon)
         {
             WonTriathlon();
+        }
+        if (eventHandler.bankGoneBankrupt && PlayerPrefs.GetInt("FooBankBankrupt") == 0)
+        {
+            DeclaringBankruptcy();
         }
     }
 
@@ -119,6 +137,14 @@ public class RandomEventManager : MonoBehaviour
         triathlonWinPanel.SetActive(false);
         coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + grandPrize);
     }
+    public void ProceedBankrupt()
+    {
+        bankruptBankPanel.SetActive(false);
+        chainedBankruptLock.SetActive(true);
+        PlayerPrefs.SetInt("FooBankBankrupt", 1);
+    }
+
+
 
     public void GettingRobbedEvent()
     {
@@ -149,8 +175,21 @@ public class RandomEventManager : MonoBehaviour
         }
     }
 
+    public void DeclaringBankruptcy()
+    {
+        moneyBeforeBankrupt = Mathf.RoundToInt(PlayerPrefs.GetFloat("BankOfFooBalance"));
+        percentageLostInBankrupt = Random.Range(0.4f, 0.7f);
+        moneyAfterBankrupt = Mathf.RoundToInt(moneyBeforeBankrupt * percentageLostInBankrupt);
+        PlayerPrefs.SetInt("ClaimableBankruptcyMoney", moneyAfterBankrupt);
+        Debug.Log(moneyAfterBankrupt);
+    }
 
 
+    public void ClaimRemainderOfBank()
+    {
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + PlayerPrefs.GetInt("ClaimableBankruptcyMoney"));
+        claimBankruptMoneyBtn.SetActive(false);
+    }
 
     public void InsuranceSlipped()
     {
