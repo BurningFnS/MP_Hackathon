@@ -91,7 +91,20 @@ public class CoinManager : MonoBehaviour
     private void UpdateMoneyText(int amount)
     {
         currentCoins = amount;
-        coinText.text = "" + amount.ToString();
+        if(amount >= 1000000)
+        {
+            double amountInMillions = amount / 1000000.0;
+            coinText.text = amountInMillions.ToString("0.##") + "M";
+        }
+        else if(amount >= 100000)
+        {
+            coinText.text = "" + (amount / 1000) + "K";
+        }
+        else
+        {
+            coinText.text = "" + amount.ToString();
+        }
+        
     }
 
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34620354, g: 0.632019, b: 0.8685846, a: 1}
+  m_IndirectSpecularColor: {r: 0.3461307, g: 0.63197345, b: 0.8685561, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28004,7 +28004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5.92, y: 0}
   m_SizeDelta: {x: 20, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783532774
@@ -37680,7 +37680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endlessRunnerCoins: 0
-  currentCoins: 0
+  currentCoins: 323122
   cashAtHand: 0
   coinText: {fileID: 1483962595}
   ageText: {fileID: 783532774}
@@ -46933,7 +46933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5.92, y: 0}
   m_SizeDelta: {x: 20, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483962595
