@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3457358, g: 0.631771, b: 0.868466, a: 1}
+  m_IndirectSpecularColor: {r: 0.34580848, g: 0.63185304, b: 0.86852545, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5477,12 +5477,13 @@ MonoBehaviour:
   - {fileID: 2810899153893480827, guid: 5c43dc839aa286240acbfd49bf0eec12, type: 3}
   hardTilePrefabs:
   - {fileID: 1876527733591322818, guid: 860fbd38c5110c449b27eac1dca77d80, type: 3}
-  - {fileID: 832914781367012115, guid: d3e15cc7b09c5d64980135b4317705b1, type: 3}
+  - {fileID: 832914781367012115, guid: 9c23a94c53c8e684994ae4f725a18591, type: 3}
   - {fileID: 1876527733591322818, guid: d18002c2c543c494bbe5a3a615829026, type: 3}
   - {fileID: 1846252225569747496, guid: 540c097c9e91a4748846c05da96951ec, type: 3}
   - {fileID: 8919390859186386481, guid: f30b7ff747e6583408a114453ca9f6b3, type: 3}
   - {fileID: 2810899153893480827, guid: 6ba7067dbf2ad20458b84eb4dd633bc0, type: 3}
   - {fileID: 1846252225569747496, guid: c8f62d5fee4c32d4d95e58f4694d9de3, type: 3}
+  - {fileID: 832914781367012115, guid: d3e15cc7b09c5d64980135b4317705b1, type: 3}
   playerController: {fileID: 1749492192}
   zSpawn: 0
   tileLength: 45

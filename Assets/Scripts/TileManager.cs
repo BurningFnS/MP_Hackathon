@@ -12,9 +12,11 @@ public class TileManager : MonoBehaviour
 
     public float zSpawn = 0;
     public float tileLength = 45f;
-    public int numberOfTiles = 3;
+    public int numberOfTiles = 5;
     private List<GameObject> activeTiles = new List<GameObject>();
     public Transform playerTransform;
+
+    private int previousNumber;
 
     void Start()
     { 
@@ -26,7 +28,7 @@ public class TileManager : MonoBehaviour
             }
             else
             {
-                SpawnTile(Random.Range(1, ChosenTile.Length)); //Subsequent tiles that spawn will be random       
+                SpawnTile(GenerateRandomNumbers()); //Subsequent tiles that spawn will be random       
             }
         }
     }
@@ -35,13 +37,21 @@ public class TileManager : MonoBehaviour
     {
         if(playerTransform.position.z - 25 > zSpawn - (numberOfTiles * tileLength))
         {
-   /*         if(Random.Range(0, 11) >= 8)
-            {
-
-            }*/
-            SpawnTile(Random.Range(1, ChosenTile.Length));
+            SpawnTile(GenerateRandomNumbers());
             DeleteTile();
         }
+    }
+
+    private int GenerateRandomNumbers()
+    {
+        int randomNumber = Random.Range(1, ChosenTile.Length); // Adjust the range as needed
+        while (randomNumber == previousNumber)
+        {
+            randomNumber = Random.Range(1, ChosenTile.Length);
+        }
+        previousNumber = randomNumber;
+
+        return randomNumber;
     }
 
     public void SpawnTile(int tileIndex)
@@ -50,7 +60,7 @@ public class TileManager : MonoBehaviour
         if (PlayerPrefs.GetInt("CurrentAge") >= 25 && PlayerPrefs.GetInt("CurrentAge") <= 40)
         {
             Debug.Log("Easy");
-            ChosenTile = easyTilePrefabs;
+            ChosenTile = hardTilePrefabs;
             playerController.maxSpeed = 25;
         }
         // 45 to 65 intermediate mode
