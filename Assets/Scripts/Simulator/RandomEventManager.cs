@@ -19,6 +19,7 @@ public class RandomEventManager : MonoBehaviour
     public Text electricalFireText;
     public Text grandPrizeText;
     public Text claimableMoneyText;
+    public Text carBreakdownText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -31,6 +32,7 @@ public class RandomEventManager : MonoBehaviour
     public int moneyBeforeBankrupt;
     public float percentageLostInBankrupt;
     public int moneyAfterBankrupt;
+    public int carBreakdownBill;
 
     public bool randomEventHasHappened;
 
@@ -41,7 +43,8 @@ public class RandomEventManager : MonoBehaviour
     public GameObject electricalFirePanel;
     public GameObject triathlonWinPanel;
     public GameObject bankruptBankPanel;
-    
+    public GameObject carBreakdownPanel;
+
 
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
@@ -52,6 +55,8 @@ public class RandomEventManager : MonoBehaviour
     public GameObject electricalFireInsurance;
     public GameObject electricalFireGreyInsurance;
     public GameObject claimBankruptMoneyBtn;
+    public GameObject carBreakdownInsurance;
+    public GameObject carBreakdownGreyInsurance;
 
     public GameObject chainedBankruptLock;
     public GameObject claimableMoneyTextUI;
@@ -63,16 +68,23 @@ public class RandomEventManager : MonoBehaviour
     void Start()
     {
         randomEventHasHappened = false;
+
         medicalSlippedBill = 2000;
         medicalInsurancePercentage = 0.2f;
+
         moneyLostInFire = Random.Range(150, 750);
         fireInsurancePercentage = 0.25f;
         fireText.text = "Amount Lost: " + moneyLostInFire;
+        electricalFireText.text = "Amount Lost: " + moneyLostInFire;
+
         carAccidentBill = Random.Range(750, 1250);
         carInsurancePercentage = 0.2f;
         carAcciText.text = "Amount Lost: " + carAccidentBill;
-        electricalFireText.text = "Amount Lost: " + moneyLostInFire;
+        carBreakdownBill = Random.Range(200, 500);
+        carBreakdownText.text = "Amount Lost: " + carBreakdownBill;
+
         grandPrize = 1500;
+
 
         if (PlayerPrefs.GetInt("FooBankBankrupt") == 1)
         {
@@ -153,6 +165,11 @@ public class RandomEventManager : MonoBehaviour
         chainedBankruptLock.SetActive(true);
         PlayerPrefs.SetInt("FooBankBankrupt", 1);
     }
+    public void ProceedCarBreakdown()
+    {
+        carBreakdownPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - carBreakdownBill);
+    }
 
 
 
@@ -228,6 +245,13 @@ public class RandomEventManager : MonoBehaviour
         electricalFirePanel.SetActive(false);
         StartCoroutine(InsuranceBill(moneyLostInFire, fireInsurancePercentage));
     }
+
+    public void InsuranceCarBreakdown()
+    {
+        carBreakdownPanel.SetActive(false);
+        StartCoroutine(InsuranceBill(carBreakdownBill, carInsurancePercentage));
+    }
+
     public void CheckForMedicalInsurance()
     {
         if (PlayerPrefs.GetInt("HealthInsurance") == 1)
@@ -267,11 +291,15 @@ public class RandomEventManager : MonoBehaviour
         {
             carAcciGreyInsurance.SetActive(false);
             carAcciInsurance.SetActive(true);
+            carBreakdownGreyInsurance.SetActive(false);
+            carBreakdownInsurance.SetActive(true);
         }
         if (PlayerPrefs.GetInt("CarInsurance") == 0)
         {
             carAcciGreyInsurance.SetActive(true);
             carAcciInsurance.SetActive(false);
+            carBreakdownGreyInsurance.SetActive(true);
+            carBreakdownInsurance.SetActive(false);
         }
     }
 

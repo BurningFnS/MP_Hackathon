@@ -99,7 +99,7 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         RandomizeIndex(randomizedIndexPanel);
-        randomizedIndexPanel = 6; //For Debugging purpose
+        randomizedIndexPanel = 7; //For Debugging purpose
         if(PlayerPrefs.GetInt("Condo") == 1)
         {
             while(randomizedIndexPanel == 0)
@@ -127,7 +127,7 @@ public class EventHandler : MonoBehaviour
         {
             fireAccident = true;
         }
-        if(randomizedIndexPanel == 3 )
+        if(randomizedIndexPanel == 3 || randomizedIndexPanel == 7)
         {
             carAccident = true;
         }
