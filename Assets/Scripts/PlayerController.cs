@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
             if (SwipeManager.swipeUp)
             {
                 Jump();
-            }       
+            }
         }
 
         //if the player is not grounded and is rolling
@@ -119,11 +119,6 @@ public class PlayerController : MonoBehaviour
 
         if (hitObstacle == false)
         {
-            if (SwipeManager.swipeDown && isRolling == false)
-            {
-                Roll();
-            }
-
             //Gather the inputs on which lane we should be
 
             //Player can swipe right as long as they did not hit an obstacle and is not sliding
@@ -163,6 +158,7 @@ public class PlayerController : MonoBehaviour
         {
             controller.height = 2.8f;
             controller.center = new Vector3(controller.center.x, 1.7f, controller.center.z);
+
             isRolling = false;
         }
 
@@ -172,7 +168,7 @@ public class PlayerController : MonoBehaviour
             if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             {
                 hitObstacle = false;
-            }
+            } 
         }
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling"))
@@ -181,25 +177,16 @@ public class PlayerController : MonoBehaviour
 
             controller.height = 0.7f;
             controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
-
-            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-            {
-                isRolling = false;
-            }
         }
 
 
         //Magnet and Shield Code
-
         if (magnetEffectActive)
         {
-            Debug.Log("Magnet Enabled");
-
             // Update magnet remaining time and disable magnet effect if time is up
             magnetRemainingTime -= Time.deltaTime;
             if (magnetRemainingTime <= 0f)
             {
-                Debug.Log("Magnet Disabled");
                 DisableMagnetEffect();
             }
 
@@ -223,11 +210,9 @@ public class PlayerController : MonoBehaviour
 
         if (shieldEffectActive)
         {
-            Debug.Log("Shield Enabled");
             shieldRemainingTime -= Time.deltaTime;
             if (shieldRemainingTime <= 0f)
             {
-                Debug.Log("Shield Disabled");
                 DisableShieldEffect();
             }
         }
@@ -329,18 +314,26 @@ public class PlayerController : MonoBehaviour
     {
         if (hit.transform.tag == "Obstacle")
         {
-            FindObjectOfType<Audio>().PlaysSound("Bang");
-            smokeBurst.Play();
+            hitObstacle = true;
+            anim.SetTrigger("GetHit"); //Play the Trip animation
+
             Destroy(hit.gameObject); //Destroy the collided obstacle
+            smokeBurst.Play();
             CoinExplosion();
+
+            FindObjectOfType<Audio>().PlaysSound("Bang");
         }
 
         if (hit.transform.tag == "Car" || hit.transform.tag == "Truck")
         {
-            FindObjectOfType<Audio>().PlaysSound("Bang");
-            explosionBurst.Play();
+            hitObstacle = true;
+            anim.SetTrigger("GetHit"); //Play the Trip animation
+
             Destroy(hit.gameObject); //Destroy the collided obstacle
+            explosionBurst.Play();
             CoinExplosion();
+
+            FindObjectOfType<Audio>().PlaysSound("Bang");
         }
     }
 
@@ -354,9 +347,6 @@ public class PlayerController : MonoBehaviour
         coinBurst.Play(); // Play coin burst particle
 
         PlayerManager.numberOfCoins -= randomNumber; //Deduct a random amount of coins
-        anim.SetTrigger("GetHit"); //Play the Trip animation
-
-        hitObstacle = true;
         forwardSpeed = 5f;
     }
 }

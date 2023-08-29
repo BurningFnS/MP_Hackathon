@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.34580848, g: 0.63185304, b: 0.86852545, a: 1}
+  m_IndirectSpecularColor: {r: 0.34572917, g: 0.63172233, b: 0.86842805, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5484,6 +5484,8 @@ MonoBehaviour:
   - {fileID: 2810899153893480827, guid: 6ba7067dbf2ad20458b84eb4dd633bc0, type: 3}
   - {fileID: 1846252225569747496, guid: c8f62d5fee4c32d4d95e58f4694d9de3, type: 3}
   - {fileID: 832914781367012115, guid: d3e15cc7b09c5d64980135b4317705b1, type: 3}
+  testTilePrefabs:
+  - {fileID: 1876527733591322818, guid: 860fbd38c5110c449b27eac1dca77d80, type: 3}
   playerController: {fileID: 1749492192}
   zSpawn: 0
   tileLength: 45
@@ -8330,7 +8332,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1749492189}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.55
   m_Height: 2.8
   m_Direction: 1
@@ -8364,11 +8366,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!82 &1749492196
 AudioSource:
   m_ObjectHideFlags: 0
