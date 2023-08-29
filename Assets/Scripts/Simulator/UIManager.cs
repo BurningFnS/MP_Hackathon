@@ -88,7 +88,6 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         {
             haveInsurancePanel.SetActive(false);
         }
-        Debug.Log("This is working");
     }
     public void ReturnBack()
     {
