@@ -26,6 +26,9 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
     public GameObject[] cancelButton;
     public GameObject[] confirmButton;
 
+    public GameObject cancelHealthInsuranceButton;
+
+    public GameObject haveInsurancePanel;
     void Start()
     {
         PlayerPrefs.GetInt("HealthInsurance");
@@ -40,7 +43,20 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             insuranceExpensesText.text = "Insurance Bill: $" + totalInsuranceExpenses;
         }
     }
-
+    public void OpenHaveInsurancePanel()
+    {
+        if (PlayerPrefs.GetInt("JobIndex") == 1)
+        {
+            haveInsurancePanel.SetActive(true);
+            cancelHealthInsuranceButton.SetActive(false);
+           
+        }
+        else
+        {
+            haveInsurancePanel.SetActive(false);
+            cancelHealthInsuranceButton.SetActive(true);
+        }
+    }
     public void InsuranceUpdate()
     {
         if (PlayerPrefs.GetInt("FireInsurance") == 1)
@@ -97,14 +113,17 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             PlayerPrefs.SetInt("HealthInsurance", 1);
             insurance[1].SetActive(true);
             noInsurance[1].SetActive(false);
+
         }
-        else if(PlayerPrefs.GetInt("JobIndex") != 1)
-        {
-            cancelButton[1].SetActive(false);
-            noInsurance[1].SetActive(true);
-            insurance[1].SetActive(false);
-            insuranceExpenses[1] = 0;
-        }
+        //else if(PlayerPrefs.GetInt("JobIndex") != 1)
+        //{
+        //    PlayerPrefs.SetInt("HealthInsurance", 0);
+            
+        //    noInsurance[1].SetActive(true);
+        //    insurance[1].SetActive(false);
+        //    insuranceExpenses[1] = 0;
+        //}
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -126,7 +145,10 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             noInsurance[1].SetActive(false);
             insurance[1].SetActive(true);
             successText.text = "Successfully purchased\n the health insurance";
+            
             StartCoroutine(SuccessfullyPurchasedInsurace(1));
+            Debug.Log(StartCoroutine(SuccessfullyPurchasedInsurace(1)));
+            
         }
 
         if (gameObject.name == "CarConfirmButton")
@@ -143,6 +165,7 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             PlayerPrefs.SetInt("FireInsurance", 0);
             noInsurance[0].SetActive(true);
             insurance[0].SetActive(false);
+      
             cancelText.text = "In the event of a fire outbreak,\n you will not be covered.";
             StartCoroutine(CancelInsurace(0));
         }
@@ -153,7 +176,23 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             noInsurance[1].SetActive(true);
             insurance[1].SetActive(false);
             cancelText.text = "In the event of a health issue,\n you will not be covered.";
-            StartCoroutine(CancelInsurace(1));
+
+            if (PlayerPrefs.GetInt("JobIndex") == 1)
+            {
+                PlayerPrefs.SetInt("HealthInsurance", 1);
+                noInsurance[1].SetActive(false);
+                insurance[1].SetActive(true);
+                //StopCoroutine(CancelInsurace(1));
+                haveInsurancePanel.SetActive(true);
+                cancelHealthInsuranceButton.SetActive(true);
+            }
+            else
+            {
+
+                haveInsurancePanel.SetActive(false);
+                cancelHealthInsuranceButton.SetActive(true);
+                StartCoroutine(CancelInsurace(1));
+            }
         }
 
         if (gameObject.name == "CarCancelButton")
@@ -179,7 +218,6 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
     IEnumerator CancelInsurace(int button)
     {
         cancelPanel.SetActive(true);
-
         yield return new WaitForSeconds(1.5f);
 
         cancelPanel.SetActive(false);

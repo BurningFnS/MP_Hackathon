@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3456416, g: 0.63169366, b: 0.86841226, a: 1}
+  m_IndirectSpecularColor: {r: 0.34583497, g: 0.6318142, b: 0.86846083, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9978,7 +9978,6 @@ RectTransform:
   - {fileID: 1250030996}
   - {fileID: 1440552536}
   - {fileID: 109565952}
-  - {fileID: 967879989}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14769,6 +14768,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 753485000}
+  haveInsurancePanel: {fileID: 967879988}
 --- !u!1 &432669294
 GameObject:
   m_ObjectHideFlags: 0
@@ -15244,6 +15245,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 0}
+  haveInsurancePanel: {fileID: 0}
 --- !u!1 &442485178
 GameObject:
   m_ObjectHideFlags: 0
@@ -15890,9 +15893,10 @@ RectTransform:
   - {fileID: 936915320}
   - {fileID: 1901329620}
   - {fileID: 63291720}
+  - {fileID: 625490532}
   - {fileID: 494212568}
   - {fileID: 753485001}
-  - {fileID: 625490532}
+  - {fileID: 967879989}
   m_Father: {fileID: 252745333}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17016,7 +17020,7 @@ RectTransform:
   m_Children:
   - {fileID: 768644828}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -17066,19 +17070,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 494212570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &494212570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17152,6 +17144,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 753485000}
+  haveInsurancePanel: {fileID: 967879988}
 --- !u!1 &497027970
 GameObject:
   m_ObjectHideFlags: 0
@@ -18378,6 +18372,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 0}
+  haveInsurancePanel: {fileID: 0}
 --- !u!1 &522350252
 GameObject:
   m_ObjectHideFlags: 0
@@ -21414,6 +21410,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 0}
+  haveInsurancePanel: {fileID: 0}
 --- !u!114 &624665951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21541,7 +21539,7 @@ RectTransform:
   - {fileID: 270949918}
   - {fileID: 1858673754}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26647,7 +26645,7 @@ RectTransform:
   m_Children:
   - {fileID: 760065019}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -26689,6 +26687,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 753485000}
+  haveInsurancePanel: {fileID: 967879988}
 --- !u!114 &753485003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26732,7 +26732,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 753485004}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 429489366}
+        m_TargetAssemblyTypeName: InsuranceManager, Assembly-CSharp
+        m_MethodName: OpenHaveInsurancePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &753485004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32760,6 +32772,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 0}
+  haveInsurancePanel: {fileID: 0}
 --- !u!114 &940129155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34020,14 +34034,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967879988}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 876280582}
-  m_Father: {fileID: 252745333}
-  m_RootOrder: 31
+  m_Father: {fileID: 465267231}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -35390,7 +35404,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 19, y: 186.25168}
-  m_SizeDelta: {x: 213.5591, y: 228.1729}
+  m_SizeDelta: {x: 259.2, y: 228.1729}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032886816
 MonoBehaviour:
@@ -41001,6 +41015,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 0}
+  haveInsurancePanel: {fileID: 0}
 --- !u!114 &1206147117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56775,6 +56791,10 @@ MonoBehaviour:
   CongratulationsOnJobPanel: {fileID: 791493136}
   CongratsJobText: {fileID: 1348327952}
   HaveJobText: {fileID: 883344671}
+  cancelButtonHealthInsurance: {fileID: 753485000}
+  confirmButtonHealthInsurance: {fileID: 494212567}
+  healthInsuranceIcon: {fileID: 876258684}
+  noHealthInsuranceIcon: {fileID: 227516616}
 --- !u!4 &1766064509
 Transform:
   m_ObjectHideFlags: 0
@@ -67041,6 +67061,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 0}
+  haveInsurancePanel: {fileID: 0}
 --- !u!114 &2041869379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67211,6 +67233,8 @@ MonoBehaviour:
   - {fileID: 441410430}
   - {fileID: 494212567}
   - {fileID: 522250860}
+  cancelHealthInsuranceButton: {fileID: 0}
+  haveInsurancePanel: {fileID: 0}
 --- !u!114 &2043442774
 MonoBehaviour:
   m_ObjectHideFlags: 0

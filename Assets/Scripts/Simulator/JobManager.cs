@@ -17,6 +17,11 @@ public class JobManager : MonoBehaviour
     private bool isZooKeeper;
     private bool isPlumber;
 
+    public GameObject cancelButtonHealthInsurance;
+    public GameObject confirmButtonHealthInsurance;
+    public GameObject healthInsuranceIcon;
+    public GameObject noHealthInsuranceIcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,17 +57,29 @@ public class JobManager : MonoBehaviour
         }
         else if (jobIndex == 1 && !isZooKeeper)
         {
+            healthInsuranceIcon.SetActive(true);
+            noHealthInsuranceIcon.SetActive(false);
+            cancelButtonHealthInsurance.SetActive(true);
+            confirmButtonHealthInsurance.SetActive(false);
             CongratulationsOnJobPanel.SetActive(true);
             isZooKeeper = true;
             isPlumber = false;
             isPhotographer = false;
             PlayerPrefs.SetInt("JobIndex", 1);
             PlayerPrefs.SetInt("Salary", 360);
-            CongratsJobText.text = "You are now a ZooKeeper!";
+            CongratsJobText.text = "You are now a Zoo Keeper!";
             // Display UI messages for ZooKeeper job
         }
         else if (jobIndex == 2 && !isPlumber)
         {
+            if (isZooKeeper)
+            {
+                healthInsuranceIcon.SetActive(false);
+                noHealthInsuranceIcon.SetActive(true);
+                PlayerPrefs.SetInt("HealthInsurance", 0);
+                confirmButtonHealthInsurance.SetActive(true);
+                cancelButtonHealthInsurance.SetActive(false);
+            }
             CongratulationsOnJobPanel.SetActive(true);
             isPlumber = true;
             isPhotographer = false;

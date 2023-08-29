@@ -69,7 +69,6 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     {
         if(PlayerPrefs.GetInt("JobIndex") == 1)
         {
-            insuranceUIPanels[1].SetActive(false);
             haveInsurancePanel.SetActive(false);
         }
         else
@@ -78,17 +77,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             haveInsurancePanel.SetActive(true);
         }
     }
-    public void OpenHaveInsurancePanel()
-    {
-        if (PlayerPrefs.GetInt("JobIndex") == 1 && insuranceUIPanels[1].activeSelf == true)
-        {
-            haveInsurancePanel.SetActive(true);
-        }
-        else
-        {
-            haveInsurancePanel.SetActive(false);
-        }
-    }
+
     public void ReturnBack()
     {
         for (int i = 0; i < clickedPanel.Length; i++)
@@ -125,10 +114,6 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         if (listPanel == "Insurance")
         {
             currentUIpanels = insuranceUIPanels;
-            if(insuranceUIPanels[1].activeSelf == true)
-            {
-                OpenHaveInsurancePanel();
-            }  
         }
         if (listPanel == "Property")
         {
@@ -172,10 +157,6 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         if (listPanel == "Insurance")
         {
             currentUIpanels = insuranceUIPanels;
-            if(insuranceUIPanels[1].activeSelf == true)
-            {
-                OpenHaveInsurancePanel();
-            } 
         }
         if (listPanel == "Property")
         {
@@ -321,14 +302,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         else if (gameObject.name == "HealthInsuranceButton")
         {
             insuranceUIPanels[1].SetActive(true);
-            if(PlayerPrefs.GetInt("JobIndex") ==1 )
-            {
-                haveInsurancePanel.SetActive(true);
-            }
-            else
-            {
-                haveInsurancePanel.SetActive(false);
-            }
+           
         }
         else if (gameObject.name == "CarInsuranceButton")
         {
