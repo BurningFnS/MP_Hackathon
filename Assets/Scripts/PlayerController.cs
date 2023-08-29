@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private CharacterController controller;
+    public CharacterController controller;
     private Vector3 direction;
     public float forwardSpeed;
     private float timeSinceLastIncrease;
@@ -150,7 +150,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (SwipeManager.swipeDown)
+       /*     if (SwipeManager.swipeDown)
+            {
+                Roll();
+            }*/
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Roll();
             }
@@ -159,10 +164,11 @@ public class PlayerController : MonoBehaviour
 
         //Animation check code
 
+        //
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Running"))
         {
             controller.height = 2.8f;
-            controller.center = new Vector3(controller.center.x, 1.7f, controller.center.z);
+            controller.center = new Vector3(controller.center.x, 1.5f, controller.center.z);
             isRolling = false;
         }
 
@@ -360,4 +366,5 @@ public class PlayerController : MonoBehaviour
         forwardSpeed = 5f;
     }
 }
- 
+
+
