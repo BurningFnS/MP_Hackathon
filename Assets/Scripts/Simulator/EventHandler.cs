@@ -23,6 +23,7 @@ public class EventHandler : MonoBehaviour
     public bool fireAccident;
     public bool carAccident;
     public bool triathlonWon;
+    public bool bankGoneBankrupt;
 
     void Start()
     {
@@ -32,10 +33,11 @@ public class EventHandler : MonoBehaviour
         fireAccident = false;
         carAccident = false;
         triathlonWon = false;
+        bankGoneBankrupt = false;
         //randomEventManager.SetActive(false);
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
-        Debug.Log("script functions");
+        //Debug.Log("script functions");
 
         for (int i = 0; i < livingExpenses.Length; i++)
         {
@@ -97,10 +99,17 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         RandomizeIndex(randomizedIndexPanel);
-        //randomizedIndexPanel = 0; //For Debugging purpose
+        randomizedIndexPanel = 6; //For Debugging purpose
         if(PlayerPrefs.GetInt("Condo") == 1)
         {
             while(randomizedIndexPanel == 0)
+            {
+                RandomizeIndex(randomizedIndexPanel);
+            }
+        }
+        if(PlayerPrefs.GetInt("FooBankBankrupt") == 1)
+        {
+            while (randomizedIndexPanel == 6)
             {
                 RandomizeIndex(randomizedIndexPanel);
             }
@@ -125,6 +134,10 @@ public class EventHandler : MonoBehaviour
         if(randomizedIndexPanel == 5)
         {
             triathlonWon = true;
+        }
+        if(randomizedIndexPanel == 6)
+        {
+            bankGoneBankrupt = true;
         }
     }
 
