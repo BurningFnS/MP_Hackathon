@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     public static bool atGameInvest;
     public static bool atBusinessInvest;
     public static bool atGymInvest;
-
+    public GameObject haveInsurancePanel;
     private void Start()
     {
         currentPanelIndex = 0;  // Set an initial value for currentPanelIndex
@@ -64,6 +64,31 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
                 atGymInvest = false;
             }
         }
+    }
+    public void ProceedHaveInsurance()
+    {
+        if(PlayerPrefs.GetInt("JobIndex") == 1)
+        {
+            insuranceUIPanels[1].SetActive(false);
+            haveInsurancePanel.SetActive(false);
+        }
+        else
+        {
+            insuranceUIPanels[1].SetActive(true);
+            haveInsurancePanel.SetActive(true);
+        }
+    }
+    public void OpenHaveInsurancePanel()
+    {
+        if (PlayerPrefs.GetInt("JobIndex") == 1 && insuranceUIPanels[1].activeSelf == true)
+        {
+            haveInsurancePanel.SetActive(true);
+        }
+        else
+        {
+            haveInsurancePanel.SetActive(false);
+        }
+        Debug.Log("This is working");
     }
     public void ReturnBack()
     {
@@ -101,6 +126,10 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         if (listPanel == "Insurance")
         {
             currentUIpanels = insuranceUIPanels;
+            if(insuranceUIPanels[1].activeSelf == true)
+            {
+                OpenHaveInsurancePanel();
+            }  
         }
         if (listPanel == "Property")
         {
@@ -144,6 +173,10 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         if (listPanel == "Insurance")
         {
             currentUIpanels = insuranceUIPanels;
+            if(insuranceUIPanels[1].activeSelf == true)
+            {
+                OpenHaveInsurancePanel();
+            } 
         }
         if (listPanel == "Property")
         {
@@ -289,6 +322,14 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         else if (gameObject.name == "HealthInsuranceButton")
         {
             insuranceUIPanels[1].SetActive(true);
+            if(PlayerPrefs.GetInt("JobIndex") ==1 )
+            {
+                haveInsurancePanel.SetActive(true);
+            }
+            else
+            {
+                haveInsurancePanel.SetActive(false);
+            }
         }
         else if (gameObject.name == "CarInsuranceButton")
         {

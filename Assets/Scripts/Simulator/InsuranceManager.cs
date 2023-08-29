@@ -103,6 +103,7 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             cancelButton[1].SetActive(false);
             noInsurance[1].SetActive(true);
             insurance[1].SetActive(false);
+            insuranceExpenses[1] = 0;
         }
     }
 
