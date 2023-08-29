@@ -7,6 +7,7 @@ public class TileManager : MonoBehaviour
     public GameObject[] easyTilePrefabs;
     public GameObject[] intermediateTilePrefabs;
     public GameObject[] hardTilePrefabs;
+
     private GameObject[] ChosenTile;
     public PlayerController playerController;
 
@@ -59,20 +60,17 @@ public class TileManager : MonoBehaviour
         //25 to 40 easy mode
         if (PlayerPrefs.GetInt("CurrentAge") >= 25 && PlayerPrefs.GetInt("CurrentAge") <= 40)
         {
-            Debug.Log("Easy");
-            ChosenTile = hardTilePrefabs;
+            ChosenTile = easyTilePrefabs;
             playerController.maxSpeed = 25;
         }
         // 45 to 65 intermediate mode
         else if (PlayerPrefs.GetInt("CurrentAge") >= 45 && PlayerPrefs.GetInt("CurrentAge") <= 65)
         {
-            Debug.Log("Intermediate");
             ChosenTile = intermediateTilePrefabs;
             playerController.maxSpeed = 35;
         }
         else  //70 to 90 hard mode
         {
-            Debug.Log("Hard");
             ChosenTile = hardTilePrefabs;
             playerController.maxSpeed = 45;
         }
