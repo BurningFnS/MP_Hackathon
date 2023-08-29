@@ -46,6 +46,14 @@ public class JobManager : MonoBehaviour
     {
         if (jobIndex == 0 && !isPhotographer)
         {
+            if (isZooKeeper)
+            {
+                healthInsuranceIcon.SetActive(false);
+                noHealthInsuranceIcon.SetActive(true);
+                PlayerPrefs.SetInt("HealthInsurance", 0);
+                confirmButtonHealthInsurance.SetActive(true);
+                cancelButtonHealthInsurance.SetActive(false);
+            }
             CongratulationsOnJobPanel.SetActive(true);
             isPhotographer = true;
             isPlumber = false;
@@ -67,7 +75,7 @@ public class JobManager : MonoBehaviour
             isPhotographer = false;
             PlayerPrefs.SetInt("JobIndex", 1);
             PlayerPrefs.SetInt("Salary", 360);
-            CongratsJobText.text = "You are now a Zoo Keeper!";
+            CongratsJobText.text = "You are now a           Zoo Keeper!";
             // Display UI messages for ZooKeeper job
         }
         else if (jobIndex == 2 && !isPlumber)
