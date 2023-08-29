@@ -12,6 +12,10 @@ public class StartSelection : MonoBehaviour
     public bool isPlumber;
     public bool isZookeeper;
 
+    public AudioSource soundSource; // Reference to the AudioSource component
+    public AudioClip buttonSound;   // The sound clip to play
+    private bool soundPlaying;       // Flag to track if sound is currently playing
+
     public void LoadScene(string name)
     {
         if (isPhotographer == true)
@@ -32,8 +36,25 @@ public class StartSelection : MonoBehaviour
             PlayerPrefs.SetInt("Salary", 480);
             Debug.Log("Plumber Selected");
         }
-        SceneManager.LoadScene(name);
 
+        if (!soundPlaying)
+        {
+            soundPlaying = true;
+            soundSource.Play();
+            soundPlaying = false;
+            Invoke("LoadScene", buttonSound.length); // Invoke LoadScene after sound duration
+        }
+    }
+
+    private void LoadScene()
+    {
+        SceneManager.LoadScene("Level");
+    }
+
+    private void Awake()
+    {
+        soundSource = GetComponent<AudioSource>();
+        soundSource.clip = buttonSound;
     }
 
     private void Start()
