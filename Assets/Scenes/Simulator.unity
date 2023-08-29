@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34620354, g: 0.632019, b: 0.8685846, a: 1}
+  m_IndirectSpecularColor: {r: 0.3456416, g: 0.63169366, b: 0.86841226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2771,6 +2771,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Insurance
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenHaveInsurancePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &63291722
@@ -9751,6 +9763,18 @@ MonoBehaviour:
           m_StringArgument: Insurance
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenHaveInsurancePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &250176738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14408,6 +14432,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Insurance
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenHaveInsurancePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &425664826
@@ -36545,6 +36581,18 @@ MonoBehaviour:
           m_StringArgument: Insurance
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenHaveInsurancePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1073692603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42395,6 +42443,7 @@ MonoBehaviour:
   - {fileID: 1364918729}
   - {fileID: 724092054}
   currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
 --- !u!114 &1274107303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42583,6 +42632,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Insurance
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenHaveInsurancePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1274419067
@@ -44810,7 +44871,7 @@ MonoBehaviour:
   propertyUIPanels: []
   bankDepositUIPanels: []
   currentPanelIndex: 0
-  haveInsurancePanel: {fileID: 0}
+  haveInsurancePanel: {fileID: 967879988}
 --- !u!1 &1351222333
 GameObject:
   m_ObjectHideFlags: 0
@@ -62378,6 +62439,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Insurance
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenHaveInsurancePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1901329622
