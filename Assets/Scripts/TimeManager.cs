@@ -27,6 +27,18 @@ public class TimeManager : MonoBehaviour
     public int salary;
     public int totalCoins;
 
+    public AudioSource soundSource; // Reference to the AudioSource component
+    public AudioClip buttonSound;   // The sound clip to play
+
+    private bool soundPlaying;       // Flag to track if sound is currently playing
+
+    private void Awake()
+    {
+        soundSource = GetComponent<AudioSource>();
+        soundSource.clip = buttonSound;
+    }
+
+
     void Start()
     {
         timer = totalTime; // Initialize the timer with the total time
@@ -34,6 +46,8 @@ public class TimeManager : MonoBehaviour
         magnetPanel.SetActive(false);
         pausedScreen.SetActive(false);
         salary = PlayerPrefs.GetInt("Salary") * 5;
+
+        soundPlaying = false;
     }
 
     void Update()
@@ -129,7 +143,29 @@ public class TimeManager : MonoBehaviour
     public void Proceed()
     {
         SceneManager.LoadScene("Simulator");
+        
+
         totalCoins = PlayerManager.numberOfCoins + salary;
         PlayerPrefs.SetInt("CollectedCoins", totalCoins);
+        
+        //PlayButtonSoundAndLoadScene();
+        
+    }
+
+    public void PlayButtonSoundAndLoadScene()
+    {
+        if (!soundPlaying)
+        {
+            soundPlaying = true;
+            soundSource.Play();
+            
+            Invoke("LoadScene", buttonSound.length); // Invoke LoadScene after sound duration
+        }
+    }
+
+    private void LoadScene()
+    {
+        SceneManager.LoadScene("Simulator");
+        
     }
 }
