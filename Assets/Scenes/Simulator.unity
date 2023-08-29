@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34583497, g: 0.6318142, b: 0.86846083, a: 1}
+  m_IndirectSpecularColor: {r: 0.34569976, g: 0.63175315, b: 0.8684625, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2013,8 +2013,8 @@ RectTransform:
   m_GameObject: {fileID: 41930317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 584157936}
   - {fileID: 1189928582}
@@ -13362,6 +13362,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16bacbf184814ad4a95d27dfcb6ae841, type: 3}
   m_PrefabInstance: {fileID: 380934321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &385571533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385571534}
+  - component: {fileID: 385571536}
+  - component: {fileID: 385571535}
+  m_Layer: 5
+  m_Name: MoneyClaimedText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &385571534
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385571533}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 673921659}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -59.4}
+  m_SizeDelta: {x: 282.13, y: 68.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &385571535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385571533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4e9cc341aa8e8704da6d7b0deb8872ce, type: 3}
+    m_FontSize: 22
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: You have claimed $1000
+--- !u!222 &385571536
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385571533}
+  m_CullTransparentMesh: 1
 --- !u!1 &386941718
 GameObject:
   m_ObjectHideFlags: 0
@@ -20350,7 +20430,7 @@ RectTransform:
   m_GameObject: {fileID: 584157935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 41930318}
@@ -23184,18 +23264,19 @@ RectTransform:
   m_GameObject: {fileID: 673921658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.94, y: 0.94, z: 0.94}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1056863434}
   - {fileID: 1274107301}
+  - {fileID: 385571534}
   m_Father: {fileID: 1288048531}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00003411969, y: 11.919991}
-  m_SizeDelta: {x: 369.21, y: 264.1}
+  m_AnchoredPosition: {x: 0.00003411969, y: 1.7}
+  m_SizeDelta: {x: 350.9, y: 264.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673921660
 MonoBehaviour:
@@ -33417,7 +33498,7 @@ RectTransform:
   m_GameObject: {fileID: 948005287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2071686823}
@@ -40619,7 +40700,7 @@ RectTransform:
   m_GameObject: {fileID: 1189928581}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.25, y: 3.25, z: 3.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 41930318}
@@ -43321,10 +43402,10 @@ RectTransform:
   m_Father: {fileID: 747177731}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -44.5}
-  m_SizeDelta: {x: 559.2, y: 806.17}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 446.6}
+  m_SizeDelta: {x: 0, y: 893.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288048532
 MonoBehaviour:
@@ -51091,7 +51172,7 @@ RectTransform:
   m_GameObject: {fileID: 1567869279}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 822105077}
@@ -54102,7 +54183,7 @@ RectTransform:
   m_GameObject: {fileID: 1685067058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 659241730}
@@ -54111,7 +54192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -1.3091745, y: 321.61664}
+  m_AnchoredPosition: {x: -1.3091745, y: 103.75}
   m_SizeDelta: {x: 310, y: 98.604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1685067060
@@ -59871,6 +59952,7 @@ MonoBehaviour:
   carAcciText: {fileID: 405785721}
   electricalFireText: {fileID: 454366354}
   grandPrizeText: {fileID: 2071686824}
+  claimableMoneyText: {fileID: 385571535}
   amountRobbed: 0
   medicalSlippedBill: 0
   medicalInsurancePercentage: 0
@@ -59890,7 +59972,6 @@ MonoBehaviour:
   electricalFirePanel: {fileID: 2089129163}
   triathlonWinPanel: {fileID: 822105076}
   bankruptBankPanel: {fileID: 778846090}
-  chainedBankruptLock: {fileID: 1288048530}
   slippedInsurance: {fileID: 348184562}
   slippedGreyInsurance: {fileID: 776907534}
   fireInsurance: {fileID: 2044302503}
@@ -59900,6 +59981,8 @@ MonoBehaviour:
   electricalFireInsurance: {fileID: 1640091806}
   electricalFireGreyInsurance: {fileID: 1837618458}
   claimBankruptMoneyBtn: {fileID: 1274107300}
+  chainedBankruptLock: {fileID: 1288048530}
+  claimableMoneyTextUI: {fileID: 385571533}
   noInsurancePanel: {fileID: 1045703507}
   insuranceBillPanel: {fileID: 1254614697}
 --- !u!1 &1834950056

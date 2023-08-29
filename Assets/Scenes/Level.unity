@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.34572917, g: 0.63172233, b: 0.86842805, a: 1}
+  m_IndirectSpecularColor: {r: 0.34630588, g: 0.6320231, b: 0.8685458, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5484,8 +5484,6 @@ MonoBehaviour:
   - {fileID: 2810899153893480827, guid: 6ba7067dbf2ad20458b84eb4dd633bc0, type: 3}
   - {fileID: 1846252225569747496, guid: c8f62d5fee4c32d4d95e58f4694d9de3, type: 3}
   - {fileID: 832914781367012115, guid: d3e15cc7b09c5d64980135b4317705b1, type: 3}
-  testTilePrefabs:
-  - {fileID: 1876527733591322818, guid: 860fbd38c5110c449b27eac1dca77d80, type: 3}
   playerController: {fileID: 1749492192}
   zSpawn: 0
   tileLength: 45
@@ -6108,7 +6106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052c13f8a4177d445935f852c613a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 60
+  totalTime: 10
   timerText: {fileID: 1791390365}
   timeUpPanel: {fileID: 926932345}
   playerController: {fileID: 1749492192}

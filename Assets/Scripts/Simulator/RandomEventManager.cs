@@ -18,6 +18,7 @@ public class RandomEventManager : MonoBehaviour
     public Text carAcciText;
     public Text electricalFireText;
     public Text grandPrizeText;
+    public Text claimableMoneyText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -40,7 +41,7 @@ public class RandomEventManager : MonoBehaviour
     public GameObject electricalFirePanel;
     public GameObject triathlonWinPanel;
     public GameObject bankruptBankPanel;
-    public GameObject chainedBankruptLock;
+    
 
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
@@ -51,6 +52,9 @@ public class RandomEventManager : MonoBehaviour
     public GameObject electricalFireInsurance;
     public GameObject electricalFireGreyInsurance;
     public GameObject claimBankruptMoneyBtn;
+
+    public GameObject chainedBankruptLock;
+    public GameObject claimableMoneyTextUI;
 
 
     public GameObject noInsurancePanel;
@@ -74,6 +78,12 @@ public class RandomEventManager : MonoBehaviour
         {
             bankruptBankPanel.SetActive(false);
             chainedBankruptLock.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("ClaimableBankruptcyMoney") == 0)
+        {
+            claimBankruptMoneyBtn.SetActive(false);
+            claimableMoneyText.text = "The money has\r\nbeen claimed";
+            claimableMoneyTextUI.SetActive(true);
         }
     }
 
@@ -189,6 +199,10 @@ public class RandomEventManager : MonoBehaviour
     {
         coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + PlayerPrefs.GetInt("ClaimableBankruptcyMoney"));
         claimBankruptMoneyBtn.SetActive(false);
+        claimableMoneyText.text = "You have claimed $" + PlayerPrefs.GetInt("ClaimableBankruptcyMoney");
+        claimableMoneyTextUI.SetActive(true);
+        PlayerPrefs.SetInt("ClaimableBankruptcyMoney", 0);
+
     }
 
     public void InsuranceSlipped()
