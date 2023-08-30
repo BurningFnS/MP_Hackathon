@@ -25,6 +25,7 @@ public class EventHandler : MonoBehaviour
     public bool carAccident;
     public bool triathlonWon;
     public bool bankGoneBankrupt;
+    public bool foundJewellery;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class EventHandler : MonoBehaviour
         carAccident = false;
         triathlonWon = false;
         bankGoneBankrupt = false;
+        foundJewellery = false;
         //randomEventManager.SetActive(false);
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
@@ -100,7 +102,7 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         RandomizeIndex(randomizedIndexPanel);
-        randomizedIndexPanel = 7; //For Debugging purpose
+        randomizedIndexPanel = 8; //For Debugging purpose
         if(PlayerPrefs.GetInt("Condo") == 1)
         {
             while(randomizedIndexPanel == 0)
@@ -139,6 +141,10 @@ public class EventHandler : MonoBehaviour
         if(randomizedIndexPanel == 6)
         {
             bankGoneBankrupt = true;
+        }
+        if (randomizedIndexPanel == 8)
+        {
+            foundJewellery = true;
         }
     }
 

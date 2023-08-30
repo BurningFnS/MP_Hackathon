@@ -20,6 +20,7 @@ public class RandomEventManager : MonoBehaviour
     public Text grandPrizeText;
     public Text claimableMoneyText;
     public Text carBreakdownText;
+    public Text secretJewelleryText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -33,6 +34,7 @@ public class RandomEventManager : MonoBehaviour
     public float percentageLostInBankrupt;
     public int moneyAfterBankrupt;
     public int carBreakdownBill;
+    public int jewelleryWorth;
 
     public bool randomEventHasHappened;
 
@@ -44,6 +46,7 @@ public class RandomEventManager : MonoBehaviour
     public GameObject triathlonWinPanel;
     public GameObject bankruptBankPanel;
     public GameObject carBreakdownPanel;
+    public GameObject foundJewelleryPanel;
 
 
     public GameObject slippedInsurance;
@@ -85,6 +88,8 @@ public class RandomEventManager : MonoBehaviour
 
         grandPrize = 1000;
 
+        jewelleryWorth = Random.Range(200, 850);
+
 
         if (PlayerPrefs.GetInt("FooBankBankrupt") == 1)
         {
@@ -125,6 +130,10 @@ public class RandomEventManager : MonoBehaviour
         if (eventHandler.bankGoneBankrupt && PlayerPrefs.GetInt("FooBankBankrupt") == 0)
         {
             DeclaringBankruptcy();
+        }
+        if (eventHandler.foundJewellery)
+        {
+            SellJewellery();
         }
     }
 
@@ -170,6 +179,11 @@ public class RandomEventManager : MonoBehaviour
         carBreakdownPanel.SetActive(false);
         coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - carBreakdownBill);
     }
+    public void ProceedSellJewellery()
+    {
+        foundJewelleryPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + jewelleryWorth);
+    }
 
 
 
@@ -199,6 +213,15 @@ public class RandomEventManager : MonoBehaviour
             grandPrizeText.text = "Grand Prize: " + grandPrize;
             randomEventHasHappened = true;
 
+        }
+    }
+
+    public void SellJewellery()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            secretJewelleryText.text = "Sold for: " + jewelleryWorth;
+            randomEventHasHappened = true;
         }
     }
 

@@ -35609,7 +35609,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1834669575}
         m_TargetAssemblyTypeName: RandomEventManager, Assembly-CSharp
-        m_MethodName: ProceedTriathlon
+        m_MethodName: ProceedSellJewellery
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -62078,6 +62078,7 @@ MonoBehaviour:
   grandPrizeText: {fileID: 2071686824}
   claimableMoneyText: {fileID: 385571535}
   carBreakdownText: {fileID: 605935162}
+  secretJewelleryText: {fileID: 1733815503}
   amountRobbed: 0
   medicalSlippedBill: 0
   medicalInsurancePercentage: 0
@@ -62090,6 +62091,7 @@ MonoBehaviour:
   percentageLostInBankrupt: 0
   moneyAfterBankrupt: 0
   carBreakdownBill: 0
+  jewelleryWorth: 0
   randomEventHasHappened: 0
   robbedPanel: {fileID: 351581052}
   slippedPanel: {fileID: 750997696}
@@ -62099,6 +62101,7 @@ MonoBehaviour:
   triathlonWinPanel: {fileID: 822105076}
   bankruptBankPanel: {fileID: 778846090}
   carBreakdownPanel: {fileID: 576516869}
+  foundJewelleryPanel: {fileID: 199783343}
   slippedInsurance: {fileID: 348184562}
   slippedGreyInsurance: {fileID: 776907534}
   fireInsurance: {fileID: 2044302503}
@@ -72207,6 +72210,7 @@ MonoBehaviour:
   - {fileID: 822105076}
   - {fileID: 778846090}
   - {fileID: 576516869}
+  - {fileID: 199783343}
   insuranceManager: {fileID: 429489366}
   propertyManager: {fileID: 1353680983}
   randomEventCanHappen: 0
@@ -72216,6 +72220,7 @@ MonoBehaviour:
   carAccident: 0
   triathlonWon: 0
   bankGoneBankrupt: 0
+  foundJewellery: 0
 --- !u!1 &2130465949
 GameObject:
   m_ObjectHideFlags: 0
