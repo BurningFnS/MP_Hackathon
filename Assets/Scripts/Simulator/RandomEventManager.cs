@@ -37,6 +37,7 @@ public class RandomEventManager : MonoBehaviour
     public int carBreakdownBill;
     public int jewelleryWorth;
     public int moneyPickpocketted;
+    public float payRaise;
 
     public bool randomEventHasHappened;
 
@@ -50,6 +51,7 @@ public class RandomEventManager : MonoBehaviour
     public GameObject carBreakdownPanel;
     public GameObject foundJewelleryPanel;
     public GameObject pickpockettedPanel;
+    public GameObject payRaisePanel;
 
 
     public GameObject slippedInsurance;
@@ -93,6 +95,7 @@ public class RandomEventManager : MonoBehaviour
 
         jewelleryWorth = Random.Range(200, 850);
 
+        payRaise = 1.25f;
 
         if (PlayerPrefs.GetInt("FooBankBankrupt") == 1)
         {
@@ -195,6 +198,14 @@ public class RandomEventManager : MonoBehaviour
     {
         pickpockettedPanel.SetActive(false);
         coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - moneyPickpocketted);
+    }
+    public void ProceedPayRaise()
+    {
+        payRaisePanel.SetActive(false);
+        int currentSalary = PlayerPrefs.GetInt("Salary");
+        int newSalary = Mathf.CeilToInt(currentSalary * payRaise);
+        PlayerPrefs.SetInt("Salary", newSalary);
+        
     }
 
 
