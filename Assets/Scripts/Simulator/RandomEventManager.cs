@@ -21,6 +21,7 @@ public class RandomEventManager : MonoBehaviour
     public Text claimableMoneyText;
     public Text carBreakdownText;
     public Text secretJewelleryText;
+    public Text pickpockettedText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -35,6 +36,7 @@ public class RandomEventManager : MonoBehaviour
     public int moneyAfterBankrupt;
     public int carBreakdownBill;
     public int jewelleryWorth;
+    public int moneyPickpocketted;
 
     public bool randomEventHasHappened;
 
@@ -47,6 +49,7 @@ public class RandomEventManager : MonoBehaviour
     public GameObject bankruptBankPanel;
     public GameObject carBreakdownPanel;
     public GameObject foundJewelleryPanel;
+    public GameObject pickpockettedPanel;
 
 
     public GameObject slippedInsurance;
@@ -135,6 +138,10 @@ public class RandomEventManager : MonoBehaviour
         {
             SellJewellery();
         }
+        if (eventHandler.gotPickpocketted)
+        {
+            GettingPickpockettedEvent();
+        }
     }
 
     public void ProceedRobbed()
@@ -184,7 +191,11 @@ public class RandomEventManager : MonoBehaviour
         foundJewelleryPanel.SetActive(false);
         coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + jewelleryWorth);
     }
-
+    public void ProceedPickpocketted()
+    {
+        pickpockettedPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - moneyPickpocketted);
+    }
 
 
     public void GettingRobbedEvent()
@@ -200,6 +211,25 @@ public class RandomEventManager : MonoBehaviour
             else
             {
                 robbedText.text = "Amount Lost: 0";
+                randomEventHasHappened = true;
+            }
+
+        }
+    }
+
+    public void GettingPickpockettedEvent()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            if (coinManager.currentCoins > 0)
+            {
+                moneyPickpocketted = Random.Range(0, coinManager.currentCoins);
+                pickpockettedText.text = "Money Lost: " + moneyPickpocketted;
+                randomEventHasHappened = true;
+            }
+            else
+            {
+                pickpockettedText.text = "Money Lost: 0";
                 randomEventHasHappened = true;
             }
 
