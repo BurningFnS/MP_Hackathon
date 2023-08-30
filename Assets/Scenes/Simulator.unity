@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34569976, g: 0.63175315, b: 0.8684625, a: 1}
+  m_IndirectSpecularColor: {r: 0.34604156, g: 0.631889, b: 0.8684756, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -46766,7 +46766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1380081039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -71430,6 +71430,7 @@ MonoBehaviour:
   livingExpenses: 000000000000000000000000
   yourExpenses: {fileID: 508644629}
   coinManager: {fileID: 1122658503}
+  percentageDiscount: 0.5
   randomizedIndexPanel: 0
   randomEventPanel:
   - {fileID: 351581052}
