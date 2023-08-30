@@ -22,6 +22,8 @@ public class RandomEventManager : MonoBehaviour
     public Text carBreakdownText;
     public Text secretJewelleryText;
     public Text pickpockettedText;
+    public Text companyBonusText;
+    public Text arsonText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -38,6 +40,9 @@ public class RandomEventManager : MonoBehaviour
     public int jewelleryWorth;
     public int moneyPickpocketted;
     public float payRaise;
+    public float payRaise2;
+    public int companyBonus;
+    public int moneyLostFromArson;
 
     public bool randomEventHasHappened;
 
@@ -52,6 +57,9 @@ public class RandomEventManager : MonoBehaviour
     public GameObject foundJewelleryPanel;
     public GameObject pickpockettedPanel;
     public GameObject payRaisePanel;
+    public GameObject payRaisePanel2;
+    public GameObject companyBonusPanel;
+    public GameObject arsonPanel;
 
 
     public GameObject slippedInsurance;
@@ -96,7 +104,9 @@ public class RandomEventManager : MonoBehaviour
         jewelleryWorth = Random.Range(200, 850);
 
         payRaise = 1.25f;
+        payRaise2 = 1.15f;
 
+        companyBonus = 1500;
         if (PlayerPrefs.GetInt("FooBankBankrupt") == 1)
         {
             bankruptBankPanel.SetActive(false);
@@ -144,6 +154,14 @@ public class RandomEventManager : MonoBehaviour
         if (eventHandler.gotPickpocketted)
         {
             GettingPickpockettedEvent();
+        }
+        if (eventHandler.companyBonus)
+        {
+            ReceiveCompanyBonus();
+        }
+        if (eventHandler.arsonCase)
+        {
+            ArsonEvent();
         }
     }
 
@@ -207,6 +225,25 @@ public class RandomEventManager : MonoBehaviour
         PlayerPrefs.SetInt("Salary", newSalary);
         
     }
+    public void ProceedPayRaise2()
+    {
+        payRaisePanel2.SetActive(false);
+        int currentSalary = PlayerPrefs.GetInt("Salary");
+        int newSalary = Mathf.CeilToInt(currentSalary * payRaise2);
+        PlayerPrefs.SetInt("Salary", newSalary);
+
+    }
+    public void ProceedCompanyBonus()
+    {
+        companyBonusPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + companyBonus);
+    }
+
+    public void ProceedArson()
+    {
+        arsonPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - moneyLostFromArson);
+    }
 
 
     public void GettingRobbedEvent()
@@ -247,6 +284,25 @@ public class RandomEventManager : MonoBehaviour
         }
     }
 
+    public void ArsonEvent()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            if (coinManager.currentCoins > 0)
+            {
+                moneyLostFromArson = Random.Range(0, coinManager.currentCoins);
+                arsonText.text = "Amount Lost: " + moneyLostFromArson;
+                randomEventHasHappened = true;
+            }
+            else
+            {
+                arsonText.text = "Money Lost: 0";
+                randomEventHasHappened = true;
+            }
+
+        }
+    }
+
     public void WonTriathlon()
     {
         if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
@@ -256,7 +312,15 @@ public class RandomEventManager : MonoBehaviour
 
         }
     }
+    public void ReceiveCompanyBonus()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            companyBonusText.text = "Bonus: " + companyBonus;
+            randomEventHasHappened = true;
 
+        }
+    }
     public void SellJewellery()
     {
         if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)

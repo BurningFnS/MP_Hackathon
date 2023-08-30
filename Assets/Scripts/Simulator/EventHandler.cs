@@ -28,6 +28,8 @@ public class EventHandler : MonoBehaviour
     public bool foundJewellery;
     public bool gotPickpocketted;
     public bool payRaised;
+    public bool companyBonus;
+    public bool arsonCase;
 
     void Start()
     {
@@ -41,6 +43,8 @@ public class EventHandler : MonoBehaviour
         foundJewellery = false;
         gotPickpocketted = false;
         payRaised = false;
+        companyBonus = false;
+        arsonCase = false;
         //randomEventManager.SetActive(false);
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
@@ -106,10 +110,10 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         RandomizeIndex(randomizedIndexPanel);
-        randomizedIndexPanel = 10; //For Debugging purpose
-        if(PlayerPrefs.GetInt("Condo") == 1)
+        randomizedIndexPanel = 13; //For Debugging purpose
+        if (PlayerPrefs.GetInt("Condo") == 1)
         {
-            while(randomizedIndexPanel == 0)
+            while (randomizedIndexPanel == 0 || randomizedIndexPanel == 9 || randomizedIndexPanel == 13)
             {
                 RandomizeIndex(randomizedIndexPanel);
             }
@@ -154,9 +158,17 @@ public class EventHandler : MonoBehaviour
         {
             gotPickpocketted = true;
         }
-        if (randomizedIndexPanel == 10)
+        if (randomizedIndexPanel == 10 || randomizedIndexPanel == 11)
         {
             payRaised = true;
+        }
+        if (randomizedIndexPanel == 12)
+        {
+            companyBonus = true;
+        }
+        if(randomizedIndexPanel == 13)
+        {
+            arsonCase = true;
         }
     }
 
