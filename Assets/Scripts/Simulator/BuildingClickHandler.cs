@@ -54,7 +54,7 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
             return 2;
         else if (gameObject.name == "Insurance")
             return 3;
-        else if (gameObject.name == "House")
+        else if (gameObject.name == "Property")
             return 4;
 
         return -1;
