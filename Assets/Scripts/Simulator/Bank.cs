@@ -27,15 +27,15 @@ public class Bank : MonoBehaviour
         {
             if(i == 0)
             {
-                bankBalance[i] = RoundBalance(CalculateInterest(bankBalance[i], 0.03f, 1));
+                bankBalance[i] = RoundBalance(CalculateInterest(bankBalance[i], 0.05f, 4));
             }
             if (i == 1)
             {
-                bankBalance[i] = RoundBalance(CalculateInterest(bankBalance[i], 0.12f, 1));
+                bankBalance[i] = RoundBalance(CalculateInterest(bankBalance[i], 0.07f, 1));
             }
             if (i == 2)
             {
-                bankBalance[i] = RoundBalance(CalculateInterest(bankBalance[i], 0.10f, 1));
+                bankBalance[i] = RoundBalance(CalculateInterest(bankBalance[i], 0.12f, 1));
             }
             moneyInBankText[i].text = "Money in bank: $" + bankBalance[i].ToString("");
         }

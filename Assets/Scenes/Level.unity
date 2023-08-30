@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.34630588, g: 0.6320231, b: 0.8685458, a: 1}
+  m_IndirectSpecularColor: {r: 0.34604156, g: 0.631889, b: 0.8684756, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8308,7 +8308,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 767866101540771977}
   smokeParticles: {fileID: 8762424083605754839}
   magneticEffect: {fileID: 699311117}
-  magnetDuration: 10
+  magnetDuration: 12
   shieldBarrier: {fileID: 2353331781107158594}
   isGrounded: 0
   groundLayer:

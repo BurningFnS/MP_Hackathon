@@ -59,7 +59,7 @@ public class JobManager : MonoBehaviour
             isPlumber = false;
             isZooKeeper = false;
             PlayerPrefs.SetInt("JobIndex", 0);
-            PlayerPrefs.SetInt("Salary", 400);
+            PlayerPrefs.SetInt("Salary", 360);
             CongratsJobText.text = "You are now a Photographer!";
             // Display UI messages for Photographer job
         }
@@ -74,7 +74,7 @@ public class JobManager : MonoBehaviour
             isPlumber = false;
             isPhotographer = false;
             PlayerPrefs.SetInt("JobIndex", 1);
-            PlayerPrefs.SetInt("Salary", 360);
+            PlayerPrefs.SetInt("Salary", 320);
             CongratsJobText.text = "You are now a           Zoo Keeper!";
             // Display UI messages for ZooKeeper job
         }
@@ -93,7 +93,7 @@ public class JobManager : MonoBehaviour
             isPhotographer = false;
             isZooKeeper = false;
             PlayerPrefs.SetInt("JobIndex", 2);
-            PlayerPrefs.SetInt("Salary",  480);
+            PlayerPrefs.SetInt("Salary",  450);
             CongratsJobText.text = "You are now a Plumber!";
             // Display UI messages for Plumber job
         }

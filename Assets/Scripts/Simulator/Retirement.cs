@@ -19,22 +19,38 @@ public class Retirement : MonoBehaviour
 
     public Bank bank;
     public float bankTotal;
+
     private void Update()
     {
         bankTotal= bank.bankBalance[0] + bank.bankBalance[1] + bank.bankBalance[2];
+        //if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("JobIndex") == 0) //for the perks for pension 
+        //{
+        //    //forcedRetiredPanel.SetActive(true);
+        //    BuildingClickHandler.canClickOnBuildings = false;
+        //    PlayerPrefs.SetInt("JobIndex", 0);
+        //    PlayerPrefs.SetInt("Retirement", 1);
+        //    PlayerPrefs.SetInt("Salary", 150);
+        //}
         if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("Retirement") == 0)
         {
-            if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("JobIndex") == 0) //for the perks for pension 
-            {
-                PlayerPrefs.SetInt("JobIndex", 0);
-                PlayerPrefs.SetInt("Retirement", 1);
-            }
+           
             //Show you have Retired Panel (FORCE PLAYER TO RETIRE)
             forcedRetiredPanel.SetActive(true);
             BuildingClickHandler.canClickOnBuildings = false;
+
+            if(PlayerPrefs.GetInt("JobIndex") == 0)
+            {
+                PlayerPrefs.SetInt("Salary", 150);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Salary", 0);
+            }
+
             PlayerPrefs.SetInt("JobIndex", 3);
-            PlayerPrefs.SetInt("Salary", 0);
+            
             PlayerPrefs.SetInt("Retirement", 1);
+           
             Debug.Log(PlayerPrefs.GetInt("JobIndex"));
         }
 

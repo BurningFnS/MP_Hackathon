@@ -64,7 +64,7 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             cancelButton[0].SetActive(true);
             noInsurance[0].SetActive(false);
             insurance[0].SetActive(true);
-            insuranceExpenses[0] = 2000;
+            insuranceExpenses[0] = (160*5);
         }
         else
         {
@@ -83,7 +83,7 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             cancelButton[1].SetActive(true);
             noInsurance[1].SetActive(false);
             insurance[1].SetActive(true);
-            insuranceExpenses[1] = 3000;
+            insuranceExpenses[1] = (140 * 5);
         }
         else
         {
@@ -95,7 +95,7 @@ public class InsuranceManager : MonoBehaviour, IPointerClickHandler
             cancelButton[2].SetActive(true);
             noInsurance[2].SetActive(false);
             insurance[2].SetActive(true);
-            insuranceExpenses[2] = 1000;
+            insuranceExpenses[2] = (190*5);
         }
         else
         {

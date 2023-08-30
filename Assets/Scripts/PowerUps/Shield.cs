@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public float shieldDuration = 10f; // The duration of the shield effect in seconds
+    public float shieldDuration = 8f; // The duration of the shield effect in seconds
     public float bounceHeight = 1f;    // The maximum height the power-up will reach during each bounce
 
     private Vector3 startingPosition;    // Initial position of the power-up

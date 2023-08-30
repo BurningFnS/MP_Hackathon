@@ -32,9 +32,9 @@ public class Clock : MonoBehaviour
         {
             GameObject canvas = GameObject.Find("Canvas"); // Make sure your Canvas object is named "Canvas"
             GameObject textEffect = Instantiate(textEffectPrefab, canvas.transform);
-            textEffect.GetComponent<TextEffect>().SetText("+" + 10 + "s");
+            textEffect.GetComponent<TextEffect>().SetText("+" + 8 + "s");
             Destroy(gameObject);
-            TimeManager.timer += 10;
+            TimeManager.timer += 8;
         }
     }
 }

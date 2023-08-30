@@ -69,21 +69,21 @@ public class RandomEventManager : MonoBehaviour
     {
         randomEventHasHappened = false;
 
-        medicalSlippedBill = 2000;
+        medicalSlippedBill = 850;
         medicalInsurancePercentage = 0.2f;
 
-        moneyLostInFire = Random.Range(150, 750);
+        moneyLostInFire = Random.Range(150, 550);
         fireInsurancePercentage = 0.25f;
         fireText.text = "Amount Lost: " + moneyLostInFire;
         electricalFireText.text = "Amount Lost: " + moneyLostInFire;
 
-        carAccidentBill = Random.Range(750, 1250);
+        carAccidentBill = Random.Range(650, 1000);
         carInsurancePercentage = 0.2f;
         carAcciText.text = "Amount Lost: " + carAccidentBill;
-        carBreakdownBill = Random.Range(200, 500);
+        carBreakdownBill = Random.Range(300, 650);
         carBreakdownText.text = "Amount Lost: " + carBreakdownBill;
 
-        grandPrize = 1500;
+        grandPrize = 1000;
 
 
         if (PlayerPrefs.GetInt("FooBankBankrupt") == 1)

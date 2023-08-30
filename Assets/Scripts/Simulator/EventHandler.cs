@@ -10,6 +10,7 @@ public class EventHandler : MonoBehaviour
     public int[] livingExpenses;
     public GameObject yourExpenses;
     public CoinManager coinManager;
+    public float percentageDiscount = 0.5f;
 
     public int randomizedIndexPanel;
     public GameObject[] randomEventPanel;
@@ -51,7 +52,7 @@ public class EventHandler : MonoBehaviour
             }
             if(i == 0 && PlayerPrefs.GetInt("Landed") == 1)
             {
-                livingExpenses[i] = (int)((waterBill + changeInCostOfLiving) * 0.75f);
+                livingExpenses[i] = (int)((waterBill + changeInCostOfLiving) *percentageDiscount);
                 livingExpensesText[i].text = "Water Bill: $" + livingExpenses[0];
                 PlayerPrefs.SetInt("WaterBill", livingExpenses[i]);
                 Debug.Log("Water Bill = " + livingExpenses[i]);
@@ -65,7 +66,7 @@ public class EventHandler : MonoBehaviour
             }
             if (i == 1 && PlayerPrefs.GetInt("Landed") == 1)
             {
-                livingExpenses[i] = (int)((elecBill + changeInCostOfLiving) * 0.75f);
+                livingExpenses[i] = (int)((elecBill + changeInCostOfLiving) * percentageDiscount);
                 livingExpensesText[i].text = "Electrical Bill: $" + livingExpenses[1];
                 PlayerPrefs.SetInt("ElectricalBill", livingExpenses[i]);
                 Debug.Log("Elec Bill = " + livingExpenses[i]);

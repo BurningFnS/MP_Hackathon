@@ -16,8 +16,8 @@ public class PropertyManager : MonoBehaviour
     public bool hasApartment = false;
     public bool hasLanded = false;
     public bool hasCondominium = false;
-    public int condominiumPrice = 4000;
-    public int landedPrice = 5500;
+    public int condominiumPrice = 3800;
+    public int landedPrice = 7200;
     public float sellAmt;
     public float sellPercentage;
     // Start is called before the first frame update
@@ -132,7 +132,7 @@ public class PropertyManager : MonoBehaviour
     }
     public void SellPropertyButton()
     {
-        sellPercentage = 0.9f;
+        sellPercentage = 0.8f;
        
         if (hasApartment)
         {

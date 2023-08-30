@@ -34,6 +34,7 @@ public class TimeManager : MonoBehaviour
         magnetPanel.SetActive(false);
         pausedScreen.SetActive(false);
         salary = PlayerPrefs.GetInt("Salary") * 5;
+        Debug.Log(salary);
     }
 
     void Update()

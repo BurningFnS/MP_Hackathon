@@ -17,19 +17,19 @@ public class StartSelection : MonoBehaviour
         if (isPhotographer == true)
         {
             PlayerPrefs.SetInt("JobIndex", 0);
-            PlayerPrefs.SetInt("Salary", 400);
+            PlayerPrefs.SetInt("Salary", 360);
             Debug.Log("Photographer Selected");
         }
         if (isZookeeper == true)
         {
             PlayerPrefs.SetInt("JobIndex", 1);
-            PlayerPrefs.SetInt("Salary", 360);
+            PlayerPrefs.SetInt("Salary", 320);
             Debug.Log("ZooKeeper Selected");
         }
         if (isPlumber == true)
         {
             PlayerPrefs.SetInt("JobIndex", 2);
-            PlayerPrefs.SetInt("Salary", 480);
+            PlayerPrefs.SetInt("Salary", 450);
             Debug.Log("Plumber Selected");
         }
         SceneManager.LoadScene(name);
