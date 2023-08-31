@@ -110,7 +110,7 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         RandomizeIndex(randomizedIndexPanel);
-        randomizedIndexPanel = 13; //For Debugging purpose
+        randomizedIndexPanel = 6; //For Debugging purpose
         if (PlayerPrefs.GetInt("Condo") == 1)
         {
             while (randomizedIndexPanel == 0 || randomizedIndexPanel == 9 || randomizedIndexPanel == 13)
