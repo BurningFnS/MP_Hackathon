@@ -30,6 +30,7 @@ public class Clock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            FindObjectOfType<Audio>().PlaysSound("Yay");
             GameObject canvas = GameObject.Find("Canvas"); // Make sure your Canvas object is named "Canvas"
             GameObject textEffect = Instantiate(textEffectPrefab, canvas.transform);
             textEffect.GetComponent<TextEffect>().SetText("+" + 8 + "s");
