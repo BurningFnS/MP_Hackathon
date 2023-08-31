@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: 81269a6f3d738c3418de00f61c721737
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Deposit_Withdraw_Anims_6
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 688
+        width: 185
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe7ef15f56e026488d8d5cd22fd329a
+      internalID: -1500582428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deposit_Withdraw_Anims_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 685
+        width: 185
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7280cf43f8ae544bb660fa3b5aadcab
+      internalID: -1481212749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deposit_Withdraw_Anims_12
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 685
+        width: 185
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4b9fc7eac5e1549af6e5bdba3d67df
+      internalID: 64365684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deposit_Withdraw_Anims_53
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 392
+        width: 216
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a456fd7d7fbed41b43fdb5a5dd675c
+      internalID: -983878725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deposit_Withdraw_Anims_54
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 392
+        width: 216
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5e6a96a15d1e241a15fe3a89e43a67
+      internalID: -295747938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deposit_Withdraw_Anims_56
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 392
+        width: 216
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba3ecd466658434e9ef304391a6193c
+      internalID: -1755079221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deposit_Withdraw_Anims_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 685
+        width: 185
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28bd1b8d45c90e4296120aab7715f60
+      internalID: 946893717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deposit_Withdraw_Anims_1
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 392
+        width: 215
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab43e9558cd365b4688ea709d311118c
+      internalID: 2038354521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 303677107c4f82846b2de6ecdda24de4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Deposit_Withdraw_Anims_19: 946893717
+      Deposit_Withdraw_Anims_67: 2038354521
+      Deposit_Withdraw_Anims_56: -1617974425
+      Deposit_Withdraw_Anims_71: 573910584
+      Deposit_Withdraw_Anims_13: 426775931
+      Deposit_Withdraw_Anims_40: 542479675
+      Deposit_Withdraw_Anims_10: -1500582428
+      Deposit_Withdraw_Anims_9: -312236201
+      Deposit_Withdraw_Anims_69: 650857553
+      Deposit_Withdraw_Anims_47: 82010226
+      Deposit_Withdraw_Anims_68: 1597452305
+      Deposit_Withdraw_Anims_31: -1481212749
+      Deposit_Withdraw_Anims_29: 64365684
+      Deposit_Withdraw_Anims_12: 1776531987
+      Deposit_Withdraw_Anims_73: -1419496623
+      Deposit_Withdraw_Anims_42: -1171662492
+      Deposit_Withdraw_Anims_64: -1089184001
+      Deposit_Withdraw_Anims_1: -1541215868
+      Deposit_Withdraw_Anims_62: 2000762131
+      Deposit_Withdraw_Anims_72: -892329858
+      Deposit_Withdraw_Anims_17: 1406708285
+      Deposit_Withdraw_Anims_18: 379870192
+      Deposit_Withdraw_Anims_22: 214737865
+      Deposit_Withdraw_Anims_41: -909968308
+      Deposit_Withdraw_Anims_49: -938928427
+      Deposit_Withdraw_Anims_59: 1746914157
+      Deposit_Withdraw_Anims_51: -1150988570
+      Deposit_Withdraw_Anims_30: -1961471122
+      Deposit_Withdraw_Anims_11: 1974433700
+      Deposit_Withdraw_Anims_6: -526383474
+      Deposit_Withdraw_Anims_14: -253533098
+      Deposit_Withdraw_Anims_57: -1585612442
+      Deposit_Withdraw_Anims_15: -258936573
+      Deposit_Withdraw_Anims_45: 1790249685
+      Deposit_Withdraw_Anims_0: -1119323621
+      Deposit_Withdraw_Anims_35: -2138356087
+      Deposit_Withdraw_Anims_58: -845509467
+      Deposit_Withdraw_Anims_50: -1218339346
+      Deposit_Withdraw_Anims_37: -1829859983
+      Deposit_Withdraw_Anims_27: 1352772097
+      Deposit_Withdraw_Anims_23: -1259259731
+      Deposit_Withdraw_Anims_24: -639275457
+      Deposit_Withdraw_Anims_16: -979939576
+      Deposit_Withdraw_Anims_25: -184976614
+      Deposit_Withdraw_Anims_39: 929513133
+      Deposit_Withdraw_Anims_33: -1570427490
+      Deposit_Withdraw_Anims_34: -34632564
+      Deposit_Withdraw_Anims_46: -1265276219
+      Deposit_Withdraw_Anims_55: -354619754
+      Deposit_Withdraw_Anims_52: -26876108
+      Deposit_Withdraw_Anims_48: -269377440
+      Deposit_Withdraw_Anims_61: -1562197779
+      Deposit_Withdraw_Anims_66: 1549425257
+      Deposit_Withdraw_Anims_3: -983878725
+      Deposit_Withdraw_Anims_20: -295747938
+      Deposit_Withdraw_Anims_70: 1662039039
+      Deposit_Withdraw_Anims_4: -1755079221
+      Deposit_Withdraw_Anims_38: -640720120
+      Deposit_Withdraw_Anims_63: -819830952
+      Deposit_Withdraw_Anims_44: 427861165
+      Deposit_Withdraw_Anims_53: -1269659477
+      Deposit_Withdraw_Anims_28: -1580364675
+      Deposit_Withdraw_Anims_21: -617306270
+      Deposit_Withdraw_Anims_74: -2024742635
+      Deposit_Withdraw_Anims_8: 988069077
+      Deposit_Withdraw_Anims_36: -901129164
+      Deposit_Withdraw_Anims_7: 244318002
+      Deposit_Withdraw_Anims_32: -2097266467
+      Deposit_Withdraw_Anims_2: -232723638
+      Deposit_Withdraw_Anims_60: 806573306
+      Deposit_Withdraw_Anims_26: 263252649
+      Deposit_Withdraw_Anims_65: 609848606
+      Deposit_Withdraw_Anims_5: -1052962193
+      Deposit_Withdraw_Anims_43: 338055387
+      Deposit_Withdraw_Anims_54: -1956719212
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
