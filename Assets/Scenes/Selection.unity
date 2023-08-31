@@ -294,8 +294,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
       - m_Target: {fileID: 1025007827}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+=======
+      - m_Target: {fileID: 1050625550}
+        m_TargetAssemblyTypeName: ButtonAudio, Assembly-CSharp
+>>>>>>> Stashed changes
         m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
@@ -517,8 +522,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
       - m_Target: {fileID: 1025007827}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+=======
+      - m_Target: {fileID: 1050625550}
+        m_TargetAssemblyTypeName: ButtonAudio, Assembly-CSharp
+>>>>>>> Stashed changes
         m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
@@ -1640,8 +1650,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
       - m_Target: {fileID: 1025007827}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+=======
+      - m_Target: {fileID: 1050625550}
+        m_TargetAssemblyTypeName: ButtonAudio, Assembly-CSharp
+>>>>>>> Stashed changes
         m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
@@ -1868,7 +1883,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1025007825
+=======
+--- !u!1 &1050625548
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1876,23 +1895,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1025007828}
   - component: {fileID: 1025007827}
   - component: {fileID: 1025007826}
   m_Layer: 0
   m_Name: ButtonSoundManger
+=======
+  - component: {fileID: 1050625551}
+  - component: {fileID: 1050625550}
+  - component: {fileID: 1050625549}
+  m_Layer: 0
+  m_Name: ButtonClickManager
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!82 &1025007826
+=======
+--- !u!82 &1050625549
+>>>>>>> Stashed changes
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1025007825}
+=======
+  m_GameObject: {fileID: 1050625548}
+>>>>>>> Stashed changes
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -1982,12 +2017,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< Updated upstream
 --- !u!114 &1025007827
+=======
+--- !u!114 &1050625550
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1025007825}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1997,12 +2037,27 @@ MonoBehaviour:
   soundSource: {fileID: 1025007826}
   buttonSound: {fileID: 8300000, guid: 718942656a099b245899a33cb82b0bbd, type: 3}
 --- !u!4 &1025007828
+=======
+  m_GameObject: {fileID: 1050625548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac35d61cf5efbd45809d53a79334e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundSource: {fileID: 1050625549}
+  buttonSound: {fileID: 8300000, guid: 4e80e58c08c598d4a93ed01ae869e42e, type: 3}
+--- !u!4 &1050625551
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1025007825}
+=======
+  m_GameObject: {fileID: 1050625548}
+>>>>>>> Stashed changes
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 682.4489, y: 904.3265, z: 37.09305}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2190,8 +2245,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
       - m_Target: {fileID: 1025007827}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+=======
+      - m_Target: {fileID: 1050625550}
+        m_TargetAssemblyTypeName: ButtonAudio, Assembly-CSharp
+>>>>>>> Stashed changes
         m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
@@ -2735,8 +2795,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
       - m_Target: {fileID: 1025007827}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+=======
+      - m_Target: {fileID: 1050625550}
+        m_TargetAssemblyTypeName: ButtonAudio, Assembly-CSharp
+>>>>>>> Stashed changes
         m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
@@ -4254,8 +4319,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
       - m_Target: {fileID: 1025007827}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+=======
+      - m_Target: {fileID: 1050625550}
+        m_TargetAssemblyTypeName: ButtonAudio, Assembly-CSharp
+>>>>>>> Stashed changes
         m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
