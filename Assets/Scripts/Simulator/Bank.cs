@@ -16,6 +16,8 @@ public class Bank : MonoBehaviour
     public float interestAmount;
     public float bankBalanceWithInterest;
 
+    public GameObject depositPanel;
+    public GameObject withdrawnPanel;
     private void Start()
     {
         bankBalance[0] = PlayerPrefs.GetFloat("BankOfRashidBalance");
@@ -60,6 +62,7 @@ public class Bank : MonoBehaviour
             //Deposit amount is less than or equal to total coins, so player can deposit
             if (InputAmount <= coinManager.currentCoins)
             {
+                StartCoroutine(SuccessfullyDepositedMoney());
                 // Update the bank balance
                 bankBalance[bankIndex] += InputAmount;
 
@@ -106,6 +109,7 @@ public class Bank : MonoBehaviour
             }
             if (InputAmount <= bankBalance[bankIndex])
             {
+                StartCoroutine(SuccessfullyWithdrawnMoney());
                 coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins += InputAmount);
 
                 bankBalance[bankIndex] -= InputAmount;
@@ -180,5 +184,22 @@ public class Bank : MonoBehaviour
         float amount = principal * Mathf.Pow(1 + ratePerPeriod, compoundingFreq * years);
 
         return amount;
+    }
+
+    IEnumerator SuccessfullyDepositedMoney()
+    {
+        depositPanel.SetActive(true);
+
+        yield return new WaitForSeconds(2.1f);
+
+        depositPanel.SetActive(false);
+    }
+    IEnumerator SuccessfullyWithdrawnMoney()
+    {
+        withdrawnPanel.SetActive(true);
+
+        yield return new WaitForSeconds(2.1f);
+
+        withdrawnPanel.SetActive(false);
     }
 }
