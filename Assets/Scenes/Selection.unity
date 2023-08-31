@@ -1425,12 +1425,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: 'Income: 400/year
-
-    Perks: Has Pension after retirement
-
-    Stability
-    of job: Unstable'
+  m_Text: "Income: 360/year\nPerks: Has Pension after \nretirement\nStability of
+    job: Unstable"
 --- !u!222 &799463946
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2275,7 +2271,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: 'Income: 480/year
+  m_Text: 'Income: 450/year
 
     Perks: None
 
@@ -4059,7 +4055,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: 'Income: 360/year
+  m_Text: 'Income: 320/year
 
     Perks: Has Health Insurance immediately
 
