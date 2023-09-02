@@ -20,7 +20,7 @@ public class EventHandler : MonoBehaviour
 
     public bool randomEventCanHappen;
     public bool gettingRobbed;
-    public bool slipAndFall;
+    public bool hospitalInsurance;
     public bool fireAccident;
     public bool carAccident;
     public bool triathlonWon;
@@ -30,12 +30,18 @@ public class EventHandler : MonoBehaviour
     public bool payRaised;
     public bool companyBonus;
     public bool arsonCase;
+    public bool luckyDraw;
+    public bool firstPlace;
+    public bool secondPlace;
+    public bool thirdPlace;
+    public bool lostnFound;
+    //public bool fracturedArm;
 
     void Start()
     {
         randomEventCanHappen = false;
         gettingRobbed = false;
-        slipAndFall = false;
+        hospitalInsurance = false;
         fireAccident = false;
         carAccident = false;
         triathlonWon = false;
@@ -45,6 +51,12 @@ public class EventHandler : MonoBehaviour
         payRaised = false;
         companyBonus = false;
         arsonCase = false;
+        luckyDraw = false;
+        firstPlace = false;
+        secondPlace = false; 
+        thirdPlace = false;
+        lostnFound = false;
+        //fracturedArm = false;
         //randomEventManager.SetActive(false);
         int waterBill = PlayerPrefs.GetInt("WaterBill");
         int elecBill = PlayerPrefs.GetInt("ElectricalBill");
@@ -110,7 +122,7 @@ public class EventHandler : MonoBehaviour
     public void PlayRandomEvent()
     {
         RandomizeIndex(randomizedIndexPanel);
-        randomizedIndexPanel = 6; //For Debugging purpose
+        randomizedIndexPanel = 21; //For Debugging purpose
         if (PlayerPrefs.GetInt("Condo") == 1)
         {
             while (randomizedIndexPanel == 0 || randomizedIndexPanel == 9 || randomizedIndexPanel == 13)
@@ -130,9 +142,9 @@ public class EventHandler : MonoBehaviour
         {
             gettingRobbed = true;
         }
-        if(randomizedIndexPanel == 1)
+        if(randomizedIndexPanel == 1 || randomizedIndexPanel == 19 || randomizedIndexPanel == 20 || randomizedIndexPanel == 21)
         {
-            slipAndFall = true;
+            hospitalInsurance = true;
         }
         if(randomizedIndexPanel == 2 || randomizedIndexPanel == 4)
         {
@@ -169,6 +181,26 @@ public class EventHandler : MonoBehaviour
         if(randomizedIndexPanel == 13)
         {
             arsonCase = true;
+        }
+        if(randomizedIndexPanel == 14)
+        {
+            luckyDraw = true;
+        }
+        if(randomizedIndexPanel == 15)
+        {
+            firstPlace = true;
+        }
+        if(randomizedIndexPanel == 16)
+        {
+            secondPlace = true;
+        }
+        if(randomizedIndexPanel == 17)
+        {
+            thirdPlace = true;
+        }
+        if(randomizedIndexPanel == 18)
+        {
+            lostnFound = true;
         }
     }
 

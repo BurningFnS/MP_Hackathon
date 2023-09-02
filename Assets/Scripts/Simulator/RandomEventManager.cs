@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Accessibility;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -24,6 +25,14 @@ public class RandomEventManager : MonoBehaviour
     public Text pickpockettedText;
     public Text companyBonusText;
     public Text arsonText;
+    public Text luckyDrawText;
+    public Text firstPlaceText;
+    public Text secondPlaceText;
+    public Text thirdPlaceText;
+    public Text foundMissingText;
+    public Text fracturedArmText;
+    public Text tornHamstringText;
+    public Text concussionText;
 
     public int amountRobbed;
     public int medicalSlippedBill;
@@ -43,6 +52,14 @@ public class RandomEventManager : MonoBehaviour
     public float payRaise2;
     public int companyBonus;
     public int moneyLostFromArson;
+    public int luckyDrawMoney;
+    public int firstPlacePrize;
+    public int secondPlacePrize;
+    public int thirdPlacePrize;
+    public int missingBountyReward;
+    public int fracturedArmBill;
+    public int tornHamstringBill;
+    public int concussionBill;
 
     public bool randomEventHasHappened;
 
@@ -60,7 +77,14 @@ public class RandomEventManager : MonoBehaviour
     public GameObject payRaisePanel2;
     public GameObject companyBonusPanel;
     public GameObject arsonPanel;
-
+    public GameObject luckyDrawPanel;
+    public GameObject firstPlacePanel;
+    public GameObject secondPlacePanel;
+    public GameObject thirdPlacePanel;
+    public GameObject missingBountyRewardPanel;
+    public GameObject fracturedArmPanel;
+    public GameObject tornHamPanel;
+    public GameObject concussionPanel;
 
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
@@ -73,6 +97,12 @@ public class RandomEventManager : MonoBehaviour
     public GameObject claimBankruptMoneyBtn;
     public GameObject carBreakdownInsurance;
     public GameObject carBreakdownGreyInsurance;
+    public GameObject fracturedArmInsurance;
+    public GameObject fracturedArmGreyInsurance;
+    public GameObject tornHamstringInsurance;
+    public GameObject tornHamstringGreyInsurance;
+    public GameObject concussionInsurance;
+    public GameObject concussionGreyInsurance;
 
     public GameObject chainedBankruptLock;
     public GameObject claimableMoneyTextUI;
@@ -87,6 +117,12 @@ public class RandomEventManager : MonoBehaviour
 
         medicalSlippedBill = 850;
         medicalInsurancePercentage = 0.2f;
+        fracturedArmBill = 1000;
+        fracturedArmText.text = "Amount Lost: " + fracturedArmBill;
+        tornHamstringBill = 350;
+        tornHamstringText.text = "Amount Lost: " + tornHamstringBill;
+        concussionBill = 500;
+        concussionText.text = "Amount Lost: " + concussionBill;
 
         moneyLostInFire = Random.Range(150, 550);
         fireInsurancePercentage = 0.25f;
@@ -107,6 +143,14 @@ public class RandomEventManager : MonoBehaviour
         payRaise2 = 1.15f;
 
         companyBonus = 1500;
+
+        luckyDrawMoney = 750;
+        
+        firstPlacePrize = 1000;
+        secondPlacePrize = 750;
+        thirdPlacePrize = 500;
+
+        missingBountyReward = 500;
         if (PlayerPrefs.GetInt("FooBankBankrupt") == 1)
         {
             bankruptBankPanel.SetActive(false);
@@ -127,7 +171,7 @@ public class RandomEventManager : MonoBehaviour
         {
             GettingRobbedEvent();
         }
-        if (eventHandler.slipAndFall)
+        if (eventHandler.hospitalInsurance)
         {
             CheckForMedicalInsurance();
         }
@@ -163,6 +207,31 @@ public class RandomEventManager : MonoBehaviour
         {
             ArsonEvent();
         }
+        if (eventHandler.luckyDraw)
+        {
+            LuckyDrawEvent();
+        }
+        if (eventHandler.firstPlace)
+        {
+            FirstPlaceEvent();
+        }
+        if (eventHandler.secondPlace)
+        {
+            SecondPlaceEvent();
+        }
+        if (eventHandler.thirdPlace)
+        {
+            ThirdPlaceEvent();
+        }
+        if (eventHandler.lostnFound)
+        {
+            MissingCatEvent();
+        }
+        //if (eventHandler.fracturedArm)
+        //{
+        //    CheckForMedicalInsurance();
+        //}
+        
     }
 
     public void ProceedRobbed()
@@ -238,13 +307,51 @@ public class RandomEventManager : MonoBehaviour
         companyBonusPanel.SetActive(false);
         coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + companyBonus);
     }
-
     public void ProceedArson()
     {
         arsonPanel.SetActive(false);
         coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - moneyLostFromArson);
     }
-
+    public void ProceedLuckyDraw() 
+    {
+        luckyDrawPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + luckyDrawMoney);
+    }
+    public void ProceedFirstPlace()
+    {
+        firstPlacePanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + firstPlacePrize);
+    }
+    public void ProceedSecondPlace()
+    {
+        secondPlacePanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + secondPlacePrize);
+    }
+    public void ProceedThirdPlace()
+    {
+        thirdPlacePanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + thirdPlacePrize);
+    }
+    public void ProceedMissingCat()
+    {
+        missingBountyRewardPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins + missingBountyReward);
+    }
+    public void ProceedFractured()
+    {
+        fracturedArmPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - fracturedArmBill);
+    }
+    public void ProceedHamstring()
+    {
+        tornHamPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - tornHamstringBill);
+    }
+    public void ProceedConcussion()
+    {
+        concussionPanel.SetActive(false);
+        coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins - concussionBill);
+    }
 
     public void GettingRobbedEvent()
     {
@@ -330,6 +437,49 @@ public class RandomEventManager : MonoBehaviour
         }
     }
 
+    public void LuckyDrawEvent()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            luckyDrawText.text = "Amount Won: " + luckyDrawMoney;
+            randomEventHasHappened = true;
+        }
+    }
+
+    public void FirstPlaceEvent()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            firstPlaceText.text = "Grand Prize: " + firstPlacePrize;
+            randomEventHasHappened = true;
+        }
+    }
+    public void SecondPlaceEvent()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            secondPlaceText.text = "Prize: " + secondPlacePrize;
+            randomEventHasHappened = true;
+        }
+    }
+    public void ThirdPlaceEvent()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            thirdPlaceText.text = "Prize: " + thirdPlacePrize;
+            randomEventHasHappened = true;
+        }
+    }
+
+    public void MissingCatEvent()
+    {
+        if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
+        {
+            foundMissingText.text = "Rewarded: " + missingBountyReward;
+            randomEventHasHappened = true;
+        }
+    }
+
     public void DeclaringBankruptcy()
     {
         moneyBeforeBankrupt = Mathf.RoundToInt(PlayerPrefs.GetFloat("BankOfFooBalance"));
@@ -354,6 +504,24 @@ public class RandomEventManager : MonoBehaviour
     {
         slippedPanel.SetActive(false);
         StartCoroutine(InsuranceBill(medicalSlippedBill, medicalInsurancePercentage));
+    }
+
+    public void InsuranceFractured()
+    {
+        fracturedArmPanel.SetActive(false);
+        StartCoroutine(InsuranceBill(fracturedArmBill, medicalInsurancePercentage));
+    }
+
+    public void InsuranceHamstring()
+    {
+        tornHamPanel.SetActive(false);
+        StartCoroutine(InsuranceBill(tornHamstringBill, medicalInsurancePercentage));
+    }
+
+    public void InsuranceConcussion()
+    {
+        concussionPanel.SetActive(false);
+        StartCoroutine(InsuranceBill(concussionBill, medicalInsurancePercentage));
     }
 
     public void InsuranceFire()
@@ -386,11 +554,23 @@ public class RandomEventManager : MonoBehaviour
         {
             slippedGreyInsurance.SetActive(false);
             slippedInsurance.SetActive(true);
+            fracturedArmGreyInsurance.SetActive(false);
+            fracturedArmInsurance.SetActive(true);
+            tornHamstringGreyInsurance.SetActive(false);
+            tornHamstringInsurance.SetActive(true);
+            concussionGreyInsurance.SetActive(false);
+            concussionInsurance.SetActive(true);
         }
         if (PlayerPrefs.GetInt("HealthInsurance") == 0)
         {
             slippedGreyInsurance.SetActive(true);
             slippedInsurance.SetActive(false);
+            fracturedArmGreyInsurance.SetActive(true);
+            fracturedArmInsurance.SetActive(false);
+            tornHamstringGreyInsurance.SetActive(true);
+            tornHamstringInsurance.SetActive(false);
+            concussionGreyInsurance.SetActive(true);
+            concussionInsurance.SetActive(false);
         }
     }
 
