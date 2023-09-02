@@ -42,6 +42,16 @@ public class CoinManager : MonoBehaviour
     public Text _MoneyEarned, _Expenditures, _Tips;
     public InsuranceManager insuranceManager;
 
+    public AudioSource soundSource; // Reference to the AudioSource component
+    public AudioClip buttonSound;   // The sound clip to play
+    private bool soundPlaying;       // Flag to track if sound is currently playing
+
+    private void Awake()
+    {
+        soundSource = GetComponent<AudioSource>();
+        soundSource.clip = buttonSound;
+    }
+
     void Start()
     {
         endlessRunnerCoins = PlayerPrefs.GetInt("CollectedCoins");
@@ -175,11 +185,28 @@ public class CoinManager : MonoBehaviour
             PlayerPrefs.SetFloat("BusinessInvestmentBalance", investment.investmentBalance[1]);
             PlayerPrefs.SetFloat("GymInvestmentBalance", investment.investmentBalance[2]);
 
-            SceneManager.LoadScene("Level");
+            //SceneManager.LoadScene("Level");
+
+            PlayButtonSoundAndLoadScene();
         }
     }
 
- 
+    public void PlayButtonSoundAndLoadScene()
+    {
+        if (!soundPlaying)
+        {
+            soundPlaying = true;
+            soundSource.Play();
+            Invoke("LoadRunner", buttonSound.length); // Invoke LoadScene after sound duration
+        }
+    }
+
+    private void LoadRunner()
+    {
+        SceneManager.LoadScene("Level");
+    }
+
+
     public void Proceed()
     {
         losePanel.SetActive(true);
