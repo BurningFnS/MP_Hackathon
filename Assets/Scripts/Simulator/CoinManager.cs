@@ -33,6 +33,7 @@ public class CoinManager : MonoBehaviour
     private int targetAmount; // The target money amount after animation
     private int initialAmount; // The initial money amount at the start of animation
     private float animationStartTime; // The time when the animation started
+    private int interceptedAmount;
 
     private int currentAmount; // The current displayed money amount
 
@@ -45,6 +46,8 @@ public class CoinManager : MonoBehaviour
     public AudioSource soundSource; // Reference to the AudioSource component
     public AudioClip buttonSound;   // The sound clip to play
     private bool soundPlaying;       // Flag to track if sound is currently playing
+
+    private Coroutine currentAnimationCoroutine;
 
     private void Awake()
     {
@@ -74,14 +77,66 @@ public class CoinManager : MonoBehaviour
         UpdateCoinDisplay();
     }
 
-    public void AnimateToAmount(int currentCoins, int newAmount)
+    public void AnimateToAmount(int beforeAmount, int newAmount)
     {
-        targetAmount = newAmount;
-        initialAmount = currentCoins;
-        animationStartTime = Time.time;
+        // If there's a running animation coroutine, stop it.
+        if (currentAnimationCoroutine != null)
+        {
+            StopCoroutine(currentAnimationCoroutine);
+            initialAmount = PlayerPrefs.GetInt("InterceptedAmount");
+            targetAmount = newAmount;
+            animationStartTime = Time.time;
+            Debug.Log("target amount if intercepted: " + targetAmount);
+            Debug.Log("initial amount if intercepted: " + initialAmount);
+            currentAnimationCoroutine = StartCoroutine(AnimateMoney());
+        }
+        else
+        {
+            targetAmount = newAmount;
+            initialAmount = beforeAmount;
+            animationStartTime = Time.time;
+            PlayerPrefs.SetInt("InterceptedAmount", targetAmount);
+            currentCoins = newAmount;
+            // Start the animation coroutine
+            Debug.Log("target amount if not intercepted: " + targetAmount);
+            Debug.Log("initial amount if not intercepted: " + initialAmount);
+            currentAnimationCoroutine = StartCoroutine(AnimateMoney());
+        }
 
-        // Start the animation coroutine
-        StartCoroutine(AnimateMoney());
+
+    }
+
+    public void TestAnimateToAmount(int beforeAmount, int change)
+    {
+        //// If there's a running animation coroutine, stop it.
+        //if (currentAnimationCoroutine != null)
+        //{
+        //    StopCoroutine(currentAnimationCoroutine);
+        //    initialAmount = PlayerPrefs.GetInt("InterceptedAmount");
+        //    targetAmount = newAmount;
+        //    animationStartTime = Time.time;
+        //    Debug.Log("target amount if intercepted: " + targetAmount);
+        //    Debug.Log("initial amount if intercepted: " + initialAmount);
+        //    currentAnimationCoroutine = StartCoroutine(AnimateMoney());
+        //}
+        //else
+        //{
+        //    targetAmount = newAmount;
+        //    initialAmount = beforeAmount;
+        //    animationStartTime = Time.time;
+        //    PlayerPrefs.SetInt("InterceptedAmount", targetAmount);
+        //    currentCoins = newAmount;
+        //    // Start the animation coroutine
+        //    Debug.Log("target amount if not intercepted: " + targetAmount);
+        //    Debug.Log("initial amount if not intercepted: " + initialAmount);
+        //    currentAnimationCoroutine = StartCoroutine(AnimateMoney());
+        //}
+        targetAmount = beforeAmount + change;
+        initialAmount = beforeAmount;
+        animationStartTime = Time.time;
+        currentCoins = targetAmount;
+        currentAnimationCoroutine = StartCoroutine(AnimateMoney());
+
     }
 
     private IEnumerator AnimateMoney()
@@ -96,11 +151,14 @@ public class CoinManager : MonoBehaviour
 
         // Ensure the final amount is correct
         UpdateMoneyText(targetAmount);
+
+        // Set the currentAnimationCoroutine to null to indicate that it's finished.
+        currentAnimationCoroutine = null;
     }
 
     private void UpdateMoneyText(int amount)
     {
-        currentCoins = amount;
+        //currentCoins = amount;
         if(amount >= 1000000)
         {
             double amountInMillions = amount / 1000000.0;
