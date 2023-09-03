@@ -65,7 +65,7 @@ public class CoinManager : MonoBehaviour
         currentCoins = endlessRunnerCoins + cashAtHand;
 
         // Optionally, you can update the player's coins display or any other relevant UI elements
-        AnimateToAmount(cashAtHand, currentCoins);
+        UpdateMoneyText(currentCoins);
         ageText.text = "" + currentAge;
         if (currentAge >= 65)
         {
@@ -86,6 +86,7 @@ public class CoinManager : MonoBehaviour
             StopCoroutine(currentAnimationCoroutine);
             initialAmount = PlayerPrefs.GetInt("InterceptedAmount");
             targetAmount = newAmount;
+            currentCoins = targetAmount;
             animationStartTime = Time.time;
             Debug.Log("target amount if intercepted: " + targetAmount);
             Debug.Log("initial amount if intercepted: " + initialAmount);
