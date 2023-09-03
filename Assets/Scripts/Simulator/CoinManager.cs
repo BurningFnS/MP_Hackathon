@@ -53,6 +53,7 @@ public class CoinManager : MonoBehaviour
     {
         soundSource = GetComponent<AudioSource>();
         soundSource.clip = buttonSound;
+        PlayerPrefs.SetInt("InterceptedAmount", 0);
     }
 
     void Start()
