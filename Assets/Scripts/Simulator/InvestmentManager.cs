@@ -12,6 +12,8 @@ public class InvestmentManager : MonoBehaviour
 
     public float[] investmentBalance;
     public CoinManager coinManager;
+    public GameObject depositPanel;
+    public GameObject withdrawnPanel;
 
     [HideInInspector] public float gameInvestmentRate;
     [HideInInspector] public float businessInvestmentRate;
@@ -189,5 +191,21 @@ public class InvestmentManager : MonoBehaviour
         float amount = principal * Mathf.Pow(1 + ratePerPeriod, compoundingFreq * years);
 
         return amount;
+    }
+    IEnumerator SuccessfullyDepositedMoney()
+    {
+        depositPanel.SetActive(true);
+
+        yield return new WaitForSeconds(2.09f);
+
+        depositPanel.SetActive(false);
+    }
+    IEnumerator SuccessfullyWithdrawnMoney()
+    {
+        withdrawnPanel.SetActive(true);
+
+        yield return new WaitForSeconds(1.99f);
+
+        withdrawnPanel.SetActive(false);
     }
 }

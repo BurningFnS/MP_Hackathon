@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34603274, g: 0.6319145, b: 0.86852604, a: 1}
+  m_IndirectSpecularColor: {r: 0.34600794, g: 0.6319119, b: 0.8685188, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13089,7 +13089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.0079, y: -80}
+  m_AnchoredPosition: {x: 2.0079, y: -96}
   m_SizeDelta: {x: 570.51, y: 128.3586}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283566934
@@ -13125,7 +13125,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your hospital bills are $2000
+  m_Text: Your hospital bills are $850
 --- !u!222 &283566935
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37304,7 +37304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 761dbe7f99117054caf51c3b79e9752c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.014625001
+      value: -0.0259
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 761dbe7f99117054caf51c3b79e9752c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -37312,7 +37312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 761dbe7f99117054caf51c3b79e9752c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.012749994
+      value: -0.0417
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 761dbe7f99117054caf51c3b79e9752c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52346,7 +52346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000009536743, y: 38}
+  m_AnchoredPosition: {x: -0.0000009536743, y: 14}
   m_SizeDelta: {x: 553.6714, y: 183.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1220932165
@@ -52382,7 +52382,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You slipped on a wet floor in a grocery store
+  m_Text: "You slipped on a wet floor \nin a grocery store"
 --- !u!222 &1220932166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60039,7 +60039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -33, y: -84}
+  m_AnchoredPosition: {x: -33, y: -67}
   m_SizeDelta: {x: 201.7223, y: 89.8564}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1439193758
@@ -65168,6 +65168,8 @@ MonoBehaviour:
   - 0
   - 0
   coinManager: {fileID: 1122658503}
+  depositPanel: {fileID: 1424753875}
+  withdrawnPanel: {fileID: 718779494}
   gameInvestmentRate: 0
   businessInvestmentRate: 0
   gymInvestmentRate: 0
@@ -68571,7 +68573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2435
+      value: -0.2231
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalPosition.y
@@ -68579,7 +68581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15059999
+      value: -0.1505
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalRotation.w
@@ -73253,7 +73255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 761dbe7f99117054caf51c3b79e9752c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2379
+      value: -0.2301
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 761dbe7f99117054caf51c3b79e9752c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -73261,7 +73263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 761dbe7f99117054caf51c3b79e9752c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.16
+      value: -0.1652
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 761dbe7f99117054caf51c3b79e9752c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77832,7 +77834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 205}
+  m_AnchoredPosition: {x: -6, y: 217}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1869289919
@@ -80971,7 +80973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.304
+      value: 0.2137
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalRotation.w
@@ -82996,7 +82998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0279
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalPosition.y
@@ -83004,7 +83006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0348
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92296abedcf7efa4fb18bf0b5b59ac80, type: 3}
       propertyPath: m_LocalRotation.w
@@ -84898,7 +84900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 128}
+  m_AnchoredPosition: {x: -2, y: 128}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048966491
@@ -89338,7 +89340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308185208601056739, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.33
+      value: -8.74
       objectReference: {fileID: 0}
     - target: {fileID: 7308185208601056739, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
       propertyPath: m_LocalPosition.y
@@ -89346,7 +89348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308185208601056739, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.96
+      value: 7.55
       objectReference: {fileID: 0}
     - target: {fileID: 7308185208601056739, guid: bb7bf1797cf5bbc47b85c85caabac962, type: 3}
       propertyPath: m_LocalRotation.w

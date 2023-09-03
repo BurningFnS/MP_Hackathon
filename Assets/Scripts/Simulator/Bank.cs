@@ -190,7 +190,7 @@ public class Bank : MonoBehaviour
     {
         depositPanel.SetActive(true);
 
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSeconds(2.09f);
 
         depositPanel.SetActive(false);
     }
@@ -198,7 +198,7 @@ public class Bank : MonoBehaviour
     {
         withdrawnPanel.SetActive(true);
 
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSeconds(1.99f);
 
         withdrawnPanel.SetActive(false);
     }
