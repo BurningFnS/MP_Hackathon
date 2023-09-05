@@ -75,7 +75,7 @@ public class JobManager : MonoBehaviour
             isPhotographer = false;
             PlayerPrefs.SetInt("JobIndex", 1);
             PlayerPrefs.SetInt("Salary", 320);
-            CongratsJobText.text = "You are now a           Zoo Keeper!";
+            CongratsJobText.text = "You are now a Zoo Keeper!";
             // Display UI messages for ZooKeeper job
         }
         else if (jobIndex == 2 && !isPlumber)
