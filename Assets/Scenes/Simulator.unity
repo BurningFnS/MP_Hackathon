@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34600794, g: 0.6319119, b: 0.8685188, a: 1}
+  m_IndirectSpecularColor: {r: 0.3459986, g: 0.6319019, b: 0.86851686, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -65492,7 +65492,9 @@ MonoBehaviour:
   - {fileID: 1967092999}
   - {fileID: 643930378}
   - {fileID: 1815026030}
-  optionUIPanels: []
+  optionUIPanels:
+  - {fileID: 1307078356}
+  - {fileID: 688968113}
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
