@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class SwipeManager : MonoBehaviour
 {
-    public static bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
+    public static bool tap, swipeLeft, swipeRight, swipeUp, swipeDown; //static booleans to indicate the different swipe and tap gestures
+    //variables to track touch information
     private bool isDraging = false;
     private Vector2 startTouch, swipeDelta;
 
     private void Update()
     {
-        tap = swipeDown = swipeUp = swipeLeft = swipeRight = false;
+        tap = swipeDown = swipeUp = swipeLeft = swipeRight = false; //Resets the touch/swipe at every update/frame
+        //For PC controls
         #region Standalone Inputs
+        //Check if left mouse button is being pressed and set the respective variables while tracking its starting point till left mouse button is released
         if (Input.GetMouseButtonDown(0))
         {
             tap = true;
@@ -22,10 +25,11 @@ public class SwipeManager : MonoBehaviour
             Reset();
         }
         #endregion
-
+        //For mobile controls
         #region Mobile Input
         if (Input.touches.Length > 0)
         {
+            //track starting point of touch and set the respective variables
             if (Input.touches[0].phase == TouchPhase.Began)
             {
                 tap = true;
@@ -40,7 +44,7 @@ public class SwipeManager : MonoBehaviour
         }
         #endregion
 
-        //Calculate the distance
+        //Calculate the distance between the startingPoint of touch and the final point
         swipeDelta = Vector2.zero;
         if (isDraging)
         {
@@ -50,15 +54,15 @@ public class SwipeManager : MonoBehaviour
                 swipeDelta = (Vector2)Input.mousePosition - startTouch;
         }
 
-        //Did we cross the distance?
+        //Check if the swipe distance has passed a certain distance
         if (swipeDelta.magnitude > 100)
         {
-            //Which direction?
+            //Find out what direction the swipe was
             float x = swipeDelta.x;
             float y = swipeDelta.y;
             if (Mathf.Abs(x) > Mathf.Abs(y))
             {
-                //Left or Right
+                //Left or Right swipe
                 if (x < 0)
                     swipeLeft = true;
                 else
@@ -66,14 +70,14 @@ public class SwipeManager : MonoBehaviour
             }
             else
             {
-                //Up or Down
+                //Up or Down swipe
                 if (y < 0)
                     swipeDown = true;
                 else
                     swipeUp = true;
             }
 
-            Reset();
+            Reset(); //Resets the variables after a boolean has been set regarding the swipe information
         }
     }
 

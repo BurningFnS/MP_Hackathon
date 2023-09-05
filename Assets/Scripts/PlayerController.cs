@@ -12,13 +12,16 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 25f;    // The maximum allowed speed for the player
     public float speedIncrement = 1f; // The amount to increase speed per second
 
+    //Lane-related variables
     private int desiredLane = 1; //0: Left Lane, 1: Middle Lane, 2: Right Lane
     public float laneDistance = 2.5f; //Distance between two lanes 
 
+    //Jumping and gravity based variables
     public float jumpForce;
     public float gravity = 20;
     public bool hitObstacle = false;
 
+    //Variables related to animator and particleSystems
     public Animator anim;
     public GameObject coinParticles;
     public GameObject explosionParticles;
@@ -26,52 +29,57 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem smokeBurst;
     private ParticleSystem coinBurst;
     private ParticleSystem explosionBurst;
-
     public GameObject magneticEffect;
 
+    //Magnet PowerUp variables
     public float magnetDuration = 8f; // The duration of the magnet effect in seconds
     private bool magnetEffectActive = false;
     private float magnetRemainingTime = 0f;
     private float magnetRadius;
 
+    //Shield PowerUp variables
     private bool shieldEffectActive = false;
     private float shieldRemainingTime = 0f;
     public GameObject shieldBarrier;
 
+    //Variables to check if player is grounded
     public bool isGrounded;
     public LayerMask groundLayer;
     public Transform groundCheck;
 
     private bool isRolling = false;
 
+    //Variables regarding audio
     public AudioSource collisionSource;
     public AudioClip collisionImpactSFX;
-
     public AudioSource powerUpSource;
     public AudioClip powerUpSFX;
-
     public AudioSource coinSource;
     public AudioClip coinImpactSFX;
 
     void Start()
     {
+        //Initialize references
         smokeBurst = smokeParticles.GetComponent<ParticleSystem>();
         explosionBurst = explosionParticles.GetComponent<ParticleSystem>();
         coinBurst = coinParticles.GetComponent<ParticleSystem>();
         controller = GetComponent<CharacterController>();
+        //set speed of player to default speed
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
     }
 
     void Update()
     {
+        //Checks if game has not started
         if (!PlayerManager.isGameStarted)
             return;
 
+        //Checks if game is paused
         if (TimeManager.isPaused)
             return;
 
-        //if the player did not hit an obstacle, we want to increase his speed
+        //if the player does not hit an obstacle, we want to increase player's speed
         if (hitObstacle == false)
         {
             // Increment the time counter
@@ -89,14 +97,15 @@ public class PlayerController : MonoBehaviour
                 timeSinceLastIncrease = 0f;
             }
         }
-
+        //Set animation boolean of "isGameStarted" to true and change player's animation from idle to run
         anim.SetBool("isGameStarted", true);
         direction.z = forwardSpeed;
 
+        //Checks if player is grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.17f, groundLayer);
         anim.SetBool("Grounded", isGrounded);
 
-        //if the player is on the ground and did not hit an obstacle
+        //if the player is on the ground and does not hit an obstacle and a swipe up is detected, jump
         if (isGrounded && hitObstacle == false)
         {
             if (SwipeManager.swipeUp)
@@ -108,6 +117,7 @@ public class PlayerController : MonoBehaviour
         //if the player is not grounded and is rolling
         if (!isGrounded && isRolling == true)
         {
+            //Send the player back to the ground and roll
             direction.y -= gravity * Time.deltaTime * 10;
         }
         //if the player is not on the ground
@@ -121,30 +131,32 @@ public class PlayerController : MonoBehaviour
         {
             //Gather the inputs on which lane we should be
 
-            //Player can swipe right as long as they did not hit an obstacle and is not sliding
+            //Player can swipe right as long as they do not hit an obstacle and are not sliding
             if (SwipeManager.swipeRight)
             {
                 desiredLane++;
                 anim.SetTrigger("Right");
 
+                //stop them from swiping right while on the right lane
                 if (desiredLane == 3)
                 {
                     desiredLane = 2;
                 }
             }
 
-            //Player can swipe left as long as they did not hit an obstacle and is not sliding
+            //Player can swipe left as long as they do not hit an obstacle and are not sliding
             if (SwipeManager.swipeLeft)
             {
                 desiredLane--;
                 anim.SetTrigger("Left");
 
+                //stop them from swiping left while on the left lane
                 if (desiredLane == -1)
                 {
                     desiredLane = 0;
                 }
             }
-
+            //If a swipe down is detected, roll
             if (SwipeManager.swipeDown)
             {
                 Roll();
@@ -154,6 +166,7 @@ public class PlayerController : MonoBehaviour
 
         //Animation check code
 
+        //Checks if the player's animation is currently running and set their height and collider size
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Running"))
         {
             controller.height = 2.8f;
@@ -162,6 +175,7 @@ public class PlayerController : MonoBehaviour
             isRolling = false;
         }
 
+        //Checks if the player's animation is currently tripping and make sure the animation plays only once
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Trip"))
         {
             anim.SetBool("GetHit", false);
@@ -171,6 +185,7 @@ public class PlayerController : MonoBehaviour
             } 
         }
 
+        //Checks if the player's animation is currently rolling and set their height and collider size
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling"))
         {
             anim.SetBool("Roll", false);
@@ -195,6 +210,7 @@ public class PlayerController : MonoBehaviour
 
             foreach (Collider collectible in collectibles)
             {
+                //Adjust collectibles' position
                 Vector3 coinPosition = collectible.transform.position;
                 coinPosition.y = 1f; // Replace 'fixedYPosition' with the desired value
                 collectible.transform.position = coinPosition;
@@ -210,6 +226,7 @@ public class PlayerController : MonoBehaviour
 
         if (shieldEffectActive)
         {
+            // Update shield remaining time and disable magnet effect if time is up
             shieldRemainingTime -= Time.deltaTime;
             if (shieldRemainingTime <= 0f)
             {
@@ -225,7 +242,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(direction * Time.fixedDeltaTime);
 
-        //Calculate where we should be in the future
+        //Calculate the target position based on the desired lane
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
 
@@ -242,6 +259,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
+        //Move the player left/right towards the target position
         Vector3 diff = targetPosition - transform.position;
         Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
         if (moveDir.sqrMagnitude < diff.sqrMagnitude)
@@ -254,71 +273,81 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Handle player jumping
     private void Jump()
     {
-        isRolling = false;
-        direction.y = jumpForce;
+        isRolling = false; //can't roll
+        direction.y = jumpForce;// Adjust player's y position to jumpForce
     }
-    
+
+    //Handle player rolling
     private void Roll()
     {
-        isRolling = true;
-        anim.SetBool("Roll", true);
-        controller.height = 0.7f;
+        isRolling = true; //Set rolling boolean to true
+        anim.SetBool("Roll", true); //Play rolling animation through "roll" boolean
+        //Adjust height and size of player's collider
+        controller.height = 0.7f; 
         controller.center = new Vector3(controller.center.x, 0.65f, controller.center.z);
     }
 
     public void EnableMagnetEffect(float radius)
     {
-        FindObjectOfType<Audio>().PlaysSound("Yay");
-        magnetEffectActive = true;
-        magneticEffect.SetActive(true);
-        magnetRemainingTime = magnetDuration;
-        magnetRadius = radius;
+        FindObjectOfType<Audio>().PlaysSound("Yay");//Play sound effect
+        magnetEffectActive = true; //Set magnetactive boolean to true
+        magneticEffect.SetActive(true); //Enable the magnetic effect in the scene on the player
+        magnetRemainingTime = magnetDuration; //Set remaining duration of magnet
+        magnetRadius = radius;//sets radius of magnet power-up
     }
 
     private void DisableMagnetEffect()
     {
+        //Disables the boolean and the magnetic effect
         magnetEffectActive = false;
         magneticEffect.SetActive(false);
         // Perform any additional actions when the magnet effect ends, if needed.
     }
 
+    //Get remaining magnet effect duration
     public float GetMagnetRemainingTime()
     {
         return magnetRemainingTime;
     }
 
+    //Enables the shield effect
     public void EnableShieldEffect(float duration)
     {
-        FindObjectOfType<Audio>().PlaysSound("Yay");
-        shieldEffectActive = true;
-        shieldBarrier.SetActive(true);
-        shieldRemainingTime = duration;
+        FindObjectOfType<Audio>().PlaysSound("Yay"); //Plays the sound effect
+        shieldEffectActive = true; //Sets shieldActive boolean to true
+        shieldBarrier.SetActive(true); //Enable the shield effect in the scene on the player
+        shieldRemainingTime = duration;//Set remaining duration of shield
         // Activate the shield effect for the player, e.g., make the player invulnerable to obstacles
     }
 
     public void DisableShieldEffect()
     {
+        //Disables the boolean and the shield effect
         shieldEffectActive = false;
         shieldBarrier.SetActive(false);
         // Deactivate the shield effect for the player, e.g., make the player vulnerable to obstacles again
     }
 
+    // Get remaining shield effect duration
     public float GetShieldRemainingTime()
     {
         return shieldRemainingTime;
     }
 
+    //This function handles the collision of player with obstacles, cars and trucks
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        //Plays the trip animation when colliding, plays the sound effect of a collision, plays coin explosion particle effect
         if (hit.transform.tag == "Obstacle")
         {
             hitObstacle = true;
             anim.SetTrigger("GetHit"); //Play the Trip animation
 
             Destroy(hit.gameObject); //Destroy the collided obstacle
-            smokeBurst.Play();
+            smokeBurst.Play(); //Plays smoke particle if colliding with obstacle
             CoinExplosion();
 
             FindObjectOfType<Audio>().PlaysSound("Bang");
@@ -330,7 +359,7 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("GetHit"); //Play the Trip animation
 
             Destroy(hit.gameObject); //Destroy the collided obstacle
-            explosionBurst.Play();
+            explosionBurst.Play(); //Plays explosion particle if colliding with car or truck
             CoinExplosion();
 
             FindObjectOfType<Audio>().PlaysSound("Bang");
@@ -339,6 +368,7 @@ public class PlayerController : MonoBehaviour
 
     private void CoinExplosion()
     {
+        //Randomizes the amount of coins in the coin explosion particle effect depending on the amount of coins they have
         ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
         int randomNumber = Random.Range(1, 3);
         bursts[0].count = randomNumber;

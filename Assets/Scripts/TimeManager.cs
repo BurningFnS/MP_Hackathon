@@ -8,22 +8,27 @@ public class TimeManager : MonoBehaviour
 {
     public float totalTime = 60f; //Total time for the game in seconds
     public static float timer; //Remaining time 
-    private bool isGameOver = false;
+    private bool isGameOver = false; //boolean flag to check if game has ended
 
-    public Text timerText;
-    public GameObject timeUpPanel;
+    public Text timerText; //Reference to text UI
+    public GameObject timeUpPanel; //Reference to the panel that shows up once the time has run out
 
     public PlayerController playerController; // Reference to the player script
+    //Reference to the text UI
     public Text shieldTimerText;
     public Text magnetTimerText;
-    public GameObject pausedScreen;
-    public static bool isPaused;
 
+    public GameObject pausedScreen; //Reference to the pause screen panel
+    public static bool isPaused; //boolean flag to check if the game is paused
+
+    //Reference to the powerup panel
     public GameObject shieldPanel;
     public GameObject magnetPanel;
 
+    //Reference to the number of coins collected and salary text
     public Text coinText;
     public Text salaryText;
+
     public int salary;
     public int totalCoins;
 
@@ -33,26 +38,28 @@ public class TimeManager : MonoBehaviour
 
     private void Awake()
     {
-        soundSource = GetComponent<AudioSource>();
-        soundSource.clip = buttonSound;
+        soundSource = GetComponent<AudioSource>(); //Get the component of the audio source
+        soundSource.clip = buttonSound; //Set the audio clip of the audio source
     }
 
     void Start()
     {
         timer = totalTime; // Initialize the timer with the total time
+        //Disable all the power-up panels & pause screen on start
         shieldPanel.SetActive(false);
         magnetPanel.SetActive(false);
         pausedScreen.SetActive(false);
-        salary = PlayerPrefs.GetInt("Salary") * 5;
+        salary = PlayerPrefs.GetInt("Salary") * 5; //Multiply the salary by the 5 years
         Debug.Log(salary);
     }
 
     void Update()
     {
+        //Do nothing if game hasn't started
         if (!PlayerManager.isGameStarted)
             return;
 
-
+        //Constantly update the coinText and salaryText for the time's up screen
         coinText.text = "Collected: " + PlayerManager.numberOfCoins;
         salaryText.text = "Salary: " + salary;
         
@@ -79,7 +86,7 @@ public class TimeManager : MonoBehaviour
 
         if (playerController != null)
         {
-            // Get and display the remaining time for the Shield power-up
+            // Get and display the remaining time for the Shield & Magnet power-up with the respective UI
             float shieldRemainingTime = playerController.GetShieldRemainingTime();
             float magnetRemainingTime = playerController.GetMagnetRemainingTime();
 
@@ -119,6 +126,7 @@ public class TimeManager : MonoBehaviour
 
     public void GameOver()
     {
+        //Pause the game and bring up the time's up panel
         Time.timeScale = 0;
         timeUpPanel.SetActive(true);
     }
@@ -126,27 +134,29 @@ public class TimeManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f; // Pause the game
-        pausedScreen.SetActive(true);
+        pausedScreen.SetActive(true); //Show the pause screen
         isPaused = true;
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f; // Resume the game
-        pausedScreen.SetActive(false);
+        pausedScreen.SetActive(false); //Hide the pause screen
         isPaused = false;
     }
-
+    //Load the Simulator scene
     public void Proceed()
     {
         SceneManager.LoadScene("Simulator");
 
         //PlayButtonSoundAndLoadScene();
 
-        totalCoins = PlayerManager.numberOfCoins + salary;
+        //Calculate total number of coins and set it to the PlayerPrefs
+        totalCoins = PlayerManager.numberOfCoins + salary; 
         PlayerPrefs.SetInt("CollectedCoins", totalCoins);
     }
 
+    //Invoke the LoadRunner function after button sound has finished playing
     public void PlayButtonSoundAndLoadScene()
     {
         if (!soundPlaying)
@@ -156,7 +166,7 @@ public class TimeManager : MonoBehaviour
             Invoke("LoadRunner", buttonSound.length); // Invoke LoadScene after sound duration
         }
     }
-
+    //Load the Simulator scene
     private void LoadRunner()
     {
         SceneManager.LoadScene("Simulator");
@@ -164,7 +174,7 @@ public class TimeManager : MonoBehaviour
 
     public void QuitButton()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu"); //Returns and load the main menu scene
     }
 
 }

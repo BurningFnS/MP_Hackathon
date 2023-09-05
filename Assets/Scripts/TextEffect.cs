@@ -13,17 +13,20 @@ public class TextEffect : MonoBehaviour
 
     private void Start()
     {
+        //Finds the game object with the "toClock" tag
         target = GameObject.FindGameObjectWithTag("toClock");
-        Destroy(gameObject, destroyTime);
+        Destroy(gameObject, destroyTime); //Destroys the text object after destroyTime amount of seconds
     }
 
     private void Update()
     {
+        //Creates a smooth transition from object's initial position to it's target position
         transform.position = Vector3.Lerp(transform.position, target.transform.position, flySpeed * Time.deltaTime);
     }
 
     public void SetText(string message)
     {
+        //Sets the text inside the textComponent
         textComponent.text = message;
     }
 }

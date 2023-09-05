@@ -15,6 +15,7 @@ public class Magnet : MonoBehaviour
 
     private void Update()
     {
+        //Use PingPong function to make a bouncing effect
         float verticalMovement = Mathf.PingPong(Time.time, bounceHeight);
 
         // Calculate the target position for the power-up
