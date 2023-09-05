@@ -162,5 +162,9 @@ public class TimeManager : MonoBehaviour
         SceneManager.LoadScene("Simulator");
     }
 
+    public void QuitButton()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
 }
