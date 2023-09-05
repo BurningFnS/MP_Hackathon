@@ -11,6 +11,7 @@ public class RandomEventManager : MonoBehaviour
     public CoinManager coinManager;
     public EventHandler eventHandler;
 
+    // Text objects for displaying event details
     public Text robbedText;
     public Text beforeInsuranceText;
     public Text insuranceCoverageText;
@@ -34,6 +35,7 @@ public class RandomEventManager : MonoBehaviour
     public Text tornHamstringText;
     public Text concussionText;
 
+    // Various int and float variables for random events
     public int amountRobbed;
     public int medicalSlippedBill;
     public float medicalInsurancePercentage;
@@ -61,8 +63,10 @@ public class RandomEventManager : MonoBehaviour
     public int tornHamstringBill;
     public int concussionBill;
 
+    // Flags to check if random event has happened
     public bool randomEventHasHappened;
 
+    // References to UI panels for events
     public GameObject robbedPanel;
     public GameObject slippedPanel;
     public GameObject firePanel;
@@ -86,6 +90,7 @@ public class RandomEventManager : MonoBehaviour
     public GameObject tornHamPanel;
     public GameObject concussionPanel;
 
+    // References to UI elements regarding insurance buttons
     public GameObject slippedInsurance;
     public GameObject slippedGreyInsurance;
     public GameObject fireInsurance;
@@ -113,6 +118,7 @@ public class RandomEventManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Initialization of various game variables
         randomEventHasHappened = false;
 
         medicalSlippedBill = 850;
@@ -151,6 +157,7 @@ public class RandomEventManager : MonoBehaviour
         thirdPlacePrize = 500;
 
         missingBountyReward = 500;
+        //Check if certain game conditions are met and updating UI accordingly
         if (PlayerPrefs.GetInt("FooBankBankrupt") == 1)
         {
             bankruptBankPanel.SetActive(false);
@@ -167,6 +174,7 @@ public class RandomEventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Checking for what random event is happening
         if (eventHandler.gettingRobbed)
         {
             GettingRobbedEvent();
@@ -234,6 +242,7 @@ public class RandomEventManager : MonoBehaviour
         
     }
 
+    //Hides the respective panels and update coins of player
     public void ProceedRobbed()
     {
         robbedPanel.SetActive(false);
@@ -357,6 +366,7 @@ public class RandomEventManager : MonoBehaviour
     {
         if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
         {
+            //Make sure they can never lose more than they own
             if (coinManager.currentCoins > 0)
             {
                 amountRobbed = Random.Range(0, coinManager.currentCoins);
@@ -376,6 +386,7 @@ public class RandomEventManager : MonoBehaviour
     {
         if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
         {
+            //Make sure they can never lose more than they own
             if (coinManager.currentCoins > 0)
             {
                 moneyPickpocketted = Random.Range(0, coinManager.currentCoins);
@@ -395,6 +406,7 @@ public class RandomEventManager : MonoBehaviour
     {
         if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
         {
+            //Make sure they can never lose more than they own
             if (coinManager.currentCoins > 0)
             {
                 moneyLostFromArson = Random.Range(0, coinManager.currentCoins);
@@ -410,6 +422,7 @@ public class RandomEventManager : MonoBehaviour
         }
     }
 
+    //Update UI text for all these random events
     public void WonTriathlon()
     {
         if (eventHandler.randomEventCanHappen == true && randomEventHasHappened == false)
@@ -548,6 +561,7 @@ public class RandomEventManager : MonoBehaviour
         StartCoroutine(InsuranceBill(carBreakdownBill, carInsurancePercentage));
     }
 
+    //Check if player has medical insurance and updates UI accordingly
     public void CheckForMedicalInsurance()
     {
         if (PlayerPrefs.GetInt("HealthInsurance") == 1)
@@ -574,6 +588,7 @@ public class RandomEventManager : MonoBehaviour
         }
     }
 
+    //Check if player has fire insurance and updates UI accordingly
     public void CheckForFireInsurance()
     {
         //Debug.Log("FireInsurance: " + PlayerPrefs.GetInt("FireInsurance"));
@@ -593,6 +608,7 @@ public class RandomEventManager : MonoBehaviour
         }
     }
 
+    //Check if player has car insurance and updates UI accordingly
     public void CheckForCarInsurance()
     {
         if (PlayerPrefs.GetInt("CarInsurance") == 1)
@@ -611,6 +627,7 @@ public class RandomEventManager : MonoBehaviour
         }
     }
 
+    // Coroutine to display a warning when they have no insurance
     public void NoInsuranceWarning()
     {
         StartCoroutine(NoInsurance());
@@ -625,6 +642,7 @@ public class RandomEventManager : MonoBehaviour
         noInsurancePanel.SetActive(false);
     }
 
+    //Coroutine to display the insurance panel with all the correct insurance information
     IEnumerator InsuranceBill(int billBeforeInsurance, float insurancePercentage)
     {
         insuranceBillPanel.SetActive(true);

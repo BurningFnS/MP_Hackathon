@@ -22,7 +22,8 @@ public class Retirement : MonoBehaviour
 
     private void Update()
     {
-        bankTotal= bank.bankBalance[0] + bank.bankBalance[1] + bank.bankBalance[2];
+        // Calculate the total balance in the bank
+        bankTotal = bank.bankBalance[0] + bank.bankBalance[1] + bank.bankBalance[2];
         //if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("JobIndex") == 0) //for the perks for pension 
         //{
         //    //forcedRetiredPanel.SetActive(true);
@@ -31,6 +32,8 @@ public class Retirement : MonoBehaviour
         //    PlayerPrefs.SetInt("Retirement", 1);
         //    PlayerPrefs.SetInt("Salary", 150);
         //}
+
+        // Check retirement conditions
         if (coinManager.currentAge >= 65 && PlayerPrefs.GetInt("Retirement") == 0)
         {
            
@@ -38,7 +41,8 @@ public class Retirement : MonoBehaviour
             forcedRetiredPanel.SetActive(true);
             BuildingClickHandler.canClickOnBuildings = false;
 
-            if(PlayerPrefs.GetInt("JobIndex") == 0)
+            // Adjust player's salary based on job index
+            if (PlayerPrefs.GetInt("JobIndex") == 0)
             {
                 PlayerPrefs.SetInt("Salary", 150);
             }
@@ -56,13 +60,14 @@ public class Retirement : MonoBehaviour
 
         if (coinManager.currentAge >= 90)
         {
+            // Display retirement savings information
             totalSavings.text = "You have retired with\n$" + (coinManager.currentCoins + bankTotal) + " in your savings";
             winPanel.SetActive(true);
             BuildingClickHandler.canClickOnBuildings = false;
             Debug.Log(totalSavings.text);
         }
 
-        //if the player has already retired
+        //if the player has already retired, update the UI
         if (PlayerPrefs.GetInt("Retirement") == 1)
         {
             //change the retire button image to the locked one
@@ -78,7 +83,7 @@ public class Retirement : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Retirement") == 1)
         {
-            forcedRetiredPanel.SetActive(true);
+            forcedRetiredPanel.SetActive(true); //show the forced retirement panel
             BuildingClickHandler.canClickOnBuildings = false;
         }
         else
@@ -90,23 +95,26 @@ public class Retirement : MonoBehaviour
 
     public void YesRetire()
     {
-        //Set the player's salary to $0
+        //Set the player's salary to $0 and set the retirement and jobindex
         PlayerPrefs.SetInt("Salary", 0);
         PlayerPrefs.SetInt("Retirement", 1);
         PlayerPrefs.SetInt("JobIndex", 3);
 
+        //Close the retirement panel
         RetireConfirmationPanel.SetActive(false);
         BuildingClickHandler.canClickOnBuildings = true;
     }
 
     public void NoRetire()
     {
+        //Close the retirement panel
         RetireConfirmationPanel.SetActive(false);
         BuildingClickHandler.canClickOnBuildings = true;
     }
 
     public void Proceed()
     {
+        //Close the forced retirement panel
         forcedRetiredPanel.SetActive(false);
         BuildingClickHandler.canClickOnBuildings = true;
     }

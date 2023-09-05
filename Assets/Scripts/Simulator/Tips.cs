@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tips : MonoBehaviour
 {
+    //simple collection of financial tips in a string array.
     public static string[] TipArray =
         {
         "If you have spare money, consider keeping them in a bank to earn interest.", // 0

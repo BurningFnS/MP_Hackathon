@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class InvestmentManager : MonoBehaviour
 {
+    //Arrays of the inputfields and money invested texts in the different investment panels
     public InputField[] amountInputField;
     public Text[] moneyInvestedText;
+    //Error panel to show any errors/texts to player
     public GameObject error;
     public Text errorText;
 
@@ -15,6 +17,7 @@ public class InvestmentManager : MonoBehaviour
     public GameObject depositPanel;
     public GameObject withdrawnPanel;
 
+    // Investment rate for the different businesses
     [HideInInspector] public float gameInvestmentRate;
     [HideInInspector] public float businessInvestmentRate;
     [HideInInspector] public float gymInvestmentRate;
@@ -22,10 +25,12 @@ public class InvestmentManager : MonoBehaviour
 
     private void Start()
     {
+        // Load previously saved investment balances from player preferences
         investmentBalance[0] = PlayerPrefs.GetFloat("GameInvestmentBalance");
         investmentBalance[1] = PlayerPrefs.GetFloat("BusinessInvestmentBalance");
         investmentBalance[2] = PlayerPrefs.GetFloat("GymInvestmentBalance");
 
+        // Randomize investment rates for different businesses
         gameInvestmentRate = Random.Range(0.4f, 1.7f);
         Debug.Log("game investment rate: " + gameInvestmentRate);
         businessInvestmentRate = Random.Range(0.95f, 1.25f);
@@ -33,6 +38,7 @@ public class InvestmentManager : MonoBehaviour
         gymInvestmentRate = Random.Range(0.7f, 1.5f);
         Debug.Log("gym investment rate: " + gymInvestmentRate);
 
+        // Update the initial investment balance text for each business by calculating the new balance and rounding it
         for (int i = 0; i < moneyInvestedText.Length; i++)
         {
             if (i == 0)
@@ -47,10 +53,10 @@ public class InvestmentManager : MonoBehaviour
             {
                 investmentBalance[i] = RoundBalance(CalculateNewInvestmentPrice(investmentBalance[i], gymInvestmentRate));
             }
-            moneyInvestedText[i].text = "Money invested:  $" + investmentBalance[i].ToString("");
+            moneyInvestedText[i].text = "Money invested:  $" + investmentBalance[i].ToString(""); //Update UI text to display new investment balance
         }
     }
-
+    //Function for handling depositing money into an investment
     public void DepositAmount()
     {
         int investmentIndex = GetInvestmentIndex();
@@ -99,6 +105,7 @@ public class InvestmentManager : MonoBehaviour
         }
     }
 
+    //Function for handling withdrawing money into an investment
     public void WithdrawAmount()
     {
         int investmentIndex = GetInvestmentIndex();
@@ -147,12 +154,14 @@ public class InvestmentManager : MonoBehaviour
         }
     }
 
+    //closing the error message panel
     public void Close()
     {
         error.SetActive(false);
         errorText.text = "";
     }
 
+    //Determine the index of the currently selected investment business panel
     int GetInvestmentIndex()
     {
         if (UIManager.atGameInvest)
@@ -177,6 +186,7 @@ public class InvestmentManager : MonoBehaviour
         }
     }
 
+    //calculating the new investment price based on current investment and rate
     public float CalculateNewInvestmentPrice(float moneyInvested, float stockWorth)
     {
         //int years = 5;
@@ -196,6 +206,7 @@ public class InvestmentManager : MonoBehaviour
 
         return amount;
     }
+    //Display the deposit success panel then hide it after a few seconds
     IEnumerator SuccessfullyDepositedMoney()
     {
         depositPanel.SetActive(true);
@@ -204,6 +215,7 @@ public class InvestmentManager : MonoBehaviour
 
         depositPanel.SetActive(false);
     }
+    //Display the withdraw success panel then hide it after a few seconds
     IEnumerator SuccessfullyWithdrawnMoney()
     {
         withdrawnPanel.SetActive(true);

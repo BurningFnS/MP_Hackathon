@@ -13,6 +13,7 @@ public class JobManager : MonoBehaviour
     //public GameObject LivingExpensesPanel; 
     public Text CongratsJobText;
     public Text HaveJobText;
+    // Private boolean variables to track job
     private bool isPhotographer;
     private bool isZooKeeper;
     private bool isPlumber;
@@ -25,7 +26,8 @@ public class JobManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //LivingExpensesPanel.SetActive(false);
+        // Initialize player job based on PlayerPrefs
+
         if (PlayerPrefs.GetInt("JobIndex") == 0)
         {
             isPhotographer = true;
@@ -42,8 +44,10 @@ public class JobManager : MonoBehaviour
             //Debug.Log("IPT");
         }
     }
+    //Acquire a job based on the provided job index
     public void AcquireJob(int jobIndex)
     {
+        //Adjust all the UI accordingly to the job of the player
         if (jobIndex == 0 && !isPhotographer)
         {
             if (isZooKeeper)
@@ -107,6 +111,7 @@ public class JobManager : MonoBehaviour
   
     public void ProceedButton()
     {
+        //Hide job related panels
         CongratulationsOnJobPanel.SetActive(false);
         HaveJobAlreadyPanel.SetActive(false);
     }

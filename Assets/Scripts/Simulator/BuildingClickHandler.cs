@@ -6,10 +6,10 @@ using UnityEngine.EventSystems;
 
 public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
 {
-    public GameObject[] buildingUIPanels;
+    public GameObject[] buildingUIPanels; //References to all the panels that have to do with building UI
     public PlayerMovement playerMovement;
-    public Transform[] buildingTransforms;
-    public static bool canClickOnBuildings = true;
+    public Transform[] buildingTransforms; //positions of all the buildings
+    public static bool canClickOnBuildings = true; //Flag to check if player can click on building
 
     void Start()
     {
@@ -43,9 +43,7 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
 
     int GetBuildingIndex()
     {
-        // Implement your own logic to determine which building is clicked.
-        // You can use raycasting, tags, or other methods to identify the clicked building.
-        // For simplicity, we'll just return a unique index for each building in this example.
+        // Find out what building is being clicked and return the index
         if (gameObject.name == "Stock")
             return 0;
         else if (gameObject.name == "Bank")
@@ -61,9 +59,7 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
     }
     int GetVisitButtonIndex()
     {
-        // Implement your own logic to determine which building is clicked.
-        // You can use raycasting, tags, or other methods to identify the clicked building.
-        // For simplicity, we'll just return a unique index for each building in this example.
+        // Find out which visit building button is being clicked and return the index
         if (gameObject.name == "InvestmentVisitButton")
             return 0;
         else if (gameObject.name == "BankVisitButton")
@@ -80,6 +76,7 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
 
     public void Close()
     {
+        // Close all building UI panels
         foreach (GameObject panel in buildingUIPanels)
         {
             panel.SetActive(false);
@@ -88,11 +85,12 @@ public class BuildingClickHandler : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        int visitButtonIndex = GetVisitButtonIndex();
-        playerMovement.ReceiveButtonValue(visitButtonIndex);
-
+        int visitButtonIndex = GetVisitButtonIndex(); //Get the index of the building through the visit button
+        playerMovement.ReceiveButtonValue(visitButtonIndex);//Pass the visit button value to the player movement script
+        
         if (visitButtonIndex >= 0 && visitButtonIndex < buildingTransforms.Length)
         {
+            //Hide the building panel and use nav mesh agent to move to the destination(transform of the building)
             buildingUIPanels[visitButtonIndex].SetActive(false);
             playerMovement.MoveToDestination(buildingTransforms[visitButtonIndex].position);
         }

@@ -23,8 +23,9 @@ public class PropertyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Default property is apartment
         PlayerPrefs.SetInt("Apartment", 1);
-        
+        // Initialize property ownership based on PlayerPrefs
         if (PlayerPrefs.GetInt("Apartment") == 1)
         {
             apartmentSellButton.SetActive(true);
@@ -45,6 +46,7 @@ public class PropertyManager : MonoBehaviour
         }
     }
 
+    // Handle the Apartment purchase button click
     public void ApartmentButton()
     {
         if (hasApartment)
@@ -69,6 +71,7 @@ public class PropertyManager : MonoBehaviour
         Debug.Log("hasApartment: " + hasApartment);
         Debug.Log(hasProperty);
     }
+    // Handle the Condominium purchase button click
     public void CondominiumButton()
     {
         Debug.Log(hasApartment + " Have apartment");
@@ -100,6 +103,7 @@ public class PropertyManager : MonoBehaviour
         Debug.Log("hasCondominium: " + hasCondominium);
         Debug.Log(hasProperty);
     }
+    // Handle the Landed purchase button click
     public void LandedButton()
     {
         if (hasLanded)
@@ -130,6 +134,7 @@ public class PropertyManager : MonoBehaviour
         Debug.Log("hasLanded: " + hasLanded);
         Debug.Log(hasProperty);
     }
+    //Handles the sale of property click
     public void SellPropertyButton()
     {
         sellPercentage = 0.8f;
@@ -162,6 +167,7 @@ public class PropertyManager : MonoBehaviour
         hasProperty = hasApartment || hasCondominium || hasLanded;
         Debug.Log(hasProperty);
     }
+    //Coroutine to display purchase of property panel
     IEnumerator SuccessfullyPurchasedProperty()
     {
         purchasedPropertyBG.SetActive(true);
@@ -170,6 +176,7 @@ public class PropertyManager : MonoBehaviour
 
         purchasedPropertyBG.SetActive(false);
     }
+    //Coroutine to display failure to purchase of property panel
     IEnumerator FailedPurchaseProperty()
     {
         failedPurchaseBG.SetActive(true);

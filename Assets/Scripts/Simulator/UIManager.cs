@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour, IPointerClickHandler
 {
+    // Arrays to hold different UI panels
     public GameObject[] clickedPanel;
 
     [HideInInspector]
@@ -23,10 +24,11 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     [HideInInspector]
     public int currentPanelIndex;
 
+    // Static variables to track different bank states
     public static bool atBankOfRashid;
     public static bool atBankOfJunnie;
     public static bool atBankOfFoo;
-
+    // Static variables to track different investment states
     public static bool atInvest;
     public static bool atGameInvest;
     public static bool atBusinessInvest;
@@ -39,6 +41,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     }
     private void Update()
     {
+        // Update investment-related states
         if (atInvest)
         {
             if (investmentUIPanels[0].activeSelf)
@@ -69,7 +72,8 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     }
     public void ProceedHaveInsurance()
     {
-        if(PlayerPrefs.GetInt("JobIndex") == 1)
+        // Proceed with insurance panel based on the player's job
+        if (PlayerPrefs.GetInt("JobIndex") == 1)
         {
             haveInsurancePanel.SetActive(false);
         }
@@ -80,6 +84,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    // Close all clicked panels and allow clicking on buildings
     public void ReturnBack()
     {
         for (int i = 0; i < clickedPanel.Length; i++)
@@ -89,6 +94,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         BuildingClickHandler.canClickOnBuildings = true;
     }
 
+    //Activate the current index of the array
     private void SetCurrentPanelIndex(int newIndex)
     {
         currentPanelIndex = newIndex;
@@ -98,7 +104,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         }
     }
 
-
+    // Go to the next panel within the array of the listPanel
     public void GoNext(string listPanel)
     {
         if (listPanel == "Bank")
@@ -131,6 +137,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             }
         }
         //Debug.Log("before: " + currentPanelIndex);
+        // Deactivate the current panel, update the index, and activate the next panel if it is out of bounds
         currentUIpanels[currentPanelIndex].SetActive(false);
         currentPanelIndex++;
         if (currentPanelIndex >= currentUIpanels.Length)
@@ -142,6 +149,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         currentUIpanels[currentPanelIndex].SetActive(true);
     }
 
+    // Go to the previous panel within the array of the listPanel
     public void GoPrevious(string listPanel)
     {
         if (listPanel == "Bank")
@@ -174,6 +182,8 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             }
         }
         //Debug.Log("before: " + currentPanelIndex);
+
+        // Deactivate the current panel, update the index, and activate the next panel if it is out of bounds
         currentUIpanels[currentPanelIndex].SetActive(false);
         currentPanelIndex--;
         if (currentPanelIndex < 0)
@@ -187,7 +197,8 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //Investment Panels
+        // Handle UI interactions based on clicked GameObject's name
+        //Go to Investment Panels
         if (gameObject.name == "GameCompanyButton")
         {
             atInvest = true;
@@ -208,6 +219,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             
         }
 
+        //Return from Investment Panels
         if (gameObject.name == "ReturnBackButtonGame")
         {
             atInvest = false;
@@ -250,6 +262,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             bankUIPanels[currentPanelIndex].SetActive(true);
         }
 
+        // Return from Bank Panels
         if (gameObject.name == "ReturnBackButtonRashid")
         {
             clickedPanel[1].SetActive(true);
@@ -280,6 +293,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             jobUIPanels[2].SetActive(true);
         }
 
+        //Return from Job Panels
         if (gameObject.name == "ReturnBackButtonPlumber")
         {
             clickedPanel[2].SetActive(true);
@@ -311,6 +325,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             insuranceUIPanels[2].SetActive(true);
         }
 
+        //Return from Insurance Panels
         if (gameObject.name == "ReturnBackButtonFire")
         {
             clickedPanel[3].SetActive(true);
@@ -340,7 +355,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
         {
             propertyUIPanels[2].SetActive(true);
         }
-
+        //Return from Property Panels
         if (gameObject.name == "ReturnBackButtonApartment")
         {
             clickedPanel[4].SetActive(true);
@@ -373,7 +388,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             bankDepositUIPanels[2].SetActive(true);
             atBankOfFoo = true;
         }
-
+        //Return from Bank Confirmation Button
         if (gameObject.name == "ReturnBackButtonRashid1")
         {
             bankUIPanels[0].SetActive(true);
@@ -403,6 +418,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
            
     }
 
+    // Open a URL to Prudential's website
     public void OpenURL()
     {
             Application.OpenURL("https://www.prudential.com.sg/contactus");
@@ -410,6 +426,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
 
     public void OptionsClicked()
     {
+        // Open the options panel and disable clicking on buildings
         optionUIPanels[0].SetActive(true);
         BuildingClickHandler.canClickOnBuildings = false;
 
@@ -417,6 +434,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
 
     public void CloseOptionsPanel()
     {
+        //Close options panel
         optionUIPanels[0].SetActive(false);
         optionUIPanels[1].SetActive(false);
         BuildingClickHandler.canClickOnBuildings = true;
@@ -425,9 +443,11 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
 
     public void RestartGame()
     {
+        // Show the restart confirmation panel
         optionUIPanels[1].SetActive(true);
     }
 
+    //Return to the main menu
     public void ReturnMainMenu()
     {
         BuildingClickHandler.canClickOnBuildings = true;
