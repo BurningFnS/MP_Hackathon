@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34595582, g: 0.63191235, b: 0.8685815, a: 1}
+  m_IndirectSpecularColor: {r: 0.34600794, g: 0.6319119, b: 0.8685188, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -501,6 +501,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &10678790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,7 +3091,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465267231}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -3245,6 +3246,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
+  informationPanel: {fileID: 0}
 --- !u!1 &64415662
 GameObject:
   m_ObjectHideFlags: 0
@@ -3875,6 +3877,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &78419305
 GameObject:
   m_ObjectHideFlags: 0
@@ -5309,6 +5312,7 @@ GameObject:
   - component: {fileID: 108718280}
   - component: {fileID: 108718279}
   - component: {fileID: 108718278}
+  - component: {fileID: 108718281}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -5430,6 +5434,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108718276}
   m_CullTransparentMesh: 1
+--- !u!114 &108718281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108718276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &109074022
 GameObject:
   m_ObjectHideFlags: 0
@@ -5989,6 +6016,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &115295187
 GameObject:
   m_ObjectHideFlags: 0
@@ -6796,7 +6824,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 128432746}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenURL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &128432746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7150,6 +7190,7 @@ GameObject:
   - component: {fileID: 146435017}
   - component: {fileID: 146435016}
   - component: {fileID: 146435015}
+  - component: {fileID: 146435018}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -7271,6 +7312,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146435013}
   m_CullTransparentMesh: 1
+--- !u!114 &146435018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146435013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &146903616
 GameObject:
   m_ObjectHideFlags: 0
@@ -8172,6 +8236,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &159031850
 GameObject:
   m_ObjectHideFlags: 0
@@ -8442,6 +8507,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &161698142
 GameObject:
   m_ObjectHideFlags: 0
@@ -10125,8 +10191,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 187}
-  m_SizeDelta: {x: 200, y: 193.5328}
+  m_AnchoredPosition: {x: -4, y: 222.9}
+  m_SizeDelta: {x: 240, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202436542
 MonoBehaviour:
@@ -10331,6 +10397,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &213137434
 GameObject:
   m_ObjectHideFlags: 0
@@ -10343,6 +10410,7 @@ GameObject:
   - component: {fileID: 213137438}
   - component: {fileID: 213137437}
   - component: {fileID: 213137436}
+  - component: {fileID: 213137439}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -10464,6 +10532,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213137434}
   m_CullTransparentMesh: 1
+--- !u!114 &213137439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213137434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &214631755
 GameObject:
   m_ObjectHideFlags: 0
@@ -11842,6 +11933,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &248246274
 GameObject:
   m_ObjectHideFlags: 0
@@ -12127,6 +12219,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
+  informationPanel: {fileID: 0}
 --- !u!1 &252745329
 GameObject:
   m_ObjectHideFlags: 0
@@ -14100,6 +14193,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &326275656
 GameObject:
   m_ObjectHideFlags: 0
@@ -14288,6 +14382,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &330230043
 GameObject:
   m_ObjectHideFlags: 0
@@ -16050,6 +16145,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &357011311
 GameObject:
   m_ObjectHideFlags: 0
@@ -16811,6 +16907,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &376823035
 GameObject:
   m_ObjectHideFlags: 0
@@ -18760,7 +18857,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ________________________
+  m_Text: _______________________
 --- !u!222 &424871714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18969,6 +19066,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
+  informationPanel: {fileID: 0}
 --- !u!1 &428096950
 GameObject:
   m_ObjectHideFlags: 0
@@ -20182,6 +20280,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &448868947
 GameObject:
   m_ObjectHideFlags: 0
@@ -20603,15 +20702,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1960952787}
   - {fileID: 1395102291}
   - {fileID: 936915320}
   - {fileID: 1901329620}
   - {fileID: 63291720}
   - {fileID: 625490532}
   - {fileID: 494212568}
-  - {fileID: 753485001}
   - {fileID: 967879989}
+  - {fileID: 1960952787}
+  - {fileID: 753485001}
   m_Father: {fileID: 252745333}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20898,6 +20997,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &467152347
 GameObject:
   m_ObjectHideFlags: 0
@@ -21308,6 +21408,7 @@ GameObject:
   - component: {fileID: 479171633}
   - component: {fileID: 479171635}
   - component: {fileID: 479171634}
+  - component: {fileID: 479171636}
   m_Layer: 5
   m_Name: SorryPanel
   m_TagString: Untagged
@@ -21374,6 +21475,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479171632}
   m_CullTransparentMesh: 1
+--- !u!114 &479171636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479171632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &484710744
 GameObject:
   m_ObjectHideFlags: 0
@@ -21618,6 +21742,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &485776124
 GameObject:
   m_ObjectHideFlags: 0
@@ -21919,7 +22044,7 @@ RectTransform:
   m_Children:
   - {fileID: 768644828}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -23313,6 +23438,7 @@ GameObject:
   - component: {fileID: 514813260}
   - component: {fileID: 514813259}
   - component: {fileID: 514813258}
+  - component: {fileID: 514813261}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -23434,6 +23560,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514813256}
   m_CullTransparentMesh: 1
+--- !u!114 &514813261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514813256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &521277319
 GameObject:
   m_ObjectHideFlags: 0
@@ -23598,6 +23747,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &522089550
 GameObject:
   m_ObjectHideFlags: 0
@@ -25096,6 +25246,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &556212175
 GameObject:
   m_ObjectHideFlags: 0
@@ -27016,6 +27167,7 @@ MonoBehaviour:
   - {fileID: 724092054}
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &621544942
 GameObject:
   m_ObjectHideFlags: 0
@@ -27456,7 +27608,7 @@ RectTransform:
   - {fileID: 270949918}
   - {fileID: 1858673754}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29053,6 +29205,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &668621402
 GameObject:
   m_ObjectHideFlags: 0
@@ -30306,6 +30459,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &699860991
 GameObject:
   m_ObjectHideFlags: 0
@@ -30633,6 +30787,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &701839268
 GameObject:
   m_ObjectHideFlags: 0
@@ -31019,6 +31174,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &706776400
 GameObject:
   m_ObjectHideFlags: 0
@@ -31184,6 +31340,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &707559416
 GameObject:
   m_ObjectHideFlags: 0
@@ -31798,6 +31955,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &720290421
 GameObject:
   m_ObjectHideFlags: 0
@@ -31963,6 +32121,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &724092054
 GameObject:
   m_ObjectHideFlags: 0
@@ -32222,6 +32381,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &730305989
 GameObject:
   m_ObjectHideFlags: 0
@@ -32930,6 +33090,7 @@ GameObject:
   - component: {fileID: 743206313}
   - component: {fileID: 743206312}
   - component: {fileID: 743206311}
+  - component: {fileID: 743206314}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -33051,6 +33212,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743206309}
   m_CullTransparentMesh: 1
+--- !u!114 &743206314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743206309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &747177730
 GameObject:
   m_ObjectHideFlags: 0
@@ -33654,7 +33838,7 @@ RectTransform:
   m_Children:
   - {fileID: 760065019}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -34062,8 +34246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -70}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -1.3094, y: -81}
+  m_SizeDelta: {x: 310, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758221805
 MonoBehaviour:
@@ -35627,6 +35811,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &776907534
 GameObject:
   m_ObjectHideFlags: 0
@@ -38166,6 +38351,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &828562720
 GameObject:
   m_ObjectHideFlags: 0
@@ -39279,6 +39465,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &866695991
 GameObject:
   m_ObjectHideFlags: 0
@@ -39444,6 +39631,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &867083514
 GameObject:
   m_ObjectHideFlags: 0
@@ -39872,8 +40060,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
-  m_SizeDelta: {x: 536, y: 894}
+  m_AnchoredPosition: {x: 0.00058746, y: -15.8384}
+  m_SizeDelta: {x: 464.83, y: 943.2457}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &876280583
 MonoBehaviour:
@@ -41300,7 +41488,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465267231}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -42718,12 +42906,12 @@ RectTransform:
   m_Children:
   - {fileID: 876280582}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -29.363525}
+  m_SizeDelta: {x: 0, y: 180.2365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967879990
 MonoBehaviour:
@@ -45975,6 +46163,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
+  informationPanel: {fileID: 0}
 --- !u!1 &1079942640
 GameObject:
   m_ObjectHideFlags: 0
@@ -46336,6 +46525,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1084443746
 GameObject:
   m_ObjectHideFlags: 0
@@ -47726,6 +47916,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1112626694
 GameObject:
   m_ObjectHideFlags: 0
@@ -48151,6 +48342,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1120704773
 GameObject:
   m_ObjectHideFlags: 0
@@ -49825,6 +50017,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1151172065
 GameObject:
   m_ObjectHideFlags: 0
@@ -53569,6 +53762,7 @@ MonoBehaviour:
   - {fileID: 724092054}
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!114 &1274107303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53863,6 +54057,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
+  informationPanel: {fileID: 0}
 --- !u!1 &1275737861
 GameObject:
   m_ObjectHideFlags: 0
@@ -54034,6 +54229,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1278483803
 GameObject:
   m_ObjectHideFlags: 0
@@ -55425,6 +55621,7 @@ GameObject:
   - component: {fileID: 1306949545}
   - component: {fileID: 1306949544}
   - component: {fileID: 1306949543}
+  - component: {fileID: 1306949546}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -55558,6 +55755,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306949541}
   m_CullTransparentMesh: 1
+--- !u!114 &1306949546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306949541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &1315983217
 GameObject:
   m_ObjectHideFlags: 0
@@ -56007,6 +56227,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1327115758
 GameObject:
   m_ObjectHideFlags: 0
@@ -57039,6 +57260,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
+  informationPanel: {fileID: 0}
 --- !u!1 &1351222333
 GameObject:
   m_ObjectHideFlags: 0
@@ -57277,6 +57499,7 @@ MonoBehaviour:
   - {fileID: 724092054}
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1353680981
 GameObject:
   m_ObjectHideFlags: 0
@@ -58311,7 +58534,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465267231}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -61079,6 +61302,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1463132830
 GameObject:
   m_ObjectHideFlags: 0
@@ -62112,6 +62336,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1486098207
 GameObject:
   m_ObjectHideFlags: 0
@@ -63395,6 +63620,7 @@ MonoBehaviour:
   - {fileID: 724092054}
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1517519240
 GameObject:
   m_ObjectHideFlags: 0
@@ -64628,6 +64854,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
+  informationPanel: {fileID: 0}
 --- !u!1 &1553324499
 GameObject:
   m_ObjectHideFlags: 0
@@ -65183,6 +65410,7 @@ GameObject:
   - component: {fileID: 1578480206}
   - component: {fileID: 1578480205}
   - component: {fileID: 1578480204}
+  - component: {fileID: 1578480207}
   m_Layer: 5
   m_Name: OkayButton
   m_TagString: Okay
@@ -65317,6 +65545,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578480202}
   m_CullTransparentMesh: 1
+--- !u!114 &1578480207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578480202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &1578897134
 GameObject:
   m_ObjectHideFlags: 0
@@ -65865,6 +66116,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1590223392
 GameObject:
   m_ObjectHideFlags: 0
@@ -68465,6 +68717,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1001 &1674704327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70933,6 +71186,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1718858611
 GameObject:
   m_ObjectHideFlags: 0
@@ -72127,6 +72381,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1753890512
 GameObject:
   m_ObjectHideFlags: 0
@@ -73898,6 +74153,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1802914629
 GameObject:
   m_ObjectHideFlags: 0
@@ -74591,6 +74847,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1815026030
 GameObject:
   m_ObjectHideFlags: 0
@@ -75144,6 +75401,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1826750486
 GameObject:
   m_ObjectHideFlags: 0
@@ -75389,6 +75647,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1827903542
 GameObject:
   m_ObjectHideFlags: 0
@@ -76392,6 +76651,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1835743662
 GameObject:
   m_ObjectHideFlags: 0
@@ -77989,8 +78249,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.2253, y: 178.17}
-  m_SizeDelta: {x: 578.9799, y: 196.34}
+  m_AnchoredPosition: {x: -0.722, y: 178.17}
+  m_SizeDelta: {x: 627.359, y: 196.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878641534
 MonoBehaviour:
@@ -78025,7 +78285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You have $0 in your\r \nsavings, you do not \rhave enough to live"
+  m_Text: You did not have sufficient amount of money to live.
 --- !u!222 &1878641535
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -78196,6 +78456,7 @@ MonoBehaviour:
   - {fileID: 724092054}
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1886253052
 GameObject:
   m_ObjectHideFlags: 0
@@ -78461,6 +78722,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1895205048
 GameObject:
   m_ObjectHideFlags: 0
@@ -78649,6 +78911,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1897065625
 GameObject:
   m_ObjectHideFlags: 0
@@ -78837,6 +79100,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1901329619
 GameObject:
   m_ObjectHideFlags: 0
@@ -78870,7 +79134,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465267231}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -79037,6 +79301,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 967879988}
+  informationPanel: {fileID: 0}
 --- !u!1 &1907451358
 GameObject:
   m_ObjectHideFlags: 0
@@ -79681,6 +79946,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1918109854
 GameObject:
   m_ObjectHideFlags: 0
@@ -80062,7 +80328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1928226351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenURL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1928226351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80780,6 +81058,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1942711623
 GameObject:
   m_ObjectHideFlags: 0
@@ -81385,7 +81664,7 @@ RectTransform:
   m_Children:
   - {fileID: 448401715}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -81592,6 +81871,7 @@ MonoBehaviour:
   - {fileID: 724092054}
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1963620532
 GameObject:
   m_ObjectHideFlags: 0
@@ -82809,6 +83089,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &1998201055
 GameObject:
   m_ObjectHideFlags: 0
@@ -86834,6 +87115,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &2098088970
 GameObject:
   m_ObjectHideFlags: 0
@@ -87168,6 +87450,7 @@ MonoBehaviour:
   bankDepositUIPanels: []
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &2108745946
 GameObject:
   m_ObjectHideFlags: 0
@@ -87330,6 +87613,7 @@ MonoBehaviour:
   - {fileID: 724092054}
   currentPanelIndex: 0
   haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 0}
 --- !u!1 &2118242642
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     public static bool atBusinessInvest;
     public static bool atGymInvest;
     public GameObject haveInsurancePanel;
+    public GameObject informationPanel;
     private void Start()
     {
         currentPanelIndex = 0;  // Set an initial value for currentPanelIndex
@@ -390,5 +391,19 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             bankDepositUIPanels[2].SetActive(false);
             atBankOfFoo = false;
         }
+        if(gameObject.name == "InformationButton")
+        {
+            informationPanel.SetActive(true);
+        }
+        if(gameObject.name == "OkayButton")
+        {
+            informationPanel.SetActive(false);
+        }
+           
     }
-}
+
+    public void OpenURL()
+    {
+            Application.OpenURL("https://www.prudential.com.sg/contactus");
+        }
+    }
