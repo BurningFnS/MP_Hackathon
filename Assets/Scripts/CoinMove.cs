@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CoinMove : MonoBehaviour
 {
+    //Script not being used
     // Start is called before the first frame update
     void Start()
     {

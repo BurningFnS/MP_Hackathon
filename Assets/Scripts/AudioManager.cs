@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    //Script not being used
     public GameObject character;
     public AudioSource backgroundMusicSource;
     public AudioClip calmMusic;
@@ -29,7 +30,7 @@ public class AudioManager : MonoBehaviour
         UpdateBackgroundMusic();
     }
 
-    //idk how this works for oncollision diwefwife
+    
     //private void OnCollisionEnter(Collision collision)
     //{
         // Check if the collision involves an obstacle

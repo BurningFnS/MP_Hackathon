@@ -11,10 +11,11 @@ public class ButtonSound : MonoBehaviour
 
     private void Awake()
     {
-        soundSource = GetComponent<AudioSource>();
-        soundSource.clip = buttonSound;
+        soundSource = GetComponent<AudioSource>(); //Get the AudioSource component and assign it to the soundSource variable
+        soundSource.clip = buttonSound; //Set the AudioSource clip to buttonSound
     }
 
+    //Play button sound and change the bool flags
     public void PlayButtonSound()
     {
         if (!soundPlaying)
@@ -25,6 +26,7 @@ public class ButtonSound : MonoBehaviour
         }
     }
 
+    //Play the button sound then load the next scene after the sound finishes
     public void PlayButtonSoundAndLoadScene()
     {
         if (!soundPlaying)
@@ -35,6 +37,7 @@ public class ButtonSound : MonoBehaviour
         }
     }
 
+    //Loads the selection scene
     private void LoadScene()
     {
         SceneManager.LoadScene("Selection");

@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Audio : MonoBehaviour
 {
-    public Sound[] sounds;
+    public Sound[] sounds; //Array of all the Sounds and respective audio clips
+    //bools to check for the different scenes
     public bool isStartScene = false;
     public bool isRunnerScene = false;
     public bool isSimScene = false;
@@ -19,10 +20,11 @@ public class Audio : MonoBehaviour
 
         foreach(Sound s in sounds)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
+            s.source = gameObject.AddComponent<AudioSource>(); //Set the according properties of the audiosource of the gameobject
             s.source.clip = s.clip;
             s.source.loop = s.loop;
         }
+        //Check what scene the player is in and plays the respective music
         if(isStartScene == true && isRunnerScene == false && isSimScene == false)
         {
             PlaysSound("StartSong");
@@ -47,6 +49,7 @@ public class Audio : MonoBehaviour
     {
         foreach(Sound s in sounds)
         {
+            //Checks if the name of the sound is the same of the argument name and plays the according sound
             if (s.name == name)
                 s.source.Play();
         }
