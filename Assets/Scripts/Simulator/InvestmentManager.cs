@@ -70,6 +70,7 @@ public class InvestmentManager : MonoBehaviour
             //Deposit amount is less than or equal to total coins, so player can deposit
             if (InputAmount <= coinManager.currentCoins)
             {
+                StartCoroutine(SuccessfullyDepositedMoney());
                 // Update the bank balance
                 investmentBalance[investmentIndex] += InputAmount;
 
@@ -116,6 +117,8 @@ public class InvestmentManager : MonoBehaviour
             }
             if (InputAmount <= investmentBalance[investmentIndex])
             {
+                StartCoroutine(SuccessfullyWithdrawnMoney());
+                
                 coinManager.AnimateToAmount(coinManager.currentCoins, coinManager.currentCoins += InputAmount);
 
                 investmentBalance[investmentIndex] -= InputAmount;
@@ -136,6 +139,7 @@ public class InvestmentManager : MonoBehaviour
         }
         else
         {
+            
             Debug.Log("withdraw:" + investmentIndex);
             // Display a message for invalid input
             error.SetActive(true);
