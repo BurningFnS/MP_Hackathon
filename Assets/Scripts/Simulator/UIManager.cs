@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
     public GameObject[] jobUIPanels;
     public GameObject[] insuranceUIPanels;
     public GameObject[] propertyUIPanels;
+    public GameObject[] optionUIPanels;
+
 
     public GameObject[] bankDepositUIPanels;
     [HideInInspector]
@@ -391,4 +393,31 @@ public class UIManager : MonoBehaviour, IPointerClickHandler
             atBankOfFoo = false;
         }
     }
+
+    public void OptionsClicked()
+    {
+        optionUIPanels[0].SetActive(true);
+        BuildingClickHandler.canClickOnBuildings = false;
+
+    }
+
+    public void CloseOptionsPanel()
+    {
+        optionUIPanels[0].SetActive(false);
+        optionUIPanels[1].SetActive(false);
+        BuildingClickHandler.canClickOnBuildings = true;
+
+    }
+
+    public void RestartGame()
+    {
+        optionUIPanels[1].SetActive(true);
+    }
+
+    public void ReturnMainMenu()
+    {
+        BuildingClickHandler.canClickOnBuildings = true;
+        SceneManager.LoadScene(0);
+    }
+
 }
