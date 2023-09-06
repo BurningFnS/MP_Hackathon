@@ -70047,7 +70047,7 @@ GameObject:
   - component: {fileID: 1681889225}
   - component: {fileID: 1681889224}
   m_Layer: 5
-  m_Name: InvestmentSummaryText
+  m_Name: JobSummaryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70982,7 +70982,7 @@ GameObject:
   - component: {fileID: 1701739445}
   - component: {fileID: 1701739444}
   m_Layer: 5
-  m_Name: InvestmentText
+  m_Name: JobText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
