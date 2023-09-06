@@ -1012,7 +1012,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 117889455}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3092,7 +3092,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465267231}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -6160,8 +6160,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 148846752}
-  - {fileID: 23932459}
   - {fileID: 1038501389}
+  - {fileID: 23932459}
   - {fileID: 1941385699}
   - {fileID: 2108146827}
   - {fileID: 913393859}
@@ -9356,7 +9356,7 @@ GameObject:
   - component: {fileID: 184214671}
   - component: {fileID: 184214670}
   m_Layer: 5
-  m_Name: ProceedButtonRobbed
+  m_Name: ProceedButtonHaveJob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14455,7 +14455,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 643930379}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19590,7 +19590,7 @@ RectTransform:
   m_Children:
   - {fileID: 97768680}
   m_Father: {fileID: 970655466}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -20627,6 +20627,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1960952787}
   - {fileID: 1395102291}
   - {fileID: 936915320}
   - {fileID: 1901329620}
@@ -20635,7 +20636,6 @@ RectTransform:
   - {fileID: 494212568}
   - {fileID: 753485001}
   - {fileID: 967879989}
-  - {fileID: 1960952787}
   m_Father: {fileID: 252745333}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20713,7 +20713,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1815026031}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21947,7 +21947,7 @@ RectTransform:
   m_Children:
   - {fileID: 768644828}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -23858,7 +23858,7 @@ RectTransform:
   m_Children:
   - {fileID: 734452766}
   m_Father: {fileID: 1207806386}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -27199,7 +27199,7 @@ RectTransform:
   - {fileID: 969471735}
   - {fileID: 1542796701}
   m_Father: {fileID: 1344050883}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27401,7 +27401,6 @@ GameObject:
   - component: {fileID: 624665953}
   - component: {fileID: 624665952}
   - component: {fileID: 624665951}
-  - component: {fileID: 624665950}
   m_Layer: 5
   m_Name: LandedSellButton
   m_TagString: Untagged
@@ -27430,43 +27429,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.5, y: 57}
   m_SizeDelta: {x: 216.5, y: 99.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &624665950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624665948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8918b75804e9984993d0ad19fc0f3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  insurance:
-  - {fileID: 1400042795}
-  - {fileID: 876258684}
-  - {fileID: 2079699265}
-  noInsurance:
-  - {fileID: 1053341643}
-  - {fileID: 227516616}
-  - {fileID: 1764860942}
-  insuranceBill: {fileID: 775607478}
-  insuranceExpensesText: {fileID: 499920750}
-  successPurchasePanel: {fileID: 2135455813}
-  successText: {fileID: 2003953674}
-  cancelPanel: {fileID: 1832678035}
-  cancelText: {fileID: 1815749352}
-  insuranceExpenses: 000000000000000000000000
-  cancelButton:
-  - {fileID: 624665948}
-  - {fileID: 753485000}
-  - {fileID: 2043442771}
-  confirmButton:
-  - {fileID: 441410430}
-  - {fileID: 494212567}
-  - {fileID: 522250860}
-  cancelHealthInsuranceButton: {fileID: 0}
-  haveInsurancePanel: {fileID: 0}
 --- !u!114 &624665951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27606,7 +27568,7 @@ RectTransform:
   - {fileID: 270949918}
   - {fileID: 1858673754}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28374,8 +28336,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 281003316}
-  - {fileID: 341449477}
   - {fileID: 1910044185}
+  - {fileID: 341449477}
   - {fileID: 115164840}
   - {fileID: 158084271}
   - {fileID: 1426463780}
@@ -33988,7 +33950,7 @@ RectTransform:
   m_Children:
   - {fileID: 760065019}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -34934,13 +34896,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1967784848}
-  - {fileID: 1827386304}
+  - {fileID: 1032886815}
   - {fileID: 136941134}
   - {fileID: 865420713}
   - {fileID: 1798431486}
   - {fileID: 766175642}
   - {fileID: 1035189779}
-  - {fileID: 1032886815}
   m_Father: {fileID: 252745333}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41638,7 +41599,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465267231}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41721,7 +41682,7 @@ RectTransform:
   m_Children:
   - {fileID: 947758369}
   m_Father: {fileID: 970655466}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -43056,7 +43017,7 @@ RectTransform:
   m_Children:
   - {fileID: 876280582}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -43363,12 +43324,12 @@ RectTransform:
   m_Children:
   - {fileID: 1122862108}
   - {fileID: 1479997440}
+  - {fileID: 1839117208}
   - {fileID: 1274419065}
   - {fileID: 1073692601}
   - {fileID: 2071258855}
   - {fileID: 441410431}
   - {fileID: 940129153}
-  - {fileID: 1839117208}
   m_Father: {fileID: 252745333}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44587,7 +44548,7 @@ GameObject:
   - component: {fileID: 1019412175}
   - component: {fileID: 1019412174}
   m_Layer: 5
-  m_Name: ProceedButtonRobbed
+  m_Name: ProceedButtonCongrats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44912,7 +44873,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 765123147}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -45214,7 +45175,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 117889455}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -46146,7 +46107,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970655466}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -52156,7 +52117,6 @@ GameObject:
   - component: {fileID: 1206147119}
   - component: {fileID: 1206147118}
   - component: {fileID: 1206147117}
-  - component: {fileID: 1206147116}
   m_Layer: 5
   m_Name: CondominiumSellButton
   m_TagString: Untagged
@@ -52185,43 +52145,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.5, y: 57.000015}
   m_SizeDelta: {x: 216.5, y: 99.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1206147116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206147114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8918b75804e9984993d0ad19fc0f3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  insurance:
-  - {fileID: 1400042795}
-  - {fileID: 876258684}
-  - {fileID: 2079699265}
-  noInsurance:
-  - {fileID: 1053341643}
-  - {fileID: 227516616}
-  - {fileID: 1764860942}
-  insuranceBill: {fileID: 775607478}
-  insuranceExpensesText: {fileID: 499920750}
-  successPurchasePanel: {fileID: 2135455813}
-  successText: {fileID: 2003953674}
-  cancelPanel: {fileID: 1832678035}
-  cancelText: {fileID: 1815749352}
-  insuranceExpenses: 000000000000000000000000
-  cancelButton:
-  - {fileID: 1206147114}
-  - {fileID: 753485000}
-  - {fileID: 2043442771}
-  confirmButton:
-  - {fileID: 441410430}
-  - {fileID: 494212567}
-  - {fileID: 522250860}
-  cancelHealthInsuranceButton: {fileID: 0}
-  haveInsurancePanel: {fileID: 0}
 --- !u!114 &1206147117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52359,13 +52282,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2079693211}
-  - {fileID: 1590238679}
   - {fileID: 1273953119}
+  - {fileID: 1590238679}
   - {fileID: 425664824}
   - {fileID: 250176736}
+  - {fileID: 1834950057}
   - {fileID: 522250861}
   - {fileID: 2043442772}
-  - {fileID: 1834950057}
   m_Father: {fileID: 252745333}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53880,17 +53803,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273953118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1207806386}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 193}
+  m_AnchoredPosition: {x: 0, y: 193.00006}
   m_SizeDelta: {x: 400, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1273953120
@@ -54126,7 +54049,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970655466}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -54803,7 +54726,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1815026031}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -55415,7 +55338,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1344050883}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -57158,12 +57081,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1280059513}
+  - {fileID: 1830357468}
   - {fileID: 1291123810}
   - {fileID: 1997769883}
   - {fileID: 1462209799}
   - {fileID: 621544943}
   - {fileID: 2130465950}
-  - {fileID: 1830357468}
   m_Father: {fileID: 252745333}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58808,7 +58731,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465267231}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -61419,7 +61342,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1344050883}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -66391,7 +66314,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1207806386}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -74886,8 +74809,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1700893219}
-  - {fileID: 1280973350}
   - {fileID: 465715361}
+  - {fileID: 1280973350}
   - {fileID: 1119295441}
   - {fileID: 1084389167}
   - {fileID: 297328380}
@@ -75389,12 +75312,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 765123147}
-  m_RootOrder: 1
+  m_Father: {fileID: 1967784848}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 466.32184}
+  m_AnchoredPosition: {x: 50, y: -0.17071533}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827386305
@@ -75637,7 +75560,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1344050883}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -76316,7 +76239,7 @@ RectTransform:
   - {fileID: 1966402281}
   - {fileID: 890948094}
   m_Father: {fileID: 1207806386}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -77007,7 +76930,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970655466}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -77959,7 +77882,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967093000}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -79013,7 +78936,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465267231}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -79514,7 +79437,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 643930379}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -81425,7 +81348,7 @@ RectTransform:
   m_Children:
   - {fileID: 448401715}
   m_Father: {fileID: 465267231}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -81909,8 +81832,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1886253053}
-  - {fileID: 1877505245}
   - {fileID: 1980656438}
+  - {fileID: 1877505245}
   - {fileID: 160252837}
   - {fileID: 1323715989}
   - {fileID: 1938644551}
@@ -81991,7 +81914,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1827386304}
   m_Father: {fileID: 765123147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82311,7 +82235,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967093000}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -82696,7 +82620,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1344050883}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -84429,7 +84353,6 @@ GameObject:
   - component: {fileID: 2041869381}
   - component: {fileID: 2041869380}
   - component: {fileID: 2041869379}
-  - component: {fileID: 2041869378}
   m_Layer: 5
   m_Name: ApartmentSellButton
   m_TagString: Untagged
@@ -84458,43 +84381,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.5, y: 57}
   m_SizeDelta: {x: 216.5, y: 99.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2041869378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041869376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8918b75804e9984993d0ad19fc0f3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  insurance:
-  - {fileID: 1400042795}
-  - {fileID: 876258684}
-  - {fileID: 2079699265}
-  noInsurance:
-  - {fileID: 1053341643}
-  - {fileID: 227516616}
-  - {fileID: 1764860942}
-  insuranceBill: {fileID: 775607478}
-  insuranceExpensesText: {fileID: 499920750}
-  successPurchasePanel: {fileID: 2135455813}
-  successText: {fileID: 2003953674}
-  cancelPanel: {fileID: 1832678035}
-  cancelText: {fileID: 1815749352}
-  insuranceExpenses: 000000000000000000000000
-  cancelButton:
-  - {fileID: 2041869376}
-  - {fileID: 753485000}
-  - {fileID: 2043442771}
-  confirmButton:
-  - {fileID: 441410430}
-  - {fileID: 494212567}
-  - {fileID: 522250860}
-  cancelHealthInsuranceButton: {fileID: 0}
-  haveInsurancePanel: {fileID: 0}
 --- !u!114 &2041869379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84635,7 +84521,7 @@ RectTransform:
   m_Children:
   - {fileID: 989053264}
   m_Father: {fileID: 1207806386}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -85624,7 +85510,7 @@ RectTransform:
   - {fileID: 448868948}
   - {fileID: 1388499370}
   m_Father: {fileID: 970655466}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -87719,7 +87605,7 @@ RectTransform:
   m_Children:
   - {fileID: 78419306}
   m_Father: {fileID: 1344050883}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
