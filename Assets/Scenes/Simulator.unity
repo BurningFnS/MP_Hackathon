@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3459986, g: 0.6319019, b: 0.86851686, a: 1}
+  m_IndirectSpecularColor: {r: 0.34600794, g: 0.6319119, b: 0.8685188, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5315,6 +5315,7 @@ GameObject:
   - component: {fileID: 108718280}
   - component: {fileID: 108718279}
   - component: {fileID: 108718278}
+  - component: {fileID: 108718281}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -5436,6 +5437,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108718276}
   m_CullTransparentMesh: 1
+--- !u!114 &108718281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108718276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  optionUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &109565951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6750,7 +6775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 128432746}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenURL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &128432746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7104,6 +7141,7 @@ GameObject:
   - component: {fileID: 146435017}
   - component: {fileID: 146435016}
   - component: {fileID: 146435015}
+  - component: {fileID: 146435018}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -7225,6 +7263,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146435013}
   m_CullTransparentMesh: 1
+--- !u!114 &146435018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146435013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  optionUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &146903616
 GameObject:
   m_ObjectHideFlags: 0
@@ -10303,6 +10365,7 @@ GameObject:
   - component: {fileID: 213137438}
   - component: {fileID: 213137437}
   - component: {fileID: 213137436}
+  - component: {fileID: 213137439}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -10424,6 +10487,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213137434}
   m_CullTransparentMesh: 1
+--- !u!114 &213137439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213137434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  optionUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &214631755
 GameObject:
   m_ObjectHideFlags: 0
@@ -23625,6 +23712,7 @@ GameObject:
   - component: {fileID: 514813260}
   - component: {fileID: 514813259}
   - component: {fileID: 514813258}
+  - component: {fileID: 514813261}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -23746,6 +23834,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514813256}
   m_CullTransparentMesh: 1
+--- !u!114 &514813261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514813256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  optionUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &521277319
 GameObject:
   m_ObjectHideFlags: 0
@@ -33490,6 +33602,7 @@ GameObject:
   - component: {fileID: 743206313}
   - component: {fileID: 743206312}
   - component: {fileID: 743206311}
+  - component: {fileID: 743206314}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -33611,6 +33724,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743206309}
   m_CullTransparentMesh: 1
+--- !u!114 &743206314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743206309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  optionUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &747177730
 GameObject:
   m_ObjectHideFlags: 0
@@ -56085,6 +56222,7 @@ GameObject:
   - component: {fileID: 1306949545}
   - component: {fileID: 1306949544}
   - component: {fileID: 1306949543}
+  - component: {fileID: 1306949546}
   m_Layer: 5
   m_Name: InformationButton
   m_TagString: Untagged
@@ -56218,6 +56356,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306949541}
   m_CullTransparentMesh: 1
+--- !u!114 &1306949546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306949541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  optionUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &1307078356
 GameObject:
   m_ObjectHideFlags: 0
@@ -66054,6 +66216,7 @@ GameObject:
   - component: {fileID: 1578480206}
   - component: {fileID: 1578480205}
   - component: {fileID: 1578480204}
+  - component: {fileID: 1578480207}
   m_Layer: 5
   m_Name: OkayButton
   m_TagString: Okay
@@ -66125,31 +66288,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1578480205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OkayButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: DepositOkayButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1578480205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66188,6 +66327,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578480202}
   m_CullTransparentMesh: 1
+--- !u!114 &1578480207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578480202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314c7e932fedce4882801d014809771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedPanel: []
+  currentUIpanels: []
+  investmentUIPanels: []
+  bankUIPanels: []
+  jobUIPanels: []
+  insuranceUIPanels: []
+  propertyUIPanels: []
+  optionUIPanels: []
+  bankDepositUIPanels: []
+  currentPanelIndex: 0
+  haveInsurancePanel: {fileID: 0}
+  informationPanel: {fileID: 1116129846}
 --- !u!1 &1578522545
 GameObject:
   m_ObjectHideFlags: 0
@@ -81093,7 +81256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1928226351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1552456191}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OpenURL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1928226351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85271,6 +85446,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1405376856}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
         m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2123037365}
+        m_TargetAssemblyTypeName: EventHandler, Assembly-CSharp
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
