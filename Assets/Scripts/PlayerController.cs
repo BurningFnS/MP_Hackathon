@@ -49,13 +49,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isRolling = false;
 
-    //Variables regarding audio
-    public AudioSource collisionSource;
-    public AudioClip collisionImpactSFX;
-    public AudioSource powerUpSource;
-    public AudioClip powerUpSFX;
-    public AudioSource coinSource;
-    public AudioClip coinImpactSFX;
 
     void Start()
     {
