@@ -5417,7 +5417,7 @@ GameObject:
   - component: {fileID: 109732780}
   - component: {fileID: 109732779}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: ProceedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11123,7 +11123,7 @@ GameObject:
   - component: {fileID: 238927834}
   - component: {fileID: 238927833}
   m_Layer: 5
-  m_Name: SuccessText
+  m_Name: ProcessingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19035,7 +19035,7 @@ GameObject:
   - component: {fileID: 434003701}
   - component: {fileID: 434003700}
   m_Layer: 5
-  m_Name: SuccessPanel
+  m_Name: DepositPanelBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26235,7 +26235,7 @@ GameObject:
   - component: {fileID: 593349524}
   - component: {fileID: 593349523}
   m_Layer: 5
-  m_Name: inputText
+  m_Name: NotEnoughMoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28367,7 +28367,7 @@ GameObject:
   - component: {fileID: 653180081}
   - component: {fileID: 653180082}
   m_Layer: 5
-  m_Name: inputText
+  m_Name: PurchaseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28434,7 +28434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Successfully purchased \nthe fire insurnace."
+  m_Text: "Successfully purchased \nthe house."
 --- !u!1 &659241729
 GameObject:
   m_ObjectHideFlags: 0
@@ -30174,7 +30174,7 @@ GameObject:
   - component: {fileID: 699860994}
   - component: {fileID: 699860993}
   m_Layer: 5
-  m_Name: inputText
+  m_Name: WithdrawText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34894,7 +34894,7 @@ GameObject:
   - component: {fileID: 768084546}
   - component: {fileID: 768084545}
   m_Layer: 5
-  m_Name: SuccessPanel
+  m_Name: WithdrawPanelBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38438,7 +38438,7 @@ GameObject:
   - component: {fileID: 846830294}
   - component: {fileID: 846830293}
   m_Layer: 5
-  m_Name: SuccessText
+  m_Name: FailText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43241,7 +43241,7 @@ GameObject:
   - component: {fileID: 980174435}
   - component: {fileID: 980174434}
   m_Layer: 5
-  m_Name: SuccessText
+  m_Name: ProcessingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43300,7 +43300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Congratulations!
+  m_Text: Processing
 --- !u!222 &980174435
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -67172,7 +67172,7 @@ GameObject:
   - component: {fileID: 1665783926}
   - component: {fileID: 1665783925}
   m_Layer: 5
-  m_Name: inputText
+  m_Name: DepositText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68311,7 +68311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.7601, y: 321}
+  m_AnchoredPosition: {x: 0, y: 321}
   m_SizeDelta: {x: 183.5203, y: 49.368}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688826625
@@ -69969,7 +69969,7 @@ GameObject:
   - component: {fileID: 1718858614}
   - component: {fileID: 1718858613}
   m_Layer: 5
-  m_Name: CompundInterestSummaryText
+  m_Name: CompoundInterestSummaryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73716,7 +73716,7 @@ GameObject:
   - component: {fileID: 1815749353}
   - component: {fileID: 1815749352}
   m_Layer: 5
-  m_Name: inputText
+  m_Name: WarningText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81796,7 +81796,7 @@ GameObject:
   - component: {fileID: 2003953675}
   - component: {fileID: 2003953674}
   m_Layer: 5
-  m_Name: inputText
+  m_Name: BoughtText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84432,7 +84432,7 @@ GameObject:
   - component: {fileID: 2074617511}
   - component: {fileID: 2074617510}
   m_Layer: 5
-  m_Name: Image
+  m_Name: InformationPanelBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
