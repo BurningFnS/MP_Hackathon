@@ -39,6 +39,9 @@ public class MainMenu : MonoBehaviour
 
         PlayerPrefs.SetInt("FooBankBankrupt", 0);
         PlayerPrefs.SetInt("ClaimableBankruptcyMoney", 0);
+
+        PlayerPrefs.SetFloat("GeneralVolumeFloat", 0.5f);
+
     }
     public void StartGame()
     {
