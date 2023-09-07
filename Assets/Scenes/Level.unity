@@ -7987,7 +7987,7 @@ GameObject:
   - component: {fileID: 1259700202}
   - component: {fileID: 1259700201}
   m_Layer: 5
-  m_Name: PauseText
+  m_Name: TimeUpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
