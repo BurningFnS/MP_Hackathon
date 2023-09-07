@@ -174,7 +174,7 @@ public class TimeManager : MonoBehaviour
 
     public void QuitButton()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu"); //Returns and load the main menu scene
     }
-
 }

@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         //set speed of player to default speed
         forwardSpeed = initialSpeed;
         timeSinceLastIncrease = 0f;
+        TimeManager.isPaused = false;
     }
 
     void Update()

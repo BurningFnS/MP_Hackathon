@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     //Reset all PlayerPrefs to make it into a new game for the player
     private void Start()
     {
+
         PlayerPrefs.SetInt("CollectedCoins", 0);
         PlayerPrefs.SetInt("CurrentCoins", 0);
         PlayerPrefs.SetInt("CurrentAge", 25);
