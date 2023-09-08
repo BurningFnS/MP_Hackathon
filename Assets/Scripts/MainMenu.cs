@@ -44,12 +44,4 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("GeneralVolumeFloat", 0.5f);
 
     }
-    public void StartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Not in use
-    }
-    public void StartButton()
-    {
-        SceneManager.LoadScene("Selection"); //Not in use
-    }
 }
