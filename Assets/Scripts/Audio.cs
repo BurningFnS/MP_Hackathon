@@ -15,9 +15,9 @@ public class Audio : MonoBehaviour
 
     void Start()
     {
-
+  
         LoadValue();
-
+        
         foreach(Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>(); //Set the according properties of the audiosource of the gameobject
@@ -57,24 +57,28 @@ public class Audio : MonoBehaviour
 
     public void VolumeAdjustments()
     {
-        foreach (Sound s in sounds)
+        if (_MusicSlider != null)
         {
-            s.volume = _MusicSlider.value;
-            PlayerPrefs.SetFloat("GeneralVolumeFloat", s.volume);
-            AudioListener.volume = s.volume;
-        }
+            foreach (Sound s in sounds)
+            {
+                s.volume = _MusicSlider.value;
+                PlayerPrefs.SetFloat("GeneralVolumeFloat", s.volume);
+                AudioListener.volume = s.volume;
+            }
 
-        LoadValue();
+            LoadValue();
+        }
     }
 
     public void LoadValue()
     {
-        foreach (Sound s in sounds)
+        if (_MusicSlider != null)
         {
-            s.volume = PlayerPrefs.GetFloat("GeneralVolumeFloat");
-            _MusicSlider.value = s.volume;
+            foreach (Sound s in sounds)
+            {
+                s.volume = PlayerPrefs.GetFloat("GeneralVolumeFloat");
+                _MusicSlider.value = s.volume;
+            }
         }
-
-
     }
 }
