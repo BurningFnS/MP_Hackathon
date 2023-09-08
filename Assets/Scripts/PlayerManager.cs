@@ -32,7 +32,6 @@ public class PlayerManager : MonoBehaviour
         if (SwipeManager.tap)
         {
             isGameStarted = true;
-            Time.timeScale = 1f;
             Destroy(startText);
         }
     }
