@@ -243,7 +243,7 @@ public class CoinManager : MonoBehaviour
         //Check if player has negative amount of coins and stop them from proceeding
         if (currentCoins < 0)
         {
-            alertText.text = "You have negative balance of " + currentCoins;
+            alertText.text = "You have a negative balance of " + currentCoins;
             negativeBalancePanel.SetActive(true);
         }
         else if (currentCoins >= 0)
