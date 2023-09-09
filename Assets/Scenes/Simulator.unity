@@ -73208,7 +73208,7 @@ GameObject:
   - component: {fileID: 1839006895}
   - component: {fileID: 1839006894}
   m_Layer: 5
-  m_Name: SecondImage
+  m_Name: FoundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
