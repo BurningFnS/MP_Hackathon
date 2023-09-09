@@ -41436,7 +41436,7 @@ GameObject:
   - component: {fileID: 974845186}
   - component: {fileID: 974845185}
   m_Layer: 5
-  m_Name: HamstringImage
+  m_Name: ConcussionImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
