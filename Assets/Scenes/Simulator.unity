@@ -3783,7 +3783,7 @@ RectTransform:
   m_Children:
   - {fileID: 113741522}
   m_Father: {fileID: 1724422187}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -50184,7 +50184,7 @@ GameObject:
   - component: {fileID: 1217453926}
   - component: {fileID: 1217453925}
   m_Layer: 5
-  m_Name: ArsonStory
+  m_Name: ArsonStoryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50203,7 +50203,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1724422187}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -67823,8 +67823,8 @@ RectTransform:
   - {fileID: 1616752687}
   - {fileID: 788007254}
   - {fileID: 1327877835}
-  - {fileID: 1217453924}
   - {fileID: 82618906}
+  - {fileID: 1217453924}
   m_Father: {fileID: 125458856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -71584,7 +71584,7 @@ GameObject:
   - component: {fileID: 1826750489}
   - component: {fileID: 1826750488}
   m_Layer: 5
-  m_Name: luckyText
+  m_Name: LuckyStoryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
