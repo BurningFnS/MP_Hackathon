@@ -49499,7 +49499,7 @@ GameObject:
   - component: {fileID: 1191154695}
   - component: {fileID: 1191154694}
   m_Layer: 5
-  m_Name: PrizeText
+  m_Name: BonusText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62689,7 +62689,7 @@ GameObject:
   - component: {fileID: 1585281119}
   - component: {fileID: 1585281118}
   m_Layer: 5
-  m_Name: BonusText
+  m_Name: BonusStoryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
