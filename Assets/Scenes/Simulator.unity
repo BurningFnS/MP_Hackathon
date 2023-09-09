@@ -3289,7 +3289,7 @@ GameObject:
   - component: {fileID: 70756785}
   - component: {fileID: 70756784}
   m_Layer: 5
-  m_Name: JewelleryText
+  m_Name: JewelleryStoryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16122,7 +16122,7 @@ GameObject:
   - component: {fileID: 380350203}
   - component: {fileID: 380350202}
   m_Layer: 5
-  m_Name: RetirementMoneyText
+  m_Name: TipText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
