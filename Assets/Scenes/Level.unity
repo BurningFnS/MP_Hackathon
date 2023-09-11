@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3463199, g: 0.632067, b: 0.868616, a: 1}
+  m_IndirectSpecularColor: {r: 0.34590515, g: 0.6319326, b: 0.86858153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5462,9 +5462,9 @@ MonoBehaviour:
   - {fileID: 8919390859186386481, guid: 719398c584a4af741b4f998b4337dfa6, type: 3}
   - {fileID: 832914781367012115, guid: b8bdc9a446c8d044e90d8452a7c69dc4, type: 3}
   - {fileID: 1846252225569747496, guid: 065afc5790906b64582acfc7626ccb9d, type: 3}
+  - {fileID: 832914781367012115, guid: eca423518ec86c74c9618ea0da26c1ff, type: 3}
   - {fileID: 3020304205523313158, guid: 312484a688193b143afb7e6b1b92ecd4, type: 3}
   - {fileID: 2810899153893480827, guid: 1196e960380db7c4f8065fbf130276ef, type: 3}
-  - {fileID: 832914781367012115, guid: eca423518ec86c74c9618ea0da26c1ff, type: 3}
   intermediateTilePrefabs:
   - {fileID: 1876527733591322818, guid: a76ddf70a86e73b48863a70ca4d29b01, type: 3}
   - {fileID: 1846252225569747496, guid: ea61c1a5d2aa3ab4898dd12bb727dcf9, type: 3}
