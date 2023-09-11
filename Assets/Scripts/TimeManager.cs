@@ -59,12 +59,6 @@ public class TimeManager : MonoBehaviour
         if (!PlayerManager.isGameStarted)
             return;
 
-        //Constantly update the coinText and salaryText for the time's up screen
-        coinText.text = "Collected: " + PlayerManager.numberOfCoins;
-        salaryText.text = "Salary: " + salary;
-        
-
-
         if (!isGameOver) 
         {
             // Update the timer every frame
@@ -128,6 +122,8 @@ public class TimeManager : MonoBehaviour
     {
         //Pause the game and bring up the time's up panel
         Time.timeScale = 0;
+        coinText.text = "Collected: " + PlayerManager.numberOfCoins;
+        salaryText.text = "Salary: " + salary;
         timeUpPanel.SetActive(true);
     }
 
