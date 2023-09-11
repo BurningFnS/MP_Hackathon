@@ -196,16 +196,16 @@ public class InvestmentManager : MonoBehaviour
         return calculatedAmount;
     }
 
-    private float CalculateCompoundInterest(float principal, float rate, int compoundingFreq, int years)
-    {
-        // Convert annual rate to per-compounding period rate
-        float ratePerPeriod = rate / compoundingFreq;
+    //private float CalculateCompoundInterest(float principal, float rate, int compoundingFreq, int years)
+    //{
+    //    // Convert annual rate to per-compounding period rate
+    //    float ratePerPeriod = rate / compoundingFreq;
 
-        // Calculate the compound interest amount
-        float amount = principal * Mathf.Pow(1 + ratePerPeriod, compoundingFreq * years);
+    //    // Calculate the compound interest amount
+    //    float amount = principal * Mathf.Pow(1 + ratePerPeriod, compoundingFreq * years);
 
-        return amount;
-    }
+    //    return amount;
+    //}
     //Display the deposit success panel then hide it after a few seconds
     IEnumerator SuccessfullyDepositedMoney()
     {
