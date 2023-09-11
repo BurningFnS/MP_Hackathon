@@ -39,9 +39,9 @@ public class CoinManager : MonoBehaviour
     private int targetAmount; // The target money amount after animation
     private int initialAmount; // The initial money amount at the start of animation
     private float animationStartTime; // The time when the animation started
-    private int interceptedAmount;
+    //private int interceptedAmount;
 
-    private int currentAmount; // The current displayed money amount
+    //private int currentAmount; // The current displayed money amount
 
 
     // Variables for confirmation.
